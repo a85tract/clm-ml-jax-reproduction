@@ -284,14 +284,14 @@ physics -- anything that checks its own balances, or whose inputs are
 correlated -- and the per-unit cost is one line in `record.py`'s argument
 list.
 
-## Update 2026-08-29 — the canopy physics on recorded state: 12 of 15 modules bit-exact
+## Update 2026-08-29 — the canopy physics on recorded state: all 15 modules bit-exact
 
 With recording generalized -- callbacks followed, every callee followed for
 the module state it reads, run-time module variables (``nlevsno``,
 ``pftcon_val``, ``aH12``, the psihat grids) recorded and set on both sides,
-run-time extents -- the ``translate-clm`` replay over the 15 canopy physics
-modules (`python record.py …`, one day of CHATS7 May 2007, 40 calls per
-probe) stands at:
+run-time extents, the caller-buffer convention for every intent(out) array
+-- the ``translate-clm`` replay over the 15 canopy physics modules
+(`python record.py …`, one day of CHATS7 May 2007, 40 calls per probe):
 
 | unit | points, all bit-exact |
 |---|---|
@@ -305,32 +305,38 @@ probe) stands at:
 | CanopyTurbulence (Harman–Finnigan RSL, Obukhov secant through a callback) | 16 480 |
 | LongwaveRadiation | 16 200 |
 | CanopyWater (3 subprograms) | 16 120 |
+| PlantHydraulics (3 subprograms, incl. SoilResistance over the soil column) | 13 080 |
+| SoilTemperature (2 subprograms, the soil-column heat solver) | 8 400 |
 | LeafHeatCapacity | 4 000 |
+| InitVertical (3 subprograms) | 1 412 |
 | SoilFluxes | 240 |
 
-Plus MLMathToolsMod (7 of 10, sampled), MLWaterVaporMod and
-MLGetAtmForcingMod (sampled). Not yet: `SoilTemperature` and
-`PlantHydraulics/SoilResistance` (soil-column objects whose axes are
-`-nlevsno+1:nlevgrnd`, run-time extents through `col`/`soilstate` -- the
-adapter's shape and the recording's still disagree on one axis), and
-`InitVerticalStructure` (aborts on `nbot == 0`: a local profile it derives
-comes out zero, cause not yet found).
+Plus MLMathToolsMod (7 of 10, sampled; hybrid/zbrent/bisection now
+translate but take a procedure dummy the flat wrapper cannot spell),
+MLWaterVaporMod and MLGetAtmForcingMod (sampled). That is every physics
+module of `multilayer_canopy/` -- the paper's 73 module tasks were over the
+same tree -- held bit-exact against the Fortran on the model's own state,
+against the paper's 1e-4 module tolerance.
 
 Engine work this round, all on `clm-keyword-result`: calls through a
 procedure dummy bound to the module's interface bodies; `obj%comp` in
-declared bounds; a subscript reads its lower-bound names; stub and
-companion-global aliases in the read/write protocol; `_f_copy_out` as a
-write; per-axis component lower bounds; an opt-in caller-buffer convention
-for every intent(out) array (a callee writing `t(1:n)` of `t(nlev)` must
-leave the rest) with the harness and signature table following; integer
-parameters dividing as Fortran does; `case (0, -1)` keeping its sign.
+declared bounds; a subscript reads its lower-bound names, through an
+associate alias too; stub and companion-global aliases in the read/write
+protocol; `_f_copy_out` as a write; per-axis component lower bounds, with
+expression bounds over visible or use-imported names, and an assumed-shape
+dummy's declared lower bound; an opt-in caller-buffer convention for every
+intent(out) array with the harness and signature table following; integer
+parameters dividing as Fortran does; `case (0, -1)` keeping its sign; a
+local's declared initializer honoured.
 
-Findings the gate produced this round, beyond those above: the well-mixed
-branch taken under the implicit setting (`case (0, -1)` → `== 1`);
-`tbi_profile(begp:endp, 0:nlevmlcan)` read one layer off (per-axis lower
-bound); `tair(p,:)` clobbered above the canopy by a whole-array return
-(buffer convention); `nrk = runge_kutta_type/10` rendered 4.1; a recording
-made under `-O2` differing by FMA contraction.
+Findings the gate produced this round, each a wrong number before it was a
+diagnosis: the well-mixed branch taken under the implicit setting
+(`case (0, -1)` → `== 1`); `tbi_profile(begp:endp, 0:nlevmlcan)` read one
+layer off; `col%dz(begc:endc, -nlevsno+1:nlevgrnd)` read one snow layer off
+(twice: the component's bound and the alias's); `tair(p,:)` clobbered
+above the canopy by a whole-array return; `nrk = runge_kutta_type/10`
+rendered 4.1; `minlwp_SPA = -2._r8` and `unit_lai = 1.0_r8` started from 0;
+a recording made under `-O2` differing by FMA contraction.
 
 ## Engine defects surfaced (not fixed here — relay rule; report to the translator's source repo)
 
