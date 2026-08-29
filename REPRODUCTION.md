@@ -179,6 +179,72 @@ stops everything else is the derived-type surface — `mlcanopy_inst%…` in the
 static check, `TYPE(…)` dummies in the oracle — which is the next thing
 `recast-clm` has to answer, and the paper's Tier-2/3 boundary exactly.
 
+## Update 2026-08-28 (night) — derived types: `mlcanopy_type` through the gate
+
+`recast-clm` now flattens a derived-type interface on both sides
+(`flatten.py`): from the components a subprogram touches -- through its
+`associate` aliases and the calls it passes the object to -- and their
+`allocate (this%…)` bounds, it generates a Fortran `<name>_flat` that builds
+the object and calls the original, and a Python `<name>_flat` that does the
+same to the translation; the oracle precompiles the unit's whole `use`
+closure into a static library and hands f2py only the adapter module. On
+generated inputs (`np_ = 8` patches, the model's 100 layers, 2 leaf classes),
+bit-exact:
+
+| unit | compared | points |
+|---|---|---|
+| `mlwatervapormod` | SatVap, LatVap | 30 |
+| `mlmathtoolsmod` | 7 of 10 public (hybrid/zbrent/bisection take a procedure dummy: ungated) | 2 140 |
+| `mlleafheatcapacitymod` | LeafHeatCapacity, via the adapter | 8 000 |
+| `mlleafboundarylayermod` | LeafBoundaryLayer, via the adapter | 48 000 |
+| `mlsoilfluxesmod` | SoilFluxes, via the adapter | 480 |
+| `mlcanopywatermod` | 3 subprograms, via adapters | 32 240 |
+| `mlgetatmforcingmod` | 1, via the adapter | 1 360 |
+
+Three findings on the way, each of which the gate produced rather than a
+reading of the code:
+
+1. **A translation defect, caught bit-exact.** `pftcon%slatop` is allocated
+   `(0:mxpft)`; the translation read `slatop[itype - 1]`, one plant
+   functional type off. The engine did not know a component's allocated
+   lower bound. Fixed on `clm-keyword-result`: the frontend records
+   `allocated_dims` from `allocate (this%…)`, the emitter shifts a
+   `root%component` subscript by it, and an `associate` alias inherits its
+   selector's bounds. LeafHeatCapacity went from 102/8000 points differing
+   to 0.
+2. **Upstream declares the object `intent(out)` and reads through it.**
+   `MLSoilFluxesMod.f90:36` and two routines in `MLinitVerticalMod.f90`
+   declare `type(mlcanopy_type), intent(out) :: mlcanopy_inst`, then read
+   components on the next lines. By the standard the dummy is undefined on
+   entry; it works because the components are pointers every compiler leaves
+   associated. The engine's translation follows the standard (a fresh object)
+   and the routine had no `tref_forcing`. The `clm` frontend re-declares such
+   a dummy `inout` and records the assumption in `Facts.provenance`. Worth
+   an upstream note beside the RK-tableau one; not filed.
+3. **Routines that check their own energy balance cannot be gated on
+   generated inputs.** `LeafFluxes` computes `shleaf`, `lhleaf` from inputs
+   and aborts if `rnleaf - shleaf - lhleaf - stleaf > 1e-3`; with `rnleaf`
+   generated, it always aborts, on both sides. `FluxProfileSolution` the same.
+   These need recorded state -- what the paper's Phase 3 produced by hand
+   for 32 subroutines -- and the engine's `dump-replay` oracle is the slot for
+   it. Not done.
+
+Also stopped, honestly: `SolarRadiation` refuses `dim expr 'bounds % begp'`
+(a local array dimensioned by a derived-type component: engine rule
+missing); `hybrid`/`zbrent`/`bisection` take a procedure dummy (no adapter);
+`initSubgridMod`/`FluxProfileSolution` reach components the transitive
+analysis does not (depth or object aliasing), reported as `_Record has no
+attribute`.
+
+Full-tree walk after this round (`python run_translate.py numpy translate-clm`,
+76 units): **7 pass**, 8 reach the bit-exact gate and fail there (the three
+findings above, plus components reached beyond the transitive analysis), 24
+stop at the oracle (nothing spellable: procedure dummies, `bounds_type`,
+character dummies -- the two `str is not flat` crashes are now refusals),
+34 at the static gate (`call to external subroutine` 36 refusals, `dim expr`
+8), and the engine `allocate(..., stat=)` crash stands. Against the engine
+alone: 0 pass, 48 at the static gate.
+
 ## Engine defects surfaced (not fixed here — relay rule; report to the translator's source repo)
 
 1. **Python keyword as identifier.** `MLWaterVaporMod/LatVap` has a local named
