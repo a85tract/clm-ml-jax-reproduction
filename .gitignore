@@ -1,0 +1,5 @@
+# upstream is a clone of gbonan/CLM-ml_v2.CHATS, never modified and never committed here
+/upstream/
+# generated: staged sources, candidates, evidence, builds, model runs
+/output/
+/build*/
