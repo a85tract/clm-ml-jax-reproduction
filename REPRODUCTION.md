@@ -10,7 +10,7 @@ Model* — CLM-ml-v2 (Fortran) → `clm-ml-jax` via a five-phase agentic pipelin
 against the authors' artifact.
 
 **Status: 2026-08-28.** Everything below was run on macOS 26.5 / Apple silicon,
-gfortran 16.1 (Homebrew), RecastEngine 0.0.1.dev0 with `recast-cesm` installed
+gfortran 16.1 (Homebrew), RecastEngine 0.0.1.dev0 with a sibling CAM extension installed
 (unused here — the run is engine-only, the way `corpus/` is held).
 
 ## Layout
@@ -110,16 +110,16 @@ This matches the engine's own corpus baseline (2 / 59 third-party units pass),
 so it is not a CLM-ml surprise. The paper's result was obtained with an
 LLM-in-the-loop transform plus hand-built per-module harnesses; the engine
 ships the hook for that (`deferred_handler`, `AgentProvider`) and, in
-`recast-cesm`, one such transform bound to CAM's stub tables. Reaching the
+the CAM extension, one such transform bound to CAM's stub tables. Reaching the
 paper's Phase 4 in this framework means writing the CLM analogue of
-`recast-cesm`: a frontend that knows `shr_kind_mod`/`clm_varcon`, a stub table
+a CAM-side extension: a frontend that knows `shr_kind_mod`/`clm_varcon`, a stub table
 for `endrun`/`iulog`/netCDF/history, an agentic `translate.clm`, and — the
 hard part — an oracle that can drive subprograms taking `mlcanopy_type`.
 
 ## Update 2026-08-28 (later) — `recast-clm`, and `MLWaterVaporMod` end to end
 
 The gap named above is now a package: `../recast-clm/` (branch
-`translate-clm`), the CLM analogue of `recast-cesm`, attached through entry
+`translate-clm`), a model-domain extension of the engine, attached through entry
 points only. What it took to carry the paper's simplest Tier-1 module through
 all eight stages, bit-exact against the Fortran:
 
@@ -371,7 +371,7 @@ a recording made under `-O2` differing by FMA contraction.
 ## Commands
 
 ```bash
-cd ~/agent/SciRecast/RecastEngine && source .venv/bin/activate
+cd RecastEngine && source .venv/bin/activate   # checkouts side by side: RecastEngine/, recast-clm/, clm-ml-jax/
 python ../clm-ml-jax/stage.py
 python ../clm-ml-jax/run_translate.py numpy
 cd ../clm-ml-jax/build && ./build.sh && cd run && ../prgm.exe < nl.CHATS7.05.2007
