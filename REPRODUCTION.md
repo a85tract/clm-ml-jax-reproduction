@@ -284,6 +284,54 @@ physics -- anything that checks its own balances, or whose inputs are
 correlated -- and the per-unit cost is one line in `record.py`'s argument
 list.
 
+## Update 2026-08-29 — the canopy physics on recorded state: 12 of 15 modules bit-exact
+
+With recording generalized -- callbacks followed, every callee followed for
+the module state it reads, run-time module variables (``nlevsno``,
+``pftcon_val``, ``aH12``, the psihat grids) recorded and set on both sides,
+run-time extents -- the ``translate-clm`` replay over the 15 canopy physics
+modules (`python record.py …`, one day of CHATS7 May 2007, 40 calls per
+probe) stands at:
+
+| unit | points, all bit-exact |
+|---|---|
+| LeafPhotosynthesis (FvCB + stomatal optimization through `hybrid`) | 160 200 |
+| RungeKuttaUpdate | 140 200 |
+| FluxProfileSolution (implicit solver, calling LeafFluxes/SoilFluxes/tridiag) | 84 400 |
+| SolarRadiation (Norman + two-stream) | 68 680 |
+| LeafFluxes | 48 000 |
+| CanopyNitrogenProfile | 48 040 |
+| LeafBoundaryLayer | 24 000 |
+| CanopyTurbulence (Harman–Finnigan RSL, Obukhov secant through a callback) | 16 480 |
+| LongwaveRadiation | 16 200 |
+| CanopyWater (3 subprograms) | 16 120 |
+| LeafHeatCapacity | 4 000 |
+| SoilFluxes | 240 |
+
+Plus MLMathToolsMod (7 of 10, sampled), MLWaterVaporMod and
+MLGetAtmForcingMod (sampled). Not yet: `SoilTemperature` and
+`PlantHydraulics/SoilResistance` (soil-column objects whose axes are
+`-nlevsno+1:nlevgrnd`, run-time extents through `col`/`soilstate` -- the
+adapter's shape and the recording's still disagree on one axis), and
+`InitVerticalStructure` (aborts on `nbot == 0`: a local profile it derives
+comes out zero, cause not yet found).
+
+Engine work this round, all on `clm-keyword-result`: calls through a
+procedure dummy bound to the module's interface bodies; `obj%comp` in
+declared bounds; a subscript reads its lower-bound names; stub and
+companion-global aliases in the read/write protocol; `_f_copy_out` as a
+write; per-axis component lower bounds; an opt-in caller-buffer convention
+for every intent(out) array (a callee writing `t(1:n)` of `t(nlev)` must
+leave the rest) with the harness and signature table following; integer
+parameters dividing as Fortran does; `case (0, -1)` keeping its sign.
+
+Findings the gate produced this round, beyond those above: the well-mixed
+branch taken under the implicit setting (`case (0, -1)` → `== 1`);
+`tbi_profile(begp:endp, 0:nlevmlcan)` read one layer off (per-axis lower
+bound); `tair(p,:)` clobbered above the canopy by a whole-array return
+(buffer convention); `nrk = runge_kutta_type/10` rendered 4.1; a recording
+made under `-O2` differing by FMA contraction.
+
 ## Engine defects surfaced (not fixed here — relay rule; report to the translator's source repo)
 
 1. **Python keyword as identifier.** `MLWaterVaporMod/LatVap` has a local named

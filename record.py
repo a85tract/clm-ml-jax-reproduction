@@ -64,15 +64,40 @@ for module, plans in plans_by_module.items():
         )
 (probed / f"{RECORDER_MODULE}.f90").write_text(recorder)
 
-# Build in topological order; the recorder goes right before the first module that uses it.
-order = (OUT / "topo_order.txt").read_text().split()
-callers = {
-    path.stem.lower()
-    for path in probed.glob("*.f90")
-    if f"use {RECORDER_MODULE}" in path.read_text(errors="replace")
-}
-first = min((order.index(c) for c in callers if c in order), default=len(order))
-order.insert(first, RECORDER_MODULE)
+# Build order: a topological sort over the probed tree's own USE statements,
+# the recorder included -- it uses the type and state modules, and the probed
+# callers use it, so a fixed order from before cannot place it.
+import collections
+
+by_stem = {p.stem.lower(): p for p in probed.glob("*.f90")}
+module_of = {}
+uses_of = {}
+for stem, path in by_stem.items():
+    text = path.read_text(errors="replace")
+    m = re.search(r"^\s*(?:module|program)\s+(\w+)", text, re.I | re.M)
+    if not m:
+        continue
+    module_of[m.group(1).lower()] = stem
+    uses_of[m.group(1).lower()] = {u.lower() for u in re.findall(r"^\s*use\s+(\w+)", text, re.I | re.M)}
+indeg = {m: 0 for m in module_of}
+rev = collections.defaultdict(set)
+for m, uses in uses_of.items():
+    for u in uses:
+        if u in module_of and u != m:
+            indeg[m] += 1
+            rev[u].add(m)
+ready = sorted(m for m, d in indeg.items() if d == 0)
+order = []
+while ready:
+    m = ready.pop(0)
+    order.append(by_stem[module_of[m]].stem)
+    for n in sorted(rev[m]):
+        indeg[n] -= 1
+        if indeg[n] == 0:
+            ready.append(n)
+    ready.sort()
+if len(order) != len(module_of):
+    raise SystemExit("the probed tree's USE graph has a cycle")
 build = REC / "build"
 if build.exists():
     shutil.rmtree(build)
@@ -89,7 +114,6 @@ flags = [
     "-fno-range-check",
     f"-I{nf}/include",
 ]
-by_stem = {p.stem.lower(): p for p in probed.glob("*.f90")}
 objects = []
 for name in order:
     src = by_stem.get(name.lower())
@@ -122,6 +146,17 @@ with open(run / "run.log", "w") as log:
     subprocess.run([str(build / "prgm.exe")], stdin=open(run / "nl"), stdout=log, stderr=subprocess.STDOUT, cwd=run, check=True)
 print("ran; last line:", (run / "run.log").read_text().strip().splitlines()[-1])
 
+# The namelist's scalar settings, for the translation's constants.
+overrides = {}
+for key, raw in re.findall(r"^\s*(\w+)\s*=\s*([^'\n]+?)\s*$", namelist, re.M):
+    token = raw.strip().replace("D0", "").replace("d0", "")
+    try:
+        overrides[key.lower()] = int(token) if re.fullmatch(r"-?\d+", token) else float(token)
+    except ValueError:
+        pass
+overrides = {k: v for k, v in overrides.items() if k in {"met_type", "dpai_min", "pftcon_val"}}
+print("constant overrides from the namelist:", overrides)
+
 # Sort dumps per unit and write a config per unit.
 dumps = REC / "dumps"
 if dumps.exists():
@@ -138,7 +173,12 @@ for module, plans in plans_by_module.items():
     config = {
         "output": str(OUT),
         "oracle": "dump-replay",
-        "stages": {"dump-replay": {"dumps": str(target)}},
+        "stages": {
+            "dump-replay": {"dumps": str(target)},
+            # The run-control variables the namelist set: the tree's defaults
+            # are what the translation would otherwise carry.
+            "translate.clm": {"constant_overrides": overrides},
+        },
     }
     (REC / f"{uid.replace(':', '_')}.json").write_text(json.dumps(config, indent=2) + "\n")
     print(f"{uid}: {n} dump(s) -> {target}")
