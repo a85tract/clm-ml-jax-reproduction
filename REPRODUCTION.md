@@ -113,30 +113,30 @@ ships the hook for that (`deferred_handler`, `AgentProvider`) and, in
 the CAM extension, one such transform bound to CAM's stub tables. Reaching the
 paper's Phase 4 in this framework means writing the CLM analogue of
 a CAM-side extension: a frontend that knows `shr_kind_mod`/`clm_varcon`, a stub table
-for `endrun`/`iulog`/netCDF/history, an agentic `translate.clm`, and — the
+for `endrun`/`iulog`/netCDF/history, an agentic `translate.clm-ml`, and — the
 hard part — an oracle that can drive subprograms taking `mlcanopy_type`.
 
-## Update 2026-08-28 (later) — `recast-clm`, and `MLWaterVaporMod` end to end
+## Update 2026-08-28 (later) — `recast-clm-ml`, and `MLWaterVaporMod` end to end
 
-The gap named above is now a package: `../recast-clm/` (branch
-`translate-clm`), a model-domain extension of the engine, attached through entry
+The gap named above is now a package: `../recast-clm-ml/` (branch
+`translate-clm-ml`), a model-domain extension of the engine, attached through entry
 points only. What it took to carry the paper's simplest Tier-1 module through
 all eight stages, bit-exact against the Fortran:
 
 | plugin | what it answers |
 |---|---|
 | `clm` frontend | `r8` is 64-bit; `abortutils`, `clm_varctl`, `shr_kind_mod`, `clm_varcon`, `MLclm_varcon`, … are stubs, not companions |
-| `translate.clm` | the framework stub tables (`endrun` raises, history/restart/netCDF are `pass`); **use-constants** — every name use-imported from a constants module is resolved from the tree (`recast.fortran.use.resolve`) into the candidate's own `<module>_use_constants.py`; **stand-ins** — the `abortutils_numpy.py`-style files the emitted header imports are written into the candidate, with the module's constants (same parsed expressions) and the framework calls a standalone run answers itself |
-| `f2py-golden-clm` | the engine's oracle with the stub modules compiled in, `-I` for `netcdf.inc`, and `-lnetcdff` via `LDFLAGS` (the stub `abortutils` needs `nf_strerror` at load time); link flags folded into the cache key |
-| `translate-clm` | the recipe, with land-surface sampling ranges on the gate |
+| `translate.clm-ml` | the framework stub tables (`endrun` raises, history/restart/netCDF are `pass`); **use-constants** — every name use-imported from a constants module is resolved from the tree (`recast.fortran.use.resolve`) into the candidate's own `<module>_use_constants.py`; **stand-ins** — the `abortutils_numpy.py`-style files the emitted header imports are written into the candidate, with the module's constants (same parsed expressions) and the framework calls a standalone run answers itself |
+| `f2py-golden-clm-ml` | the engine's oracle with the stub modules compiled in, `-I` for `netcdf.inc`, and `-lnetcdff` via `LDFLAGS` (the stub `abortutils` needs `nf_strerror` at load time); link flags folded into the cache key |
+| `translate-clm-ml` | the recipe, with land-surface sampling ranges on the gate |
 
 ```console
-$ recast run translate-clm ../clm-ml-jax/output/staged --config ../clm-ml-jax/output/staged/recast.json --unit fortran:mlwatervapormod
+$ recast run translate-clm-ml ../clm-ml-jax/output/staged --config ../clm-ml-jax/output/staged/recast.json --unit fortran:mlwatervapormod
 fortran:mlwatervapormod
   [ok ] frontend   clm
-  [ok ] transform  translate.clm
+  [ok ] transform  translate.clm-ml
   [ok ] verifier   static.rwset                sampled: 8 blocks match
-  [ok ] oracle     f2py-golden-clm             f2py:mlwatervapormod:444f824826717b73
+  [ok ] oracle     f2py-golden-clm-ml             f2py:mlwatervapormod:444f824826717b73
   [ok ] verifier   differential.bitexact       bit_exact: 30 points across 2 subprogram(s), all bit-exact
   [ok ] verifier   symbolic.notary             symbolic: no rewrites to notarize; the translation is print-order faithful
   [ok ] store      fs-evidence                 3 verdict(s) recorded
@@ -162,10 +162,10 @@ Three things learned about the engine's contract on the way, worth relaying:
 - the f2py job's argv has no slot for linker flags; `LDFLAGS` in the
   environment is the only way in.
 
-Full-tree walk with `translate-clm` (`python run_translate.py numpy
-translate-clm` → `output/baseline_translate-clm_numpy.json`), 76 units:
+Full-tree walk with `translate-clm-ml` (`python run_translate.py numpy
+translate-clm-ml` → `output/baseline_translate-clm-ml_numpy.json`), 76 units:
 
-| stopped by | `translate` (engine alone) | `translate-clm` |
+| stopped by | `translate` (engine alone) | `translate-clm-ml` |
 |---|---|---|
 | `static.rwset` | 48 | 49 |
 | oracle | 26 | 23 — derived-type arguments (`TYPE(CLUMPFILTER)`, `TYPE(BOUNDS_TYPE)`, `TYPE(MLCANOPY_TYPE)`) and constants-only modules |
@@ -177,11 +177,11 @@ One more unit than the engine alone, and the honest reading is that the
 extension's use-constants and stand-ins remove the *import* failures; what
 stops everything else is the derived-type surface — `mlcanopy_inst%…` in the
 static check, `TYPE(…)` dummies in the oracle — which is the next thing
-`recast-clm` has to answer, and the paper's Tier-2/3 boundary exactly.
+`recast-clm-ml` has to answer, and the paper's Tier-2/3 boundary exactly.
 
 ## Update 2026-08-28 (night) — derived types: `mlcanopy_type` through the gate
 
-`recast-clm` now flattens a derived-type interface on both sides
+`recast-clm-ml` now flattens a derived-type interface on both sides
 (`flatten.py`): from the components a subprogram touches -- through its
 `associate` aliases and the calls it passes the object to -- and their
 `allocate (this%…)` bounds, it generates a Fortran `<name>_flat` that builds
@@ -236,7 +236,7 @@ missing); `hybrid`/`zbrent`/`bisection` take a procedure dummy (no adapter);
 analysis does not (depth or object aliasing), reported as `_Record has no
 attribute`.
 
-Full-tree walk after this round (`python run_translate.py numpy translate-clm`,
+Full-tree walk after this round (`python run_translate.py numpy translate-clm-ml`,
 76 units): **7 pass**, 8 reach the bit-exact gate and fail there (the three
 findings above, plus components reached beyond the transitive analysis), 24
 stop at the oracle (nothing spellable: procedure dummies, `bounds_type`,
@@ -247,14 +247,14 @@ alone: 0 pass, 48 at the static gate.
 
 ## Update 2026-08-28 (late) — Phase 3: recorded state, and the solver bit-exact
 
-`recast-clm/record.py` is the paper's Phase 3 made mechanical: from the same
+`recast-clm-ml/record.py` is the paper's Phase 3 made mechanical: from the same
 `FlatPlan` the adapters come from, it generates a Fortran recorder module
 (one probe per adapted subprogram), brackets every `call <Name>(...)` in a
 **copy** of the staged tree with the probes, builds that copy with the
 engine's reference flags (`-O1 -fno-fast-math -ffp-contract=off`), runs the
 CHATS7 namelist for one day, and writes the first 40 calls of each probe in
 the engine's dump format. `clm-ml-jax/record.py` drives it; the dumps land
-under `output/recorded/dumps/<unit>/` and `translate-clm` replays them with
+under `output/recorded/dumps/<unit>/` and `translate-clm-ml` replays them with
 `{"oracle": "dump-replay"}` (`output/recorded/<unit>.json`).
 
 | unit | on the model's own state | points |
@@ -290,7 +290,7 @@ With recording generalized -- callbacks followed, every callee followed for
 the module state it reads, run-time module variables (``nlevsno``,
 ``pftcon_val``, ``aH12``, the psihat grids) recorded and set on both sides,
 run-time extents, the caller-buffer convention for every intent(out) array
--- the ``translate-clm`` replay over the 15 canopy physics modules
+-- the ``translate-clm-ml`` replay over the 15 canopy physics modules
 (`python record.py …`, one day of CHATS7 May 2007, 40 calls per probe):
 
 | unit | points, all bit-exact |
@@ -371,7 +371,7 @@ a recording made under `-O2` differing by FMA contraction.
 ## Commands
 
 ```bash
-cd RecastEngine && source .venv/bin/activate   # checkouts side by side: RecastEngine/, recast-clm/, clm-ml-jax/
+cd RecastEngine && source .venv/bin/activate   # checkouts side by side: RecastEngine/, recast-clm-ml/, clm-ml-jax/
 python ../clm-ml-jax/stage.py
 python ../clm-ml-jax/run_translate.py numpy
 cd ../clm-ml-jax/build && ./build.sh && cd run && ../prgm.exe < nl.CHATS7.05.2007

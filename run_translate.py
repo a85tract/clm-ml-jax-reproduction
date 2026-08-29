@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Walk a translate recipe over every CLM-ml module; record per unit.
 
-    python run_translate.py [target] [recipe]     # e.g. numpy translate-clm
+    python run_translate.py [target] [recipe]     # e.g. numpy translate-clm-ml
 
 Mirrors tools/corpus.py run_case in the engine, on a case that lives outside it.
 Writes output/baseline.json.

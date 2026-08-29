@@ -8,7 +8,7 @@ output/recorded/, builds it with gfortran the way build/build.sh builds the
 reference, runs the CHATS7 May-2007 namelist for --days days, and sorts the
 dumps into output/recorded/dumps/<unit>/. Then, per unit:
 
-    recast run translate-clm output/staged --config output/recorded/<unit>.json --unit <unit>
+    recast run translate-clm-ml output/staged --config output/recorded/<unit>.json --unit <unit>
 """
 
 from __future__ import annotations
@@ -22,7 +22,7 @@ from pathlib import Path
 
 from recast.registry import REGISTRY
 
-from recast_clm.record import RECORDER_MODULE, plans_for_units, probe_tree, recorder_module
+from recast_clmml.record import RECORDER_MODULE, plans_for_units, probe_tree, recorder_module
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "output"
@@ -35,7 +35,7 @@ parser.add_argument("--days", type=int, default=1)
 parser.add_argument("--calls", type=int, default=40)
 args = parser.parse_args()
 
-frontend = REGISTRY.get("frontend", "clm")()
+frontend = REGISTRY.get("frontend", "clm-ml")()
 units = {u.uid: u for u in frontend.discover(STAGED)}
 facts_by_module = {}
 for uid in args.units:
@@ -177,7 +177,7 @@ for module, plans in plans_by_module.items():
             "dump-replay": {"dumps": str(target)},
             # The run-control variables the namelist set: the tree's defaults
             # are what the translation would otherwise carry.
-            "translate.clm": {"constant_overrides": overrides},
+            "translate.clm-ml": {"constant_overrides": overrides},
         },
     }
     (REC / f"{uid.replace(':', '_')}.json").write_text(json.dumps(config, indent=2) + "\n")
