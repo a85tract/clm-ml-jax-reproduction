@@ -245,6 +245,45 @@ character dummies -- the two `str is not flat` crashes are now refusals),
 8), and the engine `allocate(..., stat=)` crash stands. Against the engine
 alone: 0 pass, 48 at the static gate.
 
+## Update 2026-08-28 (late) — Phase 3: recorded state, and the solver bit-exact
+
+`recast-clm/record.py` is the paper's Phase 3 made mechanical: from the same
+`FlatPlan` the adapters come from, it generates a Fortran recorder module
+(one probe per adapted subprogram), brackets every `call <Name>(...)` in a
+**copy** of the staged tree with the probes, builds that copy with the
+engine's reference flags (`-O1 -fno-fast-math -ffp-contract=off`), runs the
+CHATS7 namelist for one day, and writes the first 40 calls of each probe in
+the engine's dump format. `clm-ml-jax/record.py` drives it; the dumps land
+under `output/recorded/dumps/<unit>/` and `translate-clm` replays them with
+`{"oracle": "dump-replay"}` (`output/recorded/<unit>.json`).
+
+| unit | on the model's own state | points |
+|---|---|---|
+| `mlleaffluxesmod` | LeafFluxes | 48 000 |
+| `mlsoilfluxesmod` | SoilFluxes | 240 |
+| `mlfluxprofilesolutionmod` | FluxProfileSolution -- the implicit solver, calling LeafFluxes, SoilFluxes and the tridiagonal solves | 4 000 |
+
+All bit-exact. Two things the recording taught:
+
+- **The recording's build is part of the reference.** Recorded under `-O2`,
+  LeafFluxes differed by up to 4 301 ULP (max_rel 6e-13): FMA contraction,
+  not the translation. Recorded under the engine's reference flags, 0 ULP.
+  The dump format carries no build identity, so `RECORDING.md` beside the
+  dumps does.
+- **A second translation defect, caught by the recorded run.**
+  `case (0, -1)` was emitted as `== 0 or == 1` -- the emitter walked the
+  leaves under the selector and the unary minus is a node above the literal
+  -- so `FluxProfileSolution` took the well-mixed branch under the implicit
+  solver's setting and aborted. Fixed on `clm-keyword-result`; the fix also
+  makes `case (lo:hi)` refuse, which the engine's inherited test had recorded
+  as slipping past.
+
+With these, ten units are bit-exact: seven on generated inputs, three on
+recorded state. The recorded path is the one that scales to the rest of the
+physics -- anything that checks its own balances, or whose inputs are
+correlated -- and the per-unit cost is one line in `record.py`'s argument
+list.
+
 ## Engine defects surfaced (not fixed here — relay rule; report to the translator's source repo)
 
 1. **Python keyword as identifier.** `MLWaterVaporMod/LatVap` has a local named
