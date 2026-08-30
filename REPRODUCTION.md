@@ -475,3 +475,17 @@ by ~30% for d(agross)/d(apar) on the summed outputs, while on a lit layer
 the root's own derivative agrees with the residual's implicit derivative
 (both zero: Rubisco-limited); the disagreement is therefore not in the
 root finder and remains to be located.
+
+**Reverse mode, where it stands (2026-08-29, latest).** Helpers now take the
+module state they read as parameters (no module attribute is read at trace
+time, which was a tracer leak under differentiation), and loops with a
+run-time start (``do ic = nbot(p), ntop(p)``), a descending run-time
+range, or a bound over a dummy extent (``do i = 2, n`` beside ``a(n)``) run
+their axis's static extent under a guard. ``jax.grad`` runs on the
+LeafPhotosynthesis and LeafFluxes kernels and agrees with forward mode.
+SolarRadiation and CanopyTurbulence still refuse it: the backend's own
+hoisting of a descending loop whose extent the rewrite could not read
+from the body (``_cnt_n`` trip counts), and RoughnessLength's fixed-point
+``while`` -- an iteration without a callback residual to hang an
+implicit-function adjoint on, which the paper's approach would run as a
+fixed-count ``fori_loop`` under a mask. Both are the next rules.
