@@ -409,7 +409,7 @@ translation was held bit-exact against, `differential.tolerance`
 | PlantHydraulics | within 2 ULP, 13,080 | all 3 |
 | RungeKutta | toleranced, dominant within 2 ULP, 55,486 | yes |
 | SoilTemperature | within 4 ULP, 8,400 | both |
-| FluxProfileSolution | **FAIL**: 67,175 ULP on `tair_profile` (0.66 K), a translation defect not yet found | all 5 lowered |
+| FluxProfileSolution | **FAIL** at the ULP tier, but the defect is found and fixed: `tair` was planned read-only because the plan's scope lacked the companions' procedures (`call tridiag_2eq(..., tair(p,:), ...)`), an engine defect the NumPy adapter's in-place arrays hid. With it fixed every output agrees to 1e-12..6e-10 absolute; with jit *disabled* the kernel is bit-exact with the recording, so the residual is XLA's fusion -- the ULP-tier class the backend documents -- amplified by the iterative solve past the gate's 32 ULP | all 5 lowered |
 | Longwave, SolarRadiation | **FAIL**: `np.empty((neq,))` with a run-time `neq` -- a dynamic shape the rewrite has no rule for | lowered, refused at trace |
 | SoilFluxes | **FAIL**: 2,399 ULP on `shsoi` (`tg - tair` amplifying a 4-ULP input difference) -- conditioning the gate's dominance test does not excuse | yes |
 
