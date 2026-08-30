@@ -371,7 +371,7 @@ a recording made under `-O2` differing by FMA contraction.
 ## Commands
 
 ```bash
-cd RecastEngine && source .venv/bin/activate   # checkouts side by side: RecastEngine/, recast-clm-ml/, clm-ml-jax/
+cd RecastEngine && source .venv/bin/activate   # checkouts side by side: RecastEngine/, recast-clm-ml/, cesm/clm-ml-jax/
 python ../clm-ml-jax/stage.py
 python ../clm-ml-jax/run_translate.py numpy
 cd ../clm-ml-jax/build && ./build.sh && cd run && ../prgm.exe < nl.CHATS7.05.2007
