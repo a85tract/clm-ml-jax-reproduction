@@ -489,3 +489,15 @@ from the body (``_cnt_n`` trip counts), and RoughnessLength's fixed-point
 ``while`` -- an iteration without a callback residual to hang an
 implicit-function adjoint on, which the paper's approach would run as a
 fixed-count ``fori_loop`` under a mask. Both are the next rules.
+
+**Reverse mode everywhere tried (2026-08-29, end of day).** Counted
+``while`` loops run as fixed-count ``for``s under their condition, loops
+whose bound is a scalar integer dummy run to the indexed axis's static
+extent under a guard (the bound is a tracer once the kernel is inlined),
+and a loop after an early return takes the return flag in its condition
+rather than being wrapped. ``jax.grad`` now runs and agrees with forward
+mode on LeafPhotosynthesis, LeafFluxes, SolarRadiation, CanopyTurbulence,
+SoilTemperature and PlantHydraulics; the gate stands at 12/15 with the same
+three XLA-fusion residuals. Still open: d(agross)/d(apar) on 19 of 92
+layers (~30%), not in the root finder; the three residuals; the full
+column.
