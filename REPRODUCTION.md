@@ -410,7 +410,8 @@ translation was held bit-exact against, `differential.tolerance`
 | RungeKutta | toleranced, dominant within 2 ULP, 55,486 | yes |
 | SoilTemperature | within 4 ULP, 8,400 | both |
 | FluxProfileSolution | **FAIL** at the ULP tier, but the defect is found and fixed: `tair` was planned read-only because the plan's scope lacked the companions' procedures (`call tridiag_2eq(..., tair(p,:), ...)`), an engine defect the NumPy adapter's in-place arrays hid. With it fixed every output agrees to 1e-12..6e-10 absolute; with jit *disabled* the kernel is bit-exact with the recording, so the residual is XLA's fusion -- the ULP-tier class the backend documents -- amplified by the iterative solve past the gate's 32 ULP | all 5 lowered |
-| Longwave, SolarRadiation | **FAIL**: `np.empty((neq,))` with a run-time `neq` -- a dynamic shape the rewrite has no rule for | lowered, refused at trace |
+| SolarRadiation | toleranced, dominant within 18 ULP, 37,120 (after: a local sized by a dummy extent takes the array dummy's static shape) | all 3 |
+| Longwave | **FAIL** at the ULP tier: 6,092 ULP under jit, bit-exact with jit disabled -- XLA fusion, as FluxProfileSolution | both |
 | SoilFluxes | **FAIL**: 2,399 ULP on `shsoi` (`tg - tair` amplifying a 4-ULP input difference) -- conditioning the gate's dominance test does not excuse | yes |
 
 Derivatives (`python gradients.py fortran:<unit>`): forward mode agrees with
@@ -421,3 +422,17 @@ d/d`slatop`: -4.715e5 both ways). Engine defects found on the way and fixed:
 interface bodies' dummies recorded as module state; a bundled companion
 handed the caller's use-constants; the backend carrying a step -1 loop's
 hoisted bounds.
+
+**Where the JAX numbers stand (2026-08-29, end).** With jit *disabled* -- the
+same lowered code, XLA op by op, no fusion -- every one of the 15 units'
+flat kernels reproduces its recording to 0 ULP on the first three recorded
+calls, except CanopyNitrogenProfile (101 ULP), SolarRadiation (68) and
+SoilTemperature (2), whose residuals are XLA's transcendentals rather than
+libm's. Under jit, 12 of 15 pass `differential.tolerance`; the three that
+do not (FluxProfileSolution, Longwave, SoilFluxes) differ from their
+recordings only by what fusion changes, amplified by an iterative solve or
+a cancellation past the gate's 32-ULP dominant bar. That is the backend's
+documented ceiling, not a translation defect; whether the gate should
+carry an "eager tier" for a ported kernel, or a per-unit `ulp_gate`, is a
+policy the recipe's owner sets, and this reproduction leaves it at the
+engine's default.
