@@ -454,3 +454,24 @@ outright, an open item (the implicit-function derivative of an iteration
 stopped on a tolerance is the honest comparison, not a finite difference
 across a step count that changes). Reverse mode through `lax.while_loop`
 is refused by JAX, as expected.
+
+**Implicit-function adjoints and reverse mode (2026-08-29, latest).** Each
+specialized root finder is now split into ``<spec>_iterate_flat`` (the
+loop, its inputs and outputs detached) and the specialization the caller
+sees, which adds ``-(F - sg(F))/sg(dF/dx)`` on the callback's residual at
+the converged root: the value is exactly the iteration's (the Fortran
+stopped on a tolerance; a Newton step would move it), the tangent the
+implicit one, and the components carry the iteration's values with the
+tangent of one more callback evaluation at the root -- the paper's §3.5
+IFT fix, applied by rule. Loop bounds are left as Python ints so
+``lax.fori_loop`` lowers to a ``scan`` that reverse mode can transpose
+(a ``jnp.int32`` bound, even a concrete one, makes a ``while_loop``, which
+it cannot). With that, ``jax.grad`` of the LeafPhotosynthesis kernel runs
+and agrees with forward mode for every input, ``apar`` included; LeafFluxes
+likewise. SolarRadiation still refuses reverse mode: a step -1 loop with a
+run-time start (``do ic = ntop, nbot, -1``) is not yet made static. Open:
+forward mode and the finite difference of the NumPy adapter still disagree
+by ~30% for d(agross)/d(apar) on the summed outputs, while on a lit layer
+the root's own derivative agrees with the residual's implicit derivative
+(both zero: Rubisco-limited); the disagreement is therefore not in the
+root finder and remains to be located.

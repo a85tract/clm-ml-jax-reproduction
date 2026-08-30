@@ -109,7 +109,14 @@ for kernel in kernels:
         plus[name] = base[name] + h * direction
         minus = dict(base)
         minus[name] = base[name] - h * direction
-        fd = [(a - b) / (2 * h) for a, b in zip(numpy_side(**plus), numpy_side(**minus), strict=True)]
+        try:
+            fd = [
+                (a - b) / (2 * h)
+                for a, b in zip(numpy_side(**plus), numpy_side(**minus), strict=True)
+            ]
+        except Exception as error:  # noqa: BLE001 -- the model aborted on the perturbed state
+            print(f"    d/d{name}: finite difference aborted ({type(error).__name__}: {error})")
+            continue
         worst = 0.0
         for j, f in zip(jvp_out, fd, strict=True):
             j = np.asarray(j)
