@@ -82,9 +82,14 @@ for kernel in kernels:
     def as_tuple(out):
         return out if isinstance(out, tuple) else (out,)
 
+    # The finite difference runs the validated NumPy adapter where the unit
+    # has one (its public subroutines); a private subprogram's flat kernel
+    # has only itself to be differenced.
+    reference = getattr(host, kernel, None) or getattr(ported, kernel)
+
     def numpy_side(**kw):
         copies = {k: (np.copy(v) if isinstance(v, np.ndarray) else v) for k, v in kw.items()}
-        return [np.asarray(o, dtype=np.float64) for o in as_tuple(getattr(host, kernel)(**copies))]
+        return [np.asarray(o, dtype=np.float64) for o in as_tuple(reference(**copies))]
 
     def jax_side(*reals_values):
         kw = dict(base)

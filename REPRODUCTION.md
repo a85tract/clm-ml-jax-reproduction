@@ -376,3 +376,48 @@ python ../clm-ml-jax/stage.py
 python ../clm-ml-jax/run_translate.py numpy
 cd ../clm-ml-jax/build && ./build.sh && cd run && ../prgm.exe < nl.CHATS7.05.2007
 ```
+
+## Update 2026-08-29 (later) — JAX, through the flat functions
+
+The paper's differentiable half. The engine's JAX backend excludes any
+subprogram that takes a derived-type dummy -- every physics routine here --
+and is not widened (its bytes are held to the script it came from).
+Instead `port.tree-jax` (`recast/transform/jax/tree.py`) derives a *flat
+function* per `FlatPlan` from the validated NumPy anchor: aliases and
+`obj%comp` spelled as the flat arguments, module state the same, calls into
+planned subprograms and into ported companions rewritten to their kernels,
+the `return` replaced by the flat outputs; a dynamic slice masked over one
+static length, a dynamic trip count made static with a guard (so reverse
+mode has a rule), abort checks dropped and named. The untouched backend
+lowers the result as an ordinary kernel. Recipe `port-clm-ml`: `clm-ml`
+frontend, `port.clm-ml-jax`, `dump-replay` on the same recording the NumPy
+translation was held bit-exact against, `differential.tolerance`
+(`dominant_axis: all`, `rel_scale: array`).
+
+`python run_port.py` (summary in `output/port/summary.json`):
+
+| unit | JAX verdict | its physics as `lax` kernels |
+|---|---|---|
+| CanopyNitrogenProfile | toleranced, dominant within 0 ULP | yes |
+| CanopyTurbulence | bit-exact 16,480 | AerodynamicConductance, ObuFunc, WindProfile, helpers; CanopyTurbulence/HF2008 delegated (`hybrid`) |
+| CanopyWater | bit-exact 16,120 | all 3 |
+| InitVertical | bit-exact 1,412 | 2 of 3 (`beta_distribution_cdf` not lowered) |
+| LeafBoundaryLayer | within 1 ULP, 24,000 | yes |
+| LeafFluxes | toleranced, dominant within 0 ULP, 40,220 | yes |
+| LeafHeatCapacity | bit-exact 4,000 | yes |
+| LeafPhotosynthesis | bit-exact 160,200 | CiFunc, StomataEfficiency, helpers; LeafPhotosynthesis itself delegated (`hybrid`/`zbrent` root finders) |
+| PlantHydraulics | within 2 ULP, 13,080 | all 3 |
+| RungeKutta | toleranced, dominant within 2 ULP, 55,486 | yes |
+| SoilTemperature | within 4 ULP, 8,400 | both |
+| FluxProfileSolution | **FAIL**: 67,175 ULP on `tair_profile` (0.66 K), a translation defect not yet found | all 5 lowered |
+| Longwave, SolarRadiation | **FAIL**: `np.empty((neq,))` with a run-time `neq` -- a dynamic shape the rewrite has no rule for | lowered, refused at trace |
+| SoilFluxes | **FAIL**: 2,399 ULP on `shsoi` (`tg - tair` amplifying a 4-ULP input difference) -- conditioning the gate's dominance test does not excuse | yes |
+
+Derivatives (`python gradients.py fortran:<unit>`): forward mode agrees with
+central finite differences of the NumPy adapter to ~1e-11 relative on the
+recorded state; reverse mode (`jax.grad`) now traces every kernel whose
+loops the rewrite made static, and agrees with forward mode (LeafHeatCapacity
+d/d`slatop`: -4.715e5 both ways). Engine defects found on the way and fixed:
+interface bodies' dummies recorded as module state; a bundled companion
+handed the caller's use-constants; the backend carrying a step -1 loop's
+hoisted bounds.
