@@ -436,3 +436,21 @@ documented ceiling, not a translation defect; whether the gate should
 carry an "eager tier" for a ported kernel, or a per-unit `ulp_gate`, is a
 policy the recipe's owner sets, and this reproduction leaves it at the
 engine's default.
+
+**Root finders, and the last two main kernels (2026-08-29, later).** `hybrid`,
+`zbrent` and `bisection` take the object *and a procedure*; the port now
+specializes each per callback (`hybrid__cifunc_flat`, ...), turns their
+`while True ... break` and `while cond` into `lax.while_loop`, and merges
+early returns into one exit. With that, LeafPhotosynthesis -- the paper's
+headline kernel -- is a `lax` kernel within 28 ULP of its 160,200 recorded
+points, root finders included, and CanopyTurbulence's (HF2008, GetObu,
+RoughnessLength) within 24 ULP. Every one of the 15 modules' main physics
+now lowers; the gate stands at 12/15, the three others the XLA-fusion
+class already described. Derivatives of the LeafPhotosynthesis kernel:
+forward mode agrees with finite differences to ~1e-11 for the leaf-state
+inputs; with respect to `apar` -- which reaches the outputs only through
+the root finder -- forward mode and the finite difference disagree
+outright, an open item (the implicit-function derivative of an iteration
+stopped on a tolerance is the honest comparison, not a finite difference
+across a step count that changes). Reverse mode through `lax.while_loop`
+is refused by JAX, as expected.
