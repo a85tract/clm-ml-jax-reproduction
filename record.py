@@ -22,7 +22,7 @@ from pathlib import Path
 
 from recast.registry import REGISTRY
 
-from recast_clmml.record import RECORDER_MODULE, plans_for_units, probe_tree, recorder_module
+from recast.oracle.record import RECORDER_MODULE, plans_for_units, probe_tree, recorder_module
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "output"
@@ -41,21 +41,17 @@ facts_by_module = {}
 for uid in args.units:
     facts = frontend.analyze(units[uid], STAGED)
     facts_by_module[facts.interface["module"]] = facts
-plans_by_module = plans_for_units(facts_by_module, STAGED)
+plans_by_module = plans_for_units(facts_by_module)
 for module, plans in plans_by_module.items():
     print(f"{module}: adapters for {[p.subprogram['name'] for p in plans]}")
 
 probed = REC / "staged"
 sites = probe_tree(STAGED, probed, plans_by_module)
 print("probed call sites:", sites)
-recorder = "\n".join(
-    recorder_module(module, plans, STAGED, calls=args.calls)
-    for module, plans in plans_by_module.items()
-)
 # One recorder module for all units: merge by concatenating would define the
 # module several times, so generate one module over all plans instead.
 all_plans = [p for plans in plans_by_module.values() for p in plans]
-recorder = recorder_module("recorder", all_plans, STAGED, calls=args.calls)
+recorder = recorder_module("recorder", all_plans, calls=args.calls)
 # each probe line names its own module in the PROBE header
 for module, plans in plans_by_module.items():
     for p in plans:
