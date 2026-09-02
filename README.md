@@ -67,7 +67,7 @@ marked one-line deviation that gives it defined behaviour.
 | `output/recorded/` | 1-day recording of all 16 units (48 calls each) |
 | `output/recorded.soil-month/`, `output/recorded.bak-20260830/` | the soil-loop month recording; the pre-tableau-fix per-unit recording |
 | `output/port/`, `output/translate*/` | generated candidates and the engine's evidence for every run |
-| 31-day whole-step recording (5.3 GB) | not in git: the [`recording-31day-20260830`](../../releases/tag/recording-31day-20260830) release, unpack into `output/` |
+| 31-day whole-step recording (5.3 GB) | not in git: the [`recording-31day-20260830`](https://github.com/a85tract/clm-ml-jax-reproduction/releases/tag/recording-31day-20260830) release, unpack into `output/` |
 
 Config JSONs under `output/` name paths relative to this directory; run
 `recast` from here.
