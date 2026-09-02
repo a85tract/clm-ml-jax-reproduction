@@ -56,6 +56,37 @@ and `intent(out)` arguments read on entry
 the Fortran reference itself compiler-dependent; the staged sources carry a
 marked one-line deviation that gives it defined behaviour.
 
+## What the comparison with the authors' code shows
+
+The authors' translation, [`AyaLahlou/clm-ml-jax`](https://github.com/AyaLahlou/clm-ml-jax),
+was run against the same Fortran oracle as ours, both per module on recorded
+state and as a whole month (details and numbers in
+[`REPRODUCTION.md`](REPRODUCTION.md), section "differential against the
+authors' own translation"). In plain terms:
+
+**Where the two translations differ.** Wherever the Fortran is a closed
+formula, both translations reproduce it exactly or to a few ULP. Wherever
+the Fortran iterates a solver to a tolerance, the authors replaced the
+loop with a fixed number of iterations (their code marks this as a
+physical approximation, done for `jit` and differentiability), so their
+values land within the Fortran's own tolerance of the recorded ones
+(stomatal conductance up to 3%, Obukhov length 0.2%); ours reproduce the
+Fortran's iteration path bit for bit. Over a month that is the whole
+difference: sensible heat step-RMS 5.5e-3 for their shipped run against
+7.4e-4 for ours, where two Fortran compilers differ by 7.9e-4. Both are
+inside the paper's 1% band. This is a design trade-off, not an error.
+
+**What we could not reproduce.** The 31-day output file the authors ship
+in their repository agrees with the Fortran to the third decimal over its
+first two days. Their code, run on this machine (CPU, jax 0.11.1, x64),
+does not produce that file: neither the current `main` nor the commit
+that added the file matches it (62 of the first 96 steps differ), and
+both show the same isolated excursions of up to 27 W/m2 at a handful of
+steps that the shipped file does not have. We do not know on what
+machine, JAX version, or code state the shipped file was made, and we have
+not traced the excursions to a cause. These are open questions for the
+authors, not findings against the code.
+
 ## Layout
 
 | | |
