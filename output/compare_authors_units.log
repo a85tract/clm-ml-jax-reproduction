@@ -1,0 +1,186 @@
+
+=== fortran:mlcanopynitrogenprofilemod   (our JAX gate: [ok ] verifier   differential.tolerance      toleranced: 31152 dominant point(s) within 0 )
+  canopynitrogenprofile: ok  calls=[12, 24, 36, 48]
+    constant mlclm_varcon__jmax25_to_vcmax25_acclim: theirs 1e+36 recorded 1.9963381837209062
+    jmax25_leaf            n=    368 exact=    318 max_abs=4.263e-13 max_rel=2.988e-15 max_ulp=1.500e+01
+    jmax25_profile         n=    184 exact=    136 max_abs=3.695e-13 max_rel=2.589e-15 max_ulp=1.300e+01
+    kp25_leaf              n=    368 exact=    368 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    kp25_profile           n=    184 exact=    184 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    rd25_leaf              n=    368 exact=    319 max_abs=3.109e-15 max_rel=2.900e-15 max_ulp=1.400e+01
+    rd25_profile           n=    184 exact=    141 max_abs=2.665e-15 max_rel=2.485e-15 max_ulp=1.200e+01
+    vcmax25_leaf           n=    368 exact=    318 max_abs=2.132e-13 max_rel=2.983e-15 max_ulp=1.500e+01
+    vcmax25_profile        n=    184 exact=    130 max_abs=1.847e-13 max_rel=2.585e-15 max_ulp=1.300e+01
+
+=== fortran:mlcanopyturbulencemod   (our JAX gate: [ok ] verifier   differential.tolerance      toleranced: 10944 dominant point(s) within 23)
+  canopyturbulence: ok  calls=[12, 24, 36, 48]
+    beta_canopy            n=      4 exact=      0 max_abs=8.371e-05 max_rel=3.136e-04 max_ulp=1.508e+12
+    gac0_soil              n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    gac_profile            n=    184 exact=      0 max_abs=1.402e-01 max_rel=5.066e-03 max_ulp=4.239e+13
+    gac_to_hc_canopy       n=      4 exact=      0 max_abs=2.200e-03 max_rel=2.587e-03 max_ulp=1.349e+13
+    kc_eddy_profile        n=    184 exact=      0 max_abs=8.715e-04 max_rel=5.066e-03 max_ulp=4.145e+13
+    lc_canopy              n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    mflx_profile           n=    184 exact=      0 max_abs=1.002e-04 max_rel=7.953e-03 max_ulp=5.851e+13
+    obu_canopy             n=      4 exact=      0 max_abs=4.937e-02 max_rel=1.950e-03 max_ulp=1.368e+13
+    prsc_canopy            n=      4 exact=      0 max_abs=2.152e-04 max_rel=2.892e-04 max_ulp=1.938e+12
+    qaf_canopy             n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    taf_canopy             n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    uaf_canopy             n=      4 exact=      0 max_abs=5.595e-04 max_rel=8.249e-04 max_ulp=5.039e+12
+    ustar_canopy           n=      4 exact=      0 max_abs=2.130e-04 max_rel=1.139e-03 max_ulp=7.674e+12
+    wind_profile           n=    184 exact=      0 max_abs=6.213e-04 max_rel=3.728e-03 max_ulp=2.873e+13
+    z0m_canopy             n=      4 exact=      2 max_abs=1.221e-03 max_rel=1.470e-03 max_ulp=1.100e+13
+    zdisp_canopy           n=      4 exact=      0 max_abs=6.615e-04 max_rel=7.395e-05 max_ulp=3.724e+11
+
+=== fortran:mlcanopywatermod   (our JAX gate: [ok ] verifier   differential.tolerance      bit_exact: 19344 points across 3 subprogram(s)
+  canopyevaporation: ok  calls=[12, 24, 36, 48]
+    h2ocan_profile         n=    184 exact=    184 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00  outside-canopy entries changed=216
+  canopyinterception: ok  calls=[12, 24, 36, 48]
+    h2ocan_profile         n=    184 exact=    184 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00  outside-canopy entries changed=216
+    qflx_intr_canopy       n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    qflx_tflrain_canopy    n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    qflx_tflsnow_canopy    n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+  canopywettedfraction: ok  calls=[12, 24, 36, 48]
+    fdry_profile           n=    184 exact=    184 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    fwet_profile           n=    184 exact=    108 max_abs=7.943e-21 max_rel=7.943e+279 max_ulp=4.791e+295
+
+=== fortran:mlfluxprofilesolutionmod   (our JAX gate: [FAIL] verifier   differential.tolerance      failed: a dominant element is 67175 ULP out )
+  fluxprofilesolution: ok  calls=[12, 24, 36, 48]
+    cair_profile           n=    184 exact=    184 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    eair_profile           n=    184 exact=      1 max_abs=1.478e-11 max_rel=8.402e-15 max_ulp=6.500e+01
+    eg_soil                n=      4 exact=      0 max_abs=1.273e-11 max_rel=3.451e-15 max_ulp=2.800e+01
+    etair_profile          n=    184 exact=     46 max_abs=3.825e-16 max_rel=7.097e-12 max_ulp=3.294e+04
+    etsoi_soil             n=      4 exact=      0 max_abs=3.090e-18 max_rel=8.308e-15 max_ulp=5.700e+01
+    evleaf_leaf            n=    368 exact=    368 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    gac0_soil              n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    gac_profile            n=    184 exact=    184 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    gsoi_soil              n=      4 exact=      1 max_abs=3.755e-12 max_rel=1.806e-13 max_ulp=1.057e+03
+    lhleaf_leaf            n=    368 exact=    220 max_abs=1.791e-11 max_rel=9.429e-14 max_ulp=7.630e+02
+    lhsoi_soil             n=      4 exact=      0 max_abs=1.386e-13 max_rel=8.322e-15 max_ulp=6.200e+01
+    mflx_profile           n=    184 exact=    184 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    qaf_canopy             n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    shair_profile          n=    184 exact=    105 max_abs=2.808e-10 max_rel=2.169e-11 max_ulp=1.479e+05
+    shleaf_leaf            n=    368 exact=    264 max_abs=1.612e-11 max_rel=3.089e-11 max_ulp=2.149e+05
+    shsoi_soil             n=      4 exact=      1 max_abs=5.327e-13 max_rel=2.812e-13 max_ulp=2.399e+03
+    stair_profile          n=    184 exact=      0 max_abs=4.000e-12 max_rel=6.744e-12 max_ulp=3.395e+04
+    stleaf_leaf            n=    368 exact=    232 max_abs=1.834e-12 max_rel=4.448e-10 max_ulp=3.903e+06
+    taf_canopy             n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    tair_profile           n=    184 exact=     17 max_abs=1.990e-12 max_rel=6.638e-15 max_ulp=3.500e+01
+    tg_soil                n=      4 exact=      1 max_abs=5.684e-14 max_rel=1.890e-16 max_ulp=1.000e+00
+    tleaf_leaf             n=    368 exact=     41 max_abs=1.990e-12 max_rel=6.638e-15 max_ulp=3.500e+01
+    trleaf_leaf            n=    368 exact=    217 max_abs=3.973e-16 max_rel=9.433e-14 max_ulp=5.990e+02
+    uaf_canopy             n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    wind_profile           n=    184 exact=    184 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+
+=== fortran:mlinitverticalmod   (our JAX gate: [ok ] verifier   differential.tolerance      toleranced: 905 dominant point(s) within 0 UL)
+  getpadparameters: no adapter
+  initverticalprofiles: no adapter
+  initverticalstructure: no adapter
+
+=== fortran:mlleafboundarylayermod   (our JAX gate: [ok ] verifier   differential.tolerance      ulp_bounded: every one of 28800 points within)
+  leafboundarylayer: ok  calls=[12, 24, 36, 48]
+    gbc_leaf               n=    368 exact=    301 max_abs=2.822e-10 max_rel=1.250e-09 max_ulp=1.017e+07
+    gbh_leaf               n=    368 exact=    301 max_abs=3.572e-10 max_rel=1.282e-09 max_ulp=6.435e+06
+    gbv_leaf               n=    368 exact=    303 max_abs=3.976e-10 max_rel=1.297e-09 max_ulp=7.163e+06
+
+=== fortran:mlleaffluxesmod   (our JAX gate: [ok ] verifier   differential.tolerance      toleranced: 47304 dominant point(s) within 0 )
+  leaffluxes: ok  calls=[12, 24, 36, 48]
+    evleaf_leaf            n=    120 exact=    120 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    lhleaf_leaf            n=    120 exact=    120 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    shleaf_leaf            n=    120 exact=    120 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    stleaf_leaf            n=    120 exact=    120 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    tleaf_leaf             n=    368 exact=    368 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    trleaf_leaf            n=    120 exact=    120 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+
+=== fortran:mlleafheatcapacitymod   (our JAX gate: [ok ] verifier   differential.tolerance      ulp_bounded: every one of 4800 points within )
+  leafheatcapacity: ok  calls=[12, 24, 36, 48]
+    cpleaf_profile         n=    184 exact=    184 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+
+=== fortran:mlleafphotosynthesismod   (our JAX gate: [ok ] verifier   differential.tolerance      ulp_bounded: every one of 201840 points withi)
+  leafphotosynthesis: ok  calls=[12, 24, 36, 48]
+    constant mlclm_varcon__jmaxse_acclim: theirs 1e+36 recorded 646.978675365448
+    constant mlclm_varcon__vcmaxse_acclim: theirs 1e+36 recorded 650.2409101880392
+    ac_leaf                n=    368 exact=    292 max_abs=1.028e-01 max_rel=1.892e-02 max_ulp=1.158e+14
+    agross_leaf            n=    368 exact=    292 max_abs=8.717e-03 max_rel=3.572e-03 max_ulp=1.963e+13
+    aj_leaf                n=    368 exact=    292 max_abs=7.781e-03 max_rel=3.137e-03 max_ulp=1.752e+13
+    anet_leaf              n=    368 exact=    292 max_abs=8.717e-03 max_rel=5.761e-03 max_ulp=3.926e+13
+    ap_leaf                n=    368 exact=    368 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    btran_soil             n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    ceair_leaf             n=    152 exact=    152 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    ci_leaf                n=    368 exact=    292 max_abs=1.963e+00 max_rel=6.602e-03 max_ulp=3.453e+13
+    cp_leaf                n=    152 exact=    150 max_abs=1.421e-14 max_rel=3.008e-16 max_ulp=2.000e+00
+    cs_leaf                n=    368 exact=    292 max_abs=3.310e-02 max_rel=8.774e-05 max_ulp=5.823e+11
+    g0_canopy              n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    g1_canopy              n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    gs_leaf                n=    152 exact=     76 max_abs=9.702e-04 max_rel=3.152e-02 max_ulp=2.752e+14
+    gspot_leaf             n=    152 exact=     76 max_abs=9.702e-04 max_rel=3.152e-02 max_ulp=2.752e+14
+    hs_leaf                n=    368 exact=    292 max_abs=1.631e-03 max_rel=4.857e-03 max_ulp=2.937e+13
+    je_leaf                n=    152 exact=    116 max_abs=4.263e-14 max_rel=4.763e-16 max_ulp=3.000e+00
+    jmax_leaf              n=    152 exact=    101 max_abs=1.137e-13 max_rel=6.616e-16 max_ulp=4.000e+00
+    kc_leaf                n=    152 exact=    147 max_abs=1.137e-13 max_rel=2.765e-16 max_ulp=2.000e+00
+    ko_leaf                n=    152 exact=    150 max_abs=5.684e-14 max_rel=1.819e-16 max_ulp=1.000e+00
+    kp_leaf                n=      0 exact=      0 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    leaf_esat_leaf         n=    152 exact=    131 max_abs=9.095e-13 max_rel=2.750e-16 max_ulp=2.000e+00
+    rd_leaf                n=    368 exact=    294 max_abs=1.998e-15 max_rel=1.460e-15 max_ulp=1.300e+01
+    vcmax_leaf             n=    152 exact=     96 max_abs=5.684e-14 max_rel=8.296e-16 max_ulp=4.000e+00
+    vpd_leaf               n=    368 exact=    292 max_abs=6.045e+00 max_rel=2.455e-03 max_ulp=2.108e+13
+
+=== fortran:mllongwaveradiationmod   (our JAX gate: [FAIL] verifier   differential.tolerance      failed: a dominant element is 5792 ULP out ()
+  longwaveradiation: ok  calls=[12, 24, 36, 48]
+    lwdwn_profile          n=    188 exact=    112 max_abs=1.017e-11 max_rel=2.329e-14 max_ulp=1.790e+02
+    lwleaf_leaf            n=    368 exact=    216 max_abs=8.200e-12 max_rel=6.038e-13 max_ulp=4.616e+03
+    lwsoi_soil             n=      4 exact=      0 max_abs=6.196e-12 max_rel=2.795e-13 max_ulp=1.744e+03
+    lwup_canopy            n=      4 exact=      0 max_abs=1.705e-13 max_rel=3.813e-16 max_ulp=3.000e+00
+    lwupw_profile          n=    188 exact=    112 max_abs=2.842e-13 max_rel=6.153e-16 max_ulp=5.000e+00
+    lwveg_canopy           n=      4 exact=      0 max_abs=5.869e-12 max_rel=6.574e-14 max_ulp=4.130e+02
+
+=== fortran:mlplanthydraulicsmod   (our JAX gate: [ok ] verifier   differential.tolerance      ulp_bounded: every one of 15696 points within)
+  leafwaterpotential: ok  calls=[12, 24, 36, 48]
+    lwp_leaf               n=    368 exact=    363 max_abs=1.110e-16 max_rel=2.060e-16 max_ulp=1.000e+00  outside-canopy entries changed=216
+  plantresistance: ok  calls=[12, 24, 36, 48]
+    lsc_profile            n=    184 exact=    184 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+  soilresistance: no adapter
+
+=== fortran:mlrungekuttamod   (our JAX gate: [ok ] verifier   differential.tolerance      toleranced: 97026 dominant point(s) within 2 )
+  rungekuttaupdate: ok  calls=[12, 24, 36, 48]
+    deair_profile          n=    736 exact=    736 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    dh2ocan_profile        n=    736 exact=    736 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    dlwp_leaf              n=   1472 exact=   1472 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    dtair_profile          n=    736 exact=    736 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    dtg_soil               n=     16 exact=     16 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    dtleaf_leaf            n=   1472 exact=   1472 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    eair_profile           n=    184 exact=    133 max_abs=4.547e-13 max_rel=3.890e-16 max_ulp=2.000e+00
+    h2ocan_profile         n=    184 exact=    184 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    lwp_leaf               n=    368 exact=    319 max_abs=2.220e-16 max_rel=3.712e-16 max_ulp=2.000e+00
+    tair_profile           n=    184 exact=    124 max_abs=1.137e-13 max_rel=3.795e-16 max_ulp=2.000e+00
+    tg_soil                n=      4 exact=      2 max_abs=1.137e-13 max_rel=3.775e-16 max_ulp=2.000e+00
+    tleaf_leaf             n=    368 exact=    251 max_abs=1.137e-13 max_rel=3.797e-16 max_ulp=2.000e+00
+
+=== fortran:mlsoilfluxesmod   (our JAX gate: [FAIL] verifier   differential.tolerance      failed: a dominant element is 2399 ULP out ()
+  soilfluxes: ok  calls=[12, 24, 36, 48]
+    eg_soil                n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    etsoi_soil             n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    gsoi_soil              n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    lhsoi_soil             n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    shsoi_soil             n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    tg_soil                n=      4 exact=      4 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+
+=== fortran:mlsoiltemperaturemod   (our JAX gate: [ok ] verifier   differential.tolerance      ulp_bounded: every one of 10080 points within)
+  soiltemperature: no adapter
+  soilthermprop: no adapter
+
+=== fortran:mlsolarradiationmod   (our JAX gate: [ok ] verifier   differential.tolerance      toleranced: 44544 dominant point(s) within 31)
+  solarradiation: ok  calls=[12, 24, 36, 48]
+    albcan_canopy          n=      8 exact=      8 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    apar_leaf              n=    368 exact=    316 max_abs=1.776e-13 max_rel=7.839e-15 max_ulp=3.700e+01
+    fracsun_profile        n=    184 exact=    159 max_abs=2.776e-16 max_rel=8.848e-16 max_ulp=7.000e+00
+    kb_profile             n=    184 exact=    184 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00
+    swbeam_profile         n=    376 exact=    335 max_abs=5.329e-15 max_rel=5.226e-16 max_ulp=4.000e+00
+    swdwn_profile          n=    376 exact=    318 max_abs=7.105e-15 max_rel=8.073e-16 max_ulp=7.000e+00
+    swleaf_leaf            n=    736 exact=    628 max_abs=4.263e-14 max_rel=7.919e-15 max_ulp=6.500e+01
+    swsoi_soil             n=      8 exact=      4 max_abs=5.329e-15 max_rel=6.726e-16 max_ulp=4.000e+00
+    swupw_profile          n=    376 exact=    317 max_abs=3.553e-15 max_rel=6.150e-16 max_ulp=4.000e+00
+    swveg_canopy           n=      8 exact=      3 max_abs=2.842e-14 max_rel=3.607e-16 max_ulp=2.000e+00
+    swvegsha_canopy        n=      8 exact=      6 max_abs=1.776e-15 max_rel=1.621e-16 max_ulp=1.000e+00
+    swvegsun_canopy        n=      8 exact=      7 max_abs=1.110e-16 max_rel=1.142e-16 max_ulp=1.000e+00
+    tb_profile             n=    184 exact=    171 max_abs=1.110e-16 max_rel=1.762e-16 max_ulp=1.000e+00
+    tbi_profile            n=    188 exact=    165 max_abs=1.110e-16 max_rel=3.137e-16 max_ulp=2.000e+00
+    td_profile             n=    184 exact=    184 max_abs=0.000e+00 max_rel=0.000e+00 max_ulp=0.000e+00

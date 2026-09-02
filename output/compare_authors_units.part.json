@@ -1,0 +1,304 @@
+{
+ "fortran:mlleafphotosynthesismod": {
+  "leafphotosynthesis": {
+   "status": "ok",
+   "calls": [
+    12,
+    24,
+    36,
+    48
+   ],
+   "outputs": {
+    "ac_leaf": {
+     "n": 368,
+     "exact": 292,
+     "max_abs": 0.10280774618196009,
+     "max_rel": 0.01891825061739114,
+     "max_ulp": 115751231848969.0,
+     "outside_changed": 0
+    },
+    "agross_leaf": {
+     "n": 368,
+     "exact": 292,
+     "max_abs": 0.008716925881347759,
+     "max_rel": 0.003572169207809756,
+     "max_ulp": 19628772075527.0,
+     "outside_changed": 0
+    },
+    "aj_leaf": {
+     "n": 368,
+     "exact": 292,
+     "max_abs": 0.00778101642476825,
+     "max_rel": 0.003137494086922237,
+     "max_ulp": 17521291335575.0,
+     "outside_changed": 0
+    },
+    "anet_leaf": {
+     "n": 368,
+     "exact": 292,
+     "max_abs": 0.008716925881347759,
+     "max_rel": 0.005760610295208507,
+     "max_ulp": 39257544151054.0,
+     "outside_changed": 0
+    },
+    "ap_leaf": {
+     "n": 368,
+     "exact": 368,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "max_ulp": 0.0,
+     "outside_changed": 0
+    },
+    "btran_soil": {
+     "n": 4,
+     "exact": 4,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "max_ulp": 0.0,
+     "outside_changed": 0
+    },
+    "ceair_leaf": {
+     "n": 152,
+     "exact": 152,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "max_ulp": 0.0,
+     "outside_changed": 0
+    },
+    "ci_leaf": {
+     "n": 368,
+     "exact": 292,
+     "max_abs": 1.9629053028208432,
+     "max_rel": 0.006601816360411583,
+     "max_ulp": 34531795274795.0,
+     "outside_changed": 0
+    },
+    "cp_leaf": {
+     "n": 152,
+     "exact": 150,
+     "max_abs": 1.4210854715202004e-14,
+     "max_rel": 3.0075903678857827e-16,
+     "max_ulp": 2.0,
+     "outside_changed": 0
+    },
+    "cs_leaf": {
+     "n": 368,
+     "exact": 292,
+     "max_abs": 0.033101215657950434,
+     "max_rel": 8.774254763321895e-05,
+     "max_ulp": 582322744151.0,
+     "outside_changed": 0
+    },
+    "g0_canopy": {
+     "n": 4,
+     "exact": 4,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "max_ulp": 0.0,
+     "outside_changed": 0
+    },
+    "g1_canopy": {
+     "n": 4,
+     "exact": 4,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "max_ulp": 0.0,
+     "outside_changed": 0
+    },
+    "gs_leaf": {
+     "n": 152,
+     "exact": 76,
+     "max_abs": 0.0009702285490115481,
+     "max_rel": 0.03152103630837998,
+     "max_ulp": 275212447060962.0,
+     "outside_changed": 0
+    },
+    "gspot_leaf": {
+     "n": 152,
+     "exact": 76,
+     "max_abs": 0.0009702285490115481,
+     "max_rel": 0.03152103630837998,
+     "max_ulp": 275212447060962.0,
+     "outside_changed": 0
+    },
+    "hs_leaf": {
+     "n": 368,
+     "exact": 292,
+     "max_abs": 0.0016306233651257607,
+     "max_rel": 0.004857268658318414,
+     "max_ulp": 29374699118248.0,
+     "outside_changed": 0
+    },
+    "je_leaf": {
+     "n": 152,
+     "exact": 116,
+     "max_abs": 4.263256414560601e-14,
+     "max_rel": 4.763417580114613e-16,
+     "max_ulp": 3.0,
+     "outside_changed": 0
+    },
+    "jmax_leaf": {
+     "n": 152,
+     "exact": 101,
+     "max_abs": 1.1368683772161603e-13,
+     "max_rel": 6.615568317061525e-16,
+     "max_ulp": 4.0,
+     "outside_changed": 0
+    },
+    "kc_leaf": {
+     "n": 152,
+     "exact": 147,
+     "max_abs": 1.1368683772161603e-13,
+     "max_rel": 2.7645042582821886e-16,
+     "max_ulp": 2.0,
+     "outside_changed": 0
+    },
+    "ko_leaf": {
+     "n": 152,
+     "exact": 150,
+     "max_abs": 5.684341886080802e-14,
+     "max_rel": 1.8185586276738097e-16,
+     "max_ulp": 1.0,
+     "outside_changed": 0
+    },
+    "kp_leaf": {
+     "n": 0,
+     "exact": 0,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "max_ulp": 0.0,
+     "outside_changed": 0
+    },
+    "leaf_esat_leaf": {
+     "n": 152,
+     "exact": 131,
+     "max_abs": 9.094947017729282e-13,
+     "max_rel": 2.749951403870419e-16,
+     "max_ulp": 2.0,
+     "outside_changed": 0
+    },
+    "rd_leaf": {
+     "n": 368,
+     "exact": 294,
+     "max_abs": 1.9984014443252818e-15,
+     "max_rel": 1.4596027369942816e-15,
+     "max_ulp": 13.0,
+     "outside_changed": 0
+    },
+    "vcmax_leaf": {
+     "n": 152,
+     "exact": 96,
+     "max_abs": 5.684341886080802e-14,
+     "max_rel": 8.296133458069938e-16,
+     "max_ulp": 4.0,
+     "outside_changed": 0
+    },
+    "vpd_leaf": {
+     "n": 368,
+     "exact": 292,
+     "max_abs": 6.04546918153892,
+     "max_rel": 0.0024546781704383263,
+     "max_ulp": 21075759159136.0,
+     "outside_changed": 0
+    }
+   },
+   "const_diffs": {
+    "mlclm_varcon__jmaxse_acclim": [
+     1e+36,
+     646.978675365448
+    ],
+    "mlclm_varcon__vcmaxse_acclim": [
+     1e+36,
+     650.2409101880392
+    ]
+   },
+   "missing": []
+  }
+ },
+ "fortran:mlplanthydraulicsmod": {
+  "leafwaterpotential": {
+   "status": "ok",
+   "calls": [
+    12,
+    24,
+    36,
+    48
+   ],
+   "outputs": {
+    "lwp_leaf": {
+     "n": 368,
+     "exact": 363,
+     "max_abs": 1.1102230246251565e-16,
+     "max_rel": 2.059502295442517e-16,
+     "max_ulp": 1.0,
+     "outside_changed": 216
+    }
+   },
+   "const_diffs": {},
+   "missing": []
+  },
+  "plantresistance": {
+   "status": "ok",
+   "calls": [
+    12,
+    24,
+    36,
+    48
+   ],
+   "outputs": {
+    "lsc_profile": {
+     "n": 184,
+     "exact": 184,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "max_ulp": 0.0,
+     "outside_changed": 0
+    }
+   },
+   "const_diffs": {},
+   "missing": []
+  },
+  "soilresistance": {
+   "status": "no adapter"
+  }
+ },
+ "fortran:mlleafboundarylayermod": {
+  "leafboundarylayer": {
+   "status": "ok",
+   "calls": [
+    12,
+    24,
+    36,
+    48
+   ],
+   "outputs": {
+    "gbc_leaf": {
+     "n": 368,
+     "exact": 301,
+     "max_abs": 2.821716194034707e-10,
+     "max_rel": 1.2499875114132044e-09,
+     "max_ulp": 10166300.0,
+     "outside_changed": 0
+    },
+    "gbh_leaf": {
+     "n": 368,
+     "exact": 301,
+     "max_abs": 3.572320217415381e-10,
+     "max_rel": 1.2818355492915587e-09,
+     "max_ulp": 6435318.0,
+     "outside_changed": 0
+    },
+    "gbv_leaf": {
+     "n": 368,
+     "exact": 303,
+     "max_abs": 3.9759995296151374e-10,
+     "max_rel": 1.2965578020485004e-09,
+     "max_ulp": 7162524.0,
+     "outside_changed": 0
+    }
+   },
+   "const_diffs": {},
+   "missing": []
+  }
+ }
+}

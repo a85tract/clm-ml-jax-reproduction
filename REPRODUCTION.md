@@ -784,3 +784,75 @@ same three XLA-fusion residuals -- FluxProfileSolution (67,175 ULP), Longwave
 (5,792), SoilFluxes (2,399, identical). SolarRadiation passes at 31 ULP
 dominant, one under the gate (18 on the earlier recording). Log:
 `output/run_port.regate.log`; verdicts: `output/port/summary.json`.
+
+## Update 2026-09-02 — differential against the authors' own translation
+
+The paper's code turned out to be public after all:
+[`AyaLahlou/clm-ml-jax`](https://github.com/AyaLahlou/clm-ml-jax) (BSD-3,
+100+ commits, last push 2026-07-17; the 2026-08-28 search missed it). It is a
+pip package whose offline driver mirrors the Fortran one step for step and
+writes the same six ascii files, so it can be put against the same oracle our
+kernels were gated on. Two comparisons, both scripted and both re-runnable:
+
+**Column level** (`compare_authors.py`): every driver's `flux.out` for CHATS7
+May 2007 against the tableau-fixed gfortran run behind our recording
+(`output/recorded.31day/run/out`), with the Fig-5 metric `month_jax.py` uses
+(daily means over 48 steps, relative difference per day, max over 31 days),
+plus step-level RMS and the largest single-step difference:
+
+| run | SH daily-mean rel max | SH max daily diff | SH step rel-RMS | SH max step diff | LH daily rel | GPP daily rel |
+|---|---|---|---|---|---|---|
+| authors' shipped JAX month (`src/output_files/JAX_outputs_05_2007_31days`) | 8.6e-2 | 0.69 W/m2 | 5.5e-3 | 7.5 W/m2 | 4.0e-3 | 1.5e-3 |
+| our whole-step JAX kernel, closed loop (`trajectory.fixed.npy`) | 9.6e-4 | 0.04 W/m2 | 7.4e-4 | 2.0 W/m2 | 1.8e-4 | 1.0e-4 |
+| upstream's shipped nvfortran output (compiler difference only) | 1.0e-3 | 0.03 W/m2 | 7.9e-4 | 1.8 W/m2 | 1.4e-4 | 1.6e-4 |
+| gfortran without the tableau fix (Finding 1) | 6.3 | 17.3 W/m2 | 1.8e-1 | 63 W/m2 | 7.7e-2 | 7.4e-2 |
+
+Our kernel sits at the compiler-difference tier (the nvfortran row); the
+authors' translation is one order above it at the step level and, on its
+worst day, two orders above at the daily mean (the 8.6% is a low-SH day; the
+absolute number is 0.69 W/m2). The authors' driver re-run on this laptop for
+one day reproduces their shipped day-1 file to the third decimal (SH daily
+2.38e-2 both), at 3.0 s per step on CPU (our kernel 43.7 ms, Fortran 4.9 ms).
+A same-machine 31-day run is in progress; its row goes below when it finishes.
+
+**Unit level** (`compare_authors_units.py`): their function for each recorded
+subprogram, called on our recorded Fortran inputs (loaded into their 1-based
+padded `mlcanopy_type`, their `patch`/`pftcon`/`MLpftcon` singletons and
+constant modules set to the recorded values), outputs compared entry by entry
+inside the canopy (layers 1..ncan, spval excluded), calls 12/24/36/48 of day 1:
+
+| unit | entries | bit-exact | max rel | verdict |
+|---|---|---|---|---|
+| LeafHeatCapacity, LeafFluxes, SoilFluxes, PlantResistance, CanopyInterception/Evaporation | 1,740 | 100% | 0 | exact |
+| RungeKuttaUpdate | 6,460 | 95.7% | 3.9e-16 | 2 ULP (their stage/layer axes are 0-based against a 1-based state type; matched with a per-unit layout) |
+| LeafWaterPotential | 368 | 98.6% | 2.1e-16 | 1 ULP |
+| CanopyNitrogenProfile | 2,208 | 86.7% | 3.0e-15 | 15 ULP, after setting `jmax25_to_vcmax25_acclim`, which their module leaves at spval (the driver computes it elsewhere) |
+| SolarRadiation | 3,196 | 87.8% | 7.9e-15 | 65 ULP |
+| Longwave | 756 | 58.2% | 6.0e-13 | 4.6k ULP (ours: 5.8k under jit) |
+| FluxProfileSolution | 3,904 | 58.0% | 4.4e-10 | 3.9M ULP on `stleaf`, 1.8e-12 absolute (ours: 67k ULP) |
+| LeafBoundaryLayer | 1,104 | 82.0% | 1.3e-9 | formulas identical line for line; 1e-9 on 18% of entries not pursued (ours: 1 ULP) |
+| LeafPhotosynthesis | 5,212 | 80.7% | 3.2e-2 on `gs`, 6.6e-3 on `ci` | **solver, not physics**: the Fortran brackets `gs` to tol 0.001 and `ci` to 0.1 with `hybrid`/`zbrent`, so the recorded values sit on a staircase (gs at 0.00195 steps); their solver runs fixed-count secant/bisection loops (40 for ci) and lands between the steps. Differences are of the size of the Fortran's own tolerance |
+| CanopyTurbulence | 784 | 2.3% | 8.0e-3 on `mflx`, 2.0e-3 on `obu` | same class: their `_obu_fixed_iter` is 25 secant steps where the Fortran iterates `hybrid` to tol 0.1 m; their code documents this as a physical approximation |
+| CanopyWettedFraction | 368 | 79.3% | 7.9e-21 absolute | exact to noise at zero |
+| InitVertical, SoilTemperature/SoilThermProp, SoilResistance | | | | no adapter (their signatures take the CLM soil/water instances; not built) |
+
+Two smaller things the differential shows about their code: layers above
+`ncan` are written (216 entries per four calls in CanopyWater and
+LeafWaterPotential, where the Fortran loops to `ncan` and leaves the rest),
+because their vmapped kernels mask on `dpai > 0` and spval passes that test;
+and three run-time constants (`jmax25_to_vcmax25_acclim`, `jmaxse_acclim`,
+`vcmaxse_acclim`) are spval at module level and only set by the driver, so
+the modules cannot be called standalone without the driver's init. Neither
+affects their driver's outputs.
+
+**What it says.** Where the Fortran is closed-form, the authors' translation
+is exact or at the XLA tier, as ours is. Where the Fortran iterates to a
+tolerance, theirs converges by a different route and differs by up to that
+tolerance; ours reproduces the Fortran's iteration path bit for bit (0 ULP on
+201,840 photosynthesis points, 23 ULP dominant on turbulence). That solver
+difference, compounded over 6 substeps x 5 RK passes x 1,488 steps, is the
+whole of the column-level gap between the two rows above: 5.5e-3 against
+7.4e-4 step RMS on sensible heat. Both are inside the paper's 1% band.
+Artifacts: `output/compare_authors_units.{log,json}`, `compare_authors.py`,
+`compare_authors_units.py`; the authors' clone at `../authors-clm-ml-jax`
+(not committed).

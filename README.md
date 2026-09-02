@@ -23,7 +23,7 @@ report says exactly where it agrees with the Fortran and where it does not.
 
 | What | Where |
 |---|---|
-| The paper's own translation | [`AyaLahlou/clm-ml-jax`](https://github.com/AyaLahlou/clm-ml-jax) (BSD-3). Not used here; not yet compared against. |
+| The paper's own translation | [`AyaLahlou/clm-ml-jax`](https://github.com/AyaLahlou/clm-ml-jax) (BSD-3). Compared against the same Fortran oracle, see below. |
 | The Fortran being translated | [`gbonan/CLM-ml_v2.CHATS`](https://github.com/gbonan/CLM-ml_v2.CHATS) at `8d1cc40`. Clone it into `upstream/` (not committed here; never modified). |
 | The engine | [`a85tract/RecastEngine`](https://github.com/a85tract/RecastEngine). Its condensed account of this case: [`docs/case-clm-ml.md`](https://github.com/a85tract/RecastEngine/blob/main/docs/case-clm-ml.md). |
 | The CLM-ml domain extension for the engine | `recast-clm-ml` (private at the time of writing; the frontend, stub table and recipes for this model). |
@@ -46,6 +46,7 @@ the Fortran run on the same laptop:
 | **Fig. 9** throughput | 43.7 ms per step jitted (25.5 s one-time compile), NumPy 377 ms, Fortran 4.9 ms, all CPU single-point; not comparable to the paper's GPU figure | `throughput.py` |
 | Per-module translation | 15/15 canopy physics modules bit-exact in NumPy on recorded state; 12/15 pass the JAX 32-ULP gate under `jit`, the other three (FluxProfileSolution, Longwave, SoilFluxes) are exact with `jit` off and differ only by XLA fusion | `output/port/summary.json`, `output/run_port.regate.log` |
 | Beyond the paper | soil-thermal loop also closed (NumPy zero drift over the month; JAX 2.4e-6) | `output/column_jax_month.soilclosed.log`, `month_soil.py` |
+| Against the authors' translation | same oracle, same month: their driver's SH step-RMS 5.5e-3 vs our kernel's 7.4e-4 (nvfortran-vs-gfortran is 7.9e-4); per unit, theirs is exact or ULP-tier wherever the Fortran is closed-form, and off by the Fortran's own solver tolerance where it iterates (gs 3%, Obukhov 0.2%); ours is 0 ULP there | `compare_authors.py`, `compare_authors_units.py`, `output/compare_authors_units.log` |
 
 Two defects in the upstream Fortran surfaced on the way and were reported
 there: the Runge-Kutta tableau kept in un-SAVEd locals

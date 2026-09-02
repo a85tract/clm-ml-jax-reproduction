@@ -1,0 +1,145 @@
+{
+ "fortran:mlcanopyturbulencemod": {
+  "canopyturbulence": {
+   "status": "ok",
+   "calls": [
+    12,
+    24,
+    36,
+    48
+   ],
+   "outputs": {
+    "beta_canopy": {
+     "n": 4,
+     "exact": 0,
+     "max_abs": 8.370817371833317e-05,
+     "max_rel": 0.00031364943032522374,
+     "max_ulp": 1507952399863.0,
+     "outside_changed": 0
+    },
+    "gac0_soil": {
+     "n": 4,
+     "exact": 4,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "max_ulp": 0.0,
+     "outside_changed": 0
+    },
+    "gac_profile": {
+     "n": 184,
+     "exact": 0,
+     "max_abs": 0.140228496076503,
+     "max_rel": 0.005066446329348899,
+     "max_ulp": 42390768284048.0,
+     "outside_changed": 0
+    },
+    "gac_to_hc_canopy": {
+     "n": 4,
+     "exact": 0,
+     "max_abs": 0.0021999961980880833,
+     "max_rel": 0.002587394312029188,
+     "max_ulp": 13494891078858.0,
+     "outside_changed": 0
+    },
+    "kc_eddy_profile": {
+     "n": 184,
+     "exact": 0,
+     "max_abs": 0.000871511989112117,
+     "max_rel": 0.005066446329348929,
+     "max_ulp": 41446718851547.0,
+     "outside_changed": 0
+    },
+    "lc_canopy": {
+     "n": 4,
+     "exact": 4,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "max_ulp": 0.0,
+     "outside_changed": 0
+    },
+    "mflx_profile": {
+     "n": 184,
+     "exact": 0,
+     "max_abs": 0.0001002085438414832,
+     "max_rel": 0.007952587720221676,
+     "max_ulp": 58511722225061.0,
+     "outside_changed": 0
+    },
+    "obu_canopy": {
+     "n": 4,
+     "exact": 0,
+     "max_abs": 0.04936803266857481,
+     "max_rel": 0.0019503385101206992,
+     "max_ulp": 13675394337038.0,
+     "outside_changed": 0
+    },
+    "prsc_canopy": {
+     "n": 4,
+     "exact": 0,
+     "max_abs": 0.0002151924243147807,
+     "max_rel": 0.000289181272311478,
+     "max_ulp": 1938281043914.0,
+     "outside_changed": 0
+    },
+    "qaf_canopy": {
+     "n": 4,
+     "exact": 4,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "max_ulp": 0.0,
+     "outside_changed": 0
+    },
+    "taf_canopy": {
+     "n": 4,
+     "exact": 4,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "max_ulp": 0.0,
+     "outside_changed": 0
+    },
+    "uaf_canopy": {
+     "n": 4,
+     "exact": 0,
+     "max_abs": 0.0005594728663511628,
+     "max_rel": 0.0008248911036490847,
+     "max_ulp": 5039283584846.0,
+     "outside_changed": 0
+    },
+    "ustar_canopy": {
+     "n": 4,
+     "exact": 0,
+     "max_abs": 0.00021300074404356772,
+     "max_rel": 0.0011387992605990554,
+     "max_ulp": 7674160572034.0,
+     "outside_changed": 0
+    },
+    "wind_profile": {
+     "n": 184,
+     "exact": 0,
+     "max_abs": 0.0006212863002832414,
+     "max_rel": 0.003728172511021154,
+     "max_ulp": 28726669942829.0,
+     "outside_changed": 0
+    },
+    "z0m_canopy": {
+     "n": 4,
+     "exact": 2,
+     "max_abs": 0.001220703125,
+     "max_rel": 0.0014695077149155032,
+     "max_ulp": 10995116277760.0,
+     "outside_changed": 0
+    },
+    "zdisp_canopy": {
+     "n": 4,
+     "exact": 0,
+     "max_abs": 0.0006615091807287143,
+     "max_rel": 7.395410412180478e-05,
+     "max_ulp": 372396562479.0,
+     "outside_changed": 0
+    }
+   },
+   "const_diffs": {},
+   "missing": []
+  }
+ }
+}
