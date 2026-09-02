@@ -6,6 +6,10 @@
 # regenerate with `python record.py mlcanopyfluxesmod --days 31` or fetch the
 # archive attached to the GitHub release
 /output/recorded.31day/
+# the upstream Fortran is not redistributed here: no preprocessed copies
+# (output/*/staged, regenerate with stage.py) and no generated wrappers
+*.f90
+*.F90
 # compiled artefacts inside output/: f2py builds, gfortran objects, bytecode
 __pycache__/
 clmlib-*/
