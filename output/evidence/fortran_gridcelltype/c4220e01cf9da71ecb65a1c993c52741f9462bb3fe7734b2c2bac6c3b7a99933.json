@@ -1,0 +1,65 @@
+{
+  "artifact": {
+    "digest": "ee12a3bc61e3697135285a507fe2cbbdcd2d3f3e0640dbef87d4235eaa37a051",
+    "files": [
+      "gridcelltype_constants.py",
+      "gridcelltype_numpy.py"
+    ],
+    "name": "fortran:gridcelltype",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"ee12a3bc61e3697135285a507fe2cbbdcd2d3f3e0640dbef87d4235eaa37a051\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:gridcelltype\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "2/4 blocks disagree: init/B002, init/B004",
+    "metrics": {
+      "blocks_checked": 4,
+      "blocks_deferred": 0,
+      "blocks_matched": 2,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "init/B002",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "init/B004",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:24:32.455387+00:00"
+}

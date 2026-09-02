@@ -1,0 +1,42 @@
+{
+  "artifact": {
+    "digest": "1feee564aec5b635293345a84f04531871a34d3ba4c7f93943239111e1c40c4e",
+    "files": [
+      "initsubgridmod_constants.py",
+      "initsubgridmod_numpy.py"
+    ],
+    "name": "fortran:initsubgridmod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"1feee564aec5b635293345a84f04531871a34d3ba4c7f93943239111e1c40c4e\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:initsubgridmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "4 blocks match",
+    "metrics": {
+      "blocks_checked": 4,
+      "blocks_deferred": 0,
+      "blocks_matched": 4,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:31.742486+00:00"
+}

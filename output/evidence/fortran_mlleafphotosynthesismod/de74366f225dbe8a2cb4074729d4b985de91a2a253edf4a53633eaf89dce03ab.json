@@ -1,0 +1,83 @@
+{
+  "artifact": {
+    "digest": "d6e4fe6d24baed0d0e3b84fc89822a9dbae23e9e8d8abb8d537ced08e975e7af",
+    "files": [
+      "mlcanopyfluxestype_numpy.py",
+      "mlleafphotosynthesismod_constants.py",
+      "mlleafphotosynthesismod_numpy.py",
+      "mlleafphotosynthesismod_use_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlpftconmod_numpy.py",
+      "mlwatervapormod_numpy.py",
+      "patchtype_numpy.py",
+      "pftconmod_numpy.py"
+    ],
+    "name": "fortran:mlleafphotosynthesismod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"d6e4fe6d24baed0d0e3b84fc89822a9dbae23e9e8d8abb8d537ced08e975e7af\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlleafphotosynthesismod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "3/9 blocks disagree: leafphotosynthesis/B001, stomataoptimization/B001, stomataefficiency/B001",
+    "metrics": {
+      "blocks_checked": 9,
+      "blocks_deferred": 0,
+      "blocks_matched": 6,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "leafphotosynthesis/B001",
+          "reads_source_only": [
+            "mlpftcon"
+          ],
+          "reads_target_only": [
+            "_mlp"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "stomataoptimization/B001",
+          "reads_source_only": [
+            "mlpftcon"
+          ],
+          "reads_target_only": [
+            "_mlp"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "stomataefficiency/B001",
+          "reads_source_only": [
+            "mlpftcon"
+          ],
+          "reads_target_only": [
+            "_mlp"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:29:56.892837+00:00"
+}

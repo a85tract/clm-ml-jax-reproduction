@@ -1,0 +1,55 @@
+{
+  "artifact": {
+    "digest": "7fc9fd534faebfcc9156cb9fd1687e7ab59c87c74baf507bd4576f4d12217e53",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varctl_numpy.py",
+      "shr_file_mod_constants.py",
+      "shr_file_mod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:shr_file_mod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"7fc9fd534faebfcc9156cb9fd1687e7ab59c87c74baf507bd4576f4d12217e53\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:shr_file_mod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/3 blocks disagree: shr_file_freeunit/B001",
+    "metrics": {
+      "blocks_checked": 3,
+      "blocks_deferred": 1,
+      "blocks_matched": 2,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "shr_file_freeunit/B001",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:51:04.888998+00:00"
+}

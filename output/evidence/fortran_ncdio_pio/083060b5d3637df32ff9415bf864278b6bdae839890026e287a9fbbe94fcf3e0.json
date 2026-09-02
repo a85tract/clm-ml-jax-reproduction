@@ -1,0 +1,42 @@
+{
+  "artifact": {
+    "digest": "0f1906228a297d45c534a2c4d81abedb3b233bddde37903d674a7d0133551125",
+    "files": [
+      "ncdio_pio_constants.py",
+      "ncdio_pio_numpy.py"
+    ],
+    "name": "fortran:ncdio_pio",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"0f1906228a297d45c534a2c4d81abedb3b233bddde37903d674a7d0133551125\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:ncdio_pio\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "16 blocks match",
+    "metrics": {
+      "blocks_checked": 16,
+      "blocks_deferred": 0,
+      "blocks_matched": 16,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:37.951561+00:00"
+}

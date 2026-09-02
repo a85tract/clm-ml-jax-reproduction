@@ -1,0 +1,34 @@
+truth iota_spa (pft in use) = 750.0000; day scales gpp 2.904e+01 lh 4.616e+02
+start multiplier 1.5000
+AD check (noon step): d gpp/d mult AD +0.00000e+00 vs FD +0.00000e+00; d lh/d mult AD +0.00000e+00 vs FD +0.00000e+00
+iter   0: loss 3.513e-03  dL/dmult +9.219e-03  mult 1.4500
+iter   1: loss 3.088e-03  dL/dmult +8.678e-03  mult 1.2000
+iter   2: loss 2.179e-03  dL/dmult -1.250e-03  mult 1.2315
+iter   3: loss 2.180e-03  dL/dmult +1.300e-03  mult 1.2154
+iter   4: loss 2.175e-03  dL/dmult +1.245e-04  mult 1.2137
+iter   5: loss 2.179e-03  dL/dmult +5.292e-04  mult 1.2160
+iter   6: loss 2.177e-03  dL/dmult -9.399e-06  mult 1.2159
+iter   7: loss 2.178e-03  dL/dmult -1.376e-04  mult 1.2160
+iter   8: loss 2.177e-03  dL/dmult -1.895e-05  mult 1.2160
+iter   9: loss 2.177e-03  dL/dmult -2.026e-05  mult 1.2159
+iter  10: loss 2.178e-03  dL/dmult +1.606e-05  mult 1.2159
+iter  11: loss 2.177e-03  dL/dmult -1.182e-04  mult 1.2159
+iter  12: loss 2.178e-03  dL/dmult +6.087e-06  mult 1.2159
+iter  13: loss 2.178e-03  dL/dmult +5.636e-06  mult 1.2159
+iter  14: loss 2.177e-03  dL/dmult -7.833e-05  mult 1.2159
+iter  15: loss 2.178e-03  dL/dmult +4.940e-06  mult 1.2159
+iter  16: loss 2.178e-03  dL/dmult +2.519e-05  mult 1.2159
+iter  17: loss 2.178e-03  dL/dmult +5.788e-06  mult 1.2159
+iter  18: loss 2.178e-03  dL/dmult +5.116e-06  mult 1.2159
+iter  19: loss 2.178e-03  dL/dmult +6.083e-06  mult 1.2159
+iter  20: loss 2.178e-03  dL/dmult -6.193e-05  mult 1.2159
+iter  21: loss 2.178e-03  dL/dmult +4.808e-06  mult 1.2159
+iter  22: loss 2.178e-03  dL/dmult +5.116e-06  mult 1.2158
+iter  23: loss 2.178e-03  dL/dmult +6.281e-05  mult 1.2159
+iter  24: loss 2.178e-03  dL/dmult +2.519e-05  mult 1.2159
+iter  25: loss 2.178e-03  dL/dmult -5.697e-05  mult 1.2159
+iter  26: loss 2.178e-03  dL/dmult +1.829e-05  mult 1.2159
+iter  27: loss 2.178e-03  dL/dmult +1.702e-05  mult 1.2159
+iter  28: loss 2.176e-03  dL/dmult -2.812e-05  mult 1.2159
+iter  29: loss 2.177e-03  dL/dmult -7.520e-05  mult 1.2159
+FINAL multiplier 1.2159 (truth 1.0)  |error| 21.59%

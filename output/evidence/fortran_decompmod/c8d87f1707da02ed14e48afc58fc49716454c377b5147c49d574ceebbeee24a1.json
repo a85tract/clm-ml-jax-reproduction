@@ -1,0 +1,43 @@
+{
+  "artifact": {
+    "digest": "cd694b6d4eca9f66f230fe98a8f15cff3dd0debd9063bb96436b17ba5fbe56be",
+    "files": [
+      "decompmod_constants.py",
+      "decompmod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:decompmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"cd694b6d4eca9f66f230fe98a8f15cff3dd0debd9063bb96436b17ba5fbe56be\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:decompmod\"}}",
+  "reference": {
+    "key": "f2py:decompmod:b30d5660c8563d2e",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "8 blocks match",
+    "metrics": {
+      "blocks_checked": 8,
+      "blocks_deferred": 0,
+      "blocks_matched": 8,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:44:39.537916+00:00"
+}

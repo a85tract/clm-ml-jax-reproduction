@@ -1,0 +1,81 @@
+{
+  "artifact": {
+    "digest": "164b7edb2ae8dcea4a3555c004b623483b1344a7c9c3f735d4d72e5e28a535db",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clm_varpar_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mllongwaveradiationmod_constants.py",
+      "mllongwaveradiationmod_jax.py",
+      "mllongwaveradiationmod_jax_runtime.py",
+      "mllongwaveradiationmod_numpy.py",
+      "mllongwaveradiationmod_use_constants.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "mlpftconmod_constants.py",
+      "mlpftconmod_numpy.py",
+      "mlpftconmod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "patchtype_constants.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mllongwaveradiationmod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"164b7edb2ae8dcea4a3555c004b623483b1344a7c9c3f735d4d72e5e28a535db\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mllongwaveradiationmod\"}}",
+  "reference": {
+    "key": "dump-replay:mllongwaveradiationmod:5b5d4e4ff1d1c4ea",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "1 subprogram(s) could not be compared: longwaveradiation_flat: candidate raised: NameError: name '_f_copy_out' is not defined",
+    "metrics": {
+      "bit_exact": 0,
+      "candidate_device": "cpu:0",
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 0,
+      "skipped": [],
+      "subprograms": {
+        "longwaveradiation_flat": {
+          "error": "candidate raised: NameError: name '_f_copy_out' is not defined"
+        }
+      },
+      "trials": 10
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T00:49:45.334038+00:00"
+}

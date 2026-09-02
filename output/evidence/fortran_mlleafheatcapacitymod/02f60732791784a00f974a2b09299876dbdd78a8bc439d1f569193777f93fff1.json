@@ -1,0 +1,46 @@
+{
+  "artifact": {
+    "digest": "e05627c08347c497b0b40d1701cc08e4ba5352452d740e35fc9a425a9799fbd1",
+    "files": [
+      "mlcanopyfluxestype_numpy.py",
+      "mlleafheatcapacitymod_constants.py",
+      "mlleafheatcapacitymod_numpy.py",
+      "mlleafheatcapacitymod_use_constants.py",
+      "patchtype_numpy.py",
+      "pftconmod_numpy.py"
+    ],
+    "name": "fortran:mlleafheatcapacitymod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"e05627c08347c497b0b40d1701cc08e4ba5352452d740e35fc9a425a9799fbd1\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlleafheatcapacitymod\"}}",
+  "reference": {
+    "key": "f2py:mlleafheatcapacitymod:49f8eb31eb821d85",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "1 blocks match",
+    "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 1,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:21:48.734454+00:00"
+}

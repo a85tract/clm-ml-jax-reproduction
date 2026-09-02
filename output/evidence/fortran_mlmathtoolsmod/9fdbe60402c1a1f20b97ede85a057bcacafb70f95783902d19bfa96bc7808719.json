@@ -1,0 +1,102 @@
+{
+  "artifact": {
+    "digest": "e9c838d6a314774bc4b32bdacb17f74f87772a7c4580a81a9c6a79383d4e7119",
+    "files": [
+      "mlcanopyfluxestype_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py"
+    ],
+    "name": "fortran:mlmathtoolsmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"e9c838d6a314774bc4b32bdacb17f74f87772a7c4580a81a9c6a79383d4e7119\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlmathtoolsmod\"}}",
+  "reference": {
+    "key": "f2py:mlmathtoolsmod:c2b7fc90c8e0c3f0",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "2140 points across 7 subprogram(s), all bit-exact; 3 subprogram(s) ungated, no reference: bisection (mlcanopy_inst: UNKNOWN(TYPE(MLCANOPY_TYPE))), hybrid (mlcanopy_inst: UNKNOWN(TYPE(MLCANOPY_TYPE))), zbrent (mlcanopy_inst: UNKNOWN(TYPE(MLCANOPY_TYPE)))",
+    "metrics": {
+      "bit_exact": 2140,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 2140,
+      "skipped": [],
+      "subprograms": {
+        "beta_distribution_cdf": {
+          "bit_exact": 10,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 10
+        },
+        "beta_distribution_pdf": {
+          "bit_exact": 10,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 10
+        },
+        "beta_function": {
+          "bit_exact": 10,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 10
+        },
+        "log_gamma_function": {
+          "bit_exact": 10,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 10
+        },
+        "quadratic": {
+          "bit_exact": 20,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 20
+        },
+        "tridiag": {
+          "bit_exact": 80,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 80
+        },
+        "tridiag_2eq": {
+          "bit_exact": 2000,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 2000
+        }
+      },
+      "trials": 10,
+      "ungated": {
+        "bisection": "mlcanopy_inst: UNKNOWN(TYPE(MLCANOPY_TYPE))",
+        "hybrid": "mlcanopy_inst: UNKNOWN(TYPE(MLCANOPY_TYPE))",
+        "zbrent": "mlcanopy_inst: UNKNOWN(TYPE(MLCANOPY_TYPE))"
+      }
+    },
+    "passed": true,
+    "verdict": "bit_exact",
+    "verifier": "differential.bitexact-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:30:02.265787+00:00"
+}

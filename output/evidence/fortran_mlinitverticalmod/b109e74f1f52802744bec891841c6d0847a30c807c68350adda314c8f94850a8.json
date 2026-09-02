@@ -1,0 +1,114 @@
+{
+  "artifact": {
+    "digest": "0d606630762ccb9d8a1c59f688026dee062b828ee7d61f48f8c74155312f54ab",
+    "files": [
+      "abortutils_numpy.py",
+      "atm2lndtype_numpy.py",
+      "canopystatetype_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_numpy.py",
+      "decompmod_numpy.py",
+      "frictionvelocitymod_numpy.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlinitverticalmod_constants.py",
+      "mlinitverticalmod_numpy.py",
+      "mlinitverticalmod_use_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "patchtype_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "wateratm2lndbulktype_numpy.py"
+    ],
+    "name": "fortran:mlinitverticalmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"0d606630762ccb9d8a1c59f688026dee062b828ee7d61f48f8c74155312f54ab\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlinitverticalmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "2/2 blocks disagree: initverticalprofiles/B001, getpadparameters/B001",
+    "metrics": {
+      "blocks_checked": 2,
+      "blocks_deferred": 1,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "initverticalprofiles/B001",
+          "reads_source_only": [
+            "cair",
+            "eair",
+            "h2ocan",
+            "lwp",
+            "tair",
+            "tg",
+            "tleaf",
+            "wind"
+          ],
+          "reads_target_only": [
+            "num_filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "c",
+            "cair",
+            "eair",
+            "forc_pbot",
+            "forc_pco2",
+            "forc_q",
+            "forc_t",
+            "forc_u",
+            "forc_v",
+            "fp",
+            "g",
+            "h2ocan",
+            "ic",
+            "lwp",
+            "ncan",
+            "p",
+            "tair",
+            "tg",
+            "tleaf",
+            "wind"
+          ]
+        },
+        {
+          "block": "getpadparameters/B001",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "num_filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "fp",
+            "p",
+            "pbeta_lai",
+            "pbeta_lai_pft",
+            "pbeta_sai",
+            "pbeta_sai_pft"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:50:54.659660+00:00"
+}

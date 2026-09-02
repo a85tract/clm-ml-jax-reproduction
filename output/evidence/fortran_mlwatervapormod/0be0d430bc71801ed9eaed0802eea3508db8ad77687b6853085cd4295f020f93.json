@@ -1,0 +1,48 @@
+{
+  "artifact": {
+    "digest": "cfda59b672db25c3c79289ddca58caf0c52fd2accf9add8dbcb24dcafb4a94a2",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "mlclm_varcon_numpy.py",
+      "mlwatervapormod_constants.py",
+      "mlwatervapormod_numpy.py",
+      "mlwatervapormod_use_constants.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlwatervapormod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"cfda59b672db25c3c79289ddca58caf0c52fd2accf9add8dbcb24dcafb4a94a2\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlwatervapormod\"}}",
+  "reference": {
+    "key": "f2py:mlwatervapormod:a4f5d3cc04dcf62b",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "8 blocks match",
+    "metrics": {
+      "blocks_checked": 8,
+      "blocks_deferred": 0,
+      "blocks_matched": 8,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:48:25.033271+00:00"
+}

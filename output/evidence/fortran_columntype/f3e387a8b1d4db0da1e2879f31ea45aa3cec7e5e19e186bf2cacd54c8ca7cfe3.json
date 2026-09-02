@@ -1,0 +1,80 @@
+{
+  "artifact": {
+    "digest": "5d9db167fcf721672bd515e77e802c20b1835846be42b85d78881dfc4a37b8da",
+    "files": [
+      "clm_varcon_numpy.py",
+      "clm_varpar_numpy.py",
+      "columntype_constants.py",
+      "columntype_numpy.py",
+      "columntype_use_constants.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:columntype",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"5d9db167fcf721672bd515e77e802c20b1835846be42b85d78881dfc4a37b8da\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:columntype\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "3/10 blocks disagree: init/B004, init/B006, init/B008",
+    "metrics": {
+      "blocks_checked": 10,
+      "blocks_deferred": 0,
+      "blocks_matched": 7,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "init/B004",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "init/B006",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "init/B008",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:50:40.849985+00:00"
+}

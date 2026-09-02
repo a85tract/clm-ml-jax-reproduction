@@ -1,0 +1,43 @@
+{
+  "artifact": {
+    "digest": "d703742da51624dce0bb79daf987d20ca12b3869d9aec359ac7d69e63ba5d133",
+    "files": [
+      "clm_varctl_constants.py",
+      "clm_varctl_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:clm_varctl",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"d703742da51624dce0bb79daf987d20ca12b3869d9aec359ac7d69e63ba5d133\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:clm_varctl\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "0 blocks match",
+    "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:50:38.525661+00:00"
+}

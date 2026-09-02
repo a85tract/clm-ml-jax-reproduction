@@ -1,0 +1,51 @@
+{
+  "artifact": {
+    "digest": "339ee61e6516c17591f8b39bdd16a1162625e62f18fdb36e4ed13a496263f438",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlclm_varcon_numpy.py",
+      "mlleafheatcapacitymod_constants.py",
+      "mlleafheatcapacitymod_numpy.py",
+      "mlleafheatcapacitymod_use_constants.py",
+      "patchtype_numpy.py",
+      "pftconmod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlleafheatcapacitymod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"339ee61e6516c17591f8b39bdd16a1162625e62f18fdb36e4ed13a496263f438\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlleafheatcapacitymod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1 blocks match",
+    "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 1,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:09:03.455614+00:00"
+}

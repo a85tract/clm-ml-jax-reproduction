@@ -1,0 +1,219 @@
+{
+  "artifact": {
+    "digest": "ece71175d3b600187fe3d7e431e0468f8c768ab836d8f5c1d5c68aed6cc900a1",
+    "files": [
+      "soilstatetype_constants.py",
+      "soilstatetype_numpy.py"
+    ],
+    "name": "fortran:soilstatetype",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"ece71175d3b600187fe3d7e431e0468f8c768ab836d8f5c1d5c68aed6cc900a1\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:soilstatetype\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "16/36 blocks disagree: initallocate/B006, initallocate/B008, initallocate/B010, initallocate/B012, initallocate/B014 (+11 more)",
+    "metrics": {
+      "blocks_checked": 36,
+      "blocks_deferred": 1,
+      "blocks_matched": 20,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "initallocate/B006",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B008",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B010",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B012",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B014",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B016",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B018",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B020",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B022",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B024",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B026",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B028",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B030",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B032",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B034",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B036",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:24:40.579465+00:00"
+}

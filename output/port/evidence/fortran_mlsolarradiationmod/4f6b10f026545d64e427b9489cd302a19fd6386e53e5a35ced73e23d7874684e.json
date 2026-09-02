@@ -1,0 +1,95 @@
+{
+  "artifact": {
+    "digest": "fbf4b6ea93d599469c92e251ec6199fcba7e687dec5086ac3d7a405131a33447",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_jax.py",
+      "mlmathtoolsmod_jax_runtime.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "mlpftconmod_constants.py",
+      "mlpftconmod_jax.py",
+      "mlpftconmod_jax_runtime.py",
+      "mlpftconmod_numpy.py",
+      "mlpftconmod_use_constants.py",
+      "mlsolarradiationmod_constants.py",
+      "mlsolarradiationmod_jax.py",
+      "mlsolarradiationmod_jax_runtime.py",
+      "mlsolarradiationmod_numpy.py",
+      "mlsolarradiationmod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "patchtype_constants.py",
+      "patchtype_jax.py",
+      "patchtype_jax_runtime.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "pftconmod_constants.py",
+      "pftconmod_jax.py",
+      "pftconmod_jax_runtime.py",
+      "pftconmod_numpy.py",
+      "pftconmod_use_constants.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mlsolarradiationmod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"fbf4b6ea93d599469c92e251ec6199fcba7e687dec5086ac3d7a405131a33447\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlsolarradiationmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlsolarradiationmod:a2c2257b516795a9",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "1 subprogram(s) could not be compared: solarradiation_flat: candidate raised: TypeError: Shapes must be 1D sequences of concrete values of integer type, got (JitTracer(int32[]),).\nIf using `jit`, try using `static_argnums` or applying `jit` to smaller subfunctions.\nThe error occurred while tracing the function _body_6 at /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/port/port-clm-ml/fortran_mlsolarradiationmod/candidate/mlsolarradiationmod_jax.py:283 for fori_loop. This concrete value was not available in Python because it depends on the values of the arguments fp, _c[6], _c[7], _c[8], _c[9], _c[14], and _c[15].",
+    "metrics": {
+      "bit_exact": 0,
+      "candidate_device": "cpu:0",
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 0,
+      "skipped": [],
+      "subprograms": {
+        "solarradiation_flat": {
+          "error": "candidate raised: TypeError: Shapes must be 1D sequences of concrete values of integer type, got (JitTracer(int32[]),).\nIf using `jit`, try using `static_argnums` or applying `jit` to smaller subfunctions.\nThe error occurred while tracing the function _body_6 at /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/port/port-clm-ml/fortran_mlsolarradiationmod/candidate/mlsolarradiationmod_jax.py:283 for fori_loop. This concrete value was not available in Python because it depends on the values of the arguments fp, _c[6], _c[7], _c[8], _c[9], _c[14], and _c[15]."
+        }
+      },
+      "trials": 10
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T01:23:48.411155+00:00"
+}

@@ -1,0 +1,81 @@
+{
+  "artifact": {
+    "digest": "2c6b47f89886817a7efc7636831104eade3454e86f49a23b8950872758847893",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_time_manager_constants.py",
+      "clm_time_manager_numpy.py",
+      "clm_time_manager_use_constants.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_numpy.py",
+      "columntype_constants.py",
+      "columntype_numpy.py",
+      "columntype_use_constants.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "mlsoiltemperaturemod_constants.py",
+      "mlsoiltemperaturemod_numpy.py",
+      "mlsoiltemperaturemod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "soilstatetype_constants.py",
+      "soilstatetype_numpy.py",
+      "soilstatetype_use_constants.py",
+      "temperaturetype_constants.py",
+      "temperaturetype_numpy.py",
+      "temperaturetype_use_constants.py",
+      "waterdiagnosticbulktype_constants.py",
+      "waterdiagnosticbulktype_numpy.py",
+      "waterdiagnosticbulktype_use_constants.py",
+      "waterstatebulktype_constants.py",
+      "waterstatebulktype_numpy.py",
+      "waterstatebulktype_use_constants.py",
+      "watertype_constants.py",
+      "watertype_numpy.py",
+      "watertype_use_constants.py"
+    ],
+    "name": "fortran:mlsoiltemperaturemod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"2c6b47f89886817a7efc7636831104eade3454e86f49a23b8950872758847893\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlsoiltemperaturemod\"}}",
+  "reference": {
+    "key": "dump-replay:mlsoiltemperaturemod:fe3df800586fca46",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "2 blocks match",
+    "metrics": {
+      "blocks_checked": 2,
+      "blocks_deferred": 0,
+      "blocks_matched": 2,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T04:43:22.518039+00:00"
+}

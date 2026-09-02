@@ -1,0 +1,73 @@
+{
+  "artifact": {
+    "digest": "1f1871f320d53257a2a11595fda95c74c235c7fb3b66df19a528a43c23470915",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clm_varpar_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlsoilfluxesmod_constants.py",
+      "mlsoilfluxesmod_jax.py",
+      "mlsoilfluxesmod_jax_runtime.py",
+      "mlsoilfluxesmod_numpy.py",
+      "mlwatervapormod_constants.py",
+      "mlwatervapormod_numpy.py",
+      "mlwatervapormod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlsoilfluxesmod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"1f1871f320d53257a2a11595fda95c74c235c7fb3b66df19a528a43c23470915\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlsoilfluxesmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlsoilfluxesmod:b0da1c4da69a5188",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "1 subprogram(s) could not be compared: soilfluxes_flat: candidate raised: TracerBoolConversionError: Attempted boolean conversion of traced array with shape bool[].\nThe error occurred while tracing the function _soilfluxes_flat_k_impl at /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/port/port-clm-ml/fortran_mlsoilfluxesmod/candidate/mlsoilfluxesmod_jax.py:36 for jit. This concrete value was not available in Python because it depends on the value of the argument mlcanopy_inst__tref_forcing.\nSee https://docs.jax.dev/en/latest/errors.html#jax.errors.TracerBoolConversionError",
+    "metrics": {
+      "bit_exact": 0,
+      "candidate_device": "cpu:0",
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 0,
+      "skipped": [],
+      "subprograms": {
+        "soilfluxes_flat": {
+          "error": "candidate raised: TracerBoolConversionError: Attempted boolean conversion of traced array with shape bool[].\nThe error occurred while tracing the function _soilfluxes_flat_k_impl at /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/port/port-clm-ml/fortran_mlsoilfluxesmod/candidate/mlsoilfluxesmod_jax.py:36 for jit. This concrete value was not available in Python because it depends on the value of the argument mlcanopy_inst__tref_forcing.\nSee https://docs.jax.dev/en/latest/errors.html#jax.errors.TracerBoolConversionError"
+        }
+      },
+      "trials": 10
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T00:49:58.909321+00:00"
+}

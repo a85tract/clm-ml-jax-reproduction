@@ -1,0 +1,76 @@
+{
+  "artifact": {
+    "digest": "966bac43bcf8054da3266acbb19d91ff0dde4178b2c1b4bdc7966738b99512a6",
+    "files": [
+      "patchtype_constants.py",
+      "patchtype_numpy.py"
+    ],
+    "name": "fortran:patchtype",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"966bac43bcf8054da3266acbb19d91ff0dde4178b2c1b4bdc7966738b99512a6\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:patchtype\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "3/6 blocks disagree: init/B002, init/B004, init/B006",
+    "metrics": {
+      "blocks_checked": 6,
+      "blocks_deferred": 0,
+      "blocks_matched": 3,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "init/B002",
+          "reads_source_only": [
+            "ispval"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "init/B004",
+          "reads_source_only": [
+            "ispval"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "init/B006",
+          "reads_source_only": [
+            "ispval"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:38.124989+00:00"
+}

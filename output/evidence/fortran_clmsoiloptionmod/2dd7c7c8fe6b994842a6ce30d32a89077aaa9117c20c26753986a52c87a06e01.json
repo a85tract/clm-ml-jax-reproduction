@@ -1,0 +1,42 @@
+{
+  "artifact": {
+    "digest": "ee96706b6ceea6ad7e2a59a75794ea9ab7f4cb23a9238043e0a6438768cc3912",
+    "files": [
+      "clmsoiloptionmod_constants.py",
+      "clmsoiloptionmod_numpy.py"
+    ],
+    "name": "fortran:clmsoiloptionmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"ee96706b6ceea6ad7e2a59a75794ea9ab7f4cb23a9238043e0a6438768cc3912\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:clmsoiloptionmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "0 blocks match",
+    "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:44:36.037520+00:00"
+}

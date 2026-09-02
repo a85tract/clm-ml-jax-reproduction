@@ -1,0 +1,54 @@
+{
+  "artifact": {
+    "digest": "bf76d5968ffd36fcca005e2e4c8c47ca323ceeee39601c9e8b2e3e6157531e92",
+    "files": [
+      "pftconmod_constants.py",
+      "pftconmod_numpy.py"
+    ],
+    "name": "fortran:pftconmod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"bf76d5968ffd36fcca005e2e4c8c47ca323ceeee39601c9e8b2e3e6157531e92\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:pftconmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/80 blocks disagree: initread/B071",
+    "metrics": {
+      "blocks_checked": 80,
+      "blocks_deferred": 2,
+      "blocks_matched": 79,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "initread/B071",
+          "reads_source_only": [
+            "pftcon_val"
+          ],
+          "reads_target_only": [
+            "_mlc"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:38.277936+00:00"
+}

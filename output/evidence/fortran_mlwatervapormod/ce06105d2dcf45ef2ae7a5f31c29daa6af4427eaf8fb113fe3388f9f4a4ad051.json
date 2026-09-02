@@ -1,0 +1,38 @@
+{
+  "artifact": {
+    "digest": "1ca8c8a10a8a700891bc9867caf3a9f04ad0746cca65dc6e6bab1c414d8ebc4a",
+    "files": [
+      "mlwatervapormod_constants.py",
+      "mlwatervapormod_numpy.py"
+    ],
+    "name": "fortran:mlwatervapormod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"1ca8c8a10a8a700891bc9867caf3a9f04ad0746cca65dc6e6bab1c414d8ebc4a\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:mlwatervapormod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "emitted file does not parse: invalid syntax (<unknown>, line 626)",
+    "metrics": {
+      "blocks_checked": 0
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:37.804700+00:00"
+}

@@ -1,0 +1,376 @@
+{
+  "artifact": {
+    "digest": "4d5703ae1c9b27c89f55c1e0d29b64927e9b86cf8fde8809f6234f2f64a8dbec",
+    "files": [
+      "clmml_driver_constants.py",
+      "clmml_driver_numpy.py"
+    ],
+    "name": "fortran:clmml_driver",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"4d5703ae1c9b27c89f55c1e0d29b64927e9b86cf8fde8809f6234f2f64a8dbec\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:clmml_driver\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "25/79 blocks disagree: clmml_drv/B006, clmml_drv/B007, clmml_drv/B008, clmml_drv/B009, clmml_drv/B025 (+20 more)",
+    "metrics": {
+      "blocks_checked": 79,
+      "blocks_deferred": 8,
+      "blocks_matched": 54,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "clmml_drv/B006",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B007",
+          "reads_source_only": [],
+          "reads_target_only": [],
+          "writes_source_only": [
+            "eccen",
+            "lambm0",
+            "mvelpp",
+            "obliqr"
+          ],
+          "writes_target_only": [
+            "_clm_varorb"
+          ]
+        },
+        {
+          "block": "clmml_drv/B008",
+          "reads_source_only": [
+            "tower_num"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B009",
+          "reads_source_only": [
+            "tower_num"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B025",
+          "reads_source_only": [
+            "fout1",
+            "nout1"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B029",
+          "reads_source_only": [
+            "fout2",
+            "nout2"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B033",
+          "reads_source_only": [
+            "fout3",
+            "nout3"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B037",
+          "reads_source_only": [
+            "fout4",
+            "nout4"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B041",
+          "reads_source_only": [
+            "fout5",
+            "nout5"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B045",
+          "reads_source_only": [
+            "fout6",
+            "nout6"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B048",
+          "reads_source_only": [
+            "flux_profile_type",
+            "met_type",
+            "tower_num"
+          ],
+          "reads_target_only": [
+            "_mlc",
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B049",
+          "reads_source_only": [
+            "nout1"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B051",
+          "reads_source_only": [
+            "nout2"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B053",
+          "reads_source_only": [
+            "nout3"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B055",
+          "reads_source_only": [
+            "nout4"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B057",
+          "reads_source_only": [
+            "nout5"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B059",
+          "reads_source_only": [
+            "nout6"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B061",
+          "reads_source_only": [
+            "flux_profile_type"
+          ],
+          "reads_target_only": [
+            "_mlc"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "init_acclim/B001",
+          "reads_source_only": [
+            "frictionvel_inst",
+            "pref",
+            "wateratm2lndbulk_inst"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "atm2lnd_inst",
+            "c",
+            "forc_pbot",
+            "forc_t",
+            "frictionvel_inst",
+            "itim",
+            "p",
+            "pref",
+            "t10",
+            "wateratm2lndbulk_inst"
+          ]
+        },
+        {
+          "block": "towerveg/B001",
+          "reads_source_only": [
+            "htop",
+            "pbeta_lai",
+            "pbeta_sai",
+            "root_biomass",
+            "tower_canht",
+            "tower_pbeta_lai",
+            "tower_pbeta_sai",
+            "tower_pft",
+            "tower_root"
+          ],
+          "reads_target_only": [
+            "_tow",
+            "begp",
+            "endp"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "htop",
+            "p",
+            "patch",
+            "pbeta_lai",
+            "pbeta_sai",
+            "root_biomass"
+          ]
+        },
+        {
+          "block": "soilinit/B001",
+          "reads_source_only": [
+            "clm_phys",
+            "col",
+            "denh2o",
+            "h2osoi_ice",
+            "h2osoi_liq",
+            "t_soisno"
+          ],
+          "reads_target_only": [
+            "_clm_varcon",
+            "_clms",
+            "_columntype",
+            "begc",
+            "endc"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "c",
+            "count3",
+            "dz",
+            "h2osoi_ice",
+            "h2osoi_liq",
+            "h2osoi_vol",
+            "j",
+            "nbedrock",
+            "start3",
+            "status",
+            "t_soisno",
+            "watsat"
+          ]
+        },
+        {
+          "block": "output/B004",
+          "reads_source_only": [
+            "met_type"
+          ],
+          "reads_target_only": [
+            "_mlc"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "output/B015",
+          "reads_source_only": [
+            "mmdry",
+            "mmh2o"
+          ],
+          "reads_target_only": [
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "output/B016",
+          "reads_source_only": [
+            "mmdry",
+            "mmh2o"
+          ],
+          "reads_target_only": [
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readcanopyprofiles/B001",
+          "reads_source_only": [
+            "eair_data",
+            "i",
+            "mmdry",
+            "mmh2o",
+            "nin1",
+            "tair_data",
+            "wind_data",
+            "x"
+          ],
+          "reads_target_only": [
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "check",
+            "eair_data",
+            "err",
+            "ic",
+            "ncan",
+            "nrec",
+            "p",
+            "pref",
+            "qair",
+            "tair_data",
+            "wind_data",
+            "zs"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:24:32.294378+00:00"
+}

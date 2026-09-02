@@ -1,0 +1,309 @@
+{
+  "artifact": {
+    "digest": "f7987bab9f72f147ab162edf186e8eadd59247a8767172574ad3b38e47628590",
+    "files": [
+      "clm_time_manager_numpy.py",
+      "clm_varcon_numpy.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyturbulencemod_constants.py",
+      "mlcanopyturbulencemod_numpy.py",
+      "mlcanopyturbulencemod_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlmathtoolsmod_numpy.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mlcanopyturbulencemod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"f7987bab9f72f147ab162edf186e8eadd59247a8767172574ad3b38e47628590\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlcanopyturbulencemod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "23/72 blocks disagree: obufunc/B001, getpsirsl/B004, getpsirsl/B005, getpsirsl/B013, getpsirsl/B014 (+18 more)",
+    "metrics": {
+      "blocks_checked": 72,
+      "blocks_deferred": 1,
+      "blocks_matched": 49,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "obufunc/B001",
+          "reads_source_only": [
+            "ah12"
+          ],
+          "reads_target_only": [
+            "_mlclm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "getpsirsl/B004",
+          "reads_source_only": [
+            "dtlgridm",
+            "psigridm",
+            "zdtgridm"
+          ],
+          "reads_target_only": [
+            "_mlclm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "getpsirsl/B005",
+          "reads_source_only": [
+            "dtlgridm",
+            "psigridm",
+            "zdtgridm"
+          ],
+          "reads_target_only": [
+            "_mlclm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "getpsirsl/B013",
+          "reads_source_only": [
+            "dtlgridh",
+            "psigridh",
+            "zdtgridh"
+          ],
+          "reads_target_only": [
+            "_mlclm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "getpsirsl/B014",
+          "reads_source_only": [
+            "dtlgridh",
+            "psigridh",
+            "zdtgridh"
+          ],
+          "reads_target_only": [
+            "_mlclm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "psim_monin_obukhov/B001",
+          "reads_source_only": [
+            "pi"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B001",
+          "reads_source_only": [
+            "masterproc"
+          ],
+          "reads_target_only": [
+            "_spmdmod"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B003",
+          "reads_source_only": [
+            "locfn",
+            "ncid"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B004",
+          "reads_source_only": [
+            "dimid",
+            "ncid"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B005",
+          "reads_source_only": [
+            "dimid",
+            "ncid",
+            "nz_nc"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B007",
+          "reads_source_only": [
+            "dimid",
+            "ncid"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B008",
+          "reads_source_only": [
+            "dimid",
+            "ncid",
+            "nl_nc"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B010",
+          "reads_source_only": [
+            "dtlgridm_nc",
+            "ncid",
+            "readv"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B012",
+          "reads_source_only": [
+            "ncid",
+            "readv",
+            "zdtgridm_nc"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B014",
+          "reads_source_only": [
+            "ncid",
+            "psigridm_nc",
+            "readv"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B016",
+          "reads_source_only": [
+            "dtlgridh_nc",
+            "ncid",
+            "readv"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B018",
+          "reads_source_only": [
+            "ncid",
+            "readv",
+            "zdtgridh_nc"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B020",
+          "reads_source_only": [
+            "ncid",
+            "psigridh_nc",
+            "readv"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B022",
+          "reads_source_only": [
+            "ncid"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B023",
+          "reads_source_only": [
+            "masterproc"
+          ],
+          "reads_target_only": [
+            "_spmdmod"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B024",
+          "reads_source_only": [],
+          "reads_target_only": [],
+          "writes_source_only": [
+            "dtlgridh",
+            "dtlgridm"
+          ],
+          "writes_target_only": [
+            "_mlclm_varcon"
+          ]
+        },
+        {
+          "block": "lookuppsihatini/B025",
+          "reads_source_only": [],
+          "reads_target_only": [],
+          "writes_source_only": [
+            "zdtgridh",
+            "zdtgridm"
+          ],
+          "writes_target_only": [
+            "_mlclm_varcon"
+          ]
+        },
+        {
+          "block": "lookuppsihatini/B026",
+          "reads_source_only": [],
+          "reads_target_only": [],
+          "writes_source_only": [
+            "psigridh",
+            "psigridm"
+          ],
+          "writes_target_only": [
+            "_mlclm_varcon"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:29:20.655528+00:00"
+}

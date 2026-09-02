@@ -1,0 +1,44 @@
+{
+  "artifact": {
+    "digest": "7328611d6306a6c441b0dada75ff299acc091c27a4043e274985130bccc8db8b",
+    "files": [
+      "decompmod_numpy.py",
+      "histfilemod_constants.py",
+      "histfilemod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:histfilemod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"7328611d6306a6c441b0dada75ff299acc091c27a4043e274985130bccc8db8b\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:histfilemod\"}}",
+  "reference": {
+    "key": "f2py:histfilemod:646dfdbf29461b9a",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "0 blocks match",
+    "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:50:45.023010+00:00"
+}

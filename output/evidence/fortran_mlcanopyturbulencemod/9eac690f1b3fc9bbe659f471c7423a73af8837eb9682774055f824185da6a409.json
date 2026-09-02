@@ -1,0 +1,710 @@
+{
+  "artifact": {
+    "digest": "9216a141724d1a0eb50d800fbd9145cbaa700867e4faa99c35e4eb2e65e1050a",
+    "files": [
+      "mlcanopyturbulencemod_constants.py",
+      "mlcanopyturbulencemod_numpy.py"
+    ],
+    "name": "fortran:mlcanopyturbulencemod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"9216a141724d1a0eb50d800fbd9145cbaa700867e4faa99c35e4eb2e65e1050a\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:mlcanopyturbulencemod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "39/73 blocks disagree: canopyturbulence/B001, hf2008/B001, getobu/B001, obufunc/B001, getprsc/B001 (+34 more)",
+    "metrics": {
+      "blocks_checked": 73,
+      "blocks_deferred": 0,
+      "blocks_matched": 34,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "canopyturbulence/B001",
+          "reads_source_only": [
+            "turb_type"
+          ],
+          "reads_target_only": [
+            "_mlc"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "hf2008/B001",
+          "reads_source_only": [
+            "cd",
+            "eta_max",
+            "gac",
+            "gac0",
+            "gac_to_hc",
+            "iulog",
+            "kc_eddy",
+            "mflx",
+            "mmdry",
+            "mmh2o",
+            "nstep",
+            "nstep_ml",
+            "obu",
+            "prsc",
+            "qaf",
+            "taf",
+            "uaf",
+            "wind",
+            "z0m",
+            "zdisp"
+          ],
+          "reads_target_only": [
+            "_mlcl",
+            "num_filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "beta",
+            "eair",
+            "eta",
+            "fp",
+            "gac",
+            "gac0",
+            "gac_to_hc",
+            "ic",
+            "kc_eddy",
+            "lai",
+            "lc",
+            "lm",
+            "lm_over_beta",
+            "mflx",
+            "mlcanopy_inst",
+            "ncan",
+            "nstep",
+            "ntop",
+            "obu",
+            "p",
+            "pref",
+            "prsc",
+            "qaf",
+            "sai",
+            "taf",
+            "tair",
+            "uaf",
+            "ustar",
+            "wind",
+            "z0m",
+            "zdisp",
+            "ztop",
+            "zw"
+          ]
+        },
+        {
+          "block": "getobu/B001",
+          "reads_source_only": [
+            "dummy",
+            "obu"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "dummy",
+            "ic",
+            "il",
+            "obu",
+            "obu0",
+            "obu1",
+            "tol"
+          ]
+        },
+        {
+          "block": "obufunc/B001",
+          "reads_source_only": [
+            "ah12",
+            "beta_neutral_max",
+            "cr",
+            "dum1",
+            "dum2",
+            "gac_to_hc",
+            "grav",
+            "lcl_max",
+            "lcl_min",
+            "obu",
+            "obu_dif",
+            "sparse_canopy_type",
+            "vkc",
+            "z0mg"
+          ],
+          "reads_target_only": [
+            "_clm_varcon",
+            "_mlc",
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "beta",
+            "beta_hf",
+            "beta_neutral",
+            "beta_norsl",
+            "c1",
+            "dum1",
+            "dum2",
+            "gac_to_hc",
+            "hc_minus_d",
+            "lai",
+            "lc",
+            "lcl",
+            "obu",
+            "obu_cur",
+            "obu_dif",
+            "obu_max_unstable",
+            "obu_min_stable",
+            "obu_new",
+            "prsc",
+            "psic",
+            "psim",
+            "qaf",
+            "qref",
+            "qstar",
+            "rhomol",
+            "sai",
+            "taf",
+            "thref",
+            "thvref",
+            "tstar",
+            "tvstar",
+            "uref",
+            "ustar",
+            "zdisp",
+            "zlog",
+            "zref",
+            "ztop"
+          ]
+        },
+        {
+          "block": "getprsc/B001",
+          "reads_source_only": [
+            "pr0",
+            "pr1",
+            "pr2"
+          ],
+          "reads_target_only": [
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "getprsc/B002",
+          "reads_source_only": [
+            "sparse_canopy_type"
+          ],
+          "reads_target_only": [
+            "_mlc"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "getpsirsl/B002",
+          "reads_source_only": [
+            "c2",
+            "vkc"
+          ],
+          "reads_target_only": [
+            "_clm_varcon",
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "getpsirsl/B004",
+          "reads_source_only": [
+            "dtlgridm",
+            "psigridm",
+            "zdtgridm"
+          ],
+          "reads_target_only": [
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "getpsirsl/B005",
+          "reads_source_only": [
+            "dtlgridm",
+            "psigridm",
+            "zdtgridm"
+          ],
+          "reads_target_only": [
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "getpsirsl/B010",
+          "reads_source_only": [
+            "vkc"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "getpsirsl/B012",
+          "reads_source_only": [
+            "c2",
+            "vkc"
+          ],
+          "reads_target_only": [
+            "_clm_varcon",
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "getpsirsl/B013",
+          "reads_source_only": [
+            "dtlgridh",
+            "psigridh",
+            "zdtgridh"
+          ],
+          "reads_target_only": [
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "getpsirsl/B014",
+          "reads_source_only": [
+            "dtlgridh",
+            "psigridh",
+            "zdtgridh"
+          ],
+          "reads_target_only": [
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "psim_monin_obukhov/B001",
+          "reads_source_only": [
+            "pi"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihat/B003",
+          "reads_source_only": [
+            "nl"
+          ],
+          "reads_target_only": [
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihat/B007",
+          "reads_source_only": [
+            "nz"
+          ],
+          "reads_target_only": [
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "roughnesslength/B001",
+          "reads_source_only": [
+            "psic",
+            "psim",
+            "vkc",
+            "z0m"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "aval",
+            "beta",
+            "bval",
+            "cval",
+            "err",
+            "exp1",
+            "exp2",
+            "fa",
+            "fb",
+            "fc",
+            "hc_minus_d",
+            "n",
+            "nmax",
+            "obu",
+            "prsc",
+            "psic",
+            "psim",
+            "psim_hat_hc",
+            "psim_hc",
+            "psim_z0m_aval",
+            "psim_z0m_bval",
+            "psim_z0m_cval",
+            "z0m",
+            "z0m_aval",
+            "z0m_bval",
+            "z0m_cval",
+            "zdisp",
+            "zref",
+            "ztop"
+          ]
+        },
+        {
+          "block": "windprofile/B001",
+          "reads_source_only": [
+            "dum1",
+            "dum2",
+            "psic",
+            "vkc",
+            "wind"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "beta",
+            "dum1",
+            "dum2",
+            "ic",
+            "ncan",
+            "ntop",
+            "obu",
+            "prsc",
+            "psic",
+            "psim",
+            "uaf",
+            "ustar",
+            "wind",
+            "zdisp",
+            "zlog_m",
+            "zs",
+            "ztop"
+          ]
+        },
+        {
+          "block": "aerodynamicconductance/B001",
+          "reads_source_only": [
+            "dum1",
+            "dum2",
+            "hf_extension_type",
+            "kc_eddy",
+            "psim1",
+            "psim2",
+            "ra_max",
+            "vkc",
+            "z0mg"
+          ],
+          "reads_target_only": [
+            "_clm_varcon",
+            "_mlc",
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "beta",
+            "dum1",
+            "dum2",
+            "gac",
+            "gac0",
+            "gac_above_foliage",
+            "gac_below_foliage",
+            "gac_to_hc",
+            "ic",
+            "kc_eddy",
+            "ncan",
+            "ntop",
+            "obu",
+            "prsc",
+            "psic",
+            "psic1",
+            "psic2",
+            "psim1",
+            "psim2",
+            "res",
+            "rhomol",
+            "sumres",
+            "ustar",
+            "ustar_g",
+            "wind",
+            "z0cg",
+            "zdisp",
+            "zl",
+            "zlog_c",
+            "zlog_m",
+            "zref",
+            "zs",
+            "ztop",
+            "zu"
+          ]
+        },
+        {
+          "block": "lookuppsihatini/B001",
+          "reads_source_only": [
+            "masterproc"
+          ],
+          "reads_target_only": [
+            "_spmdmod"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B002",
+          "reads_source_only": [
+            "rslfile"
+          ],
+          "reads_target_only": [
+            "_clm_varctl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B003",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "ncid"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B004",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "ncid"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B005",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "ncid"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B006",
+          "reads_source_only": [
+            "nz"
+          ],
+          "reads_target_only": [
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B007",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "ncid"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B008",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "ncid"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B009",
+          "reads_source_only": [
+            "nl"
+          ],
+          "reads_target_only": [
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B010",
+          "reads_source_only": [
+            "readv"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "ncid",
+            "readv"
+          ]
+        },
+        {
+          "block": "lookuppsihatini/B012",
+          "reads_source_only": [
+            "readv"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "ncid",
+            "readv"
+          ]
+        },
+        {
+          "block": "lookuppsihatini/B014",
+          "reads_source_only": [
+            "readv"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "ncid",
+            "readv"
+          ]
+        },
+        {
+          "block": "lookuppsihatini/B016",
+          "reads_source_only": [
+            "readv"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "ncid",
+            "readv"
+          ]
+        },
+        {
+          "block": "lookuppsihatini/B018",
+          "reads_source_only": [
+            "readv"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "ncid",
+            "readv"
+          ]
+        },
+        {
+          "block": "lookuppsihatini/B020",
+          "reads_source_only": [
+            "readv"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "ncid",
+            "readv"
+          ]
+        },
+        {
+          "block": "lookuppsihatini/B022",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "ncid"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B023",
+          "reads_source_only": [
+            "masterproc"
+          ],
+          "reads_target_only": [
+            "_spmdmod"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "lookuppsihatini/B024",
+          "reads_source_only": [
+            "nl"
+          ],
+          "reads_target_only": [
+            "_mlcl"
+          ],
+          "writes_source_only": [
+            "dtlgridh",
+            "dtlgridm"
+          ],
+          "writes_target_only": [
+            "_mlcl"
+          ]
+        },
+        {
+          "block": "lookuppsihatini/B025",
+          "reads_source_only": [
+            "nz"
+          ],
+          "reads_target_only": [
+            "_mlcl"
+          ],
+          "writes_source_only": [
+            "zdtgridh",
+            "zdtgridm"
+          ],
+          "writes_target_only": [
+            "_mlcl"
+          ]
+        },
+        {
+          "block": "lookuppsihatini/B026",
+          "reads_source_only": [
+            "nl",
+            "nz"
+          ],
+          "reads_target_only": [
+            "_mlcl"
+          ],
+          "writes_source_only": [
+            "psigridh",
+            "psigridm"
+          ],
+          "writes_target_only": [
+            "_mlcl"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:33.636456+00:00"
+}

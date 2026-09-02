@@ -1,0 +1,7 @@
+day-15 full 48-step open-loop, per-flux rel err:
+  gppveg_canopy    median 7.798e-14  p95 2.135e-05  max 3.353e-05
+  lhflx_canopy     median 7.794e-13  p95 1.143e-11  max 2.512e-11
+  shflx_canopy     median 1.089e-11  p95 4.300e-11  max 2.878e-10
+  ustar_canopy     median 2.297e-13  p95 1.481e-12  max 7.076e-12
+
+[exited with code 0]

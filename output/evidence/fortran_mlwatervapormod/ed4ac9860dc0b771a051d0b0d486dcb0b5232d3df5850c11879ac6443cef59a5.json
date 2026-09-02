@@ -1,0 +1,39 @@
+{
+  "artifact": {
+    "digest": "094fd9affb9d82bb401ad210d068d10e9cb21774c0f018e9b633a03fbf89f1dc",
+    "files": [
+      "mlwatervapormod_constants.py",
+      "mlwatervapormod_numpy.py",
+      "mlwatervapormod_use_constants.py"
+    ],
+    "name": "fortran:mlwatervapormod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"094fd9affb9d82bb401ad210d068d10e9cb21774c0f018e9b633a03fbf89f1dc\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlwatervapormod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "emitted file does not parse: invalid syntax (<unknown>, line 720)",
+    "metrics": {
+      "blocks_checked": 0
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:30:21.064264+00:00"
+}

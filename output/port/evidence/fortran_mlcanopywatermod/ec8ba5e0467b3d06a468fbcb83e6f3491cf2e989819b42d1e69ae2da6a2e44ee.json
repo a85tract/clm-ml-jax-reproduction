@@ -1,0 +1,91 @@
+{
+  "artifact": {
+    "digest": "63989704ee3ee213a14d32d551d58574e4f2a79443da9b5fe045dcb32000807b",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clm_varpar_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlcanopywatermod_constants.py",
+      "mlcanopywatermod_jax.py",
+      "mlcanopywatermod_jax_runtime.py",
+      "mlcanopywatermod_numpy.py",
+      "mlcanopywatermod_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "ncdio_pio_numpy.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlcanopywatermod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"63989704ee3ee213a14d32d551d58574e4f2a79443da9b5fe045dcb32000807b\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlcanopywatermod\"}}",
+  "reference": {
+    "key": "dump-replay:mlcanopywatermod:369609f816d7ba49",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "1 subprogram(s) could not be compared: canopyinterception_flat: candidate raised: TracerArrayConversionError: The numpy.ndarray conversion method __array__() was called on traced array with shape int32[]\nThe error occurred while tracing the function _body_7 at /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/port/port-clm-ml/fortran_mlcanopywatermod/candidate/mlcanopywatermod_jax.py:89 for fori_loop. This concrete value was not available in Python because it depends on the value of the argument fp.\nSee https://docs.jax.dev/en/latest/errors.html#jax.errors.TracerArrayConversionError",
+    "metrics": {
+      "bit_exact": 12000,
+      "candidate_device": "cpu:0",
+      "dominant_points": 8320,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "max_ulp_dominant": 0,
+      "nan_mismatch": 0,
+      "points": 12000,
+      "skipped": [],
+      "subprograms": {
+        "canopyevaporation_flat": {
+          "bit_exact": 4000,
+          "dominant_points": 4000,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 0,
+          "points": 4000
+        },
+        "canopyinterception_flat": {
+          "error": "candidate raised: TracerArrayConversionError: The numpy.ndarray conversion method __array__() was called on traced array with shape int32[]\nThe error occurred while tracing the function _body_7 at /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/port/port-clm-ml/fortran_mlcanopywatermod/candidate/mlcanopywatermod_jax.py:89 for fori_loop. This concrete value was not available in Python because it depends on the value of the argument fp.\nSee https://docs.jax.dev/en/latest/errors.html#jax.errors.TracerArrayConversionError"
+        },
+        "canopywettedfraction_flat": {
+          "bit_exact": 8000,
+          "dominant_points": 4320,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 0,
+          "points": 8000
+        }
+      },
+      "trials": 10
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T00:42:10.704891+00:00"
+}

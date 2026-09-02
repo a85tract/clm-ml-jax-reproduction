@@ -1,0 +1,76 @@
+{
+  "artifact": {
+    "digest": "ba210c918557a44e5219156edfbb73e04b47a7c0540197a8ba751c939120874f",
+    "files": [
+      "clm_time_manager_constants.py",
+      "clm_time_manager_jax.py",
+      "clm_time_manager_jax_runtime.py",
+      "clm_time_manager_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlcanopyturbulencemod_constants.py",
+      "mlcanopyturbulencemod_jax.py",
+      "mlcanopyturbulencemod_jax_runtime.py",
+      "mlcanopyturbulencemod_numpy.py",
+      "mlcanopyturbulencemod_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_jax.py",
+      "mlmathtoolsmod_jax_runtime.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mlcanopyturbulencemod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"ba210c918557a44e5219156edfbb73e04b47a7c0540197a8ba751c939120874f\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlcanopyturbulencemod\"}}",
+  "reference": {
+    "key": "dump-replay:mlcanopyturbulencemod:077852e3ffbea9d3",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "1 subprogram(s) could not be compared: canopyturbulence_flat: candidate raised: UnboundLocalError: cannot access local variable '_done_1' where it is not associated with a value",
+    "metrics": {
+      "bit_exact": 0,
+      "candidate_device": "cpu:0",
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 0,
+      "skipped": [],
+      "subprograms": {
+        "canopyturbulence_flat": {
+          "error": "candidate raised: UnboundLocalError: cannot access local variable '_done_1' where it is not associated with a value"
+        }
+      },
+      "trials": 10
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T04:45:44.219308+00:00"
+}

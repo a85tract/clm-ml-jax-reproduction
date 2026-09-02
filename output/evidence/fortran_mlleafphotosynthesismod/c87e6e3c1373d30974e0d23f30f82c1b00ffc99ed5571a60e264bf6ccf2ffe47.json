@@ -1,0 +1,108 @@
+{
+  "artifact": {
+    "digest": "abd5acbdfce1b43cb818a5f42be3ceb96b380c29f66743ddb83bce81b886a6a1",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_numpy.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlleafphotosynthesismod_constants.py",
+      "mlleafphotosynthesismod_numpy.py",
+      "mlleafphotosynthesismod_use_constants.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "mlpftconmod_constants.py",
+      "mlpftconmod_numpy.py",
+      "mlpftconmod_use_constants.py",
+      "mlwatervapormod_constants.py",
+      "mlwatervapormod_numpy.py",
+      "mlwatervapormod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "patchtype_constants.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "pftconmod_constants.py",
+      "pftconmod_numpy.py",
+      "pftconmod_use_constants.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mlleafphotosynthesismod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"abd5acbdfce1b43cb818a5f42be3ceb96b380c29f66743ddb83bce81b886a6a1\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlleafphotosynthesismod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "3/9 blocks disagree: leafphotosynthesis/B001, stomataoptimization/B001, stomataefficiency/B001",
+    "metrics": {
+      "blocks_checked": 9,
+      "blocks_deferred": 0,
+      "blocks_matched": 6,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "leafphotosynthesis/B001",
+          "reads_source_only": [
+            "mlpftcon"
+          ],
+          "reads_target_only": [
+            "_mlp"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "stomataoptimization/B001",
+          "reads_source_only": [
+            "mlpftcon"
+          ],
+          "reads_target_only": [
+            "_mlp"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "stomataefficiency/B001",
+          "reads_source_only": [
+            "mlpftcon"
+          ],
+          "reads_target_only": [
+            "_mlp"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T04:02:36.286698+00:00"
+}

@@ -1,0 +1,43 @@
+{
+  "artifact": {
+    "digest": "5ca0efd98c0909f8aeefb375483b66e7f7e4b5f978906bb5a49f5d0bb66a1b0e",
+    "files": [
+      "mlclm_varpar_constants.py",
+      "mlclm_varpar_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlclm_varpar",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"5ca0efd98c0909f8aeefb375483b66e7f7e4b5f978906bb5a49f5d0bb66a1b0e\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlclm_varpar\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "0 blocks match",
+    "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:45:23.994278+00:00"
+}

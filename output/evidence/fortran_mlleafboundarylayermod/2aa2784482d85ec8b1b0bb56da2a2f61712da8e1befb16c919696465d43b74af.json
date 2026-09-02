@@ -1,0 +1,46 @@
+{
+  "artifact": {
+    "digest": "d4a49c1f917ceb1df0dba6caf5182c847c545d81ebc5ee484b50e6a6fa751307",
+    "files": [
+      "mlcanopyfluxestype_numpy.py",
+      "mlleafboundarylayermod_constants.py",
+      "mlleafboundarylayermod_numpy.py",
+      "mlleafboundarylayermod_use_constants.py",
+      "patchtype_numpy.py",
+      "pftconmod_numpy.py"
+    ],
+    "name": "fortran:mlleafboundarylayermod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"d4a49c1f917ceb1df0dba6caf5182c847c545d81ebc5ee484b50e6a6fa751307\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlleafboundarylayermod\"}}",
+  "reference": {
+    "key": "f2py:mlleafboundarylayermod:4581cab0edd8518e",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "1 blocks match",
+    "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 1,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:29:47.599636+00:00"
+}

@@ -1,0 +1,234 @@
+The Meson build system
+Version: 1.12.0
+Source dir: /private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmpm92gj8h1
+Build dir: /private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmpm92gj8h1/bbdir
+Build type: native build
+Project name: ref_clm_time_manager
+Project version: 0.1
+Fortran compiler for the host machine: gfortran (gcc 16.1.0 "GNU Fortran (Homebrew GCC 16.1.0) 16.1.0")
+Fortran linker for the host machine: gfortran ld64 1267
+C compiler for the host machine: cc (clang 21.0.0 "Apple clang version 21.0.0 (clang-2100.1.1.101)")
+C linker for the host machine: cc ld64 1267
+Host machine cpu family: aarch64
+Host machine cpu: aarch64
+Compiler for C supports arguments -fno-strict-aliasing: YES 
+Program /Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/python found: YES (/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/python)
+Found pkg-config: YES (/opt/homebrew/bin/pkg-config) 3.0.6
+Run-time dependency python found: YES 3.11
+Library quadmath found: YES
+Build targets in project: 1
+
+Found ninja-1.13.0.git.kitware.jobserver-pipe-1 at /Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/ninja
+ninja: Entering directory `/private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmpm92gj8h1/bbdir'
+[1/12] Scanning target ref_clm_time_manager.cpython-311-darwin for modules
+[2/12] Compiling C object ref_clm_time_manager.cpython-311-darwin.so.p/ref_clm_time_managermodule.c.o
+../ref_clm_time_managermodule.c:535:9: warning: misleading indentation; statement is not part of the previous 'if' [-Wmisleading-indentation]
+  535 |         f2py_success = int_from_pyobj(&year,year_capi,"ref_clm_time_manager.w_isleap() 1st argument (year) can't be converted to int");
+      |         ^
+../ref_clm_time_managermodule.c:529:5: note: previous statement is here
+  529 |     if (!PyArg_ParseTupleAndKeywords(capi_args,capi_keywds,\
+      |     ^
+1 warning generated.
+[3/12] Generating dynamic dependency information for target ref_clm_time_manager.cpython-311-darwin
+[4/12] Compiling C object ref_clm_time_manager.cpython-311-darwin.so.p/c9103ebe8974317e72579428ad3ce24fea6d8fbd_.._.._f2py_src_fortranobject.c.o
+[5/12] Compiling Fortran object ref_clm_time_manager.cpython-311-darwin.so.p/shr_kind_mod.f90.o
+[6/12] Compiling Fortran object ref_clm_time_manager.cpython-311-darwin.so.p/ref_clm_time_manager-f2pywrappers.f.o
+[7/12] Compiling Fortran object ref_clm_time_manager.cpython-311-darwin.so.p/clm_varctl.f90.o
+[8/12] Compiling Fortran object ref_clm_time_manager.cpython-311-darwin.so.p/abortutils.f90.o
+FAILED: [code=1] ref_clm_time_manager.cpython-311-darwin.so.p/abortutils.f90.o ref_clm_time_manager.cpython-311-darwin.so.p/abortutils.mod 
+gfortran -Iref_clm_time_manager.cpython-311-darwin.so.p -I. -I.. -I/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged -I/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/_core/include -I/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/src -I/Users/yueqichen/.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/pkgconfig/../../include/python3.11 -fvisibility=hidden -fdiagnostics-color=always -Wall -O3 -O1 -fno-fast-math -ffp-contract=off -Jref_clm_time_manager.cpython-311-darwin.so.p -o ref_clm_time_manager.cpython-311-darwin.so.p/abortutils.f90.o -c ../abortutils.f90
+../abortutils.f90:15:0:
+
+   15 |   include 'netcdf.inc'
+Fatal Error: Cannot open included file 'netcdf.inc'
+compilation terminated.
+ninja: build stopped: subcommand failed.
+INFO: autodetecting backend as ninja
+INFO: calculating backend command to run: /Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/ninja -C /private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmpm92gj8h1/bbdir
+Using meson backend
+Will pass --lower to f2py
+See https://numpy.org/doc/stable/f2py/buildtools/meson.html
+Reading fortran codes...
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/shr_kind_mod.f90' (format:free)
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/clm_varctl.f90' (format:free)
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/abortutils.f90' (format:free)
+Line #15 in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/abortutils.f90:"  include 'netcdf.inc' "
+	readfortrancode: could not find include file 'netcdf.inc' in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged. Ignoring.
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/clm_time_manager.f90' (format:free)
+	Reading file 'wrappers.f90' (format:free)
+Post-processing...
+	Block: ref_clm_time_manager
+			Block: shr_kind_mod
+			Block: clm_varctl
+			Block: abortutils
+			Block: clm_time_manager
+			Block: w_get_step_size
+In: :ref_clm_time_manager:wrappers.f90:w_get_step_size
+param_eval: got "invalid syntax (<string>, line 1)" on '(/31, 28, 31,30,31,30,31,31,30,31,30,31/)'
+In: :ref_clm_time_manager:wrappers.f90:w_get_step_size
+param_eval: got "invalid syntax (<string>, line 1)" on '(/0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365/)'
+In: :ref_clm_time_manager:wrappers.f90:w_get_step_size
+param_eval: got "invalid syntax (<string>, line 1)" on '(/31, 29, 31,30,31,30,31,31,30,31,30,31/)'
+In: :ref_clm_time_manager:wrappers.f90:w_get_step_size
+param_eval: got "invalid syntax (<string>, line 1)" on '(/0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366/)'
+			Block: w_get_nstep
+In: :ref_clm_time_manager:wrappers.f90:w_get_nstep
+param_eval: got "invalid syntax (<string>, line 1)" on '(/31, 28, 31,30,31,30,31,31,30,31,30,31/)'
+In: :ref_clm_time_manager:wrappers.f90:w_get_nstep
+param_eval: got "invalid syntax (<string>, line 1)" on '(/0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365/)'
+In: :ref_clm_time_manager:wrappers.f90:w_get_nstep
+param_eval: got "invalid syntax (<string>, line 1)" on '(/31, 29, 31,30,31,30,31,31,30,31,30,31/)'
+In: :ref_clm_time_manager:wrappers.f90:w_get_nstep
+param_eval: got "invalid syntax (<string>, line 1)" on '(/0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366/)'
+			Block: w_isleap
+In: :ref_clm_time_manager:wrappers.f90:w_isleap
+param_eval: got "invalid syntax (<string>, line 1)" on '(/31, 28, 31,30,31,30,31,31,30,31,30,31/)'
+In: :ref_clm_time_manager:wrappers.f90:w_isleap
+param_eval: got "invalid syntax (<string>, line 1)" on '(/0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365/)'
+In: :ref_clm_time_manager:wrappers.f90:w_isleap
+param_eval: got "invalid syntax (<string>, line 1)" on '(/31, 29, 31,30,31,30,31,31,30,31,30,31/)'
+In: :ref_clm_time_manager:wrappers.f90:w_isleap
+param_eval: got "invalid syntax (<string>, line 1)" on '(/0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366/)'
+			Block: w_get_curr_date
+In: :ref_clm_time_manager:wrappers.f90:w_get_curr_date
+param_eval: got "invalid syntax (<string>, line 1)" on '(/31, 28, 31,30,31,30,31,31,30,31,30,31/)'
+In: :ref_clm_time_manager:wrappers.f90:w_get_curr_date
+param_eval: got "invalid syntax (<string>, line 1)" on '(/0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365/)'
+In: :ref_clm_time_manager:wrappers.f90:w_get_curr_date
+param_eval: got "invalid syntax (<string>, line 1)" on '(/31, 29, 31,30,31,30,31,31,30,31,30,31/)'
+In: :ref_clm_time_manager:wrappers.f90:w_get_curr_date
+param_eval: got "invalid syntax (<string>, line 1)" on '(/0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366/)'
+			Block: w_get_curr_time
+In: :ref_clm_time_manager:wrappers.f90:w_get_curr_time
+param_eval: got "invalid syntax (<string>, line 1)" on '(/31, 28, 31,30,31,30,31,31,30,31,30,31/)'
+In: :ref_clm_time_manager:wrappers.f90:w_get_curr_time
+param_eval: got "invalid syntax (<string>, line 1)" on '(/0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365/)'
+In: :ref_clm_time_manager:wrappers.f90:w_get_curr_time
+param_eval: got "invalid syntax (<string>, line 1)" on '(/31, 29, 31,30,31,30,31,31,30,31,30,31/)'
+In: :ref_clm_time_manager:wrappers.f90:w_get_curr_time
+param_eval: got "invalid syntax (<string>, line 1)" on '(/0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366/)'
+			Block: w_get_curr_calday
+In: :ref_clm_time_manager:wrappers.f90:w_get_curr_calday
+param_eval: got "invalid syntax (<string>, line 1)" on '(/31, 28, 31,30,31,30,31,31,30,31,30,31/)'
+In: :ref_clm_time_manager:wrappers.f90:w_get_curr_calday
+param_eval: got "invalid syntax (<string>, line 1)" on '(/0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365/)'
+In: :ref_clm_time_manager:wrappers.f90:w_get_curr_calday
+param_eval: got "invalid syntax (<string>, line 1)" on '(/31, 29, 31,30,31,30,31,31,30,31,30,31/)'
+In: :ref_clm_time_manager:wrappers.f90:w_get_curr_calday
+param_eval: got "invalid syntax (<string>, line 1)" on '(/0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366/)'
+			Block: w_is_end_curr_day
+In: :ref_clm_time_manager:wrappers.f90:w_is_end_curr_day
+param_eval: got "invalid syntax (<string>, line 1)" on '(/31, 28, 31,30,31,30,31,31,30,31,30,31/)'
+In: :ref_clm_time_manager:wrappers.f90:w_is_end_curr_day
+param_eval: got "invalid syntax (<string>, line 1)" on '(/0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365/)'
+In: :ref_clm_time_manager:wrappers.f90:w_is_end_curr_day
+param_eval: got "invalid syntax (<string>, line 1)" on '(/31, 29, 31,30,31,30,31,31,30,31,30,31/)'
+In: :ref_clm_time_manager:wrappers.f90:w_is_end_curr_day
+param_eval: got "invalid syntax (<string>, line 1)" on '(/0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366/)'
+			Block: w_is_end_curr_month
+In: :ref_clm_time_manager:wrappers.f90:w_is_end_curr_month
+param_eval: got "invalid syntax (<string>, line 1)" on '(/31, 28, 31,30,31,30,31,31,30,31,30,31/)'
+In: :ref_clm_time_manager:wrappers.f90:w_is_end_curr_month
+param_eval: got "invalid syntax (<string>, line 1)" on '(/0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365/)'
+In: :ref_clm_time_manager:wrappers.f90:w_is_end_curr_month
+param_eval: got "invalid syntax (<string>, line 1)" on '(/31, 29, 31,30,31,30,31,31,30,31,30,31/)'
+In: :ref_clm_time_manager:wrappers.f90:w_is_end_curr_month
+param_eval: got "invalid syntax (<string>, line 1)" on '(/0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366/)'
+Applying post-processing hooks...
+  character_backward_compatibility_hook
+Post-processing (stage 2)...
+	Block: ref_clm_time_manager
+		Block: unknown_interface
+			Block: shr_kind_mod
+			Block: clm_varctl
+			Block: abortutils
+			Block: clm_time_manager
+			Block: w_get_step_size
+			Block: w_get_nstep
+			Block: w_isleap
+			Block: w_get_curr_date
+			Block: w_get_curr_time
+			Block: w_get_curr_calday
+			Block: w_is_end_curr_day
+			Block: w_is_end_curr_month
+Building modules...
+    Building module "ref_clm_time_manager"...
+    Generating possibly empty wrappers"
+    Maybe empty "ref_clm_time_manager-f2pywrappers.f"
+		Creating wrapper for Fortran function "w_get_step_size"("w_get_step_size")...
+        Constructing wrapper function "w_get_step_size"...
+          res = w_get_step_size()
+    Generating possibly empty wrappers"
+    Maybe empty "ref_clm_time_manager-f2pywrappers.f"
+		Creating wrapper for Fortran function "w_get_nstep"("w_get_nstep")...
+        Constructing wrapper function "w_get_nstep"...
+          res = w_get_nstep()
+    Generating possibly empty wrappers"
+    Maybe empty "ref_clm_time_manager-f2pywrappers.f"
+		Creating wrapper for Fortran function "w_isleap"("w_isleap")...
+        Constructing wrapper function "w_isleap"...
+          res = w_isleap(year,calendar)
+    Generating possibly empty wrappers"
+    Maybe empty "ref_clm_time_manager-f2pywrappers.f"
+        Constructing wrapper function "w_get_curr_date"...
+          yr,mon,day,tod = w_get_curr_date()
+    Generating possibly empty wrappers"
+    Maybe empty "ref_clm_time_manager-f2pywrappers.f"
+        Constructing wrapper function "w_get_curr_time"...
+          days,seconds = w_get_curr_time()
+    Generating possibly empty wrappers"
+    Maybe empty "ref_clm_time_manager-f2pywrappers.f"
+		Creating wrapper for Fortran function "w_get_curr_calday"("w_get_curr_calday")...
+        Constructing wrapper function "w_get_curr_calday"...
+          res = w_get_curr_calday()
+    Generating possibly empty wrappers"
+    Maybe empty "ref_clm_time_manager-f2pywrappers.f"
+		Creating wrapper for Fortran function "w_is_end_curr_day"("w_is_end_curr_day")...
+        Constructing wrapper function "w_is_end_curr_day"...
+          res = w_is_end_curr_day()
+    Generating possibly empty wrappers"
+    Maybe empty "ref_clm_time_manager-f2pywrappers.f"
+		Creating wrapper for Fortran function "w_is_end_curr_month"("w_is_end_curr_month")...
+        Constructing wrapper function "w_is_end_curr_month"...
+          res = w_is_end_curr_month()
+		Constructing F90 module support for "shr_kind_mod"...
+		  Variables: shr_kind_r8 shr_kind_in
+		Constructing F90 module support for "clm_varctl"...
+		  Variables: iulog rslfile
+		Constructing F90 module support for "abortutils"...
+			Skipping abortutils since there are no public vars/func in this module...
+		Constructing F90 module support for "clm_time_manager"...
+		  Variables: dtstep itim start_date_ymd start_date_tod curr_date_ymd curr_date_tod calkindflag mday mdaycum mdayleap mdayleapcum
+    Wrote C/API module "ref_clm_time_manager" to file "./ref_clm_time_managermodule.c"
+    Fortran 77 wrappers are saved to "./ref_clm_time_manager-f2pywrappers.f"
+    Fortran 90 wrappers are saved to "./ref_clm_time_manager-f2pywrappers2.f90"
+
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'get_step_size': 'get_step_size'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'get_nstep': 'get_nstep'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'isleap': 'isleap'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'get_curr_date': 'get_curr_date'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'get_curr_time': 'get_curr_time'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'get_curr_calday': 'get_curr_calday'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'is_end_curr_day': 'is_end_curr_day'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'is_end_curr_month': 'is_end_curr_month'}} not impl.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/__main__.py", line 5, in <module>
+    main()
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/f2py2e.py", line 786, in main
+    run_compile()
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/f2py2e.py", line 758, in run_compile
+    builder.compile()
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/_backends/_meson.py", line 197, in compile
+    self.run_meson(self.build_dir)
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/_backends/_meson.py", line 191, in run_meson
+    self._run_subprocess_command(compile_command, build_dir)
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/_backends/_meson.py", line 185, in _run_subprocess_command
+    subprocess.run(command, cwd=cwd, check=True)
+  File "/Users/yueqichen/.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['meson', 'compile', '-C', 'bbdir']' returned non-zero exit status 1.

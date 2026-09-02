@@ -1,0 +1,86 @@
+{
+  "artifact": {
+    "digest": "09d068bc6fff5ddd1dcc505deb4c11ee2a99ffe4cefa076506e252017e199e31",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varctl_numpy.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlmathtoolsmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"09d068bc6fff5ddd1dcc505deb4c11ee2a99ffe4cefa076506e252017e199e31\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlmathtoolsmod\"}}",
+  "reference": {
+    "key": "f2py:mlmathtoolsmod:ba9b68f69f6c6c74",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "5 subprogram(s) could not be compared: quadratic: candidate raised: ValueError: math domain error; log_gamma_function: candidate raised: ValueError: math domain error; beta_function: candidate raised: ValueError: math domain error; 3 subprogram(s) ungated, no reference: bisection (mlcanopy_inst: UNKNOWN(TYPE(MLCANOPY_TYPE))), hybrid (mlcanopy_inst: UNKNOWN(TYPE(MLCANOPY_TYPE))), zbrent (mlcanopy_inst: UNKNOWN(TYPE(MLCANOPY_TYPE)))",
+    "metrics": {
+      "bit_exact": 352,
+      "max_rel": 9.988217462497306e+302,
+      "max_ulp": 4651996944811598241,
+      "nan_mismatch": 0,
+      "points": 2080,
+      "skipped": [],
+      "subprograms": {
+        "beta_distribution_cdf": {
+          "error": "candidate raised: ValueError: math domain error"
+        },
+        "beta_distribution_pdf": {
+          "error": "candidate raised: ValueError: math domain error"
+        },
+        "beta_function": {
+          "error": "candidate raised: ValueError: math domain error"
+        },
+        "log_gamma_function": {
+          "error": "candidate raised: ValueError: math domain error"
+        },
+        "quadratic": {
+          "error": "candidate raised: ValueError: math domain error"
+        },
+        "tridiag": {
+          "bit_exact": 80,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 80
+        },
+        "tridiag_2eq": {
+          "bit_exact": 272,
+          "max_rel": 9.988217462497306e+302,
+          "max_ulp": 4651996944811598241,
+          "nan_mismatch": 0,
+          "points": 2000
+        }
+      },
+      "trials": 10,
+      "ungated": {
+        "bisection": "mlcanopy_inst: UNKNOWN(TYPE(MLCANOPY_TYPE))",
+        "hybrid": "mlcanopy_inst: UNKNOWN(TYPE(MLCANOPY_TYPE))",
+        "zbrent": "mlcanopy_inst: UNKNOWN(TYPE(MLCANOPY_TYPE))"
+      }
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.bitexact-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:13:55.946082+00:00"
+}

@@ -1,0 +1,42 @@
+{
+  "artifact": {
+    "digest": "38c3f65b0f1bed9d68f271d0201bf7574f7e014a0bd4d1fd031405b2dc6f02d3",
+    "files": [
+      "lnd_comp_nuopc_constants.py",
+      "lnd_comp_nuopc_numpy.py"
+    ],
+    "name": "fortran:lnd_comp_nuopc",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"38c3f65b0f1bed9d68f271d0201bf7574f7e014a0bd4d1fd031405b2dc6f02d3\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:lnd_comp_nuopc\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "3 blocks match",
+    "metrics": {
+      "blocks_checked": 3,
+      "blocks_deferred": 0,
+      "blocks_matched": 3,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:32.033430+00:00"
+}

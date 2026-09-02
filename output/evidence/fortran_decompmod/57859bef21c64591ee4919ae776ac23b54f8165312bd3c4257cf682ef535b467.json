@@ -1,0 +1,54 @@
+{
+  "artifact": {
+    "digest": "cd694b6d4eca9f66f230fe98a8f15cff3dd0debd9063bb96436b17ba5fbe56be",
+    "files": [
+      "decompmod_constants.py",
+      "decompmod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:decompmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"cd694b6d4eca9f66f230fe98a8f15cff3dd0debd9063bb96436b17ba5fbe56be\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:decompmod\"}}",
+  "reference": {
+    "key": "f2py:decompmod:b30d5660c8563d2e",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "71/80 points differ (max 13510798882111488 ULP, max_rel=8.750e-01) and no rtol excuses them",
+    "metrics": {
+      "bit_exact": 9,
+      "max_rel": 0.875,
+      "max_ulp": 13510798882111488,
+      "nan_mismatch": 0,
+      "points": 80,
+      "skipped": [],
+      "subprograms": {
+        "get_clump_bounds_flat": {
+          "bit_exact": 9,
+          "max_rel": 0.875,
+          "max_ulp": 13510798882111488,
+          "nan_mismatch": 0,
+          "points": 80
+        }
+      },
+      "trials": 10
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.bitexact-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:44:39.538263+00:00"
+}

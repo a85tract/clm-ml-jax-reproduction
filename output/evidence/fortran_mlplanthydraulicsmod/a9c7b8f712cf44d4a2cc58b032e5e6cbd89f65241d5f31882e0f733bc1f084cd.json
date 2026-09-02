@@ -1,0 +1,76 @@
+{
+  "artifact": {
+    "digest": "047ea33d8b98528585af552e1990f8ff8e1aa7a6aeb2527853616223d2b97d04",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clm_varpar_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "columntype_constants.py",
+      "columntype_numpy.py",
+      "columntype_use_constants.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlpftconmod_constants.py",
+      "mlpftconmod_numpy.py",
+      "mlpftconmod_use_constants.py",
+      "mlplanthydraulicsmod_constants.py",
+      "mlplanthydraulicsmod_numpy.py",
+      "ncdio_pio_numpy.py",
+      "patchtype_constants.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "soilstatetype_constants.py",
+      "soilstatetype_numpy.py",
+      "soilstatetype_use_constants.py",
+      "spmdmod_numpy.py",
+      "waterstatebulktype_constants.py",
+      "waterstatebulktype_numpy.py",
+      "waterstatebulktype_use_constants.py"
+    ],
+    "name": "fortran:mlplanthydraulicsmod",
+    "transform": "recast-clm-ml.translate.clm-ml-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"047ea33d8b98528585af552e1990f8ff8e1aa7a6aeb2527853616223d2b97d04\", \"executor\": \"local\", \"recipe\": \"translate-clm-ml\", \"unit\": \"fortran:mlplanthydraulicsmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlplanthydraulicsmod:5faf70c4a8f9f1ba",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "3 blocks match",
+    "metrics": {
+      "blocks_checked": 3,
+      "blocks_deferred": 0,
+      "blocks_matched": 3,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T00:05:55.524756+00:00"
+}

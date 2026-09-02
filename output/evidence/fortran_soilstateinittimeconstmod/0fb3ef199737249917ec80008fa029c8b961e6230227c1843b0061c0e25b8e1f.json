@@ -1,0 +1,121 @@
+{
+  "artifact": {
+    "digest": "59b3465178c3b547278fdc4cbe4e6b50e9873a9714494348e8738817cb937945",
+    "files": [
+      "soilstateinittimeconstmod_constants.py",
+      "soilstateinittimeconstmod_numpy.py"
+    ],
+    "name": "fortran:soilstateinittimeconstmod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"59b3465178c3b547278fdc4cbe4e6b50e9873a9714494348e8738817cb937945\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:soilstateinittimeconstmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/1 blocks disagree: soilstateinittimeconst/B001",
+    "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "soilstateinittimeconst/B001",
+          "reads_source_only": [
+            "bsw_tex",
+            "cellclay",
+            "cellorg",
+            "cellsand",
+            "clay_tex",
+            "col",
+            "csol",
+            "csol_bedrock",
+            "hksat_tex",
+            "iulog",
+            "sand_tex",
+            "smpsat_tex",
+            "soil_tex",
+            "tkdry",
+            "tkmg",
+            "tower_clay",
+            "tower_num",
+            "tower_organic",
+            "tower_sand",
+            "tower_tex",
+            "watsat_tex"
+          ],
+          "reads_target_only": [
+            "_clm_varcon",
+            "_columntype",
+            "_soiltexmod",
+            "_tow",
+            "bounds",
+            "nlevgrnd"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "beta",
+            "bsw",
+            "bulk_dens_min",
+            "c",
+            "cellclay",
+            "cellorg",
+            "cellsand",
+            "clay",
+            "csol",
+            "cvsol",
+            "hksat",
+            "j",
+            "m",
+            "nbedrock",
+            "om_b",
+            "om_cvsol",
+            "om_frac",
+            "om_frac_therm",
+            "om_hksat",
+            "om_sucsat",
+            "om_tkdry",
+            "om_tksol",
+            "om_watsat",
+            "p",
+            "perc_frac",
+            "perc_norm",
+            "rootfr",
+            "rootprof_beta",
+            "sand",
+            "sucsat",
+            "tex",
+            "tkdry",
+            "tkdry_min",
+            "tkm",
+            "tkmg",
+            "tksol_min",
+            "uncon_frac",
+            "uncon_hksat",
+            "watsat",
+            "z",
+            "zi"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:40.918523+00:00"
+}

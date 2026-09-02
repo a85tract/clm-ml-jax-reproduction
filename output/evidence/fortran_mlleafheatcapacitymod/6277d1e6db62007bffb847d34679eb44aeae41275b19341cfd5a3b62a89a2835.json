@@ -1,0 +1,57 @@
+{
+  "artifact": {
+    "digest": "ce245d24fbe8c9cc74612fcf04b93ff36bae8f6dfe917766b323f23abe43a410",
+    "files": [
+      "mlcanopyfluxestype_numpy.py",
+      "mlleafheatcapacitymod_constants.py",
+      "mlleafheatcapacitymod_numpy.py",
+      "mlleafheatcapacitymod_use_constants.py",
+      "patchtype_numpy.py",
+      "pftconmod_numpy.py"
+    ],
+    "name": "fortran:mlleafheatcapacitymod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"ce245d24fbe8c9cc74612fcf04b93ff36bae8f6dfe917766b323f23abe43a410\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlleafheatcapacitymod\"}}",
+  "reference": {
+    "key": "f2py:mlleafheatcapacitymod:49f8eb31eb821d85",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "102/8000 points differ (max 9214689791084276997 ULP, max_rel=8.186e+00) and no rtol excuses them",
+    "metrics": {
+      "bit_exact": 7898,
+      "max_rel": 8.186419197285245,
+      "max_ulp": 9214689791084276997,
+      "nan_mismatch": 0,
+      "points": 8000,
+      "skipped": [],
+      "subprograms": {
+        "leafheatcapacity_flat": {
+          "bit_exact": 7898,
+          "max_rel": 8.186419197285245,
+          "max_ulp": 9214689791084276997,
+          "nan_mismatch": 0,
+          "points": 8000
+        }
+      },
+      "trials": 10
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.bitexact-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:27:08.395034+00:00"
+}

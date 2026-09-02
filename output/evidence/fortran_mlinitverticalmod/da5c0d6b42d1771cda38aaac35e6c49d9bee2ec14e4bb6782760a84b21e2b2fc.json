@@ -1,0 +1,73 @@
+{
+  "artifact": {
+    "digest": "87990503ae1668c94c45c4c0324436c5fb05c06857aa172393ec4c2411d80bc1",
+    "files": [
+      "abortutils_numpy.py",
+      "atm2lndtype_constants.py",
+      "atm2lndtype_numpy.py",
+      "atm2lndtype_use_constants.py",
+      "canopystatetype_constants.py",
+      "canopystatetype_numpy.py",
+      "canopystatetype_use_constants.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_numpy.py",
+      "decompmod_numpy.py",
+      "frictionvelocitymod_constants.py",
+      "frictionvelocitymod_numpy.py",
+      "frictionvelocitymod_use_constants.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlinitverticalmod_constants.py",
+      "mlinitverticalmod_numpy.py",
+      "mlinitverticalmod_use_constants.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "patchtype_constants.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "wateratm2lndbulktype_constants.py",
+      "wateratm2lndbulktype_numpy.py",
+      "wateratm2lndbulktype_use_constants.py"
+    ],
+    "name": "fortran:mlinitverticalmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"87990503ae1668c94c45c4c0324436c5fb05c06857aa172393ec4c2411d80bc1\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlinitverticalmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlinitverticalmod:381a2d84f7470b43",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "no rewrites to notarize; the translation is print-order faithful",
+    "metrics": {
+      "judged": [],
+      "rewrites": 0
+    },
+    "passed": true,
+    "verdict": "symbolic",
+    "verifier": "symbolic.notary"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T04:14:55.823259+00:00"
+}

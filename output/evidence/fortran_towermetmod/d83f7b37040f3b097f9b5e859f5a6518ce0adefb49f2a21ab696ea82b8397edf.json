@@ -1,0 +1,270 @@
+{
+  "artifact": {
+    "digest": "79705ebde1e1b17bda9cbd9bebf96e45e74fe2427493d6d704189bde254df8bb",
+    "files": [
+      "abortutils_numpy.py",
+      "atm2lndtype_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varpar_numpy.py",
+      "frictionvelocitymod_numpy.py",
+      "gridcelltype_numpy.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlclm_varcon_numpy.py",
+      "mlwatervapormod_numpy.py",
+      "patchtype_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "towerdatamod_numpy.py",
+      "towermetmod_constants.py",
+      "towermetmod_numpy.py",
+      "towermetmod_use_constants.py",
+      "wateratm2lndbulktype_numpy.py"
+    ],
+    "name": "fortran:towermetmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"79705ebde1e1b17bda9cbd9bebf96e45e74fe2427493d6d704189bde254df8bb\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:towermetmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "16/45 blocks disagree: towermetcurr/B001, readtowermet/B002, readtowermet/B006, readtowermet/B008, readtowermet/B010 (+11 more)",
+    "metrics": {
+      "blocks_checked": 45,
+      "blocks_deferred": 0,
+      "blocks_matched": 29,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "towermetcurr/B001",
+          "reads_source_only": [
+            "desat",
+            "endrun",
+            "forc_pco2",
+            "forc_po2",
+            "forc_rain",
+            "forc_snow",
+            "forc_solad",
+            "forc_solai",
+            "forc_u",
+            "forc_v",
+            "grc",
+            "tower_ht",
+            "tower_lat",
+            "tower_lon"
+          ],
+          "reads_target_only": [
+            "_tow",
+            "begp",
+            "endp",
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "_gri",
+            "c",
+            "desat",
+            "eair",
+            "emiss",
+            "esat",
+            "forc_hgt_u",
+            "forc_lwrad",
+            "forc_pbot",
+            "forc_pco2",
+            "forc_po2",
+            "forc_q",
+            "forc_rain",
+            "forc_rh",
+            "forc_snow",
+            "forc_solad",
+            "forc_solai",
+            "forc_t",
+            "forc_u",
+            "forc_v",
+            "fsds",
+            "g",
+            "p"
+          ]
+        },
+        {
+          "block": "readtowermet/B002",
+          "reads_source_only": [
+            "ncfilename"
+          ],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readtowermet/B006",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readtowermet/B008",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readtowermet/B010",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readtowermet/B012",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readtowermet/B014",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readtowermet/B016",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readtowermet/B018",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readtowermet/B020",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readtowermet/B022",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readtowermet/B024",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readtowermet/B026",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readtowermet/B028",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readtowermet/B030",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "towermetnext/B001",
+          "reads_source_only": [
+            "co2ref_next",
+            "desat",
+            "endrun",
+            "swskyb_next",
+            "swskyd_next",
+            "uref_next"
+          ],
+          "reads_target_only": [
+            "begp",
+            "endp",
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "co2ref_next",
+            "desat",
+            "eair",
+            "emiss",
+            "esat",
+            "forc_rh",
+            "fsds",
+            "lwsky_next",
+            "p",
+            "pref_next",
+            "qref_next",
+            "swskyb_next",
+            "swskyd_next",
+            "tref_next",
+            "uref_next"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:51:08.585627+00:00"
+}

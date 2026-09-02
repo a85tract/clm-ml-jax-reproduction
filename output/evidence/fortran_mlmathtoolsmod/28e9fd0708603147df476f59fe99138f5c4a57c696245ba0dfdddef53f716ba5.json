@@ -1,0 +1,42 @@
+{
+  "artifact": {
+    "digest": "d25b228e64d462e0f2e8a4266b366cf2b1dfbc39b3f419e13f46fa4b97998606",
+    "files": [
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py"
+    ],
+    "name": "fortran:mlmathtoolsmod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"d25b228e64d462e0f2e8a4266b366cf2b1dfbc39b3f419e13f46fa4b97998606\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:mlmathtoolsmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "60 blocks match",
+    "metrics": {
+      "blocks_checked": 60,
+      "blocks_deferred": 9,
+      "blocks_matched": 60,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:27:59.084690+00:00"
+}

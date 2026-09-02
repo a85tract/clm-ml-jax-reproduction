@@ -1,0 +1,52 @@
+{
+  "artifact": {
+    "digest": "13cff5226982330bd8a3fa83f6230e2799273f37dc0f84557051a5eca81dad63",
+    "files": [
+      "mlcanopyfluxestype_numpy.py",
+      "mlleaffluxesmod_constants.py",
+      "mlleaffluxesmod_numpy.py",
+      "mlleaffluxesmod_use_constants.py",
+      "mlwatervapormod_numpy.py"
+    ],
+    "name": "fortran:mlleaffluxesmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"13cff5226982330bd8a3fa83f6230e2799273f37dc0f84557051a5eca81dad63\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlleaffluxesmod\"}}",
+  "reference": {
+    "key": "f2py:mlleaffluxesmod:14590331a7b2753e",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "1 subprogram(s) could not be compared: leaffluxes_flat: candidate raised: AttributeError: module 'mlwatervapormod_numpy' has no attribute 'latvap'",
+    "metrics": {
+      "bit_exact": 0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 0,
+      "skipped": [],
+      "subprograms": {
+        "leaffluxes_flat": {
+          "error": "candidate raised: AttributeError: module 'mlwatervapormod_numpy' has no attribute 'latvap'"
+        }
+      },
+      "trials": 10
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.bitexact-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:29:53.256967+00:00"
+}

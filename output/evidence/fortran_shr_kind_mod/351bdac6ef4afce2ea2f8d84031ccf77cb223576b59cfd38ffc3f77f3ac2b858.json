@@ -1,0 +1,42 @@
+{
+  "artifact": {
+    "digest": "e2735b9ceec6a894d92c02d1dd5042b177557d154083e98204f422895447a955",
+    "files": [
+      "shr_kind_mod_constants.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:shr_kind_mod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"e2735b9ceec6a894d92c02d1dd5042b177557d154083e98204f422895447a955\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:shr_kind_mod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "0 blocks match",
+    "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:24:40.505111+00:00"
+}

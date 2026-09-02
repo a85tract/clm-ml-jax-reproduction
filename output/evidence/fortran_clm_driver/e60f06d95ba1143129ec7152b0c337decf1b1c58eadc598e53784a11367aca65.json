@@ -1,0 +1,68 @@
+{
+  "artifact": {
+    "digest": "2fc7e22bc1ccff8ec419137563eecb7e8752bf7234b3e8ac3377ff7b65132565",
+    "files": [
+      "atm2lndtype_numpy.py",
+      "canopystatetype_numpy.py",
+      "clm_driver_constants.py",
+      "clm_driver_numpy.py",
+      "clm_driver_use_constants.py",
+      "clm_instmod_numpy.py",
+      "clmdatamod_numpy.py",
+      "columntype_numpy.py",
+      "energyfluxtype_numpy.py",
+      "filtermod_numpy.py",
+      "frictionvelocitymod_numpy.py",
+      "initverticalmod_numpy.py",
+      "mlcanopyfluxesmod_numpy.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlsoiltemperaturemod_numpy.py",
+      "soilstateinittimeconstmod_numpy.py",
+      "soilstatetype_numpy.py",
+      "soilwatermovementmod_numpy.py",
+      "solarabsorbedtype_numpy.py",
+      "surfacealbedomod_numpy.py",
+      "surfacealbedotype_numpy.py",
+      "surfaceresistancemod_numpy.py",
+      "temperaturetype_numpy.py",
+      "wateratm2lndbulktype_numpy.py",
+      "waterdiagnosticbulktype_numpy.py",
+      "waterfluxbulktype_numpy.py",
+      "waterstatebulktype_numpy.py",
+      "watertype_numpy.py"
+    ],
+    "name": "fortran:clm_driver",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"2fc7e22bc1ccff8ec419137563eecb7e8752bf7234b3e8ac3377ff7b65132565\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:clm_driver\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "0 blocks match",
+    "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 1,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:29:02.410200+00:00"
+}

@@ -1,0 +1,64 @@
+{
+  "artifact": {
+    "digest": "42b1b01f0cc7e92f61f10d5d85186ec0292f3197091ae63278e6b8c1101fa3a2",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_time_manager_constants.py",
+      "clm_time_manager_numpy.py",
+      "clm_varctl_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:clm_time_manager",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"42b1b01f0cc7e92f61f10d5d85186ec0292f3197091ae63278e6b8c1101fa3a2\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:clm_time_manager\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "2/48 blocks disagree: get_curr_calday/B001, get_prev_calday/B004",
+    "metrics": {
+      "blocks_checked": 48,
+      "blocks_deferred": 2,
+      "blocks_matched": 46,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "get_curr_calday/B001",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "get_prev_calday/B004",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:51:28.185613+00:00"
+}

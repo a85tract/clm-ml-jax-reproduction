@@ -1,0 +1,71 @@
+{
+  "artifact": {
+    "digest": "91ec08785345bb98c3f5b0b661b6d13d33961766f195e53adf7417ca3aeabac2",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clm_varpar_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "mlpftconmod_constants.py",
+      "mlpftconmod_numpy.py",
+      "mlpftconmod_use_constants.py",
+      "mlsolarradiationmod_constants.py",
+      "mlsolarradiationmod_numpy.py",
+      "mlsolarradiationmod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "patchtype_constants.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "pftconmod_constants.py",
+      "pftconmod_numpy.py",
+      "pftconmod_use_constants.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mlsolarradiationmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"91ec08785345bb98c3f5b0b661b6d13d33961766f195e53adf7417ca3aeabac2\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlsolarradiationmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlsolarradiationmod:9fc9245bc939195f",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "no rewrites to notarize; the translation is print-order faithful",
+    "metrics": {
+      "judged": [],
+      "rewrites": 0
+    },
+    "passed": true,
+    "verdict": "symbolic",
+    "verifier": "symbolic.notary"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T04:46:01.685090+00:00"
+}

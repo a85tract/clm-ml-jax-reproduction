@@ -1,0 +1,133 @@
+{
+  "artifact": {
+    "digest": "870a9c3b661f39715e1b67c3a99eb09d3292637e9a9dfcc8dca24059e236f79c",
+    "files": [
+      "abortutils_numpy.py",
+      "atm2lndtype_constants.py",
+      "atm2lndtype_jax.py",
+      "atm2lndtype_jax_runtime.py",
+      "atm2lndtype_numpy.py",
+      "atm2lndtype_use_constants.py",
+      "canopystatetype_constants.py",
+      "canopystatetype_jax.py",
+      "canopystatetype_jax_runtime.py",
+      "canopystatetype_numpy.py",
+      "canopystatetype_use_constants.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clm_varpar_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "decompmod_numpy.py",
+      "frictionvelocitymod_constants.py",
+      "frictionvelocitymod_jax.py",
+      "frictionvelocitymod_jax_runtime.py",
+      "frictionvelocitymod_numpy.py",
+      "frictionvelocitymod_use_constants.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlinitverticalmod_constants.py",
+      "mlinitverticalmod_jax.py",
+      "mlinitverticalmod_jax_runtime.py",
+      "mlinitverticalmod_numpy.py",
+      "mlinitverticalmod_use_constants.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_jax.py",
+      "mlmathtoolsmod_jax_runtime.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "patchtype_constants.py",
+      "patchtype_jax.py",
+      "patchtype_jax_runtime.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "wateratm2lndbulktype_constants.py",
+      "wateratm2lndbulktype_jax.py",
+      "wateratm2lndbulktype_jax_runtime.py",
+      "wateratm2lndbulktype_numpy.py",
+      "wateratm2lndbulktype_use_constants.py"
+    ],
+    "name": "fortran:mlinitverticalmod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"870a9c3b661f39715e1b67c3a99eb09d3292637e9a9dfcc8dca24059e236f79c\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlinitverticalmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlinitverticalmod:5b07392a926f9efc",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "1412 points across 3 subprogram(s), all bit-exact -- this backend did not need the tiers",
+    "metrics": {
+      "bit_exact": 1412,
+      "candidate_device": "cpu:0",
+      "dominant_points": 905,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "max_ulp_dominant": 0,
+      "nan_mismatch": 0,
+      "points": 1412,
+      "rel_gate": 1e-12,
+      "skipped": [],
+      "subprograms": {
+        "getpadparameters_flat": {
+          "bit_exact": 4,
+          "dominant_points": 4,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 0,
+          "points": 4
+        },
+        "initverticalprofiles_flat": {
+          "bit_exact": 901,
+          "dominant_points": 625,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 0,
+          "points": 901
+        },
+        "initverticalstructure_flat": {
+          "bit_exact": 507,
+          "dominant_points": 276,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 0,
+          "points": 507
+        }
+      },
+      "trials": 10,
+      "ulp_gate": 32
+    },
+    "passed": true,
+    "verdict": "bit_exact",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T01:07:40.077602+00:00"
+}

@@ -82,7 +82,8 @@ on the stack — reproducible only with the same binary.
 The fix is one `save` (or making the arrays module-level). Per the relay rule
 it is **not** applied in `upstream/` or anywhere in SciRecast; the scratch copy
 that demonstrated it was discarded. The right action is an issue on
-`gbonan/CLM-ml_v2.CHATS` — not filed yet, that is the user's call.
+`gbonan/CLM-ml_v2.CHATS` — filed 2026-08-31 with the user's approval:
+https://github.com/gbonan/CLM-ml_v2.CHATS/issues/1.
 
 A second, smaller defect: `-finit-integer` / `-finit-logical` change nothing,
 so the integer/logical state is clean.
@@ -219,8 +220,9 @@ reading of the code:
    entry; it works because the components are pointers every compiler leaves
    associated. The engine's translation follows the standard (a fresh object)
    and the routine had no `tref_forcing`. The `clm` frontend re-declares such
-   a dummy `inout` and records the assumption in `Facts.provenance`. Worth
-   an upstream note beside the RK-tableau one; not filed.
+   a dummy `inout` and records the assumption in `Facts.provenance`. Filed
+   2026-08-31 beside the RK-tableau one:
+   https://github.com/gbonan/CLM-ml_v2.CHATS/issues/2.
 3. **Routines that check their own energy balance cannot be gated on
    generated inputs.** `LeafFluxes` computes `shleaf`, `lhleaf` from inputs
    and aborts if `rnleaf - shleaf - lhleaf - stleaf > 1e-3`; with `rnleaf`
@@ -501,3 +503,262 @@ SoilTemperature and PlantHydraulics; the gate stands at 12/15 with the same
 three XLA-fusion residuals. Still open: d(agross)/d(apar) on 19 of 92
 layers (~30%), not in the root finder; the three residuals; the full
 column.
+
+## Update 2026-08-30 — the whole time step as one flat unit, bit-exact
+
+Phase 5 needs the orchestrator, not just its physics: `MLCanopyFluxes`
+itself computes forcing interpolation (GetAtmForcing between the tower's
+half-hours), the lai/dpai profiles, `rhg`, net radiation, the 6 ML
+sub-steps with 5 Runge-Kutta passes each, the flux integration and the
+diagnostics. Rather than hand-wiring the 15 ported kernels in Python, the
+same record→translate pipeline was pointed at `mlcanopyfluxesmod` whole:
+its flat plan carries 19 objects, 331 components and 122 module-state
+inputs, and one recorded call is one CLM step (445 inputs, 259 outputs).
+
+**Staged deviation (Finding 1 closed).** `stage.py` now moves
+`call RungeKuttaIni (ark, brk, crk)` out of the first-call block so the
+un-SAVEd tableau is filled every step — the same values with defined
+behaviour, marked `staged deviation (Finding 1)` in the staged source. The
+recording and every gate below stand on this build; the 15 physics
+modules' JAX gates reproduce exactly (12/15, the same three XLA-fusion
+residuals to the ULP).
+
+**Engine additions the orchestrator forced** (RecastEngine branch
+`column-orchestrator`): a character parameter is a value
+(`calkindflag = 'GREGORIAN'` reached `isleap` at run time); a
+subprogram-level `10 continue … go to 10` is a loop region the way the
+statement-level rule already said; and the flat plan's callee closure is
+transitive — `GetObu` calls `hybrid` in a module the orchestrator never
+`use`s, and `ObuFunc`, reached only as `hybrid`'s callback, reads
+`aH12` — so `_procedure_index` and `_state_vars` follow `use`/call
+closure across companions of companions.
+
+**Result.** `mlcanopyfluxes_flat` is bit-exact against the recording on
+all 48 steps of the day — 902,544 points, `symbolic.notary`:
+print-order faithful. The full canopy step — five nested call levels,
+root finders included — is one NumPy function matching gfortran
+bit-for-bit.
+
+## Update 2026-08-30 (night) — the closed-loop column, bit-exact for a day
+
+The recording itself yields the driver's contract: of the whole-step
+adapter's 456 inputs, 262 are the previous step's own outputs — value for
+value, every step — and 194 are exogenous (tower forcing, the CLM-side
+per-step fields, `t_soisno`). `column.py` runs `mlcanopyfluxes_flat`
+closed-loop on that split: state from its own outputs, forcing from the
+recording. In `--mode numpy` the whole day — 48 CLM steps, 288 ML
+sub-steps, 1440 RK stage evaluations — reproduces the Fortran run
+bit-for-bit at every output of every step. The whole-step JAX kernel
+(`mlcanopyfluxes_flat` emitted as one `lax` kernel, all 15 physics
+companions inlined) runs and is compared on all 48 recorded steps:
+669,387 of 902,544 points bit-exact under jit, the residual in the
+10^-12..10^-9 relative band (the XLA-fusion class compounding over the
+30 solver passes of a step); `--mode jax` measures how that residual
+grows over the day.
+
+**The whole-step residual characterized.** With jit disabled (eager jnp,
+inputs as jnp arrays) the same ~140 outputs differ in the same
+10^-12..10^-9 relative band, worst ~2e-9 (`dtair`/`dtleaf`, the RK slope
+storage after 30 solver passes): the residual is the JAX/XLA numerical
+tier itself — XLA's transcendental implementations and fusion — not a
+translation defect, the same class the three per-module XLA residuals
+documented. The apparently enormous ULP distances sit on spval-scale
+(1e36) placeholder entries at relative distances ≤ 3e-11. Against the
+paper's own §4.2 standard (1e-4 per module), the whole-step kernel is
+five orders of magnitude inside tolerance at every recorded step.
+
+## Update 2026-08-30 (Fig. 5) — the 31-day column, closed loop
+
+A 31-day recording of the whole-step adapter (1488 calls, one per CLM
+step, 4.7 GB of dumps; the 1-day recording preserved beside it) drives
+`column.py` for the paper's full May-2007 CHATS7 window. In `--mode
+numpy` the closed loop -- 1488 steps, 8928 ML sub-steps, 44,640 RK stage
+evaluations, state carried entirely from the model's own outputs --
+reproduces the Fortran month **bit-for-bit at every output of every
+step**. Two boundaries of that claim: the soil column is not closed --
+`t_soisno`, a prognostic advanced by `SoilTemperature` outside the canopy
+call, is taken from the recording each step, as are the file-read CLM
+fields (closing the soil loop means adding the gated
+`soilthermprop`/`soiltemperature` kernels to the driver); and the parity
+is *given the recorded exogenous forcing and soil state*. Within those
+boundaries the paper's Fig. 5 claim (31-day parity within 1% column flux
+tolerance) is met with zero tolerance on the NumPy translation; the JAX
+kernel's month-long drift is measured by the same driver in `--mode jax`.
+Sampling note: the per-module gates replay the recording's first day (48
+calls per probed site; `initvertical` has 3), and MathTools was sampled
+7/10 -- the whole-step gate covers every call of the recorded window.
+
+**Fig. 5, closed (2026-08-30 night).** The whole-step JAX kernel, driven
+closed-loop for the full month (1488 steps, ~7 minutes wall once the
+step counter stays traced), does not diverge from the Fortran
+trajectory: leaf temperature's per-step relative deviation holds at a
+median 4.5e-11 (p95 1.7e-9, worst single instant 3.3e-3) with no growth
+from day 1 to day 31. Against the paper's own Fig.-5 standard -- daily-
+mean column fluxes within 1% -- the month gives GPP 1.0e-4, SH 9.6e-4,
+LH 1.8e-4, soil T 9.5e-8: one to five orders inside tolerance. The
+apparently large instantaneous relative errors on GPP-family outputs are
+dawn/dusk near-zero divisions; at the aggregate level they vanish. The
+same boundaries as the NumPy claim apply (recorded exogenous forcing;
+soil column not closed).
+
+**Fig. 9 (same-machine throughput).** One CLM step of the whole-step
+kernel: 43.7 ms jitted (25.5 s one-time compile), against 377 ms for the
+NumPy anchor and ~4.9 ms for the Fortran reference (-O2) -- all on this
+laptop's CPU, single point. The 9x gap to Fortran is XLA dispatch
+overhead on a problem this small; the paper's throughput claim lives on
+GPU batch execution (Derecho) and is neither confirmed nor contradicted
+by a single-point CPU number, as already noted.
+
+**Reverse mode through the whole step (Fig. 6 groundwork, 2026-08-30
+late).** What §4.2's per-module gradients did not face, the whole-step
+kernel did: with every input linearized at once, `fwet = (h2ocan /
+h2ocanmx) ** fwet_exponent` differentiates to infinity on a dry canopy
+layer (`0 ** 0.67`), and inf x 0 seeds NaN into 124 of the step's
+outputs -- with a ZERO input tangent, and invisibly to per-module probes
+(their constants are never linearized). The chain of refusals before it
+-- the substep and RK trip counts (`traced_scalars` keeps the per-step
+counter `itim` out of the static arguments, which also ends the
+compile-per-step the month run suffered), the calendar `while` under
+`stop_gradient`, the layer loops whose counters ride into companion
+kernels (extent inherited through the callee's kept associates) -- each
+became an engine rule. The safe-pow emission (`where(x>0, x, 1) ** c *
+where(x>0, 1, 0)`, fractional and run-set exponents alike) is
+bit-identical for x > 0 (the gate's dominant artifact is byte-identical
+around the change), keeps 0 ** c = 0, and takes the subgradient 0. After
+it: zero NaN tangents across all 462 outputs, and `jax.grad` through the
+full CLM step -- 30 solver passes, three root-finder specializations --
+returns finite values agreeing with forward mode.
+
+**Fig. 6, met (2026-08-30 night).** Reverse mode through the whole step
+against forward mode, noon of day 1: d(SH)/d(forc_t) agrees to 2.2e-11
+relative, d(LH) to 2.0e-11, d(Tg) to 1.9e-13 -- machine-precision
+agreement on real daytime sensitivities through 30 solver passes and
+three root-finder specializations. One caveat carried forward: both
+modes give ~1e-19 (an effective zero) for d(GPP)/d(forc_t) at noon,
+which should not vanish; this is the same broken-tangent family as the
+open d(agross)/d(apar) item (the implicit-function detachment around the
+photosynthesis root finder severing a path both modes lose alike), and
+is tracked there -- the grad==jvp consistency claim itself is unaffected.
+
+**Fig. 8, attempted -- and the honest result (2026-08-31 0:15).** The
+calibration loop itself works end to end: iota_spa perturbed 1.5x, the
+whole-step kernel driven over day 1, the loss falling monotonically with
+a finite-difference gradient of the jitted kernel (~4 s per iteration),
+and a one-shot AD-vs-FD check wired in. But it recovers only 1.50 ->
+1.39 in 40 iterations: the parameter sensitivity through the stomatal
+path is orders too small, and the AD check at noon gives exactly zero
+for d(gpp, lh)/d(iota) -- the same severed-tangent family as
+d(GPP)/d(forc_t) = 0 and the older d(agross)/d(apar) 30% item. Three
+symptoms, one suspect: the implicit-function specialization around the
+photosynthesis root finder detaches more than the iteration (the
+components' dependence on parameters and forcing dies at the root).
+Fig. 8 is therefore blocked on that one defect, not on machinery: fix
+the IFT tangent, and both the GPP Jacobian entries and the calibration
+convergence should come back together.
+
+**The sensitivity "defect", resolved as the model's own fixed point
+(2026-08-31).** Every symptom in yesterday's severed-tangent family
+dissolves under per-entry scrutiny. (1) The old d(agross)/d(apar)
+mismatch and every FD-vs-jvp zero were probe artifacts: summing a leaf
+array puts ~1e38 of spval padding into the objective and a real 0.02
+change rounds away in float64 -- jvp, working in tangent space where the
+padding's tangents are zero, was right all along; per entry, JAX and
+NumPy responses agree exactly. (2) The near-zero whole-step
+d(GPP)/d(forc_t) and d/d(iota) at noon are the MODEL's true derivatives:
+the Fortran recording itself carries gs bit-identical and agross within
+one ULP step over step at quasi-steady noon -- the substep iteration
+re-equilibrates ci (+11.6 ppm under +0.5 K) so assimilation returns to
+its optimum; per-module sensitivities are large only because they hold
+that equilibration fixed. AD, finite differences, and the Fortran
+recording agree at every point tested. Consequences: the Fig-6 caveat is
+retired (grad == jvp everywhere, and where both are zero the model is
+zero); Fig-8's slow recovery is small genuine day-scale sensitivity
+under re-equilibration -- an optimizer-scaling matter, not a defect.
+
+**Correction and completion of the sensitivity story (2026-08-31).** The
+"fixed point" reading of the noon zeros was wrong in an instructive way;
+the full account has three parts, each now demonstrated. (i) Steps
+1..~300 are CHATS leaf-out: layer apar is tiny and the WUE optimum sits
+at gsmin -- the recording itself holds gs bit-identical at 0.002 for six
+straight days -- so every "noon" probe aimed at day 1 measured a genuine
+clamped-at-the-bound regime, zero sensitivity being the model's truth
+there. (ii) On day 15 (leafed canopy) everything is alive: forc_t +0.5 K
+moves gs by 2.6e-3 and agross by 3.7e-3; iota moves both. (iii) At fine
+steps the true function is a STAIRCASE: the root finder's tolerance
+quantizes the response (FD at h=0.075 on iota returns exactly zero;
+larger-h secants bracket the jvp at -4.6e-4), so the implicit-function
+derivative is the honest derivative of the smooth limit -- the paper's
+own Sec. 3.5 position, here observed directly. Together with the
+spval-summation probe artifact, every sensitivity discrepancy of the
+last two days is accounted for; AD agrees with NumPy per entry, with
+Fortran's recording, and with finite differences wherever finite
+differences mean anything.
+
+**Day-15 kernel regression: the callee-extent misfire (2026-08-31).**
+The Fig-8 landscape scan was the instrument that caught it: loss at the
+true multiplier came out 4.1e-3 instead of ~0, and the optimizer's
+"recovered" 1.216 was compensating a kernel bias, not finding one. A
+day-15 open-loop check (48 steps, recorded inputs) showed gppveg p95 13%
+/ max 15.45%. Bisection across engine checkpoints (PYTHONPATH-swapped
+emission, 3-step gpp probe): clean at 2376be4 (8.8e-14), broken from
+fe8c74f (1.55e-1) -- the callee-extent commits. The smoking gun in the
+emission diff: the RK stage loop `do irk = 1, nrk_steps+1` (5 passes;
+the final combination pass does not index dtg) had its bound rewritten
+to `fori_loop(1, dtg_soil.shape[1] + 1)` = 4 passes -- the callee-extent
+rule inherited the 4-stage dtg axis for a loop that legitimately runs
+one pass PAST that axis, and a too-short range is a wrong answer no
+guard can widen. Day 1 hid it (the canopy barely evolves); the day-1
+gate was blind by construction. Fix (engine 13debff): the callee extent
+is taken only when the stop expression subscripts a per-patch count
+(`ncan[p-1] + 1`, the pattern the rule was built for); scalar bounds
+stay as written and are trace-time static on their own. After the fix
+the day-15 48-step open-loop errors are gppveg max 3.4e-5 (tolerance
+staircase steps), lhflx/shflx/ustar <= 3e-10; the day-1 differential
+metrics return byte-identical to the pre-regression fingerprint
+(667863 bit-exact / max_rel 193.4 on the strict 32-ULP whole-step gate,
+which the JAX kernel has never been expected to pass -- the staircase
+amplifies ULP-level XLA reassociation; the paper-level criterion is the
+Fig-5 1% band). Lesson, now standing policy: every kernel gate runs
+day-15 (active canopy, live root finder) steps alongside day 1.
+
+**Fig 8 closed (2026-08-31, fixed kernel).** Synthetic-truth recovery of
+the stomatal efficiency iota on day 15 (48 recorded-input steps, open
+loop, GPP+LH mismatch): loss at the true multiplier is 1.9e-6 (the
+staircase floor; it was 4.1e-3 on the broken kernel), and secant descent
+from a 1.5x perturbation recovers multiplier 0.9995 -- 0.05% from truth
+-- in 7 iterations. Fig-6 rows re-verified on the fixed kernel at
+day-15 noon (step 697): d(SH)/d(forc_t) grad == jvp to 2.8e-12,
+d(LH)/d(forc_t) to 6.0e-11, d(Tg)/d(forc_t) to 9.9e-14.
+
+**Fig 5 re-confirmed on the fixed kernel (2026-08-31).** Full 31-day
+closed-loop JAX run (`month_jax.py`, 1488 steps, state carried from the
+kernel's own outputs): daily-mean relative drift vs the Fortran
+recording -- GPP 1.041e-4, SH 9.634e-4, LH 1.757e-4, Tleaf 2.97e-6,
+Tair 1.36e-6, Tg 9.5e-8 -- all well inside the paper's 1% band, and the
+flux numbers identical to the pre-regression run, confirming the fix
+restored value semantics exactly. Trajectory in
+`output/trajectory.fixed.npy`, log in `output/column_jax_month.fixed.log`.
+
+**The soil-thermal loop, closed (2026-08-31).** `month_soil.py` runs the
+driver's own per-step sequence as three kernels -- SoilThermProp ->
+MLCanopyFluxes -> SoilTemperature -- carrying t_soisno, thk and bw
+closed-loop alongside the canopy state, with gsoi flowing from the
+canopy step into the soil advance; only hydrology (`h2osoi_liq`, from
+SoilWater) and the tower forcing stay recorded. The soil unit was
+re-recorded over the month (4,464 dumps; SoilThermProp has TWO call
+sites per step -- the driver's and the one inside SoilTemperature that
+the flat kernel inlines -- so the driver-level dump for step k is
+2k-1; a first run mis-indexed this and showed a spurious 1.4e-3
+t_soisno drift *identical in NumPy and JAX*, which is exactly the
+signature that separates a wiring error from a numerical tier). With
+the indexing right, the recorded hand-off soiltemp_out(k) ->
+thermprop_in(k+1) is bit-equal at every probe, and: the **NumPy**
+soil-closed month is **bit-for-bit zero** at every output of every one
+of the 1,488 steps; the **JAX** month drifts t_soisno by at most
+2.4e-6 (median 9e-11), with daily-mean fluxes GPP 1.009e-4,
+SH 8.735e-4, LH 1.766e-4, Tg 1.1e-7 -- the same XLA tier as the
+canopy-only loop, still one to four orders inside the paper's 1% band.
+The remaining exogenous boundary is soil hydrology and the forcing.
+Artifacts: output/trajectory.soilclosed.{numpy,jax}.npy,
+output/column_jax_month.soilclosed.log,
+output/recorded.31day/dumps/fortran_mlsoiltemperaturemod/.

@@ -1,0 +1,64 @@
+{
+  "artifact": {
+    "digest": "3fd11a8250978dfe429557ce25365829b3f248405501d73ecf4642e89acb152a",
+    "files": [
+      "fileutils_constants.py",
+      "fileutils_numpy.py"
+    ],
+    "name": "fortran:fileutils",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"3fd11a8250978dfe429557ce25365829b3f248405501d73ecf4642e89acb152a\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:fileutils\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "2/16 blocks disagree: opnfil/B003, relavu/B001",
+    "metrics": {
+      "blocks_checked": 16,
+      "blocks_deferred": 3,
+      "blocks_matched": 14,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "opnfil/B003",
+          "reads_source_only": [
+            "ft",
+            "ioe",
+            "iun",
+            "locfn"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "relavu/B001",
+          "reads_source_only": [
+            "iunit"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:24:32.417160+00:00"
+}

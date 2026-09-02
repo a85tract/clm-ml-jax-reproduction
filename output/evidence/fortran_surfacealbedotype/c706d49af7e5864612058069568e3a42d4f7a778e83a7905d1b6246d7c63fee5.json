@@ -1,0 +1,98 @@
+{
+  "artifact": {
+    "digest": "811bf614e45485f6235faea337ed17a93daef68ade98e20d10187ac136ec33e6",
+    "files": [
+      "surfacealbedotype_constants.py",
+      "surfacealbedotype_numpy.py"
+    ],
+    "name": "fortran:surfacealbedotype",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"811bf614e45485f6235faea337ed17a93daef68ade98e20d10187ac136ec33e6\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:surfacealbedotype\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "5/14 blocks disagree: initallocate/B006, initallocate/B008, initallocate/B010, initallocate/B012, initallocate/B014",
+    "metrics": {
+      "blocks_checked": 14,
+      "blocks_deferred": 1,
+      "blocks_matched": 9,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "initallocate/B006",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B008",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B010",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B012",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B014",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:41.856646+00:00"
+}

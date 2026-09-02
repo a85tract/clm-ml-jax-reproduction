@@ -1,0 +1,119 @@
+{
+  "artifact": {
+    "digest": "b10cea20bf73dae15b8344b8b916c8c85baecacef88eee10ed3808ba44bb945b",
+    "files": [
+      "clm_varcon_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "columntype_constants.py",
+      "columntype_jax.py",
+      "columntype_jax_runtime.py",
+      "columntype_numpy.py",
+      "columntype_use_constants.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlpftconmod_constants.py",
+      "mlpftconmod_jax.py",
+      "mlpftconmod_jax_runtime.py",
+      "mlpftconmod_numpy.py",
+      "mlpftconmod_use_constants.py",
+      "mlplanthydraulicsmod_constants.py",
+      "mlplanthydraulicsmod_jax.py",
+      "mlplanthydraulicsmod_jax_runtime.py",
+      "mlplanthydraulicsmod_numpy.py",
+      "patchtype_constants.py",
+      "patchtype_jax.py",
+      "patchtype_jax_runtime.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "soilstatetype_constants.py",
+      "soilstatetype_jax.py",
+      "soilstatetype_jax_runtime.py",
+      "soilstatetype_numpy.py",
+      "soilstatetype_use_constants.py",
+      "spmdmod_numpy.py",
+      "waterstatebulktype_constants.py",
+      "waterstatebulktype_jax.py",
+      "waterstatebulktype_jax_runtime.py",
+      "waterstatebulktype_numpy.py",
+      "waterstatebulktype_use_constants.py"
+    ],
+    "name": "fortran:mlplanthydraulicsmod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"b10cea20bf73dae15b8344b8b916c8c85baecacef88eee10ed3808ba44bb945b\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlplanthydraulicsmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlplanthydraulicsmod:03b4507ba2d24f9c",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "every one of 15696 points within 3 ULP (gate 32)",
+    "metrics": {
+      "bit_exact": 15522,
+      "candidate_device": "cpu:0",
+      "dominant_points": 10353,
+      "max_rel": 3.364183846695452e-16,
+      "max_ulp": 3,
+      "max_ulp_dominant": 3,
+      "nan_mismatch": 0,
+      "points": 15696,
+      "rel_gate": 1e-12,
+      "skipped": [],
+      "subprograms": {
+        "leafwaterpotential_flat": {
+          "bit_exact": 9506,
+          "dominant_points": 7089,
+          "max_rel": 1.6665548429925573e-16,
+          "max_ulp": 1,
+          "max_ulp_dominant": 1,
+          "nan_mismatch": 0,
+          "points": 9600
+        },
+        "plantresistance_flat": {
+          "bit_exact": 4800,
+          "dominant_points": 2592,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 0,
+          "points": 4800
+        },
+        "soilresistance_flat": {
+          "bit_exact": 1216,
+          "dominant_points": 672,
+          "max_rel": 3.364183846695452e-16,
+          "max_ulp": 3,
+          "max_ulp_dominant": 3,
+          "nan_mismatch": 0,
+          "points": 1296
+        }
+      },
+      "trials": 10,
+      "ulp_gate": 32
+    },
+    "passed": true,
+    "verdict": "ulp_bounded",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-31T00:47:27.957941+00:00"
+}

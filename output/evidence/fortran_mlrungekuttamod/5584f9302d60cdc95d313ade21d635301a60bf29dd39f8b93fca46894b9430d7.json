@@ -1,0 +1,95 @@
+{
+  "artifact": {
+    "digest": "26fa2725156331e80a1bd1b6643e7b3980db6856abc409a31e3892f04c08e4aa",
+    "files": [
+      "mlrungekuttamod_constants.py",
+      "mlrungekuttamod_numpy.py"
+    ],
+    "name": "fortran:mlrungekuttamod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"26fa2725156331e80a1bd1b6643e7b3980db6856abc409a31e3892f04c08e4aa\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:mlrungekuttamod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "2/2 blocks disagree: rungekuttaupdate/B001, rungekuttaini/B001",
+    "metrics": {
+      "blocks_checked": 2,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "rungekuttaupdate/B001",
+          "reads_source_only": [
+            "isha",
+            "isun",
+            "nrk"
+          ],
+          "reads_target_only": [
+            "_mlcl",
+            "_mlclm",
+            "num_filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "deair",
+            "dh2ocan",
+            "dlwp",
+            "dtair",
+            "dtg",
+            "dtleaf",
+            "eair",
+            "eair_bef",
+            "fp",
+            "h2ocan",
+            "h2ocan_bef",
+            "ic",
+            "j",
+            "lwp",
+            "lwp_bef",
+            "ncan",
+            "p",
+            "tair",
+            "tair_bef",
+            "tg",
+            "tg_bef",
+            "tleaf",
+            "tleaf_bef"
+          ]
+        },
+        {
+          "block": "rungekuttaini/B001",
+          "reads_source_only": [
+            "runge_kutta_type",
+            "spval"
+          ],
+          "reads_target_only": [
+            "_clm_varcon",
+            "_mlclm"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:36.930895+00:00"
+}

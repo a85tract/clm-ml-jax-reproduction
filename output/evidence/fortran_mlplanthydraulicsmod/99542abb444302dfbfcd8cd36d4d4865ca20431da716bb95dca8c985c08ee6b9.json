@@ -1,0 +1,64 @@
+{
+  "artifact": {
+    "digest": "1e1ad3ffc38a8eeacaf3bf241b863e6fe8331241499d596fe15a628720797cd4",
+    "files": [
+      "clm_varcon_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "columntype_constants.py",
+      "columntype_numpy.py",
+      "columntype_use_constants.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlpftconmod_constants.py",
+      "mlpftconmod_numpy.py",
+      "mlpftconmod_use_constants.py",
+      "mlplanthydraulicsmod_constants.py",
+      "mlplanthydraulicsmod_numpy.py",
+      "patchtype_constants.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "soilstatetype_constants.py",
+      "soilstatetype_numpy.py",
+      "soilstatetype_use_constants.py",
+      "spmdmod_numpy.py",
+      "waterstatebulktype_constants.py",
+      "waterstatebulktype_numpy.py",
+      "waterstatebulktype_use_constants.py"
+    ],
+    "name": "fortran:mlplanthydraulicsmod",
+    "transform": "recast-clm-ml.translate.clm-ml-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"1e1ad3ffc38a8eeacaf3bf241b863e6fe8331241499d596fe15a628720797cd4\", \"executor\": \"local\", \"recipe\": \"translate-clm-ml\", \"unit\": \"fortran:mlplanthydraulicsmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlplanthydraulicsmod:5faf70c4a8f9f1ba",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "no rewrites to notarize; the translation is print-order faithful",
+    "metrics": {
+      "judged": [],
+      "rewrites": 0
+    },
+    "passed": true,
+    "verdict": "symbolic",
+    "verifier": "symbolic.notary"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T01:50:39.488642+00:00"
+}

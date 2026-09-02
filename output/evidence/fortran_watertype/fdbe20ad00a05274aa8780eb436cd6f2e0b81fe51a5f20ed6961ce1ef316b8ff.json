@@ -1,0 +1,56 @@
+{
+  "artifact": {
+    "digest": "cbd68dd503e3f0354687725be9b4101fc5ae4a25675153a3a87c143a189a2219",
+    "files": [
+      "clm_varcon_numpy.py",
+      "watertype_constants.py",
+      "watertype_numpy.py",
+      "watertype_use_constants.py"
+    ],
+    "name": "fortran:watertype",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"cbd68dd503e3f0354687725be9b4101fc5ae4a25675153a3a87c143a189a2219\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:watertype\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/6 blocks disagree: initallocate/B006",
+    "metrics": {
+      "blocks_checked": 6,
+      "blocks_deferred": 1,
+      "blocks_matched": 5,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "initallocate/B006",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:30:34.820325+00:00"
+}

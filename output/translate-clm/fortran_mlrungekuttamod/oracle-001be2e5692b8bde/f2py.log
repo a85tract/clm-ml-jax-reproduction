@@ -1,0 +1,154 @@
+The Meson build system
+Version: 1.12.0
+Source dir: /private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmpce093z42
+Build dir: /private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmpce093z42/bbdir
+Build type: native build
+Project name: ref_mlrungekuttamod_flat
+Project version: 0.1
+Fortran compiler for the host machine: gfortran (gcc 16.1.0 "GNU Fortran (Homebrew GCC 16.1.0) 16.1.0")
+Fortran linker for the host machine: gfortran ld64 1267
+C compiler for the host machine: cc (clang 21.0.0 "Apple clang version 21.0.0 (clang-2100.1.1.101)")
+C linker for the host machine: cc ld64 1267
+Host machine cpu family: aarch64
+Host machine cpu: aarch64
+Compiler for C supports arguments -fno-strict-aliasing: YES 
+Program /Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/python found: YES (/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/python)
+Found pkg-config: YES (/opt/homebrew/bin/pkg-config) 3.0.6
+Run-time dependency python found: YES 3.11
+Library quadmath found: YES
+Build targets in project: 1
+
+Found ninja-1.13.0.git.kitware.jobserver-pipe-1 at /Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/ninja
+ninja: Entering directory `/private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmpce093z42/bbdir'
+[1/8] Compiling C object ref_mlrungekuttamod_flat.cpython-311-darwin.so.p/ref_mlrungekuttamod_flatmodule.c.o
+FAILED: [code=1] ref_mlrungekuttamod_flat.cpython-311-darwin.so.p/ref_mlrungekuttamod_flatmodule.c.o 
+cc -Iref_mlrungekuttamod_flat.cpython-311-darwin.so.p -I. -I.. -I/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/_core/include -I/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/src -I/Users/yueqichen/.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/pkgconfig/../../include/python3.11 -fvisibility=hidden -fdiagnostics-color=always -Wall -Winvalid-pch -O3 -fno-strict-aliasing -MD -MQ ref_mlrungekuttamod_flat.cpython-311-darwin.so.p/ref_mlrungekuttamod_flatmodule.c.o -MF ref_mlrungekuttamod_flat.cpython-311-darwin.so.p/ref_mlrungekuttamod_flatmodule.c.o.d -o ref_mlrungekuttamod_flat.cpython-311-darwin.so.p/ref_mlrungekuttamod_flatmodule.c.o -c ../ref_mlrungekuttamod_flatmodule.c
+../ref_mlrungekuttamod_flatmodule.c:172:15: error: use of undeclared identifier 'nrk'; did you mean 'brk'?
+  172 |     a_Dims[0]=nrk,a_Dims[1]=nrk;
+      |               ^~~
+      |               brk
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:554:30: note: 'brk' declared here
+  554 | void *_LIBC_UNSAFE_INDEXABLE    brk(const void *_LIBC_UNSAFE_INDEXABLE);
+      |                                 ^
+../ref_mlrungekuttamod_flatmodule.c:172:15: warning: 'brk' is deprecated [-Wdeprecated-declarations]
+  172 |     a_Dims[0]=nrk,a_Dims[1]=nrk;
+      |               ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:552:1: note: 'brk' has been explicitly marked deprecated here
+  552 | __deprecated __WATCHOS_PROHIBITED __TVOS_PROHIBITED
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:223:40: note: expanded from macro '__deprecated'
+  223 | #define __deprecated    __attribute__((__deprecated__))
+      |                                        ^
+../ref_mlrungekuttamod_flatmodule.c:172:14: error: incompatible pointer to integer conversion assigning to 'npy_intp' (aka 'long') from 'void *(const void *)' [-Wint-conversion]
+  172 |     a_Dims[0]=nrk,a_Dims[1]=nrk;
+      |              ^~~~
+../ref_mlrungekuttamod_flatmodule.c:172:29: error: use of undeclared identifier 'nrk'; did you mean 'brk'?
+  172 |     a_Dims[0]=nrk,a_Dims[1]=nrk;
+      |                             ^~~
+      |                             brk
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:554:30: note: 'brk' declared here
+  554 | void *_LIBC_UNSAFE_INDEXABLE    brk(const void *_LIBC_UNSAFE_INDEXABLE);
+      |                                 ^
+../ref_mlrungekuttamod_flatmodule.c:172:29: warning: 'brk' is deprecated [-Wdeprecated-declarations]
+  172 |     a_Dims[0]=nrk,a_Dims[1]=nrk;
+      |                             ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:552:1: note: 'brk' has been explicitly marked deprecated here
+  552 | __deprecated __WATCHOS_PROHIBITED __TVOS_PROHIBITED
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:223:40: note: expanded from macro '__deprecated'
+  223 | #define __deprecated    __attribute__((__deprecated__))
+      |                                        ^
+../ref_mlrungekuttamod_flatmodule.c:172:28: error: incompatible pointer to integer conversion assigning to 'npy_intp' (aka 'long') from 'void *(const void *)' [-Wint-conversion]
+  172 |     a_Dims[0]=nrk,a_Dims[1]=nrk;
+      |                            ^~~~
+../ref_mlrungekuttamod_flatmodule.c:186:15: error: use of undeclared identifier 'nrk'; did you mean 'brk'?
+  186 |     b_Dims[0]=nrk;
+      |               ^~~
+      |               brk
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:554:30: note: 'brk' declared here
+  554 | void *_LIBC_UNSAFE_INDEXABLE    brk(const void *_LIBC_UNSAFE_INDEXABLE);
+      |                                 ^
+../ref_mlrungekuttamod_flatmodule.c:186:15: warning: 'brk' is deprecated [-Wdeprecated-declarations]
+  186 |     b_Dims[0]=nrk;
+      |               ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:552:1: note: 'brk' has been explicitly marked deprecated here
+  552 | __deprecated __WATCHOS_PROHIBITED __TVOS_PROHIBITED
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:223:40: note: expanded from macro '__deprecated'
+  223 | #define __deprecated    __attribute__((__deprecated__))
+      |                                        ^
+../ref_mlrungekuttamod_flatmodule.c:186:14: error: incompatible pointer to integer conversion assigning to 'npy_intp' (aka 'long') from 'void *(const void *)' [-Wint-conversion]
+  186 |     b_Dims[0]=nrk;
+      |              ^~~~
+../ref_mlrungekuttamod_flatmodule.c:200:15: error: use of undeclared identifier 'nrk'; did you mean 'brk'?
+  200 |     c_Dims[0]=nrk;
+      |               ^~~
+      |               brk
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:554:30: note: 'brk' declared here
+  554 | void *_LIBC_UNSAFE_INDEXABLE    brk(const void *_LIBC_UNSAFE_INDEXABLE);
+      |                                 ^
+../ref_mlrungekuttamod_flatmodule.c:200:15: warning: 'brk' is deprecated [-Wdeprecated-declarations]
+  200 |     c_Dims[0]=nrk;
+      |               ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h:552:1: note: 'brk' has been explicitly marked deprecated here
+  552 | __deprecated __WATCHOS_PROHIBITED __TVOS_PROHIBITED
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:223:40: note: expanded from macro '__deprecated'
+  223 | #define __deprecated    __attribute__((__deprecated__))
+      |                                        ^
+../ref_mlrungekuttamod_flatmodule.c:200:14: error: incompatible pointer to integer conversion assigning to 'npy_intp' (aka 'long') from 'void *(const void *)' [-Wint-conversion]
+  200 |     c_Dims[0]=nrk;
+      |              ^~~~
+4 warnings and 8 errors generated.
+[2/8] Scanning target ref_mlrungekuttamod_flat.cpython-311-darwin for modules
+[3/8] Compiling C object ref_mlrungekuttamod_flat.cpython-311-darwin.so.p/c9103ebe8974317e72579428ad3ce24fea6d8fbd_.._.._f2py_src_fortranobject.c.o
+ninja: build stopped: subcommand failed.
+INFO: autodetecting backend as ninja
+INFO: calculating backend command to run: /Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/ninja -C /private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmpce093z42/bbdir
+Using meson backend
+Will pass --lower to f2py
+See https://numpy.org/doc/stable/f2py/buildtools/meson.html
+Reading fortran codes...
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlrungekuttamod/clmflat-bd3ed4a697cb96bf/mlrungekuttamod_flat.f90' (format:free)
+	Reading file 'wrappers.f90' (format:free)
+Post-processing...
+	Block: ref_mlrungekuttamod_flat
+			Block: mlrungekuttamod_flat
+In: :ref_mlrungekuttamod_flat:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlrungekuttamod/clmflat-bd3ed4a697cb96bf/mlrungekuttamod_flat.f90:mlrungekuttamod_flat
+get_useparameters: no module mlrungekuttamod info used by mlrungekuttamod_flat
+			Block: w_rungekuttaini
+Applying post-processing hooks...
+  character_backward_compatibility_hook
+Post-processing (stage 2)...
+	Block: ref_mlrungekuttamod_flat
+		Block: unknown_interface
+			Block: mlrungekuttamod_flat
+			Block: w_rungekuttaini
+Building modules...
+    Building module "ref_mlrungekuttamod_flat"...
+    Generating possibly empty wrappers"
+    Maybe empty "ref_mlrungekuttamod_flat-f2pywrappers.f"
+        Constructing wrapper function "w_rungekuttaini"...
+          a,b,c = w_rungekuttaini()
+		Constructing F90 module support for "mlrungekuttamod_flat"...
+			Skipping mlrungekuttamod_flat since there are no public vars/func in this module...
+    Wrote C/API module "ref_mlrungekuttamod_flat" to file "./ref_mlrungekuttamod_flatmodule.c"
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/__main__.py", line 5, in <module>
+    main()
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/f2py2e.py", line 786, in main
+    run_compile()
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/f2py2e.py", line 758, in run_compile
+    builder.compile()
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/_backends/_meson.py", line 197, in compile
+    self.run_meson(self.build_dir)
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/_backends/_meson.py", line 191, in run_meson
+    self._run_subprocess_command(compile_command, build_dir)
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/_backends/_meson.py", line 185, in _run_subprocess_command
+    subprocess.run(command, cwd=cwd, check=True)
+  File "/Users/yueqichen/.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['meson', 'compile', '-C', 'bbdir']' returned non-zero exit status 1.

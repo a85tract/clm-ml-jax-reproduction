@@ -1,0 +1,69 @@
+{
+  "artifact": {
+    "digest": "4c9eec6d907d56da85948103efd7eb4366569b4c40d8adad8b6a7ebaa599c0fb",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clm_varpar_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlfluxprofilesolutionmod_constants.py",
+      "mlfluxprofilesolutionmod_jax.py",
+      "mlfluxprofilesolutionmod_jax_runtime.py",
+      "mlfluxprofilesolutionmod_numpy.py",
+      "mlfluxprofilesolutionmod_use_constants.py",
+      "mlleaffluxesmod_constants.py",
+      "mlleaffluxesmod_numpy.py",
+      "mlleaffluxesmod_use_constants.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "mlsoilfluxesmod_constants.py",
+      "mlsoilfluxesmod_numpy.py",
+      "mlsoilfluxesmod_use_constants.py",
+      "mlwatervapormod_constants.py",
+      "mlwatervapormod_numpy.py",
+      "mlwatervapormod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlfluxprofilesolutionmod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"4c9eec6d907d56da85948103efd7eb4366569b4c40d8adad8b6a7ebaa599c0fb\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlfluxprofilesolutionmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlfluxprofilesolutionmod:4d87dcad02ad8101",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "candidate does not import: module 'mlfluxprofilesolutionmod_numpy' has no attribute 'implicitfluxprofilesolution_flat'",
+    "metrics": {},
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T00:42:16.094184+00:00"
+}

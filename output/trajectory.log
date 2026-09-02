@@ -1,0 +1,26 @@
+step 96 done
+step 192 done
+step 288 done
+step 384 done
+step 480 done
+step 576 done
+step 672 done
+step 768 done
+step 864 done
+step 960 done
+step 1056 done
+step 1152 done
+step 1248 done
+step 1344 done
+step 1440 done
+columns: ['step', 'tleaf_leaf_absd', 'tleaf_leaf_reld', 'tleaf_leaf_ref', 'tleaf_leaf_jax', 'tair_profile_absd', 'tair_profile_reld', 'tair_profile_ref', 'tair_profile_jax', 'gppveg_canopy_absd', 'gppveg_canopy_reld', 'gppveg_canopy_ref', 'gppveg_canopy_jax', 'shflx_canopy_absd', 'shflx_canopy_reld', 'shflx_canopy_ref', 'shflx_canopy_jax', 'lhflx_canopy_absd', 'lhflx_canopy_reld', 'lhflx_canopy_ref', 'lhflx_canopy_jax', 'tg_soil_absd', 'tg_soil_reld', 'tg_soil_ref', 'tg_soil_jax']
+tleaf reld percentiles over month: p50 4.48e-11 p95 1.72e-09 max 3.28e-03
+tair  reld percentiles: p50 2.06e-12 p95 1.34e-10 max 8.51e-05
+growth: tleaf reld day1 max 1.89e-09 | day2 8.16e-10 | day7 2.60e-08 | day31 2.10e-10
+tleaf_leaf: daily-mean rel max over 31 days = 1.468e-06, median = 2.240e-12
+tair_profile: daily-mean rel max over 31 days = 4.716e-07, median = 2.397e-12
+gppveg_canopy: daily-mean rel max over 31 days = 1.041e-04, median = 3.265e-10
+shflx_canopy: daily-mean rel max over 31 days = 9.634e-04, median = 4.968e-09
+lhflx_canopy: daily-mean rel max over 31 days = 1.757e-04, median = 4.094e-10
+tg_soil: daily-mean rel max over 31 days = 9.516e-08, median = 4.193e-13
+DONE

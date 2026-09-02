@@ -1,0 +1,65 @@
+{
+  "artifact": {
+    "digest": "35957b26edbcb0f36394a5d58c4f1cb259355ddd2d9adf7cb70a40823e5863f1",
+    "files": [
+      "clm_varcon_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "mlpftconmod_constants.py",
+      "mlpftconmod_numpy.py",
+      "mlpftconmod_use_constants.py",
+      "mlsolarradiationmod_constants.py",
+      "mlsolarradiationmod_numpy.py",
+      "mlsolarradiationmod_use_constants.py",
+      "patchtype_constants.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "pftconmod_constants.py",
+      "pftconmod_numpy.py",
+      "pftconmod_use_constants.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mlsolarradiationmod",
+    "transform": "recast-clm-ml.translate.clm-ml-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"35957b26edbcb0f36394a5d58c4f1cb259355ddd2d9adf7cb70a40823e5863f1\", \"executor\": \"local\", \"recipe\": \"translate-clm-ml\", \"unit\": \"fortran:mlsolarradiationmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlsolarradiationmod:a2c2257b516795a9",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "3 blocks match",
+    "metrics": {
+      "blocks_checked": 3,
+      "blocks_deferred": 0,
+      "blocks_matched": 3,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T01:50:55.275136+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "artifact": {
+    "digest": "9e3c8fccfa6ce91a89d71f8a53acf043508bb90ca64b8e637cb4790942caf06c",
+    "files": [
+      "clm_varcon_numpy.py",
+      "clm_varpar_numpy.py",
+      "columntype_numpy.py",
+      "decompmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "soilstatetype_numpy.py",
+      "soilwatermovementmod_constants.py",
+      "soilwatermovementmod_numpy.py",
+      "soilwatermovementmod_use_constants.py",
+      "waterstatebulktype_numpy.py"
+    ],
+    "name": "fortran:soilwatermovementmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"9e3c8fccfa6ce91a89d71f8a53acf043508bb90ca64b8e637cb4790942caf06c\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:soilwatermovementmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/2 blocks disagree: compute_hydraulic_properties/B001",
+    "metrics": {
+      "blocks_checked": 2,
+      "blocks_deferred": 1,
+      "blocks_matched": 1,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "compute_hydraulic_properties/B001",
+          "reads_source_only": [
+            "hk_l",
+            "smp_l"
+          ],
+          "reads_target_only": [
+            "nlayers"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "bsw",
+            "hk",
+            "hk_l",
+            "hksat",
+            "j",
+            "s",
+            "smp",
+            "smp_l",
+            "sucsat",
+            "watsat"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:51:06.442862+00:00"
+}

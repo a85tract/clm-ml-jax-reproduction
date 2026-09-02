@@ -1,0 +1,75 @@
+{
+  "artifact": {
+    "digest": "4bd028533d9e41f22286d3b8cc29795da4b32a37641b1ccbfdc9f063fa97a49f",
+    "files": [
+      "clm_time_manager_constants.py",
+      "clm_time_manager_numpy.py"
+    ],
+    "name": "fortran:clm_time_manager",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"4bd028533d9e41f22286d3b8cc29795da4b32a37641b1ccbfdc9f063fa97a49f\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:clm_time_manager\"}}",
+  "reference": {
+    "key": "f2py:clm_time_manager:320f3b7cf15dea59",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "4 subprogram(s) could not be compared: get_curr_time: candidate raised: TypeError: unsupported operand type(s) for *: 'NoneType' and 'NoneType'; get_curr_calday: candidate raised: TypeError: '<' not supported between instances of 'NoneType' and 'int'; is_end_curr_day: candidate raised: TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'",
+    "metrics": {
+      "bit_exact": 0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 20,
+      "points": 20,
+      "skipped": [
+        "get_curr_date",
+        "isleap"
+      ],
+      "subprograms": {
+        "get_curr_calday": {
+          "error": "candidate raised: TypeError: '<' not supported between instances of 'NoneType' and 'int'"
+        },
+        "get_curr_time": {
+          "error": "candidate raised: TypeError: unsupported operand type(s) for *: 'NoneType' and 'NoneType'"
+        },
+        "get_nstep": {
+          "bit_exact": 0,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 10,
+          "points": 10
+        },
+        "get_step_size": {
+          "bit_exact": 0,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 10,
+          "points": 10
+        },
+        "is_end_curr_day": {
+          "error": "candidate raised: TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'"
+        },
+        "is_end_curr_month": {
+          "error": "candidate raised: TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'"
+        }
+      },
+      "trials": 10
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.bitexact-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:29:05.895318+00:00"
+}

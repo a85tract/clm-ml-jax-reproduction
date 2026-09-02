@@ -1,0 +1,47 @@
+{
+  "artifact": {
+    "digest": "dfd916058c72d0b436b3036188079a7356aa6fbfe48b51ed83440ef3a9c733ca",
+    "files": [
+      "columntype_numpy.py",
+      "soilstatetype_numpy.py",
+      "surfaceresistancemod_constants.py",
+      "surfaceresistancemod_numpy.py",
+      "surfaceresistancemod_use_constants.py",
+      "temperaturetype_numpy.py",
+      "waterstatebulktype_numpy.py"
+    ],
+    "name": "fortran:surfaceresistancemod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"dfd916058c72d0b436b3036188079a7356aa6fbfe48b51ed83440ef3a9c733ca\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:surfaceresistancemod\"}}",
+  "reference": {
+    "key": "f2py:surfaceresistancemod:852240f61e3a9c1a",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "1 blocks match",
+    "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 1,
+      "blocks_matched": 1,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:30:32.926263+00:00"
+}

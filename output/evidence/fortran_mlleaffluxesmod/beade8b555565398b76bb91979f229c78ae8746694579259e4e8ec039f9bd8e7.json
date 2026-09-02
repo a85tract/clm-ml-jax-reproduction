@@ -1,0 +1,51 @@
+{
+  "artifact": {
+    "digest": "d6d0c5982e8595fd3bcc7ca49eb86514ba04a694f94fd1224477d0ecd8e92b39",
+    "files": [
+      "clm_varcon_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlleaffluxesmod_constants.py",
+      "mlleaffluxesmod_numpy.py",
+      "mlwatervapormod_constants.py",
+      "mlwatervapormod_numpy.py",
+      "mlwatervapormod_use_constants.py"
+    ],
+    "name": "fortran:mlleaffluxesmod",
+    "transform": "recast-clm-ml.translate.clm-ml-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"d6d0c5982e8595fd3bcc7ca49eb86514ba04a694f94fd1224477d0ecd8e92b39\", \"executor\": \"local\", \"recipe\": \"translate-clm-ml\", \"unit\": \"fortran:mlleaffluxesmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlleaffluxesmod:c2e29893f2a338d8",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "no rewrites to notarize; the translation is print-order faithful",
+    "metrics": {
+      "judged": [],
+      "rewrites": 0
+    },
+    "passed": true,
+    "verdict": "symbolic",
+    "verifier": "symbolic.notary"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T01:50:22.679412+00:00"
+}

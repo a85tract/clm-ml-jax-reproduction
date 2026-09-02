@@ -1,0 +1,83 @@
+{
+  "artifact": {
+    "digest": "f98c8889c4d92770693d42442134203e0effd2dfc58e13b6018585fec23559b6",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_numpy.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlcanopywatermod_constants.py",
+      "mlcanopywatermod_numpy.py",
+      "mlcanopywatermod_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "ncdio_pio_numpy.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlcanopywatermod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"f98c8889c4d92770693d42442134203e0effd2dfc58e13b6018585fec23559b6\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlcanopywatermod\"}}",
+  "reference": {
+    "key": "f2py:mlcanopywatermod:f20bc543f144aa11",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "32240 points across 3 subprogram(s), all bit-exact",
+    "metrics": {
+      "bit_exact": 32240,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 32240,
+      "skipped": [],
+      "subprograms": {
+        "canopyevaporation_flat": {
+          "bit_exact": 8000,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 8000
+        },
+        "canopyinterception_flat": {
+          "bit_exact": 8240,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 8240
+        },
+        "canopywettedfraction_flat": {
+          "bit_exact": 16000,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 16000
+        }
+      },
+      "trials": 10
+    },
+    "passed": true,
+    "verdict": "bit_exact",
+    "verifier": "differential.bitexact-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:45:23.272590+00:00"
+}

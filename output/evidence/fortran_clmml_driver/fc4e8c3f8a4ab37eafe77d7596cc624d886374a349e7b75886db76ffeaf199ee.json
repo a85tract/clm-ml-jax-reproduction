@@ -1,0 +1,487 @@
+{
+  "artifact": {
+    "digest": "c2aafc9490a65aa14ebb8621f06df1418e6b727390714c65902e4e33a744915c",
+    "files": [
+      "atm2lndtype_numpy.py",
+      "canopystatetype_numpy.py",
+      "clm_instmod_numpy.py",
+      "clm_time_manager_numpy.py",
+      "clm_varorb_numpy.py",
+      "clmml_driver_constants.py",
+      "clmml_driver_numpy.py",
+      "clmml_driver_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "columntype_numpy.py",
+      "controlmod_numpy.py",
+      "energyfluxtype_numpy.py",
+      "filtermod_numpy.py",
+      "frictionvelocitymod_numpy.py",
+      "initverticalmod_numpy.py",
+      "lnd_comp_nuopc_numpy.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlwatervapormod_numpy.py",
+      "patchtype_numpy.py",
+      "shr_orb_mod_numpy.py",
+      "soilstateinittimeconstmod_numpy.py",
+      "soilstatetype_numpy.py",
+      "solarabsorbedtype_numpy.py",
+      "surfacealbedomod_numpy.py",
+      "surfacealbedotype_numpy.py",
+      "temperaturetype_numpy.py",
+      "towerdatamod_numpy.py",
+      "towermetmod_numpy.py",
+      "wateratm2lndbulktype_numpy.py",
+      "waterdiagnosticbulktype_numpy.py",
+      "waterfluxbulktype_numpy.py",
+      "waterstatebulktype_numpy.py",
+      "watertype_numpy.py"
+    ],
+    "name": "fortran:clmml_driver",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"c2aafc9490a65aa14ebb8621f06df1418e6b727390714c65902e4e33a744915c\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:clmml_driver\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "40/86 blocks disagree: clmml_drv/B006, clmml_drv/B007, clmml_drv/B008, clmml_drv/B009, clmml_drv/B022 (+35 more)",
+    "metrics": {
+      "blocks_checked": 86,
+      "blocks_deferred": 1,
+      "blocks_matched": 46,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "clmml_drv/B006",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B007",
+          "reads_source_only": [],
+          "reads_target_only": [],
+          "writes_source_only": [
+            "eccen",
+            "lambm0",
+            "mvelpp",
+            "obliqr"
+          ],
+          "writes_target_only": [
+            "_clm_varorb"
+          ]
+        },
+        {
+          "block": "clmml_drv/B008",
+          "reads_source_only": [
+            "tower_num"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B009",
+          "reads_source_only": [
+            "tower_num"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B022",
+          "reads_source_only": [
+            "tower_id",
+            "tower_num"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B024",
+          "reads_source_only": [
+            "getavu"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B025",
+          "reads_source_only": [
+            "fout1",
+            "nout1"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B026",
+          "reads_source_only": [
+            "tower_id",
+            "tower_num"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B028",
+          "reads_source_only": [
+            "getavu"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B029",
+          "reads_source_only": [
+            "fout2",
+            "nout2"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B030",
+          "reads_source_only": [
+            "tower_id",
+            "tower_num"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B032",
+          "reads_source_only": [
+            "getavu"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B033",
+          "reads_source_only": [
+            "fout3",
+            "nout3"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B034",
+          "reads_source_only": [
+            "tower_id",
+            "tower_num"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B036",
+          "reads_source_only": [
+            "getavu"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B037",
+          "reads_source_only": [
+            "fout4",
+            "nout4"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B038",
+          "reads_source_only": [
+            "tower_id",
+            "tower_num"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B040",
+          "reads_source_only": [
+            "getavu"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B041",
+          "reads_source_only": [
+            "fout5",
+            "nout5"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B042",
+          "reads_source_only": [
+            "tower_id",
+            "tower_num"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B044",
+          "reads_source_only": [
+            "getavu"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B045",
+          "reads_source_only": [
+            "fout6",
+            "nout6"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B046",
+          "reads_source_only": [
+            "fin1",
+            "getavu",
+            "nin1",
+            "tower_id",
+            "tower_num"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B048",
+          "reads_source_only": [
+            "tower_num"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B049",
+          "reads_source_only": [
+            "nout1"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B050",
+          "reads_source_only": [
+            "nout1"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B051",
+          "reads_source_only": [
+            "nout2"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B052",
+          "reads_source_only": [
+            "nout2"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B053",
+          "reads_source_only": [
+            "nout3"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B054",
+          "reads_source_only": [
+            "nout3"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B055",
+          "reads_source_only": [
+            "nout4"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B056",
+          "reads_source_only": [
+            "nout4"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B057",
+          "reads_source_only": [
+            "nout5"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B058",
+          "reads_source_only": [
+            "nout5"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B059",
+          "reads_source_only": [
+            "nout6"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B060",
+          "reads_source_only": [
+            "nout6"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B061",
+          "reads_source_only": [
+            "nin1"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "towerveg/B001",
+          "reads_source_only": [
+            "tower_canht",
+            "tower_pbeta_lai",
+            "tower_pbeta_sai",
+            "tower_pft",
+            "tower_root"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "soilinit/B001",
+          "reads_source_only": [
+            "clm_phys",
+            "col"
+          ],
+          "reads_target_only": [
+            "_clms",
+            "_columntype"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readcanopyprofiles/B001",
+          "reads_source_only": [
+            "i",
+            "nin1",
+            "x"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:29:07.700753+00:00"
+}

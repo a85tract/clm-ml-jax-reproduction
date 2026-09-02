@@ -1,0 +1,57 @@
+{
+  "artifact": {
+    "digest": "f1b06e4d888a2fd1eeffc7f6519c18e546c90b8b9b1c6309b5539edb14ad7703",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clm_varpar_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlrungekuttamod_constants.py",
+      "mlrungekuttamod_numpy.py",
+      "mlrungekuttamod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlrungekuttamod",
+    "transform": "recast-clm-ml.translate.clm-ml-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"f1b06e4d888a2fd1eeffc7f6519c18e546c90b8b9b1c6309b5539edb14ad7703\", \"executor\": \"local\", \"recipe\": \"translate-clm-ml\", \"unit\": \"fortran:mlrungekuttamod\"}}",
+  "reference": {
+    "key": "dump-replay:mlrungekuttamod:1a8e704fc6094ffe",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "no rewrites to notarize; the translation is print-order faithful",
+    "metrics": {
+      "judged": [],
+      "rewrites": 0
+    },
+    "passed": true,
+    "verdict": "symbolic",
+    "verifier": "symbolic.notary"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T00:05:58.873659+00:00"
+}

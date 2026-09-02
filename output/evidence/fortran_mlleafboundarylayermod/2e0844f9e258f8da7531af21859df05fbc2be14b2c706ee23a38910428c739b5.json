@@ -1,0 +1,102 @@
+{
+  "artifact": {
+    "digest": "45c8b20f5b98e45292ad2a2ab0935919cb02d00ea33d70ca9c33ef108a32bc5e",
+    "files": [
+      "mlleafboundarylayermod_constants.py",
+      "mlleafboundarylayermod_numpy.py"
+    ],
+    "name": "fortran:mlleafboundarylayermod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"45c8b20f5b98e45292ad2a2ab0935919cb02d00ea33d70ca9c33ef108a32bc5e\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:mlleafboundarylayermod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/1 blocks disagree: leafboundarylayer/B001",
+    "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "leafboundarylayer/B001",
+          "reads_source_only": [
+            "dc0",
+            "dh0",
+            "dv0",
+            "gb_factor",
+            "gb_type",
+            "gbc",
+            "gbh",
+            "gbh_min",
+            "gbv",
+            "grav",
+            "tfrz",
+            "visc0"
+          ],
+          "reads_target_only": [
+            "_clm_varcon",
+            "_mlc",
+            "_mlcl",
+            "num_filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "dc",
+            "dh",
+            "dleaf",
+            "dpai",
+            "dv",
+            "fac",
+            "fp",
+            "gbc",
+            "gbc_free",
+            "gbc_lam",
+            "gbc_turb",
+            "gbh",
+            "gbh_free",
+            "gbh_lam",
+            "gbh_turb",
+            "gbv",
+            "gbv_free",
+            "gbv_lam",
+            "gbv_turb",
+            "gr",
+            "ic",
+            "ncan",
+            "nu",
+            "p",
+            "pr",
+            "pref",
+            "re",
+            "rhomol",
+            "tair",
+            "tleaf",
+            "tref",
+            "visc",
+            "wind"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:35.186810+00:00"
+}

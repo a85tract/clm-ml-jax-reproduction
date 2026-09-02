@@ -1,0 +1,48 @@
+{
+  "artifact": {
+    "digest": "48cd1a3192c9c3084f660a5550581ff6317480a1bd475b5dad046345fa4455be",
+    "files": [
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlcanopywatermod_constants.py",
+      "mlcanopywatermod_numpy.py",
+      "mlcanopywatermod_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py"
+    ],
+    "name": "fortran:mlcanopywatermod",
+    "transform": "recast-clm-ml.translate.clm-ml-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"48cd1a3192c9c3084f660a5550581ff6317480a1bd475b5dad046345fa4455be\", \"executor\": \"local\", \"recipe\": \"translate-clm-ml\", \"unit\": \"fortran:mlcanopywatermod\"}}",
+  "reference": {
+    "key": "dump-replay:mlcanopywatermod:369609f816d7ba49",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "no rewrites to notarize; the translation is print-order faithful",
+    "metrics": {
+      "judged": [],
+      "rewrites": 0
+    },
+    "passed": true,
+    "verdict": "symbolic",
+    "verifier": "symbolic.notary"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T01:50:06.156655+00:00"
+}

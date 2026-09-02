@@ -1,0 +1,390 @@
+The Meson build system
+Version: 1.12.0
+Source dir: /private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmpgw4r7_0l
+Build dir: /private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmpgw4r7_0l/bbdir
+Build type: native build
+Project name: ref_mlmathtoolsmod
+Project version: 0.1
+Fortran compiler for the host machine: gfortran (gcc 16.1.0 "GNU Fortran (Homebrew GCC 16.1.0) 16.1.0")
+Fortran linker for the host machine: gfortran ld64 1267
+C compiler for the host machine: cc (clang 21.0.0 "Apple clang version 21.0.0 (clang-2100.1.1.101)")
+C linker for the host machine: cc ld64 1267
+Host machine cpu family: aarch64
+Host machine cpu: aarch64
+Compiler for C supports arguments -fno-strict-aliasing: YES 
+Program /Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/python3 found: YES (/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/python3)
+Found pkg-config: YES (/opt/homebrew/bin/pkg-config) 3.0.6
+Run-time dependency python found: YES 3.11
+Library quadmath found: YES
+Build targets in project: 1
+
+Found ninja-1.13.0.git.kitware.jobserver-pipe-1 at /Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/ninja
+ninja: Entering directory `/private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmpgw4r7_0l/bbdir'
+[1/22] Scanning target ref_mlmathtoolsmod.cpython-311-darwin for modules
+[2/22] Generating dynamic dependency information for target ref_mlmathtoolsmod.cpython-311-darwin
+[3/22] Compiling C object ref_mlmathtoolsmod.cpython-311-darwin.so.p/ref_mlmathtoolsmodmodule.c.o
+FAILED: [code=1] ref_mlmathtoolsmod.cpython-311-darwin.so.p/ref_mlmathtoolsmodmodule.c.o 
+cc -Iref_mlmathtoolsmod.cpython-311-darwin.so.p -I. -I.. -I/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/_core/include -I/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/src -I/Users/yueqichen/.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/pkgconfig/../../include/python3.11 -fvisibility=hidden -fdiagnostics-color=always -Wall -Winvalid-pch -O3 -fno-strict-aliasing -MD -MQ ref_mlmathtoolsmod.cpython-311-darwin.so.p/ref_mlmathtoolsmodmodule.c.o -MF ref_mlmathtoolsmod.cpython-311-darwin.so.p/ref_mlmathtoolsmodmodule.c.o.d -o ref_mlmathtoolsmod.cpython-311-darwin.so.p/ref_mlmathtoolsmodmodule.c.o -c ../ref_mlmathtoolsmodmodule.c
+../ref_mlmathtoolsmodmodule.c:306:9: warning: misleading indentation; statement is not part of the previous 'if' [-Wmisleading-indentation]
+  306 |         f2py_success = double_from_pyobj(&a,a_capi,"ref_mlmathtoolsmod.w_quadratic() 1st argument (a) can't be converted to double");
+      |         ^
+../ref_mlmathtoolsmodmodule.c:300:5: note: previous statement is here
+  300 |     if (!PyArg_ParseTupleAndKeywords(capi_args,capi_keywds,\
+      |     ^
+../ref_mlmathtoolsmodmodule.c:666:16: error: use of undeclared identifier 'nlevmlcan'
+  666 |     a1_Dims[0]=nlevmlcan;
+      |                ^~~~~~~~~
+../ref_mlmathtoolsmodmodule.c:680:17: error: use of undeclared identifier 'nlevmlcan'
+  680 |     b11_Dims[0]=nlevmlcan;
+      |                 ^~~~~~~~~
+../ref_mlmathtoolsmodmodule.c:694:17: error: use of undeclared identifier 'nlevmlcan'
+  694 |     b12_Dims[0]=nlevmlcan;
+      |                 ^~~~~~~~~
+../ref_mlmathtoolsmodmodule.c:708:16: error: use of undeclared identifier 'nlevmlcan'
+  708 |     c1_Dims[0]=nlevmlcan;
+      |                ^~~~~~~~~
+../ref_mlmathtoolsmodmodule.c:722:16: error: use of undeclared identifier 'nlevmlcan'
+  722 |     d1_Dims[0]=nlevmlcan;
+      |                ^~~~~~~~~
+../ref_mlmathtoolsmodmodule.c:736:16: error: use of undeclared identifier 'nlevmlcan'
+  736 |     a2_Dims[0]=nlevmlcan;
+      |                ^~~~~~~~~
+../ref_mlmathtoolsmodmodule.c:750:17: error: use of undeclared identifier 'nlevmlcan'
+  750 |     b21_Dims[0]=nlevmlcan;
+      |                 ^~~~~~~~~
+../ref_mlmathtoolsmodmodule.c:764:17: error: use of undeclared identifier 'nlevmlcan'
+  764 |     b22_Dims[0]=nlevmlcan;
+      |                 ^~~~~~~~~
+../ref_mlmathtoolsmodmodule.c:778:16: error: use of undeclared identifier 'nlevmlcan'
+  778 |     c2_Dims[0]=nlevmlcan;
+      |                ^~~~~~~~~
+../ref_mlmathtoolsmodmodule.c:792:16: error: use of undeclared identifier 'nlevmlcan'
+  792 |     d2_Dims[0]=nlevmlcan;
+      |                ^~~~~~~~~
+../ref_mlmathtoolsmodmodule.c:806:15: error: use of undeclared identifier 'nlevmlcan'
+  806 |     t_Dims[0]=nlevmlcan;
+      |               ^~~~~~~~~
+../ref_mlmathtoolsmodmodule.c:820:15: error: use of undeclared identifier 'nlevmlcan'
+  820 |     q_Dims[0]=nlevmlcan;
+      |               ^~~~~~~~~
+../ref_mlmathtoolsmodmodule.c:949:9: warning: misleading indentation; statement is not part of the previous 'if' [-Wmisleading-indentation]
+  949 |         f2py_success = double_from_pyobj(&x,x_capi,"ref_mlmathtoolsmod.w_log_gamma_function() 1st argument (x) can't be converted to double");
+      |         ^
+../ref_mlmathtoolsmodmodule.c:943:5: note: previous statement is here
+  943 |     if (!PyArg_ParseTupleAndKeywords(capi_args,capi_keywds,\
+      |     ^
+../ref_mlmathtoolsmodmodule.c:1025:9: warning: misleading indentation; statement is not part of the previous 'if' [-Wmisleading-indentation]
+ 1025 |         f2py_success = double_from_pyobj(&a,a_capi,"ref_mlmathtoolsmod.w_beta_function() 1st argument (a) can't be converted to double");
+      |         ^
+../ref_mlmathtoolsmodmodule.c:1019:5: note: previous statement is here
+ 1019 |     if (!PyArg_ParseTupleAndKeywords(capi_args,capi_keywds,\
+      |     ^
+../ref_mlmathtoolsmodmodule.c:1109:9: warning: misleading indentation; statement is not part of the previous 'if' [-Wmisleading-indentation]
+ 1109 |         f2py_success = double_from_pyobj(&a,a_capi,"ref_mlmathtoolsmod.w_beta_distribution_pdf() 1st argument (a) can't be converted to double");
+      |         ^
+../ref_mlmathtoolsmodmodule.c:1103:5: note: previous statement is here
+ 1103 |     if (!PyArg_ParseTupleAndKeywords(capi_args,capi_keywds,\
+      |     ^
+../ref_mlmathtoolsmodmodule.c:1198:9: warning: misleading indentation; statement is not part of the previous 'if' [-Wmisleading-indentation]
+ 1198 |         f2py_success = double_from_pyobj(&a,a_capi,"ref_mlmathtoolsmod.w_beta_distribution_cdf() 1st argument (a) can't be converted to double");
+      |         ^
+../ref_mlmathtoolsmodmodule.c:1192:5: note: previous statement is here
+ 1192 |     if (!PyArg_ParseTupleAndKeywords(capi_args,capi_keywds,\
+      |     ^
+../ref_mlmathtoolsmodmodule.c:1494:7: warning: unused variable 'i_f2py' [-Wunused-variable]
+ 1494 |   int i_f2py=0;
+      |       ^~~~~~
+6 warnings and 12 errors generated.
+[4/22] Compiling Fortran object ref_mlmathtoolsmod.cpython-311-darwin.so.p/shr_kind_mod.f90.o
+[5/22] Compiling Fortran object ref_mlmathtoolsmod.cpython-311-darwin.so.p/clmSoilOptionMod.f90.o
+[6/22] Compiling Fortran object ref_mlmathtoolsmod.cpython-311-darwin.so.p/ref_mlmathtoolsmod-f2pywrappers.f.o
+[7/22] Compiling C object ref_mlmathtoolsmod.cpython-311-darwin.so.p/c9103ebe8974317e72579428ad3ce24fea6d8fbd_.._.._f2py_src_fortranobject.c.o
+ninja: build stopped: subcommand failed.
+INFO: autodetecting backend as ninja
+INFO: calculating backend command to run: /Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/ninja -C /private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmpgw4r7_0l/bbdir
+Using meson backend
+Will pass --lower to f2py
+See https://numpy.org/doc/stable/f2py/buildtools/meson.html
+Reading fortran codes...
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLCanopyFluxesType.f90' (format:free)
+,public::mlcanopy_type <re.Match object; span=(0, 22), match=',public::mlcanopy_type'>
+Line #378 in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLCanopyFluxesType.f90:"    call this%InitAllocate (bounds) "
+	analyzeline: No name/args pattern found for line.
+Line #379 in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLCanopyFluxesType.f90:"    call this%InitHistory  (bounds) "
+	analyzeline: No name/args pattern found for line.
+Line #381 in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLCanopyFluxesType.f90:"    call this%InitCold     (bounds) "
+	analyzeline: No name/args pattern found for line.
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/shr_kind_mod.f90' (format:free)
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/clm_varctl.f90' (format:free)
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/abortutils.f90' (format:free)
+Line #15 in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/abortutils.f90:"  include 'netcdf.inc' "
+	readfortrancode: could not find include file 'netcdf.inc' in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged. Ignoring.
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/clm_varcon.f90' (format:free)
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/clmSoilOptionMod.f90' (format:free)
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/clm_varpar.f90' (format:free)
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/decompMod.f90' (format:free)
+bounds_type <re.Match object; span=(0, 11), match='bounds_type'>
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLclm_varpar.f90' (format:free)
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLclm_varctl.f90' (format:free)
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/histFileMod.f90' (format:free)
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/ncdio_pio.f90' (format:free)
+Line #15 in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/ncdio_pio.f90:"  include 'netcdf.inc' "
+	readfortrancode: could not find include file 'netcdf.inc' in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged. Ignoring.
+,public::file_desc_t <re.Match object; span=(0, 20), match=',public::file_desc_t'>
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/restUtilMod.f90' (format:free)
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLMathToolsMod.f90' (format:free)
+	Reading file 'wrappers.f90' (format:free)
+Post-processing...
+	Block: ref_mlmathtoolsmod
+			Block: mlcanopyfluxestype
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLCanopyFluxesType.f90:mlcanopyfluxestype
+get_useparameters: no module abortutils info used by mlcanopyfluxestype
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLCanopyFluxesType.f90:mlcanopyfluxestype
+get_useparameters: no module clm_varcon info used by mlcanopyfluxestype
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLCanopyFluxesType.f90:mlcanopyfluxestype
+get_useparameters: no module clm_varpar info used by mlcanopyfluxestype
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLCanopyFluxesType.f90:mlcanopyfluxestype
+get_useparameters: no module decompmod info used by mlcanopyfluxestype
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLCanopyFluxesType.f90:mlcanopyfluxestype
+get_useparameters: no module shr_kind_mod info used by mlcanopyfluxestype
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLCanopyFluxesType.f90:mlcanopyfluxestype
+get_useparameters: no module mlclm_varpar info used by mlcanopyfluxestype
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLCanopyFluxesType.f90:mlcanopyfluxestype
+get_useparameters: no module mlclm_varctl info used by mlcanopyfluxestype
+				Block: mlcanopy_type
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLCanopyFluxesType.f90:mlcanopyfluxestype:mlcanopy_type
+get_useparameters: no module abortutils info used by mlcanopy_type
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLCanopyFluxesType.f90:mlcanopyfluxestype:mlcanopy_type
+get_useparameters: no module clm_varcon info used by mlcanopy_type
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLCanopyFluxesType.f90:mlcanopyfluxestype:mlcanopy_type
+get_useparameters: no module clm_varpar info used by mlcanopy_type
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLCanopyFluxesType.f90:mlcanopyfluxestype:mlcanopy_type
+get_useparameters: no module decompmod info used by mlcanopy_type
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLCanopyFluxesType.f90:mlcanopyfluxestype:mlcanopy_type
+get_useparameters: no module shr_kind_mod info used by mlcanopy_type
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLCanopyFluxesType.f90:mlcanopyfluxestype:mlcanopy_type
+get_useparameters: no module mlclm_varpar info used by mlcanopy_type
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLCanopyFluxesType.f90:mlcanopyfluxestype:mlcanopy_type
+get_useparameters: no module mlclm_varctl info used by mlcanopy_type
+			Block: shr_kind_mod
+			Block: clm_varctl
+			Block: abortutils
+			Block: clm_varcon
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/clm_varcon.f90:clm_varcon
+param_eval: got "eval() arg 1 must be a string, bytes or code object" on 4
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/clm_varcon.f90:clm_varcon
+param_eval: got "eval() arg 1 must be a string, bytes or code object" on 4
+			Block: clmsoiloptionmod
+			Block: clm_varpar
+			Block: decompmod
+				Block: bounds_type
+			Block: mlclm_varpar
+			Block: mlclm_varctl
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLclm_varctl.f90:mlclm_varctl
+param_eval: got "eval() arg 1 must be a string, bytes or code object" on 4
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLclm_varctl.f90:mlclm_varctl
+param_eval: got "eval() arg 1 must be a string, bytes or code object" on 4
+In: :ref_mlmathtoolsmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/MLclm_varctl.f90:mlclm_varctl
+param_eval: got "'(' was never closed (<string>, line 1)" on '(rungekutta'
+			Block: histfilemod
+			Block: ncdio_pio
+				Block: ncd_io
+				Block: file_desc_t
+			Block: restutilmod
+				Block: restartvar
+			Block: mlmathtoolsmod
+			Block: w_quadratic
+			Block: w_tridiag
+			Block: w_tridiag_2eq
+			Block: w_log_gamma_function
+			Block: w_beta_function
+			Block: w_beta_distribution_pdf
+			Block: w_beta_distribution_cdf
+Applying post-processing hooks...
+  character_backward_compatibility_hook
+Post-processing (stage 2)...
+	Block: ref_mlmathtoolsmod
+		Block: unknown_interface
+			Block: mlcanopyfluxestype
+				Block: mlcanopy_type
+			Block: shr_kind_mod
+			Block: clm_varctl
+			Block: abortutils
+			Block: clm_varcon
+			Block: clmsoiloptionmod
+			Block: clm_varpar
+			Block: decompmod
+				Block: bounds_type
+			Block: mlclm_varpar
+			Block: mlclm_varctl
+			Block: histfilemod
+			Block: ncdio_pio
+				Block: ncd_io
+				Block: file_desc_t
+			Block: restutilmod
+				Block: restartvar
+			Block: mlmathtoolsmod
+			Block: w_quadratic
+			Block: w_tridiag
+			Block: w_tridiag_2eq
+			Block: w_log_gamma_function
+			Block: w_beta_function
+			Block: w_beta_distribution_pdf
+			Block: w_beta_distribution_cdf
+Building modules...
+    Building module "ref_mlmathtoolsmod"...
+    Generating possibly empty wrappers"
+    Maybe empty "ref_mlmathtoolsmod-f2pywrappers.f"
+        Constructing wrapper function "w_quadratic"...
+          r1,r2 = w_quadratic(a,b,c)
+    Generating possibly empty wrappers"
+    Maybe empty "ref_mlmathtoolsmod-f2pywrappers.f"
+        Constructing wrapper function "w_tridiag"...
+          u = w_tridiag(a,b,c,r,[n])
+    Generating possibly empty wrappers"
+    Maybe empty "ref_mlmathtoolsmod-f2pywrappers.f"
+        Constructing wrapper function "w_tridiag_2eq"...
+          t,q = w_tridiag_2eq(a1,b11,b12,c1,d1,a2,b21,b22,c2,d2,n)
+    Generating possibly empty wrappers"
+    Maybe empty "ref_mlmathtoolsmod-f2pywrappers.f"
+		Creating wrapper for Fortran function "w_log_gamma_function"("w_log_gamma_function")...
+        Constructing wrapper function "w_log_gamma_function"...
+          res = w_log_gamma_function(x)
+    Generating possibly empty wrappers"
+    Maybe empty "ref_mlmathtoolsmod-f2pywrappers.f"
+		Creating wrapper for Fortran function "w_beta_function"("w_beta_function")...
+        Constructing wrapper function "w_beta_function"...
+          res = w_beta_function(a,b)
+    Generating possibly empty wrappers"
+    Maybe empty "ref_mlmathtoolsmod-f2pywrappers.f"
+		Creating wrapper for Fortran function "w_beta_distribution_pdf"("w_beta_distribution_pdf")...
+        Constructing wrapper function "w_beta_distribution_pdf"...
+          res = w_beta_distribution_pdf(a,b,x)
+    Generating possibly empty wrappers"
+    Maybe empty "ref_mlmathtoolsmod-f2pywrappers.f"
+		Creating wrapper for Fortran function "w_beta_distribution_cdf"("w_beta_distribution_cdf")...
+        Constructing wrapper function "w_beta_distribution_cdf"...
+          res = w_beta_distribution_cdf(a,b,x)
+		Constructing F90 module support for "mlcanopyfluxestype"...
+			Skipping mlcanopyfluxestype since it is in 'use' and contains a derived type...
+		Constructing F90 module support for "shr_kind_mod"...
+		  Variables: shr_kind_r8 shr_kind_in
+		Constructing F90 module support for "clm_varctl"...
+		  Variables: iulog rslfile
+		Constructing F90 module support for "abortutils"...
+			Skipping abortutils since there are no public vars/func in this module...
+		Constructing F90 module support for "clm_varcon"...
+		  Variables: rpi tfrz sb grav vkc denh2o denice tkwat tkice tkair hfus hvap hsub cpice cpliq thk_bedrock csol_bedrock zmin_bedrock spval ispval
+		Constructing F90 module support for "clmsoiloptionmod"...
+		  Variables: clm_phys nlev_soil_adjust
+		Constructing F90 module support for "clm_varpar"...
+		  Variables: nlevsno nlevsoi nlevgrnd numrad ivis inir mxpft
+		Constructing F90 module support for "decompmod"...
+			Skipping decompmod since it is in 'use' and contains a derived type...
+		Constructing F90 module support for "mlclm_varpar"...
+		  Variables: nlevmlcan nleaf isun isha
+		Constructing F90 module support for "mlclm_varctl"...
+		  Variables: gs_type gspot_type gs_solver colim_type acclim_type kn_val turb_type sparse_canopy_type hf_extension_type flux_profile_type gb_type light_type leaf_optics_type longwave_type dtime_ml runge_kutta_type nrk dz_tall dz_short dz_param nlayer_above nlayer_within mlcan_to_clm ml_vert_init met_type dpai_min pftcon_val
+		Constructing F90 module support for "histfilemod"...
+			Skipping histfilemod since there are no public vars/func in this module...
+		Constructing F90 module support for "ncdio_pio"...
+		  Variables: ncd_double ncd_int
+f90mod_rules.buildhooks: skipping interface ncd_io
+f90mod_rules.buildhooks: skipping type file_desc_t
+		Constructing F90 module support for "restutilmod"...
+f90mod_rules.buildhooks: skipping interface restartvar
+		Constructing F90 module support for "mlmathtoolsmod"...
+			Skipping mlmathtoolsmod since there are no public vars/func in this module...
+    Wrote C/API module "ref_mlmathtoolsmod" to file "./ref_mlmathtoolsmodmodule.c"
+    Fortran 77 wrappers are saved to "./ref_mlmathtoolsmod-f2pywrappers.f"
+    Fortran 90 wrappers are saved to "./ref_mlmathtoolsmod-f2pywrappers2.f90"
+
+rmbadname1: Replacing "default" with "default_bn".
+rmbadname1: Replacing "default" with "default_bn".
+rmbadname1: Replacing "default" with "default_bn".
+rmbadname1: Replacing "default" with "default_bn".
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'ispval': 'ispval'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+getctype: "real(kind=r8)" is mapped to C "float" (to override define dict(real = dict(r8="<C typespec>")) in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlmathtoolsmod/oracle-52610c1090aabeda/.f2py_f2cmap file).
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/__main__.py", line 5, in <module>
+    main()
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/f2py2e.py", line 786, in main
+    run_compile()
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/f2py2e.py", line 758, in run_compile
+    builder.compile()
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/_backends/_meson.py", line 197, in compile
+    self.run_meson(self.build_dir)
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/_backends/_meson.py", line 191, in run_meson
+    self._run_subprocess_command(compile_command, build_dir)
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/_backends/_meson.py", line 185, in _run_subprocess_command
+    subprocess.run(command, cwd=cwd, check=True)
+  File "/Users/yueqichen/.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['meson', 'compile', '-C', 'bbdir']' returned non-zero exit status 1.

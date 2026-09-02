@@ -1,0 +1,43 @@
+{
+  "artifact": {
+    "digest": "5a1abcc8202ccf4ee7d7c1a4c2a1661bbd2c21c3cae0d95d0dec9f17086b5f0b",
+    "files": [
+      "patchtype_constants.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py"
+    ],
+    "name": "fortran:patchtype",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"5a1abcc8202ccf4ee7d7c1a4c2a1661bbd2c21c3cae0d95d0dec9f17086b5f0b\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:patchtype\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "6 blocks match",
+    "metrics": {
+      "blocks_checked": 6,
+      "blocks_deferred": 0,
+      "blocks_matched": 6,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:30:21.369878+00:00"
+}

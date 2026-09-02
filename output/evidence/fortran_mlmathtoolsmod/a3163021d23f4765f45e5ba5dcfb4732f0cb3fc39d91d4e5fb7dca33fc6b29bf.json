@@ -1,0 +1,94 @@
+{
+  "artifact": {
+    "digest": "09d068bc6fff5ddd1dcc505deb4c11ee2a99ffe4cefa076506e252017e199e31",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varctl_numpy.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlmathtoolsmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"09d068bc6fff5ddd1dcc505deb4c11ee2a99ffe4cefa076506e252017e199e31\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlmathtoolsmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "5/60 blocks disagree: zbrent/B005, zbrent/B011, bisection/B005, bisection/B008, quadratic/B001",
+    "metrics": {
+      "blocks_checked": 60,
+      "blocks_deferred": 9,
+      "blocks_matched": 55,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "zbrent/B005",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "zbrent/B011",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "bisection/B005",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "bisection/B008",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "quadratic/B001",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:03:48.680682+00:00"
+}

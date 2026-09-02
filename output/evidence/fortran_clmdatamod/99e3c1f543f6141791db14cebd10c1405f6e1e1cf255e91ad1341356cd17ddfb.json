@@ -1,0 +1,113 @@
+{
+  "artifact": {
+    "digest": "1d6f6a69f322d46ecd3ca5639f772b9fd0609b06812ab36f098fabf020877936",
+    "files": [
+      "clmdatamod_constants.py",
+      "clmdatamod_numpy.py"
+    ],
+    "name": "fortran:clmdatamod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"1d6f6a69f322d46ecd3ca5639f772b9fd0609b06812ab36f098fabf020877936\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:clmdatamod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "4/30 blocks disagree: clmdata/B001, readclmsoil/B001, readclmsoil/B002, readclmsoil/B006",
+    "metrics": {
+      "blocks_checked": 30,
+      "blocks_deferred": 0,
+      "blocks_matched": 26,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "clmdata/B001",
+          "reads_source_only": [
+            "clm_phys",
+            "denh2o",
+            "elai",
+            "esai",
+            "h2osoi_ice",
+            "h2osoi_liq",
+            "nlev_soil_adjust"
+          ],
+          "reads_target_only": [
+            "_clm",
+            "_clm_varcon",
+            "begc",
+            "begp",
+            "endc",
+            "endp",
+            "nlevgrnd",
+            "nlevsoi"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "c",
+            "dz",
+            "elai",
+            "esai",
+            "h2osoi_factor",
+            "h2osoi_ice",
+            "h2osoi_liq",
+            "h2osoi_vol",
+            "j",
+            "nbedrock",
+            "p",
+            "watsat"
+          ]
+        },
+        {
+          "block": "readclmsoil/B001",
+          "reads_source_only": [
+            "spval"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readclmsoil/B002",
+          "reads_source_only": [
+            "spval"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readclmsoil/B006",
+          "reads_source_only": [
+            "clm_phys"
+          ],
+          "reads_target_only": [
+            "_clm"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:24:32.102948+00:00"
+}

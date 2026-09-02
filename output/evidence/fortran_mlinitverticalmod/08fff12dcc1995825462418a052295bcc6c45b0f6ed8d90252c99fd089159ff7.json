@@ -1,0 +1,70 @@
+{
+  "artifact": {
+    "digest": "d136861e947d4a00101e318b94ed6f46043025a2cd2533ac7cc6998a6a2412eb",
+    "files": [
+      "atm2lndtype_constants.py",
+      "atm2lndtype_numpy.py",
+      "atm2lndtype_use_constants.py",
+      "canopystatetype_constants.py",
+      "canopystatetype_numpy.py",
+      "canopystatetype_use_constants.py",
+      "clm_varcon_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "frictionvelocitymod_constants.py",
+      "frictionvelocitymod_numpy.py",
+      "frictionvelocitymod_use_constants.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlinitverticalmod_constants.py",
+      "mlinitverticalmod_numpy.py",
+      "mlinitverticalmod_use_constants.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "patchtype_constants.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "wateratm2lndbulktype_constants.py",
+      "wateratm2lndbulktype_numpy.py",
+      "wateratm2lndbulktype_use_constants.py"
+    ],
+    "name": "fortran:mlinitverticalmod",
+    "transform": "recast-clm-ml.translate.clm-ml-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"d136861e947d4a00101e318b94ed6f46043025a2cd2533ac7cc6998a6a2412eb\", \"executor\": \"local\", \"recipe\": \"translate-clm-ml\", \"unit\": \"fortran:mlinitverticalmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlinitverticalmod:5b07392a926f9efc",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "3 blocks match",
+    "metrics": {
+      "blocks_checked": 3,
+      "blocks_deferred": 0,
+      "blocks_matched": 3,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T01:50:15.484921+00:00"
+}

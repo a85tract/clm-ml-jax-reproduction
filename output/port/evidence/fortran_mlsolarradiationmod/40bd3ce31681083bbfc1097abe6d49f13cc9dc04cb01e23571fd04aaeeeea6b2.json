@@ -1,0 +1,97 @@
+{
+  "artifact": {
+    "digest": "82253c7df590201ea5351d1356945062416370120b25d65d09ba91cb628112cd",
+    "files": [
+      "clm_varcon_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_jax.py",
+      "mlmathtoolsmod_jax_runtime.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "mlpftconmod_constants.py",
+      "mlpftconmod_jax.py",
+      "mlpftconmod_jax_runtime.py",
+      "mlpftconmod_numpy.py",
+      "mlpftconmod_use_constants.py",
+      "mlsolarradiationmod_constants.py",
+      "mlsolarradiationmod_jax.py",
+      "mlsolarradiationmod_jax_runtime.py",
+      "mlsolarradiationmod_numpy.py",
+      "mlsolarradiationmod_use_constants.py",
+      "patchtype_constants.py",
+      "patchtype_jax.py",
+      "patchtype_jax_runtime.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "pftconmod_constants.py",
+      "pftconmod_jax.py",
+      "pftconmod_jax_runtime.py",
+      "pftconmod_numpy.py",
+      "pftconmod_use_constants.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mlsolarradiationmod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"82253c7df590201ea5351d1356945062416370120b25d65d09ba91cb628112cd\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlsolarradiationmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlsolarradiationmod:5b694226203dcba3",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "44544 dominant point(s) within 31 ULP (gate 32); the tail reaches 1803 ULP but max_rel=3.548e-15 is inside rel_gate=1e-12",
+    "metrics": {
+      "bit_exact": 74388,
+      "candidate_device": "cpu:0",
+      "dominant_points": 44544,
+      "max_rel": 3.547603513305956e-15,
+      "max_ulp": 1803,
+      "max_ulp_dominant": 31,
+      "nan_mismatch": 0,
+      "points": 82416,
+      "rel_gate": 1e-12,
+      "skipped": [],
+      "subprograms": {
+        "solarradiation_flat": {
+          "bit_exact": 74388,
+          "dominant_points": 44544,
+          "max_rel": 3.547603513305956e-15,
+          "max_ulp": 1803,
+          "max_ulp_dominant": 31,
+          "nan_mismatch": 0,
+          "points": 82416
+        }
+      },
+      "trials": 10,
+      "ulp_gate": 32
+    },
+    "passed": true,
+    "verdict": "toleranced",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T21:24:23.737196+00:00"
+}

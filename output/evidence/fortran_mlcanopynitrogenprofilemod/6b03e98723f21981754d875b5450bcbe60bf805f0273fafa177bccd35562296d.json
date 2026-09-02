@@ -1,0 +1,71 @@
+{
+  "artifact": {
+    "digest": "fbdd9371e24d2da5f57bbb84da47d7374de6eae039aa5e4b728c2a3ef4c879a7",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clm_varpar_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlcanopynitrogenprofilemod_constants.py",
+      "mlcanopynitrogenprofilemod_numpy.py",
+      "mlcanopynitrogenprofilemod_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlpftconmod_constants.py",
+      "mlpftconmod_numpy.py",
+      "mlpftconmod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "patchtype_constants.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "pftconmod_constants.py",
+      "pftconmod_numpy.py",
+      "pftconmod_use_constants.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mlcanopynitrogenprofilemod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"fbdd9371e24d2da5f57bbb84da47d7374de6eae039aa5e4b728c2a3ef4c879a7\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlcanopynitrogenprofilemod\"}}",
+  "reference": {
+    "key": "dump-replay:mlcanopynitrogenprofilemod:9b29435e3d7db41b",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "1 blocks match",
+    "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 1,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T04:51:49.581934+00:00"
+}

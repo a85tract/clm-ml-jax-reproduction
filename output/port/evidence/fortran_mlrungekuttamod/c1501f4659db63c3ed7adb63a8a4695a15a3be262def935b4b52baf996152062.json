@@ -1,0 +1,80 @@
+{
+  "artifact": {
+    "digest": "7c003db4e64718d151375794d33eeaac047f2bf051f9fffa68c038e3d3d91a6f",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clm_varpar_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlrungekuttamod_constants.py",
+      "mlrungekuttamod_jax.py",
+      "mlrungekuttamod_jax_runtime.py",
+      "mlrungekuttamod_numpy.py",
+      "mlrungekuttamod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlrungekuttamod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"7c003db4e64718d151375794d33eeaac047f2bf051f9fffa68c038e3d3d91a6f\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlrungekuttamod\"}}",
+  "reference": {
+    "key": "dump-replay:mlrungekuttamod:1a8e704fc6094ffe",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "a dominant element is 150119987579016 ULP out (gate 32); that is where a translation defect shows, not where conditioning does",
+    "metrics": {
+      "bit_exact": 139938,
+      "candidate_device": "cpu:0",
+      "dominant_points": 116437,
+      "max_rel": 0.022222222222222143,
+      "max_ulp": 150119987579016,
+      "max_ulp_dominant": 150119987579016,
+      "nan_mismatch": 0,
+      "points": 140200,
+      "rel_gate": 1e-12,
+      "skipped": [],
+      "subprograms": {
+        "rungekuttaupdate_flat": {
+          "bit_exact": 139938,
+          "dominant_points": 116437,
+          "max_rel": 0.022222222222222143,
+          "max_ulp": 150119987579016,
+          "max_ulp_dominant": 150119987579016,
+          "nan_mismatch": 0,
+          "points": 140200
+        }
+      },
+      "trials": 10,
+      "ulp_gate": 32
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T00:42:53.160775+00:00"
+}

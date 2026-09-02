@@ -1,0 +1,52 @@
+{
+  "artifact": {
+    "digest": "0f712ae967daa9ed5b51b8eb3a3900a31afe69b3f7aca55093e0e7e46a3f1a7e",
+    "files": [
+      "clm_initializemod_constants.py",
+      "clm_initializemod_numpy.py"
+    ],
+    "name": "fortran:clm_initializemod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"0f712ae967daa9ed5b51b8eb3a3900a31afe69b3f7aca55093e0e7e46a3f1a7e\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:clm_initializemod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/5 blocks disagree: initialize2/B008",
+    "metrics": {
+      "blocks_checked": 5,
+      "blocks_deferred": 5,
+      "blocks_matched": 4,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "initialize2/B008",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:22.726376+00:00"
+}

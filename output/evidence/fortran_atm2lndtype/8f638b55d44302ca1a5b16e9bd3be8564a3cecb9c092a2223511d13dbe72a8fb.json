@@ -1,0 +1,42 @@
+{
+  "artifact": {
+    "digest": "a0eb3c9423e91dd0ef201eeb584e0aad9fd1c29e3d9a773123a603ddf9312e85",
+    "files": [
+      "atm2lndtype_constants.py",
+      "atm2lndtype_numpy.py"
+    ],
+    "name": "fortran:atm2lndtype",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"a0eb3c9423e91dd0ef201eeb584e0aad9fd1c29e3d9a773123a603ddf9312e85\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:atm2lndtype\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "22 blocks match",
+    "metrics": {
+      "blocks_checked": 22,
+      "blocks_deferred": 1,
+      "blocks_matched": 22,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:22.070515+00:00"
+}

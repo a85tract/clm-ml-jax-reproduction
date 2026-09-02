@@ -1,0 +1,128 @@
+{
+  "artifact": {
+    "digest": "f75843eb644796e555e06a01b128b7872f33ab862d752e1ab86b2106b746acd8",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clm_varpar_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "columntype_constants.py",
+      "columntype_jax.py",
+      "columntype_jax_runtime.py",
+      "columntype_numpy.py",
+      "columntype_use_constants.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlpftconmod_constants.py",
+      "mlpftconmod_jax.py",
+      "mlpftconmod_jax_runtime.py",
+      "mlpftconmod_numpy.py",
+      "mlpftconmod_use_constants.py",
+      "mlplanthydraulicsmod_constants.py",
+      "mlplanthydraulicsmod_jax.py",
+      "mlplanthydraulicsmod_jax_runtime.py",
+      "mlplanthydraulicsmod_numpy.py",
+      "ncdio_pio_numpy.py",
+      "patchtype_constants.py",
+      "patchtype_jax.py",
+      "patchtype_jax_runtime.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "soilstatetype_constants.py",
+      "soilstatetype_jax.py",
+      "soilstatetype_jax_runtime.py",
+      "soilstatetype_numpy.py",
+      "soilstatetype_use_constants.py",
+      "spmdmod_numpy.py",
+      "waterstatebulktype_constants.py",
+      "waterstatebulktype_jax.py",
+      "waterstatebulktype_jax_runtime.py",
+      "waterstatebulktype_numpy.py",
+      "waterstatebulktype_use_constants.py"
+    ],
+    "name": "fortran:mlplanthydraulicsmod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"f75843eb644796e555e06a01b128b7872f33ab862d752e1ab86b2106b746acd8\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlplanthydraulicsmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlplanthydraulicsmod:5faf70c4a8f9f1ba",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "every one of 13080 points within 2 ULP (gate 32)",
+    "metrics": {
+      "bit_exact": 13055,
+      "candidate_device": "cpu:0",
+      "dominant_points": 8641,
+      "max_rel": 2.2435104367644473e-16,
+      "max_ulp": 2,
+      "max_ulp_dominant": 2,
+      "nan_mismatch": 0,
+      "points": 13080,
+      "rel_gate": 1e-12,
+      "skipped": [],
+      "subprograms": {
+        "leafwaterpotential_flat": {
+          "bit_exact": 7991,
+          "dominant_points": 5921,
+          "max_rel": 1.4460334174490874e-16,
+          "max_ulp": 1,
+          "max_ulp_dominant": 1,
+          "nan_mismatch": 0,
+          "points": 8000
+        },
+        "plantresistance_flat": {
+          "bit_exact": 4000,
+          "dominant_points": 2160,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 0,
+          "points": 4000
+        },
+        "soilresistance_flat": {
+          "bit_exact": 1064,
+          "dominant_points": 560,
+          "max_rel": 2.2435104367644473e-16,
+          "max_ulp": 2,
+          "max_ulp_dominant": 2,
+          "nan_mismatch": 0,
+          "points": 1080
+        }
+      },
+      "trials": 10,
+      "ulp_gate": 32
+    },
+    "passed": true,
+    "verdict": "ulp_bounded",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T00:58:40.129256+00:00"
+}

@@ -1,0 +1,25 @@
+steps=1488  canopy carried=262  soil carried: t_soisno, thk, bw
+step 96 done  (t_soisno drift so far: max 2.554e-05)
+step 192 done  (t_soisno drift so far: max 6.731e-05)
+step 288 done  (t_soisno drift so far: max 7.473e-05)
+step 384 done  (t_soisno drift so far: max 2.956e-04)
+step 480 done  (t_soisno drift so far: max 3.004e-04)
+step 576 done  (t_soisno drift so far: max 4.020e-04)
+step 672 done  (t_soisno drift so far: max 5.890e-04)
+step 768 done  (t_soisno drift so far: max 6.260e-04)
+step 864 done  (t_soisno drift so far: max 6.887e-04)
+step 960 done  (t_soisno drift so far: max 7.894e-04)
+step 1056 done  (t_soisno drift so far: max 8.937e-04)
+step 1152 done  (t_soisno drift so far: max 1.260e-03)
+step 1248 done  (t_soisno drift so far: max 1.352e-03)
+step 1344 done  (t_soisno drift so far: max 1.352e-03)
+step 1440 done  (t_soisno drift so far: max 1.352e-03)
+
+t_soisno closed-loop drift vs recording: max 1.352e-03  median 1.923e-04
+tleaf_leaf: daily-mean rel max = 7.372e-05, median = 6.934e-06
+tair_profile: daily-mean rel max = 7.550e-05, median = 6.583e-06
+gppveg_canopy: daily-mean rel max = 2.952e-04, median = 3.793e-05
+shflx_canopy: daily-mean rel max = 1.751e-01, median = 1.694e-03
+lhflx_canopy: daily-mean rel max = 6.090e-04, median = 1.831e-04
+tg_soil: daily-mean rel max = 1.571e-04, median = 1.478e-05
+DONE

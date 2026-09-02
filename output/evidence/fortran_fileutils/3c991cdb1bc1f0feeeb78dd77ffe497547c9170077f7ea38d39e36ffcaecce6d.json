@@ -1,0 +1,85 @@
+{
+  "artifact": {
+    "digest": "3c6af8c4c043368f42547567ceb98fbd8de757ea37b49ecc58688ca03fcd5b90",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varctl_numpy.py",
+      "fileutils_constants.py",
+      "fileutils_numpy.py",
+      "shr_file_mod_numpy.py"
+    ],
+    "name": "fortran:fileutils",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"3c6af8c4c043368f42547567ceb98fbd8de757ea37b49ecc58688ca03fcd5b90\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:fileutils\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "4/16 blocks disagree: opnfil/B003, getavu/B001, relavu/B001, relavu/B002",
+    "metrics": {
+      "blocks_checked": 16,
+      "blocks_deferred": 3,
+      "blocks_matched": 12,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "opnfil/B003",
+          "reads_source_only": [
+            "ft",
+            "ioe",
+            "iun",
+            "locfn"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "getavu/B001",
+          "reads_source_only": [
+            "shr_file_getunit"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "relavu/B001",
+          "reads_source_only": [
+            "iunit"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "relavu/B002",
+          "reads_source_only": [
+            "iunit"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:44:39.930109+00:00"
+}

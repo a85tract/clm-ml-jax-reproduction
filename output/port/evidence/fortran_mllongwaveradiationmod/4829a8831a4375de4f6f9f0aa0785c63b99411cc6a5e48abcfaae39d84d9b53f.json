@@ -1,0 +1,92 @@
+{
+  "artifact": {
+    "digest": "c63cb8605897c66803b6a7e1bb54b71b273de6aecfd77c13641d5a14e45d6797",
+    "files": [
+      "clm_varcon_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mllongwaveradiationmod_constants.py",
+      "mllongwaveradiationmod_jax.py",
+      "mllongwaveradiationmod_jax_runtime.py",
+      "mllongwaveradiationmod_numpy.py",
+      "mllongwaveradiationmod_use_constants.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_jax.py",
+      "mlmathtoolsmod_jax_runtime.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "mlpftconmod_constants.py",
+      "mlpftconmod_jax.py",
+      "mlpftconmod_jax_runtime.py",
+      "mlpftconmod_numpy.py",
+      "mlpftconmod_use_constants.py",
+      "patchtype_constants.py",
+      "patchtype_jax.py",
+      "patchtype_jax_runtime.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mllongwaveradiationmod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"c63cb8605897c66803b6a7e1bb54b71b273de6aecfd77c13641d5a14e45d6797\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mllongwaveradiationmod\"}}",
+  "reference": {
+    "key": "dump-replay:mllongwaveradiationmod:ae7fc99eddc09af4",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "a dominant element is 5792 ULP out (gate 32); that is where a translation defect shows, not where conditioning does",
+    "metrics": {
+      "bit_exact": 15761,
+      "candidate_device": "cpu:0",
+      "dominant_points": 10512,
+      "max_rel": 8.586638033090264e-13,
+      "max_ulp": 6092,
+      "max_ulp_dominant": 5792,
+      "nan_mismatch": 0,
+      "points": 19440,
+      "rel_gate": 1e-12,
+      "skipped": [],
+      "subprograms": {
+        "longwaveradiation_flat": {
+          "bit_exact": 15761,
+          "dominant_points": 10512,
+          "max_rel": 8.586638033090264e-13,
+          "max_ulp": 6092,
+          "max_ulp_dominant": 5792,
+          "nan_mismatch": 0,
+          "points": 19440
+        }
+      },
+      "trials": 10,
+      "ulp_gate": 32
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-31T00:47:18.902718+00:00"
+}

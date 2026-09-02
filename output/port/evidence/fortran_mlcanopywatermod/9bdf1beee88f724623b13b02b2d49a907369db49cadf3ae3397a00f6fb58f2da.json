@@ -1,0 +1,93 @@
+{
+  "artifact": {
+    "digest": "2f488acd9e4145c829719a09ac2911bd309171377089692aa5e975327555da7a",
+    "files": [
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlcanopywatermod_constants.py",
+      "mlcanopywatermod_jax.py",
+      "mlcanopywatermod_jax_runtime.py",
+      "mlcanopywatermod_numpy.py",
+      "mlcanopywatermod_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py"
+    ],
+    "name": "fortran:mlcanopywatermod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"2f488acd9e4145c829719a09ac2911bd309171377089692aa5e975327555da7a\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlcanopywatermod\"}}",
+  "reference": {
+    "key": "dump-replay:mlcanopywatermod:dcefac29d4ceb7f5",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "19344 points across 3 subprogram(s), all bit-exact -- this backend did not need the tiers",
+    "metrics": {
+      "bit_exact": 19344,
+      "candidate_device": "cpu:0",
+      "dominant_points": 14928,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "max_ulp_dominant": 0,
+      "nan_mismatch": 0,
+      "points": 19344,
+      "rel_gate": 1e-12,
+      "skipped": [],
+      "subprograms": {
+        "canopyevaporation_flat": {
+          "bit_exact": 4800,
+          "dominant_points": 4800,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 0,
+          "points": 4800
+        },
+        "canopyinterception_flat": {
+          "bit_exact": 4944,
+          "dominant_points": 4944,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 0,
+          "points": 4944
+        },
+        "canopywettedfraction_flat": {
+          "bit_exact": 9600,
+          "dominant_points": 5184,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 0,
+          "points": 9600
+        }
+      },
+      "trials": 10,
+      "ulp_gate": 32
+    },
+    "passed": true,
+    "verdict": "bit_exact",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T19:13:33.149738+00:00"
+}

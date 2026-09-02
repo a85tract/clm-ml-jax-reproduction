@@ -1,0 +1,72 @@
+{
+  "artifact": {
+    "digest": "5353767bac16b80f7d61dab604e8d8ba95cdba27abb29fe3fb34c45a852cfdf8",
+    "files": [
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlcanopynitrogenprofilemod_constants.py",
+      "mlcanopynitrogenprofilemod_numpy.py",
+      "mlcanopynitrogenprofilemod_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlpftconmod_constants.py",
+      "mlpftconmod_numpy.py",
+      "mlpftconmod_use_constants.py",
+      "patchtype_constants.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "pftconmod_constants.py",
+      "pftconmod_numpy.py",
+      "pftconmod_use_constants.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mlcanopynitrogenprofilemod",
+    "transform": "recast-clm-ml.translate.clm-ml-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"5353767bac16b80f7d61dab604e8d8ba95cdba27abb29fe3fb34c45a852cfdf8\", \"executor\": \"local\", \"recipe\": \"translate-clm-ml\", \"unit\": \"fortran:mlcanopynitrogenprofilemod\"}}",
+  "reference": {
+    "key": "dump-replay:mlcanopynitrogenprofilemod:372e7a55442e15ac",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "48040 points across 1 subprogram(s), all bit-exact",
+    "metrics": {
+      "bit_exact": 48040,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 48040,
+      "skipped": [],
+      "subprograms": {
+        "canopynitrogenprofile_flat": {
+          "bit_exact": 48040,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 48040
+        }
+      },
+      "trials": 10
+    },
+    "passed": true,
+    "verdict": "bit_exact",
+    "verifier": "differential.bitexact"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T01:49:57.382364+00:00"
+}

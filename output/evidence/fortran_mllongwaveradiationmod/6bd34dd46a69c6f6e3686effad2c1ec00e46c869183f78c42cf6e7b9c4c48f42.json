@@ -1,0 +1,73 @@
+{
+  "artifact": {
+    "digest": "4cb0b88e236fe2f1864f87a2bf62c23d5f591efd9da0eee65319907cf0b6f3c4",
+    "files": [
+      "clm_varcon_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mllongwaveradiationmod_constants.py",
+      "mllongwaveradiationmod_numpy.py",
+      "mllongwaveradiationmod_use_constants.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "mlpftconmod_constants.py",
+      "mlpftconmod_numpy.py",
+      "mlpftconmod_use_constants.py",
+      "patchtype_constants.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mllongwaveradiationmod",
+    "transform": "recast-clm-ml.translate.clm-ml-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"4cb0b88e236fe2f1864f87a2bf62c23d5f591efd9da0eee65319907cf0b6f3c4\", \"executor\": \"local\", \"recipe\": \"translate-clm-ml\", \"unit\": \"fortran:mllongwaveradiationmod\"}}",
+  "reference": {
+    "key": "dump-replay:mllongwaveradiationmod:5b5d4e4ff1d1c4ea",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "16200 points across 1 subprogram(s), all bit-exact",
+    "metrics": {
+      "bit_exact": 16200,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 16200,
+      "skipped": [],
+      "subprograms": {
+        "longwaveradiation_flat": {
+          "bit_exact": 16200,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 16200
+        }
+      },
+      "trials": 10
+    },
+    "passed": true,
+    "verdict": "bit_exact",
+    "verifier": "differential.bitexact"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T01:50:35.337880+00:00"
+}

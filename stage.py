@@ -15,6 +15,16 @@ for d in DIRS:
     for f in sorted((SRC / d).glob("*.F90")):
         cmd = ["gfortran", "-E", "-P", "-cpp", f"-I{f.parent}", str(f)]
         text = subprocess.run(cmd, check=True, capture_output=True, text=True).stdout
+        if f.stem == "MLCanopyFluxesMod":
+            # Finding 1 (REPRODUCTION.md): the RK Butcher tableau lives in
+            # un-SAVEd locals filled only on the first call -- undefined on
+            # every later one. Filling it every step is the same values with
+            # defined behaviour (equivalent to SAVE + first-call init).
+            text = text.replace(
+                "    call RungeKuttaIni (ark, brk, crk)\n\n    end if",
+                "    end if\n\n    ! staged deviation (Finding 1): the tableau is a local; fill it every call\n    call RungeKuttaIni (ark, brk, crk)",
+            )
+            assert "staged deviation (Finding 1)" in text
         (STAGED / (f.stem + ".f90")).write_text(text); n += 1
 (STAGED / "recast.json").write_text(json.dumps({"output": str(OUT)}, indent=2) + "\n")
 print(f"staged {n} files -> {STAGED}")

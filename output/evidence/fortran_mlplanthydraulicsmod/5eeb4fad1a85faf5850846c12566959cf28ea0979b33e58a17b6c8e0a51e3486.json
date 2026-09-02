@@ -1,0 +1,101 @@
+{
+  "artifact": {
+    "digest": "cac1d3a5c527f3f8394436df7e60fb6ecd33ed441f73d1f5fca3ba00ae1d1459",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clm_varpar_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "columntype_constants.py",
+      "columntype_numpy.py",
+      "columntype_use_constants.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlpftconmod_constants.py",
+      "mlpftconmod_numpy.py",
+      "mlpftconmod_use_constants.py",
+      "mlplanthydraulicsmod_constants.py",
+      "mlplanthydraulicsmod_numpy.py",
+      "ncdio_pio_numpy.py",
+      "patchtype_constants.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "soilstatetype_constants.py",
+      "soilstatetype_numpy.py",
+      "soilstatetype_use_constants.py",
+      "spmdmod_numpy.py",
+      "waterstatebulktype_constants.py",
+      "waterstatebulktype_numpy.py",
+      "waterstatebulktype_use_constants.py"
+    ],
+    "name": "fortran:mlplanthydraulicsmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"cac1d3a5c527f3f8394436df7e60fb6ecd33ed441f73d1f5fca3ba00ae1d1459\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlplanthydraulicsmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlplanthydraulicsmod:ac744a1e29ca7b0b",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "560/13080 points differ (max 4598147970015688857 ULP, max_rel=5.962e+01) and no rtol excuses them",
+    "metrics": {
+      "bit_exact": 12520,
+      "max_rel": 59.62432605858177,
+      "max_ulp": 4598147970015688857,
+      "nan_mismatch": 0,
+      "points": 13080,
+      "skipped": [],
+      "subprograms": {
+        "leafwaterpotential_flat": {
+          "bit_exact": 8000,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 8000
+        },
+        "plantresistance_flat": {
+          "bit_exact": 4000,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 4000
+        },
+        "soilresistance_flat": {
+          "bit_exact": 520,
+          "max_rel": 59.62432605858177,
+          "max_ulp": 4598147970015688857,
+          "nan_mismatch": 0,
+          "points": 1080
+        }
+      },
+      "trials": 10
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.bitexact-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T04:57:23.121141+00:00"
+}

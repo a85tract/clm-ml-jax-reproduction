@@ -1,0 +1,36 @@
+{
+  "artifact": {
+    "digest": "11a70e215b08bed1f5a33633f64871e7825471a330ab01567a1817473d211842",
+    "files": [
+      "histfilemod_constants.py",
+      "histfilemod_numpy.py"
+    ],
+    "name": "fortran:histfilemod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"11a70e215b08bed1f5a33633f64871e7825471a330ab01567a1817473d211842\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:histfilemod\"}}",
+  "reference": {
+    "key": "f2py:histfilemod:02ff90fbfcfda8f8",
+    "oracle": "f2py-golden"
+  },
+  "result": {
+    "detail": "candidate does not import: No module named 'decompmod_numpy'",
+    "metrics": {},
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.bitexact"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:29.660304+00:00"
+}

@@ -1,0 +1,43 @@
+{
+  "artifact": {
+    "digest": "ffd6b7beff1d143fb7a7cc03156a05360243d27bb2638166228910ab299e82e5",
+    "files": [
+      "pftconmod_constants.py",
+      "pftconmod_numpy.py",
+      "pftconmod_use_constants.py"
+    ],
+    "name": "fortran:pftconmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"ffd6b7beff1d143fb7a7cc03156a05360243d27bb2638166228910ab299e82e5\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:pftconmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "80 blocks match",
+    "metrics": {
+      "blocks_checked": 80,
+      "blocks_deferred": 2,
+      "blocks_matched": 80,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:30:21.569945+00:00"
+}

@@ -1,0 +1,73 @@
+{
+  "artifact": {
+    "digest": "2b07b24fc825025ef0fdfd28de12a0857dc13892f628a8a8641d7cb954c7aeef",
+    "files": [
+      "clm_varcon_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlfluxprofilesolutionmod_constants.py",
+      "mlfluxprofilesolutionmod_numpy.py",
+      "mlfluxprofilesolutionmod_use_constants.py",
+      "mlleaffluxesmod_constants.py",
+      "mlleaffluxesmod_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "mlsoilfluxesmod_constants.py",
+      "mlsoilfluxesmod_numpy.py",
+      "mlwatervapormod_constants.py",
+      "mlwatervapormod_numpy.py",
+      "mlwatervapormod_use_constants.py"
+    ],
+    "name": "fortran:mlfluxprofilesolutionmod",
+    "transform": "recast-clm-ml.translate.clm-ml-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"2b07b24fc825025ef0fdfd28de12a0857dc13892f628a8a8641d7cb954c7aeef\", \"executor\": \"local\", \"recipe\": \"translate-clm-ml\", \"unit\": \"fortran:mlfluxprofilesolutionmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlfluxprofilesolutionmod:4d87dcad02ad8101",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "84400 points across 1 subprogram(s), all bit-exact",
+    "metrics": {
+      "bit_exact": 84400,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 84400,
+      "skipped": [],
+      "subprograms": {
+        "fluxprofilesolution_flat": {
+          "bit_exact": 84400,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 84400
+        }
+      },
+      "trials": 10
+    },
+    "passed": true,
+    "verdict": "bit_exact",
+    "verifier": "differential.bitexact"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T01:50:11.182479+00:00"
+}

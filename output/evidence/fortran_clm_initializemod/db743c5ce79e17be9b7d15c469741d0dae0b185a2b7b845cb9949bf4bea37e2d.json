@@ -1,0 +1,64 @@
+{
+  "artifact": {
+    "digest": "72b1f4ce01686422780d537ceb0b7d671a81588ea64e47ba422a2116273e23cb",
+    "files": [
+      "clm_initializemod_constants.py",
+      "clm_initializemod_numpy.py",
+      "clm_instmod_numpy.py",
+      "clm_varpar_numpy.py",
+      "columntype_numpy.py",
+      "decompmod_numpy.py",
+      "filtermod_numpy.py",
+      "gridcelltype_numpy.py",
+      "initgridcellsmod_numpy.py",
+      "mlcanopyturbulencemod_numpy.py",
+      "mlpftconmod_numpy.py",
+      "patchtype_numpy.py",
+      "pftconmod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:clm_initializemod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"72b1f4ce01686422780d537ceb0b7d671a81588ea64e47ba422a2116273e23cb\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:clm_initializemod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/4 blocks disagree: initialize2/B008",
+    "metrics": {
+      "blocks_checked": 4,
+      "blocks_deferred": 6,
+      "blocks_matched": 3,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "initialize2/B008",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:50:37.509261+00:00"
+}

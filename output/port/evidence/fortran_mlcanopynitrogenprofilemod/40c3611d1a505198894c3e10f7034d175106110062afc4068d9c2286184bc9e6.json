@@ -1,0 +1,98 @@
+{
+  "artifact": {
+    "digest": "0eb4200b30b066f7f4966411cda71043ba48f27c0ccf3ba8f1910a5b7b3b22f9",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlcanopynitrogenprofilemod_constants.py",
+      "mlcanopynitrogenprofilemod_jax.py",
+      "mlcanopynitrogenprofilemod_jax_runtime.py",
+      "mlcanopynitrogenprofilemod_numpy.py",
+      "mlcanopynitrogenprofilemod_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlpftconmod_constants.py",
+      "mlpftconmod_jax.py",
+      "mlpftconmod_jax_runtime.py",
+      "mlpftconmod_numpy.py",
+      "mlpftconmod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "patchtype_constants.py",
+      "patchtype_jax.py",
+      "patchtype_jax_runtime.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "pftconmod_constants.py",
+      "pftconmod_jax.py",
+      "pftconmod_jax_runtime.py",
+      "pftconmod_numpy.py",
+      "pftconmod_use_constants.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mlcanopynitrogenprofilemod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"0eb4200b30b066f7f4966411cda71043ba48f27c0ccf3ba8f1910a5b7b3b22f9\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlcanopynitrogenprofilemod\"}}",
+  "reference": {
+    "key": "dump-replay:mlcanopynitrogenprofilemod:372e7a55442e15ac",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "5760 point(s) where one side produced NaN and the other a number",
+    "metrics": {
+      "bit_exact": 39280,
+      "candidate_device": "cpu:0",
+      "dominant_points": 25960,
+      "max_rel": Infinity,
+      "max_ulp": 4613024839632592972,
+      "max_ulp_dominant": 0,
+      "nan_mismatch": 5760,
+      "points": 48040,
+      "skipped": [],
+      "subprograms": {
+        "canopynitrogenprofile_flat": {
+          "bit_exact": 39280,
+          "dominant_points": 25960,
+          "max_rel": Infinity,
+          "max_ulp": 4613024839632592972,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 5760,
+          "points": 48040
+        }
+      },
+      "trials": 10
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T01:12:53.781410+00:00"
+}

@@ -1,0 +1,76 @@
+{
+  "artifact": {
+    "digest": "bdddce4cd93ba3a12bd4c4c5ee70633cce4fe38a572d0125c77d8b5f51b83124",
+    "files": [
+      "frictionvelocitymod_constants.py",
+      "frictionvelocitymod_numpy.py"
+    ],
+    "name": "fortran:frictionvelocitymod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"bdddce4cd93ba3a12bd4c4c5ee70633cce4fe38a572d0125c77d8b5f51b83124\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:frictionvelocitymod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "3/8 blocks disagree: initallocate/B004, initallocate/B006, initallocate/B008",
+    "metrics": {
+      "blocks_checked": 8,
+      "blocks_deferred": 1,
+      "blocks_matched": 5,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "initallocate/B004",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B006",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B008",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:27.188836+00:00"
+}

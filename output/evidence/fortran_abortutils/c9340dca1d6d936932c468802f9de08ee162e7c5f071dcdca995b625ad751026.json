@@ -1,0 +1,53 @@
+{
+  "artifact": {
+    "digest": "33f8840390ed6810dbf6c9cb6e8942668cb88eb5fb50b74d7a3f02380da3a599",
+    "files": [
+      "abortutils_constants.py",
+      "abortutils_numpy.py"
+    ],
+    "name": "fortran:abortutils",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"33f8840390ed6810dbf6c9cb6e8942668cb88eb5fb50b74d7a3f02380da3a599\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:abortutils\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/3 blocks disagree: handle_err/B001",
+    "metrics": {
+      "blocks_checked": 3,
+      "blocks_deferred": 0,
+      "blocks_matched": 2,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "handle_err/B001",
+          "reads_source_only": [
+            "errmsg",
+            "nf_strerror"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:24:28.909623+00:00"
+}

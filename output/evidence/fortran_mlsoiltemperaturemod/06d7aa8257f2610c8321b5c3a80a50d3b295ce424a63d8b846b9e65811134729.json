@@ -1,0 +1,96 @@
+{
+  "artifact": {
+    "digest": "cb02e93f76a139e5b1e99b71084dc298997a08aa6aeac36492d191c31cc154b9",
+    "files": [
+      "mlsoiltemperaturemod_constants.py",
+      "mlsoiltemperaturemod_numpy.py"
+    ],
+    "name": "fortran:mlsoiltemperaturemod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"cb02e93f76a139e5b1e99b71084dc298997a08aa6aeac36492d191c31cc154b9\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:mlsoiltemperaturemod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/1 blocks disagree: soilthermprop/B001",
+    "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 1,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "soilthermprop/B001",
+          "reads_source_only": [
+            "cpice",
+            "cpliq",
+            "csol_bedrock",
+            "denh2o",
+            "denice",
+            "tfrz",
+            "thk_bedrock",
+            "tk",
+            "tk_h2osfc",
+            "tkair",
+            "tkice",
+            "tkwat"
+          ],
+          "reads_target_only": [
+            "_clm_varcon",
+            "nlevsno",
+            "num_nolakec"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "bw",
+            "c",
+            "csol",
+            "cv",
+            "dke",
+            "dksat",
+            "dz",
+            "fc",
+            "fl",
+            "frac_sno",
+            "h2osfc",
+            "h2osno",
+            "h2osoi_ice",
+            "h2osoi_liq",
+            "j",
+            "nbedrock",
+            "satw",
+            "snl",
+            "t_soisno",
+            "thk",
+            "tk",
+            "tk_h2osfc",
+            "tkdry",
+            "tkmg",
+            "watsat",
+            "z",
+            "zh2osfc",
+            "zi"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:24:38.258041+00:00"
+}

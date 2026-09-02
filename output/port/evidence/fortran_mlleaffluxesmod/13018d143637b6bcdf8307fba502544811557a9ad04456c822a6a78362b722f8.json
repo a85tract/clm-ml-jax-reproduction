@@ -1,0 +1,80 @@
+{
+  "artifact": {
+    "digest": "1ff814eef1e4f95b6cf93f85d333c1a1d555361a8af1e5dc24560f937bc39f91",
+    "files": [
+      "clm_varcon_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlleaffluxesmod_constants.py",
+      "mlleaffluxesmod_jax.py",
+      "mlleaffluxesmod_jax_runtime.py",
+      "mlleaffluxesmod_numpy.py",
+      "mlwatervapormod_constants.py",
+      "mlwatervapormod_jax.py",
+      "mlwatervapormod_jax_runtime.py",
+      "mlwatervapormod_numpy.py",
+      "mlwatervapormod_use_constants.py"
+    ],
+    "name": "fortran:mlleaffluxesmod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"1ff814eef1e4f95b6cf93f85d333c1a1d555361a8af1e5dc24560f937bc39f91\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlleaffluxesmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlleaffluxesmod:b119edab706f6337",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "47304 dominant point(s) within 0 ULP (gate 32); the tail reaches 6433 ULP but max_rel=3.951e-48 is inside rel_gate=1e-12",
+    "metrics": {
+      "bit_exact": 57550,
+      "candidate_device": "cpu:0",
+      "dominant_points": 47304,
+      "max_rel": 3.950617610826157e-48,
+      "max_ulp": 6433,
+      "max_ulp_dominant": 0,
+      "nan_mismatch": 0,
+      "points": 57600,
+      "rel_gate": 1e-12,
+      "skipped": [],
+      "subprograms": {
+        "leaffluxes_flat": {
+          "bit_exact": 57550,
+          "dominant_points": 47304,
+          "max_rel": 3.950617610826157e-48,
+          "max_ulp": 6433,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 0,
+          "points": 57600
+        }
+      },
+      "trials": 10,
+      "ulp_gate": 32
+    },
+    "passed": true,
+    "verdict": "toleranced",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T19:14:06.813909+00:00"
+}

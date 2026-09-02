@@ -1,0 +1,89 @@
+{
+  "artifact": {
+    "digest": "ab3b42dbf483247c5cbfc85b3c88381f55b420c361cf89a336fea3e9f173e36a",
+    "files": [
+      "clm_varcon_numpy.py",
+      "waterstatebulktype_constants.py",
+      "waterstatebulktype_numpy.py",
+      "waterstatebulktype_use_constants.py"
+    ],
+    "name": "fortran:waterstatebulktype",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"ab3b42dbf483247c5cbfc85b3c88381f55b420c361cf89a336fea3e9f173e36a\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:waterstatebulktype\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "4/12 blocks disagree: initallocate/B006, initallocate/B008, initallocate/B010, initallocate/B012",
+    "metrics": {
+      "blocks_checked": 12,
+      "blocks_deferred": 1,
+      "blocks_matched": 8,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "initallocate/B006",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B008",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B010",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B012",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:30:34.621850+00:00"
+}

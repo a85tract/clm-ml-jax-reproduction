@@ -1,0 +1,115 @@
+{
+  "artifact": {
+    "digest": "7ce3ab75e0478a9e16aa934a6764cf846639eb780c332a4f0839ccf2989c38f5",
+    "files": [
+      "mllongwaveradiationmod_constants.py",
+      "mllongwaveradiationmod_numpy.py"
+    ],
+    "name": "fortran:mllongwaveradiationmod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"7ce3ab75e0478a9e16aa934a6764cf846639eb780c332a4f0839ccf2989c38f5\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:mllongwaveradiationmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "2/2 blocks disagree: longwaveradiation/B001, norman/B001",
+    "metrics": {
+      "blocks_checked": 2,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "longwaveradiation/B001",
+          "reads_source_only": [
+            "longwave_type"
+          ],
+          "reads_target_only": [
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "norman/B001",
+          "reads_source_only": [
+            "emg",
+            "isha",
+            "isun",
+            "lwleaf",
+            "patch",
+            "sb"
+          ],
+          "reads_target_only": [
+            "_clm_varcon",
+            "_mlclm",
+            "_mlclm_",
+            "_patchtype",
+            "num_filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "aic",
+            "atri",
+            "bic",
+            "btri",
+            "ctri",
+            "dpai",
+            "dtri",
+            "eic",
+            "emleaf",
+            "err",
+            "fic",
+            "fp",
+            "fracsun",
+            "ic",
+            "icm1",
+            "lw_source",
+            "lw_source_sha",
+            "lw_source_sun",
+            "lwabs",
+            "lwdwn",
+            "lwleaf",
+            "lwsky",
+            "lwsoi",
+            "lwup",
+            "lwupw",
+            "lwveg",
+            "m",
+            "nbot",
+            "ncan",
+            "ntop",
+            "omega",
+            "p",
+            "refld",
+            "rho",
+            "sumabs",
+            "tau",
+            "td",
+            "tg",
+            "tleaf",
+            "trand"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:36.125077+00:00"
+}

@@ -1,0 +1,87 @@
+{
+  "artifact": {
+    "digest": "4abbc833f80238fef2ce3aab2c9f811783a9a75266cb3bdac9d104097278518e",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varpar_numpy.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "ncdio_pio_numpy.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlcanopyfluxestype",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"4abbc833f80238fef2ce3aab2c9f811783a9a75266cb3bdac9d104097278518e\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlcanopyfluxestype\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "3/522 blocks disagree: inithistory/B004, inithistory/B006, restart/B001",
+    "metrics": {
+      "blocks_checked": 522,
+      "blocks_deferred": 3,
+      "blocks_matched": 519,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "inithistory/B004",
+          "reads_source_only": [
+            "spval",
+            "this"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "inithistory/B006",
+          "reads_source_only": [
+            "spval",
+            "this"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "restart/B001",
+          "reads_source_only": [
+            "flag",
+            "ncd_double",
+            "ncid",
+            "readvar",
+            "this"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:45:16.245551+00:00"
+}

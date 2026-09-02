@@ -1,0 +1,65 @@
+{
+  "artifact": {
+    "digest": "5374946d20d32e5f818fcfe96c1ea21e2856172a70408bcb34039b97d64a1f85",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "columntype_numpy.py",
+      "decompmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "soilstatetype_numpy.py",
+      "surfaceresistancemod_constants.py",
+      "surfaceresistancemod_numpy.py",
+      "surfaceresistancemod_use_constants.py",
+      "temperaturetype_numpy.py",
+      "waterstatebulktype_numpy.py"
+    ],
+    "name": "fortran:surfaceresistancemod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"5374946d20d32e5f818fcfe96c1ea21e2856172a70408bcb34039b97d64a1f85\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:surfaceresistancemod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/1 blocks disagree: calc_soilevap_resis/B001",
+    "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 1,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "calc_soilevap_resis/B001",
+          "reads_source_only": [
+            "dsl",
+            "soilresis"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "dsl",
+            "soilresis"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:51:07.521348+00:00"
+}

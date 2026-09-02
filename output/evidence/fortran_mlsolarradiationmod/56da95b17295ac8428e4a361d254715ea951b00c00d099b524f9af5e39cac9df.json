@@ -1,0 +1,42 @@
+{
+  "artifact": {
+    "digest": "728c7dc7ce7622968a3ecb169f575fba09e4e0e40ed6ced91108ec75d3dbaaed",
+    "files": [
+      "mlsolarradiationmod_constants.py",
+      "mlsolarradiationmod_numpy.py"
+    ],
+    "name": "fortran:mlsolarradiationmod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"728c7dc7ce7622968a3ecb169f575fba09e4e0e40ed6ced91108ec75d3dbaaed\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:mlsolarradiationmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "0 blocks match",
+    "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 3,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:24:38.352439+00:00"
+}

@@ -1,0 +1,57 @@
+{
+  "artifact": {
+    "digest": "d0abf580c8422b69eb5744287ebba84761408be8ac5982ee798f6c7b9454dbab",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_numpy.py",
+      "decompmod_numpy.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlpftconmod_numpy.py",
+      "mlsolarradiationmod_constants.py",
+      "mlsolarradiationmod_numpy.py",
+      "mlsolarradiationmod_use_constants.py",
+      "patchtype_numpy.py",
+      "pftconmod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlsolarradiationmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"d0abf580c8422b69eb5744287ebba84761408be8ac5982ee798f6c7b9454dbab\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlsolarradiationmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "0 blocks match",
+    "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 3,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:51:00.729383+00:00"
+}

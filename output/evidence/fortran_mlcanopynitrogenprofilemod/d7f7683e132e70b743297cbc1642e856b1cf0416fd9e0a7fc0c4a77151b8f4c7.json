@@ -1,0 +1,111 @@
+{
+  "artifact": {
+    "digest": "ca5ed0feeb22b778f4b6975e0cfebf0c0c5f201702d8b9cedc2abe442c1aa695",
+    "files": [
+      "mlcanopynitrogenprofilemod_constants.py",
+      "mlcanopynitrogenprofilemod_numpy.py"
+    ],
+    "name": "fortran:mlcanopynitrogenprofilemod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"ca5ed0feeb22b778f4b6975e0cfebf0c0c5f201702d8b9cedc2abe442c1aa695\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:mlcanopynitrogenprofilemod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/1 blocks disagree: canopynitrogenprofile/B001",
+    "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "canopynitrogenprofile/B001",
+          "reads_source_only": [
+            "acclim_type",
+            "isha",
+            "isun",
+            "jmax25_profile",
+            "jmax25_to_vcmax25_acclim",
+            "jmax25_to_vcmax25_noacclim",
+            "kn_val",
+            "kp25_profile",
+            "kp25_to_vcmax25_c4",
+            "leaf_optics_type",
+            "mlpftcon",
+            "rd25_profile",
+            "rd25_to_vcmax25_c3",
+            "rd25_to_vcmax25_c4",
+            "tfrz"
+          ],
+          "reads_target_only": [
+            "_clm_varcon",
+            "_mlc",
+            "_mlcl",
+            "_mlclm",
+            "_mlp",
+            "num_filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "_mlc",
+            "analytical",
+            "c3psn",
+            "clump_fac",
+            "dpai",
+            "fn",
+            "fn_sha",
+            "fn_sun",
+            "fp",
+            "fracsun",
+            "ic",
+            "jmax25_leaf",
+            "jmax25_profile",
+            "jmax25_to_vcmax25",
+            "jmax25top",
+            "kb",
+            "kn",
+            "kp25_leaf",
+            "kp25_profile",
+            "kp25top",
+            "lai",
+            "ncan",
+            "nscale_sha",
+            "nscale_sun",
+            "numerical",
+            "p",
+            "pai_above",
+            "rd25_leaf",
+            "rd25_profile",
+            "rd25top",
+            "sai",
+            "tacclim",
+            "tbi",
+            "vcmax25_leaf",
+            "vcmax25_profile",
+            "vcmax25top",
+            "vcmaxpft"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:24:37.440872+00:00"
+}

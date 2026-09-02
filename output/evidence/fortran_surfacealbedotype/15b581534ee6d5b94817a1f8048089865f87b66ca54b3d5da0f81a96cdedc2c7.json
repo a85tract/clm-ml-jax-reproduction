@@ -1,0 +1,103 @@
+{
+  "artifact": {
+    "digest": "63201c0efc22c0dbbc969862abbf3b8837bcb41fa79652f0e30a24debc1f557e",
+    "files": [
+      "clm_varcon_numpy.py",
+      "clm_varpar_numpy.py",
+      "decompmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "surfacealbedotype_constants.py",
+      "surfacealbedotype_numpy.py",
+      "surfacealbedotype_use_constants.py"
+    ],
+    "name": "fortran:surfacealbedotype",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"63201c0efc22c0dbbc969862abbf3b8837bcb41fa79652f0e30a24debc1f557e\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:surfacealbedotype\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "5/14 blocks disagree: initallocate/B006, initallocate/B008, initallocate/B010, initallocate/B012, initallocate/B014",
+    "metrics": {
+      "blocks_checked": 14,
+      "blocks_deferred": 1,
+      "blocks_matched": 9,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "initallocate/B006",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B008",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B010",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B012",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B014",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:46:22.626319+00:00"
+}

@@ -1,0 +1,112 @@
+{
+  "artifact": {
+    "digest": "ec89e1aae1abf9da6c4df3c316e81af1413c2251796ababbf5678f3d89c5395c",
+    "files": [
+      "mlgetatmforcingmod_constants.py",
+      "mlgetatmforcingmod_numpy.py"
+    ],
+    "name": "fortran:mlgetatmforcingmod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"ec89e1aae1abf9da6c4df3c316e81af1413c2251796ababbf5678f3d89c5395c\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:mlgetatmforcingmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/6 blocks disagree: getatmforcing/B001",
+    "metrics": {
+      "blocks_checked": 6,
+      "blocks_deferred": 0,
+      "blocks_matched": 5,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "getatmforcing/B001",
+          "reads_source_only": [
+            "co2ref",
+            "cpair",
+            "cpd",
+            "cpw",
+            "lapse_rate",
+            "lwsky",
+            "met_type",
+            "mmdry",
+            "mmh2o",
+            "rgas",
+            "swskyb",
+            "swskyd",
+            "thvref",
+            "wind_forc_min"
+          ],
+          "reads_target_only": [
+            "_mlcl",
+            "_mlclm",
+            "num_filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "co2ref",
+            "co2ref_bef",
+            "co2ref_cur",
+            "co2ref_next",
+            "cpair",
+            "eref",
+            "fp",
+            "lwsky",
+            "lwsky_bef",
+            "lwsky_cur",
+            "lwsky_next",
+            "mmair",
+            "p",
+            "pref",
+            "pref_bef",
+            "pref_cur",
+            "pref_next",
+            "qref",
+            "qref_bef",
+            "qref_cur",
+            "qref_next",
+            "rhoair",
+            "rhomol",
+            "swskyb",
+            "swskyb_bef",
+            "swskyb_cur",
+            "swskyb_next",
+            "swskyd",
+            "swskyd_bef",
+            "swskyd_cur",
+            "swskyd_next",
+            "thref",
+            "thvref",
+            "tref",
+            "tref_bef",
+            "tref_cur",
+            "tref_next",
+            "uref",
+            "uref_bef",
+            "uref_cur",
+            "uref_next",
+            "zref"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:24:37.819735+00:00"
+}

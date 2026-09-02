@@ -1,0 +1,78 @@
+{
+  "artifact": {
+    "digest": "9b3e018fcd5277a2a21ef1d631c4b77545bb79207d655121fbb0448f63b27695",
+    "files": [
+      "clm_varcon_numpy.py",
+      "waterdiagnosticbulktype_constants.py",
+      "waterdiagnosticbulktype_numpy.py",
+      "waterdiagnosticbulktype_use_constants.py"
+    ],
+    "name": "fortran:waterdiagnosticbulktype",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"9b3e018fcd5277a2a21ef1d631c4b77545bb79207d655121fbb0448f63b27695\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:waterdiagnosticbulktype\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "3/10 blocks disagree: initallocate/B006, initallocate/B008, initallocate/B010",
+    "metrics": {
+      "blocks_checked": 10,
+      "blocks_deferred": 1,
+      "blocks_matched": 7,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "initallocate/B006",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B008",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B010",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:30:34.220874+00:00"
+}

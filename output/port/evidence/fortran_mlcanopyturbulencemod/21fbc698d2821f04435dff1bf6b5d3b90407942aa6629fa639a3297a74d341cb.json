@@ -1,0 +1,86 @@
+{
+  "artifact": {
+    "digest": "09dcf0214912b767da8dd767aaf9cf8364754706a21f835a70df6716392f27cb",
+    "files": [
+      "clm_time_manager_constants.py",
+      "clm_time_manager_jax.py",
+      "clm_time_manager_jax_runtime.py",
+      "clm_time_manager_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlcanopyturbulencemod_constants.py",
+      "mlcanopyturbulencemod_jax.py",
+      "mlcanopyturbulencemod_jax_runtime.py",
+      "mlcanopyturbulencemod_numpy.py",
+      "mlcanopyturbulencemod_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_jax.py",
+      "mlmathtoolsmod_jax_runtime.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mlcanopyturbulencemod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"09dcf0214912b767da8dd767aaf9cf8364754706a21f835a70df6716392f27cb\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlcanopyturbulencemod\"}}",
+  "reference": {
+    "key": "dump-replay:mlcanopyturbulencemod:077852e3ffbea9d3",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "9102 dominant point(s) within 23 ULP (gate 32); the tail reaches 172 ULP but max_rel=2.936e-15 is inside rel_gate=1e-12",
+    "metrics": {
+      "bit_exact": 10731,
+      "candidate_device": "cpu:0",
+      "dominant_points": 9102,
+      "max_rel": 2.9363129583010126e-15,
+      "max_ulp": 172,
+      "max_ulp_dominant": 23,
+      "nan_mismatch": 0,
+      "points": 16480,
+      "rel_gate": 1e-12,
+      "skipped": [],
+      "subprograms": {
+        "canopyturbulence_flat": {
+          "bit_exact": 10731,
+          "dominant_points": 9102,
+          "max_rel": 2.9363129583010126e-15,
+          "max_ulp": 172,
+          "max_ulp_dominant": 23,
+          "nan_mismatch": 0,
+          "points": 16480
+        }
+      },
+      "trials": 10,
+      "ulp_gate": 32
+    },
+    "passed": true,
+    "verdict": "toleranced",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T03:04:41.893323+00:00"
+}

@@ -1,0 +1,46 @@
+{
+  "artifact": {
+    "digest": "65f834ded1de2cf8b91147a4e58069967f3154b4799c4fa02c4a9ae2d6ba27dc",
+    "files": [
+      "columntype_numpy.py",
+      "soilstatetype_numpy.py",
+      "soilwatermovementmod_constants.py",
+      "soilwatermovementmod_numpy.py",
+      "soilwatermovementmod_use_constants.py",
+      "waterstatebulktype_numpy.py"
+    ],
+    "name": "fortran:soilwatermovementmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"65f834ded1de2cf8b91147a4e58069967f3154b4799c4fa02c4a9ae2d6ba27dc\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:soilwatermovementmod\"}}",
+  "reference": {
+    "key": "f2py:soilwatermovementmod:4ba12cb92a50341a",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "2 blocks match",
+    "metrics": {
+      "blocks_checked": 2,
+      "blocks_deferred": 1,
+      "blocks_matched": 2,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:30:28.716802+00:00"
+}

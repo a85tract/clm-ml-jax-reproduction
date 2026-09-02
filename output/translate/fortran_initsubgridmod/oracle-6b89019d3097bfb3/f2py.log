@@ -1,0 +1,114 @@
+The Meson build system
+Version: 1.12.0
+Source dir: /private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmp34mmaokp
+Build dir: /private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmp34mmaokp/bbdir
+Build type: native build
+Project name: ref_initsubgridmod
+Project version: 0.1
+Fortran compiler for the host machine: gfortran (gcc 16.1.0 "GNU Fortran (Homebrew GCC 16.1.0) 16.1.0")
+Fortran linker for the host machine: gfortran ld64 1267
+C compiler for the host machine: cc (clang 21.0.0 "Apple clang version 21.0.0 (clang-2100.1.1.101)")
+C linker for the host machine: cc ld64 1267
+Host machine cpu family: aarch64
+Host machine cpu: aarch64
+Compiler for C supports arguments -fno-strict-aliasing: YES 
+Program /Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/python found: YES (/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/python)
+Found pkg-config: YES (/opt/homebrew/bin/pkg-config) 3.0.6
+Run-time dependency python found: YES 3.11
+Library quadmath found: YES
+Build targets in project: 1
+
+Found ninja-1.13.0.git.kitware.jobserver-pipe-1 at /Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/ninja
+ninja: Entering directory `/private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmp34mmaokp/bbdir'
+[1/11] Scanning target ref_initsubgridmod.cpython-311-darwin for modules
+[2/11] Compiling C object ref_initsubgridmod.cpython-311-darwin.so.p/ref_initsubgridmodmodule.c.o
+../ref_initsubgridmodmodule.c:245:9: warning: misleading indentation; statement is not part of the previous 'if' [-Wmisleading-indentation]
+  245 |         f2py_success = int_from_pyobj(&pi,pi_capi,"ref_initsubgridmod.w_add_patch() 1st argument (pi) can't be converted to int");
+      |         ^
+../ref_initsubgridmodmodule.c:239:5: note: previous statement is here
+  239 |     if (!PyArg_ParseTupleAndKeywords(capi_args,capi_keywds,\
+      |     ^
+1 warning generated.
+[3/11] Generating dynamic dependency information for target ref_initsubgridmod.cpython-311-darwin
+[4/11] Compiling C object ref_initsubgridmod.cpython-311-darwin.so.p/c9103ebe8974317e72579428ad3ce24fea6d8fbd_.._.._f2py_src_fortranobject.c.o
+[5/11] Compiling Fortran object ref_initsubgridmod.cpython-311-darwin.so.p/shr_kind_mod.f90.o
+[6/11] Compiling Fortran object ref_initsubgridmod.cpython-311-darwin.so.p/ref_initsubgridmod-f2pywrappers.f.o
+[7/11] Compiling Fortran object ref_initsubgridmod.cpython-311-darwin.so.p/PatchType.f90.o
+FAILED: [code=1] ref_initsubgridmod.cpython-311-darwin.so.p/PatchType.f90.o ref_initsubgridmod.cpython-311-darwin.so.p/patchtype.mod 
+gfortran -Iref_initsubgridmod.cpython-311-darwin.so.p -I. -I.. -I/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged -I/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/_core/include -I/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/src -I/Users/yueqichen/.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/pkgconfig/../../include/python3.11 -fvisibility=hidden -fdiagnostics-color=always -Wall -O3 -O1 -fno-fast-math -ffp-contract=off -Jref_initsubgridmod.cpython-311-darwin.so.p -o ref_initsubgridmod.cpython-311-darwin.so.p/PatchType.f90.o -c ../PatchType.f90
+../PatchType.f90:94:7:
+
+   94 |   use clm_varcon, only : ispval, nan => spval
+      |       1
+Fatal Error: Cannot open module file 'clm_varcon.mod' for reading at (1): No such file or directory
+compilation terminated.
+[8/11] Compiling Fortran object ref_initsubgridmod.cpython-311-darwin.so.p/ref_initsubgridmod-f2pywrappers2.f90.o
+ninja: build stopped: subcommand failed.
+INFO: autodetecting backend as ninja
+INFO: calculating backend command to run: /Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/ninja -C /private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmp34mmaokp/bbdir
+Using meson backend
+Will pass --lower to f2py
+See https://numpy.org/doc/stable/f2py/buildtools/meson.html
+Reading fortran codes...
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/shr_kind_mod.f90' (format:free)
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/PatchType.f90' (format:free)
+,public::patch_type <re.Match object; span=(0, 19), match=',public::patch_type'>
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/initSubgridMod.f90' (format:free)
+	Reading file 'wrappers.f90' (format:free)
+Post-processing...
+	Block: ref_initsubgridmod
+			Block: shr_kind_mod
+			Block: patchtype
+In: :ref_initsubgridmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/PatchType.f90:patchtype
+get_useparameters: no module clm_varcon info used by patchtype
+				Block: patch_type
+In: :ref_initsubgridmod:/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/PatchType.f90:patchtype:patch_type
+get_useparameters: no module clm_varcon info used by patch_type
+			Block: initsubgridmod
+			Block: w_add_patch
+Applying post-processing hooks...
+  character_backward_compatibility_hook
+Post-processing (stage 2)...
+	Block: ref_initsubgridmod
+		Block: unknown_interface
+			Block: shr_kind_mod
+			Block: patchtype
+				Block: patch_type
+			Block: initsubgridmod
+			Block: w_add_patch
+Building modules...
+    Building module "ref_initsubgridmod"...
+    Generating possibly empty wrappers"
+    Maybe empty "ref_initsubgridmod-f2pywrappers.f"
+        Constructing wrapper function "w_add_patch"...
+          w_add_patch(pi,ptype)
+		Constructing F90 module support for "shr_kind_mod"...
+		  Variables: shr_kind_r8 shr_kind_in
+		Constructing F90 module support for "patchtype"...
+			Skipping patchtype since it is in 'use' and contains a derived type...
+		Constructing F90 module support for "initsubgridmod"...
+			Skipping initsubgridmod since there are no public vars/func in this module...
+    Wrote C/API module "ref_initsubgridmod" to file "./ref_initsubgridmodmodule.c"
+    Fortran 90 wrappers are saved to "./ref_initsubgridmod-f2pywrappers2.f90"
+
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/__main__.py", line 5, in <module>
+    main()
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/f2py2e.py", line 786, in main
+    run_compile()
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/f2py2e.py", line 758, in run_compile
+    builder.compile()
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/_backends/_meson.py", line 197, in compile
+    self.run_meson(self.build_dir)
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/_backends/_meson.py", line 191, in run_meson
+    self._run_subprocess_command(compile_command, build_dir)
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/_backends/_meson.py", line 185, in _run_subprocess_command
+    subprocess.run(command, cwd=cwd, check=True)
+  File "/Users/yueqichen/.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['meson', 'compile', '-C', 'bbdir']' returned non-zero exit status 1.

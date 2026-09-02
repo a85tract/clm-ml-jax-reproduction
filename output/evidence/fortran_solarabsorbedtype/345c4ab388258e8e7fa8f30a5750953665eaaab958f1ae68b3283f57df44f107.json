@@ -1,0 +1,56 @@
+{
+  "artifact": {
+    "digest": "bb8796df669416d93faa808c5002185b22fbcb439adfc2b65897640470ce1c8e",
+    "files": [
+      "clm_varcon_numpy.py",
+      "solarabsorbedtype_constants.py",
+      "solarabsorbedtype_numpy.py",
+      "solarabsorbedtype_use_constants.py"
+    ],
+    "name": "fortran:solarabsorbedtype",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"bb8796df669416d93faa808c5002185b22fbcb439adfc2b65897640470ce1c8e\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:solarabsorbedtype\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/4 blocks disagree: initallocate/B004",
+    "metrics": {
+      "blocks_checked": 4,
+      "blocks_deferred": 1,
+      "blocks_matched": 3,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "initallocate/B004",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:30:28.912165+00:00"
+}

@@ -1,0 +1,50 @@
+{
+  "artifact": {
+    "digest": "8b75a80b2b3567ff907175824f798ba134222d23e5891fe3c84126a2313de97f",
+    "files": [
+      "decompmod_numpy.py",
+      "histfilemod_constants.py",
+      "histfilemod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:histfilemod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"8b75a80b2b3567ff907175824f798ba134222d23e5891fe3c84126a2313de97f\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:histfilemod\"}}",
+  "reference": {
+    "key": "f2py:histfilemod:795abf4baaa4ade5",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "nothing was compared; that is not a pass",
+    "metrics": {
+      "bit_exact": 0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 0,
+      "skipped": [
+        "hist_addfld1d",
+        "hist_addfld2d"
+      ],
+      "subprograms": {},
+      "trials": 10
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.bitexact-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:44:43.104778+00:00"
+}

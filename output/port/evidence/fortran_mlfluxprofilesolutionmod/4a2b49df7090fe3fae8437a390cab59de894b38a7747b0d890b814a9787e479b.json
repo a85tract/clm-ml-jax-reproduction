@@ -1,0 +1,95 @@
+{
+  "artifact": {
+    "digest": "af86c5f979a14b364e79217b686c695ca128a0fb46718382138765dfede07700",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clm_varpar_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlfluxprofilesolutionmod_constants.py",
+      "mlfluxprofilesolutionmod_jax.py",
+      "mlfluxprofilesolutionmod_jax_runtime.py",
+      "mlfluxprofilesolutionmod_numpy.py",
+      "mlfluxprofilesolutionmod_use_constants.py",
+      "mlleaffluxesmod_constants.py",
+      "mlleaffluxesmod_jax.py",
+      "mlleaffluxesmod_jax_runtime.py",
+      "mlleaffluxesmod_numpy.py",
+      "mlleaffluxesmod_use_constants.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_jax.py",
+      "mlmathtoolsmod_jax_runtime.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "mlsoilfluxesmod_constants.py",
+      "mlsoilfluxesmod_jax.py",
+      "mlsoilfluxesmod_jax_runtime.py",
+      "mlsoilfluxesmod_numpy.py",
+      "mlsoilfluxesmod_use_constants.py",
+      "mlwatervapormod_constants.py",
+      "mlwatervapormod_jax.py",
+      "mlwatervapormod_jax_runtime.py",
+      "mlwatervapormod_numpy.py",
+      "mlwatervapormod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlfluxprofilesolutionmod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"af86c5f979a14b364e79217b686c695ca128a0fb46718382138765dfede07700\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlfluxprofilesolutionmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlfluxprofilesolutionmod:4d87dcad02ad8101",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "1 subprogram(s) could not be compared: fluxprofilesolution_flat: candidate raised: TracerBoolConversionError: Attempted boolean conversion of traced array with shape bool[].\nThe error occurred while tracing the function _body_3 at /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/port/port-clm-ml/fortran_mlfluxprofilesolutionmod/candidate/mlfluxprofilesolutionmod_jax.py:521 for fori_loop. This value became a tracer due to JAX operations on these lines:\n\n  operation a:i32[] = add b 1:i32[]\n    from line \n\n  operation a:i32[] = sub b 1:i32[]\n    from line /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/port/port-clm-ml/fortran_mlfluxprofilesolutionmod/candidate/mlfluxprofilesolutionmod_jax.py:523:73 (_wellmixed_flat_k_impl.<locals>._body_5.<locals>._body_3)\n\n  operation a:i32[] = sub b 1:i32[]\n    from line /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/port/port-clm-ml/fortran_mlfluxprofilesolutionmod/candidate/mlfluxprofilesolutionmod_jax.py:523:80 (_wellmixed_flat_k_impl.<locals>._body_5.<locals>._body_3)\n\n  operation a:i32[] = sub b 1:i32[]\n    from line /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/port/port-clm-ml/fortran_mlfluxprofilesolutionmod/candidate/mlfluxprofilesolutionmod_jax.py:523:122 (_wellmixed_flat_k_impl.<locals>._body_5.<locals>._body_3)\n\n  operation a:bool[] = lt b 0:i32[]\n    from line /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/port/port-clm-ml/fortran_mlfluxprofilesolutionmod/candidate/mlfluxprofilesolutionmod_jax.py:523:92 (_wellmixed_flat_k_impl.<locals>._body_5.<locals>._body_3)\n\n(Additional originating lines are not shown.)\nSee https://docs.jax.dev/en/latest/errors.html#jax.errors.TracerBoolConversionError",
+    "metrics": {
+      "bit_exact": 0,
+      "candidate_device": "cpu:0",
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 0,
+      "skipped": [],
+      "subprograms": {
+        "fluxprofilesolution_flat": {
+          "error": "candidate raised: TracerBoolConversionError: Attempted boolean conversion of traced array with shape bool[].\nThe error occurred while tracing the function _body_3 at /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/port/port-clm-ml/fortran_mlfluxprofilesolutionmod/candidate/mlfluxprofilesolutionmod_jax.py:521 for fori_loop. This value became a tracer due to JAX operations on these lines:\n\n  operation a:i32[] = add b 1:i32[]\n    from line \n\n  operation a:i32[] = sub b 1:i32[]\n    from line /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/port/port-clm-ml/fortran_mlfluxprofilesolutionmod/candidate/mlfluxprofilesolutionmod_jax.py:523:73 (_wellmixed_flat_k_impl.<locals>._body_5.<locals>._body_3)\n\n  operation a:i32[] = sub b 1:i32[]\n    from line /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/port/port-clm-ml/fortran_mlfluxprofilesolutionmod/candidate/mlfluxprofilesolutionmod_jax.py:523:80 (_wellmixed_flat_k_impl.<locals>._body_5.<locals>._body_3)\n\n  operation a:i32[] = sub b 1:i32[]\n    from line /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/port/port-clm-ml/fortran_mlfluxprofilesolutionmod/candidate/mlfluxprofilesolutionmod_jax.py:523:122 (_wellmixed_flat_k_impl.<locals>._body_5.<locals>._body_3)\n\n  operation a:bool[] = lt b 0:i32[]\n    from line /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/port/port-clm-ml/fortran_mlfluxprofilesolutionmod/candidate/mlfluxprofilesolutionmod_jax.py:523:92 (_wellmixed_flat_k_impl.<locals>._body_5.<locals>._body_3)\n\n(Additional originating lines are not shown.)\nSee https://docs.jax.dev/en/latest/errors.html#jax.errors.TracerBoolConversionError"
+        }
+      },
+      "trials": 10
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T01:02:52.083361+00:00"
+}

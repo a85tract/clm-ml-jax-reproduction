@@ -1,0 +1,71 @@
+{
+  "artifact": {
+    "digest": "da22085a1b646b838fa16132079505a820a5f5d04e689fb5175a93ee0e72800c",
+    "files": [
+      "initverticalmod_constants.py",
+      "initverticalmod_numpy.py"
+    ],
+    "name": "fortran:initverticalmod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"da22085a1b646b838fa16132079505a820a5f5d04e689fb5175a93ee0e72800c\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:initverticalmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/1 blocks disagree: initvertical/B001",
+    "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "initvertical/B001",
+          "reads_source_only": [
+            "clm_phys",
+            "nbedrock",
+            "tower_num",
+            "tower_zbed",
+            "zmin_bedrock"
+          ],
+          "reads_target_only": [
+            "_clm",
+            "_clm_varcon",
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "begc",
+            "c",
+            "dz",
+            "endc",
+            "j",
+            "jmin_bedrock",
+            "nbedrock",
+            "z",
+            "zbedrock",
+            "zi"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:24:36.725943+00:00"
+}

@@ -1,0 +1,54 @@
+{
+  "artifact": {
+    "digest": "1f21ae78e41d09cd966b60471e8265097a34c29d18dfede9c88623a70fdea6e1",
+    "files": [
+      "solarabsorbedtype_constants.py",
+      "solarabsorbedtype_numpy.py"
+    ],
+    "name": "fortran:solarabsorbedtype",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"1f21ae78e41d09cd966b60471e8265097a34c29d18dfede9c88623a70fdea6e1\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:solarabsorbedtype\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/4 blocks disagree: initallocate/B004",
+    "metrics": {
+      "blocks_checked": 4,
+      "blocks_deferred": 1,
+      "blocks_matched": 3,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "initallocate/B004",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:24:40.618729+00:00"
+}

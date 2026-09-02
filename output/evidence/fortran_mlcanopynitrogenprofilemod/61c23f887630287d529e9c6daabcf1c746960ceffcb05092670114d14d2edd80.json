@@ -1,0 +1,59 @@
+{
+  "artifact": {
+    "digest": "063a41fef9321998b8efa4e267fb395d9c20fb00b4cfa72180cec2c4468ff19a",
+    "files": [
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopynitrogenprofilemod_constants.py",
+      "mlcanopynitrogenprofilemod_numpy.py",
+      "mlcanopynitrogenprofilemod_use_constants.py",
+      "mlpftconmod_numpy.py",
+      "patchtype_numpy.py",
+      "pftconmod_numpy.py"
+    ],
+    "name": "fortran:mlcanopynitrogenprofilemod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"063a41fef9321998b8efa4e267fb395d9c20fb00b4cfa72180cec2c4468ff19a\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlcanopynitrogenprofilemod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/1 blocks disagree: canopynitrogenprofile/B001",
+    "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "canopynitrogenprofile/B001",
+          "reads_source_only": [
+            "mlpftcon"
+          ],
+          "reads_target_only": [
+            "_mlp"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:29:19.870436+00:00"
+}

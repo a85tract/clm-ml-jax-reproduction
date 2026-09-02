@@ -1,0 +1,51 @@
+{
+  "artifact": {
+    "digest": "1b35c342c756dfd038bc815a1cbacbc2df259f9543f8210e0c1a1215dfc63ac9",
+    "files": [
+      "shr_file_mod_constants.py",
+      "shr_file_mod_numpy.py"
+    ],
+    "name": "fortran:shr_file_mod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"1b35c342c756dfd038bc815a1cbacbc2df259f9543f8210e0c1a1215dfc63ac9\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:shr_file_mod\"}}",
+  "reference": {
+    "key": "f2py:shr_file_mod:59bbbaeb13cd4092",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "1 subprogram(s) could not be compared: shr_file_freeunit: candidate returned 1 value(s) for 0 out-intent argument(s)",
+    "metrics": {
+      "bit_exact": 0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 0,
+      "skipped": [
+        "shr_file_getunit"
+      ],
+      "subprograms": {
+        "shr_file_freeunit": {
+          "error": "candidate returned 1 value(s) for 0 out-intent argument(s)"
+        }
+      },
+      "trials": 10
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.bitexact-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:30:24.457124+00:00"
+}

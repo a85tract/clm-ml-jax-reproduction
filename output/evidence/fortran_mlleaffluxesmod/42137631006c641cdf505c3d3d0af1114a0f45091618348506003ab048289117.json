@@ -1,0 +1,95 @@
+{
+  "artifact": {
+    "digest": "3e1469633505cd03481bb7bfd74dc322e573489a251128979556deb8c73b81e3",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varctl_numpy.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlleaffluxesmod_constants.py",
+      "mlleaffluxesmod_numpy.py",
+      "mlleaffluxesmod_use_constants.py",
+      "mlwatervapormod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlleaffluxesmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"3e1469633505cd03481bb7bfd74dc322e573489a251128979556deb8c73b81e3\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlleaffluxesmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/1 blocks disagree: leaffluxes/B001",
+    "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "leaffluxes/B001",
+          "reads_source_only": [
+            "endrun"
+          ],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "cpair",
+            "cpleaf",
+            "den",
+            "desat",
+            "dpai",
+            "dqsat",
+            "dtime",
+            "eair",
+            "err",
+            "esat",
+            "evleaf",
+            "fdry",
+            "fwet",
+            "gbh",
+            "gbv",
+            "gleaf",
+            "gs",
+            "gw",
+            "lambda",
+            "lhleaf",
+            "num1",
+            "num2",
+            "num3",
+            "pref",
+            "qsat",
+            "rnleaf",
+            "shleaf",
+            "stleaf",
+            "tair",
+            "tleaf",
+            "tleaf_bef",
+            "tref",
+            "trleaf"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:50:55.581872+00:00"
+}

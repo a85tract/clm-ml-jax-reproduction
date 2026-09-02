@@ -1,0 +1,140 @@
+{
+  "artifact": {
+    "digest": "a8188136cd29af4998bcfd4cb1ad8b7776f833ca9edd87170ad5ec75e31b427f",
+    "files": [
+      "mlcanopywatermod_constants.py",
+      "mlcanopywatermod_numpy.py"
+    ],
+    "name": "fortran:mlcanopywatermod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"a8188136cd29af4998bcfd4cb1ad8b7776f833ca9edd87170ad5ec75e31b427f\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:mlcanopywatermod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "3/3 blocks disagree: canopywettedfraction/B001, canopyinterception/B001, canopyevaporation/B001",
+    "metrics": {
+      "blocks_checked": 3,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "canopywettedfraction/B001",
+          "reads_source_only": [
+            "dewmx",
+            "fdry",
+            "fwet_exponent",
+            "maximum_leaf_wetted_fraction"
+          ],
+          "reads_target_only": [
+            "_mlc",
+            "num_filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "dlai",
+            "dpai",
+            "fdry",
+            "fp",
+            "fwet",
+            "h2ocan",
+            "h2ocanmx",
+            "ic",
+            "ncan",
+            "p"
+          ]
+        },
+        {
+          "block": "canopyinterception/B001",
+          "reads_source_only": [
+            "dewmx",
+            "dtime_ml",
+            "interception_fraction",
+            "qflx_tflrain",
+            "qflx_tflsnow"
+          ],
+          "reads_target_only": [
+            "_mlc",
+            "_mlcl",
+            "num_filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "dpai",
+            "dtime",
+            "fp",
+            "fpi",
+            "fracrain",
+            "fracsnow",
+            "h2ocan",
+            "h2ocan_bef",
+            "h2ocanmx",
+            "ic",
+            "lai",
+            "n",
+            "ncan",
+            "p",
+            "qflx_candrip",
+            "qflx_intr",
+            "qflx_rain",
+            "qflx_snow",
+            "qflx_tflrain",
+            "qflx_tflsnow",
+            "qflx_through_rain",
+            "qflx_through_snow",
+            "sai",
+            "xrun"
+          ]
+        },
+        {
+          "block": "canopyevaporation/B001",
+          "reads_source_only": [
+            "dtime_ml",
+            "isha",
+            "isun",
+            "mmh2o"
+          ],
+          "reads_target_only": [
+            "_mlc",
+            "_mlcl",
+            "_mlclm",
+            "num_filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "dew",
+            "dpai",
+            "dtime",
+            "evleaf",
+            "fp",
+            "fracsun",
+            "h2ocan",
+            "ic",
+            "ncan",
+            "p",
+            "trleaf"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:24:37.588005+00:00"
+}

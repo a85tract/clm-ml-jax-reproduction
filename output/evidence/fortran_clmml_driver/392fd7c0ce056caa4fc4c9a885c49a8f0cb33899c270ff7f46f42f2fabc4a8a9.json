@@ -1,0 +1,495 @@
+{
+  "artifact": {
+    "digest": "b1d1d1a2705dd614d7451af48063a7106c77975ddccf2858eb828b340e9a9cf1",
+    "files": [
+      "abortutils_numpy.py",
+      "atm2lndtype_numpy.py",
+      "canopystatetype_numpy.py",
+      "clm_instmod_numpy.py",
+      "clm_time_manager_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varorb_numpy.py",
+      "clm_varpar_numpy.py",
+      "clmml_driver_constants.py",
+      "clmml_driver_numpy.py",
+      "clmml_driver_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "columntype_numpy.py",
+      "controlmod_numpy.py",
+      "decompmod_numpy.py",
+      "energyfluxtype_numpy.py",
+      "fileutils_numpy.py",
+      "filtermod_numpy.py",
+      "frictionvelocitymod_numpy.py",
+      "initverticalmod_numpy.py",
+      "lnd_comp_nuopc_numpy.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlwatervapormod_numpy.py",
+      "patchtype_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "shr_orb_mod_numpy.py",
+      "soilstateinittimeconstmod_numpy.py",
+      "soilstatetype_numpy.py",
+      "solarabsorbedtype_numpy.py",
+      "surfacealbedomod_numpy.py",
+      "surfacealbedotype_numpy.py",
+      "temperaturetype_numpy.py",
+      "towerdatamod_numpy.py",
+      "towermetmod_numpy.py",
+      "wateratm2lndbulktype_numpy.py",
+      "waterdiagnosticbulktype_numpy.py",
+      "waterfluxbulktype_numpy.py",
+      "waterstatebulktype_numpy.py",
+      "watertype_numpy.py"
+    ],
+    "name": "fortran:clmml_driver",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"b1d1d1a2705dd614d7451af48063a7106c77975ddccf2858eb828b340e9a9cf1\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:clmml_driver\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "35/79 blocks disagree: clmml_drv/B006, clmml_drv/B007, clmml_drv/B008, clmml_drv/B009, clmml_drv/B024 (+30 more)",
+    "metrics": {
+      "blocks_checked": 79,
+      "blocks_deferred": 8,
+      "blocks_matched": 44,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "clmml_drv/B006",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B007",
+          "reads_source_only": [],
+          "reads_target_only": [],
+          "writes_source_only": [
+            "eccen",
+            "lambm0",
+            "mvelpp",
+            "obliqr"
+          ],
+          "writes_target_only": [
+            "_clm_varorb"
+          ]
+        },
+        {
+          "block": "clmml_drv/B008",
+          "reads_source_only": [
+            "tower_num"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B009",
+          "reads_source_only": [
+            "tower_num"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B024",
+          "reads_source_only": [
+            "getavu"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B025",
+          "reads_source_only": [
+            "fout1",
+            "nout1"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B028",
+          "reads_source_only": [
+            "getavu"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B029",
+          "reads_source_only": [
+            "fout2",
+            "nout2"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B032",
+          "reads_source_only": [
+            "getavu"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B033",
+          "reads_source_only": [
+            "fout3",
+            "nout3"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B036",
+          "reads_source_only": [
+            "getavu"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B037",
+          "reads_source_only": [
+            "fout4",
+            "nout4"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B040",
+          "reads_source_only": [
+            "getavu"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B041",
+          "reads_source_only": [
+            "fout5",
+            "nout5"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B044",
+          "reads_source_only": [
+            "getavu"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B045",
+          "reads_source_only": [
+            "fout6",
+            "nout6"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B048",
+          "reads_source_only": [
+            "tower_num"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B049",
+          "reads_source_only": [
+            "nout1"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B050",
+          "reads_source_only": [
+            "nout1"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B051",
+          "reads_source_only": [
+            "nout2"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B052",
+          "reads_source_only": [
+            "nout2"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B053",
+          "reads_source_only": [
+            "nout3"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B054",
+          "reads_source_only": [
+            "nout3"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B055",
+          "reads_source_only": [
+            "nout4"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B056",
+          "reads_source_only": [
+            "nout4"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B057",
+          "reads_source_only": [
+            "nout5"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B058",
+          "reads_source_only": [
+            "nout5"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B059",
+          "reads_source_only": [
+            "nout6"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B060",
+          "reads_source_only": [
+            "nout6"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "clmml_drv/B061",
+          "reads_source_only": [
+            "nin1"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "init_acclim/B001",
+          "reads_source_only": [
+            "frictionvel_inst",
+            "pref",
+            "wateratm2lndbulk_inst"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "atm2lnd_inst",
+            "c",
+            "forc_pbot",
+            "forc_t",
+            "frictionvel_inst",
+            "itim",
+            "p",
+            "pref",
+            "t10",
+            "wateratm2lndbulk_inst"
+          ]
+        },
+        {
+          "block": "towerveg/B001",
+          "reads_source_only": [
+            "endrun",
+            "htop",
+            "pbeta_lai",
+            "pbeta_sai",
+            "root_biomass",
+            "tower_canht",
+            "tower_pbeta_lai",
+            "tower_pbeta_sai",
+            "tower_pft",
+            "tower_root"
+          ],
+          "reads_target_only": [
+            "_tow",
+            "begp",
+            "endp",
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "htop",
+            "p",
+            "patch",
+            "pbeta_lai",
+            "pbeta_sai",
+            "root_biomass"
+          ]
+        },
+        {
+          "block": "soilinit/B001",
+          "reads_source_only": [
+            "clm_phys",
+            "col",
+            "h2osoi_ice",
+            "h2osoi_liq",
+            "handle_err",
+            "t_soisno"
+          ],
+          "reads_target_only": [
+            "_clms",
+            "_columntype",
+            "begc",
+            "endc",
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "c",
+            "count3",
+            "dz",
+            "h2osoi_ice",
+            "h2osoi_liq",
+            "h2osoi_vol",
+            "j",
+            "nbedrock",
+            "start3",
+            "status",
+            "t_soisno",
+            "watsat"
+          ]
+        },
+        {
+          "block": "output/B004",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readcanopyprofiles/B001",
+          "reads_source_only": [
+            "eair_data",
+            "endrun",
+            "i",
+            "nin1",
+            "tair_data",
+            "wind_data",
+            "x"
+          ],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "check",
+            "eair_data",
+            "err",
+            "ic",
+            "ncan",
+            "nrec",
+            "p",
+            "pref",
+            "qair",
+            "tair_data",
+            "wind_data",
+            "zs"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:50:40.394891+00:00"
+}

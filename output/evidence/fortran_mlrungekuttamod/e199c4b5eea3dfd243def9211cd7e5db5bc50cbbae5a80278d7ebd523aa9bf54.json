@@ -1,0 +1,44 @@
+{
+  "artifact": {
+    "digest": "241b86b040171ab3e201d47aafe6d898d535b6843a797d4ab7277e9d4ae9f288",
+    "files": [
+      "mlcanopyfluxestype_numpy.py",
+      "mlrungekuttamod_constants.py",
+      "mlrungekuttamod_numpy.py",
+      "mlrungekuttamod_use_constants.py"
+    ],
+    "name": "fortran:mlrungekuttamod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"241b86b040171ab3e201d47aafe6d898d535b6843a797d4ab7277e9d4ae9f288\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlrungekuttamod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "2 blocks match",
+    "metrics": {
+      "blocks_checked": 2,
+      "blocks_deferred": 0,
+      "blocks_matched": 2,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:30:07.823611+00:00"
+}

@@ -1,0 +1,44 @@
+{
+  "artifact": {
+    "digest": "a066487377f7f19692b19b0c05f56ff6bf6c769e639effa79221249b963bb90e",
+    "files": [
+      "initsubgridmod_constants.py",
+      "initsubgridmod_numpy.py",
+      "patchtype_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:initsubgridmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"a066487377f7f19692b19b0c05f56ff6bf6c769e639effa79221249b963bb90e\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:initsubgridmod\"}}",
+  "reference": {
+    "key": "f2py:initsubgridmod:bf681e12df2b6830",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "4 blocks match",
+    "metrics": {
+      "blocks_checked": 4,
+      "blocks_deferred": 0,
+      "blocks_matched": 4,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:50:47.775370+00:00"
+}

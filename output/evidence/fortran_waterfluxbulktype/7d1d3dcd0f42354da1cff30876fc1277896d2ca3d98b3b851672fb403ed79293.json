@@ -1,0 +1,54 @@
+{
+  "artifact": {
+    "digest": "ca51d0ac29333c790325be1ad5a25aa72b7d717412aabbf4d0a226fde1b6e4cd",
+    "files": [
+      "waterfluxbulktype_constants.py",
+      "waterfluxbulktype_numpy.py"
+    ],
+    "name": "fortran:waterfluxbulktype",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"ca51d0ac29333c790325be1ad5a25aa72b7d717412aabbf4d0a226fde1b6e4cd\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:waterfluxbulktype\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/4 blocks disagree: initallocate/B004",
+    "metrics": {
+      "blocks_checked": 4,
+      "blocks_deferred": 1,
+      "blocks_matched": 3,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "initallocate/B004",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:42.927362+00:00"
+}

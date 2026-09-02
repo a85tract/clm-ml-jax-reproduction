@@ -1,0 +1,55 @@
+{
+  "artifact": {
+    "digest": "a8f9437c6c97d7a9db4cd83a7b81ebd6b49bc65fe48872f70bc84d4c5d57db83",
+    "files": [
+      "mlcanopyfluxestype_numpy.py",
+      "mlfluxprofilesolutionmod_constants.py",
+      "mlfluxprofilesolutionmod_numpy.py",
+      "mlfluxprofilesolutionmod_use_constants.py",
+      "mlleaffluxesmod_numpy.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlsoilfluxesmod_numpy.py",
+      "mlwatervapormod_numpy.py"
+    ],
+    "name": "fortran:mlfluxprofilesolutionmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"a8f9437c6c97d7a9db4cd83a7b81ebd6b49bc65fe48872f70bc84d4c5d57db83\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlfluxprofilesolutionmod\"}}",
+  "reference": {
+    "key": "f2py:mlfluxprofilesolutionmod:ba46a28248b868d1",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "1 subprogram(s) could not be compared: fluxprofilesolution_flat: candidate raised: AttributeError: '_Record' object has no attribute 'uref_forcing'",
+    "metrics": {
+      "bit_exact": 0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 0,
+      "skipped": [],
+      "subprograms": {
+        "fluxprofilesolution_flat": {
+          "error": "candidate raised: AttributeError: '_Record' object has no attribute 'uref_forcing'"
+        }
+      },
+      "trials": 10
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.bitexact-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:29:32.558433+00:00"
+}

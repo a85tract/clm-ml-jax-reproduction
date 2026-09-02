@@ -1,0 +1,55 @@
+{
+  "artifact": {
+    "digest": "0b1846eb46ab18448a1aaf7d22e83ac4d41e0e35721863fa9aa6665504b47841",
+    "files": [
+      "mlcanopyfluxestype_numpy.py",
+      "mlgetatmforcingmod_constants.py",
+      "mlgetatmforcingmod_numpy.py",
+      "mlgetatmforcingmod_use_constants.py"
+    ],
+    "name": "fortran:mlgetatmforcingmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"0b1846eb46ab18448a1aaf7d22e83ac4d41e0e35721863fa9aa6665504b47841\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlgetatmforcingmod\"}}",
+  "reference": {
+    "key": "f2py:mlgetatmforcingmod:d0adbd2d61bdb11f",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "1360 points across 1 subprogram(s), all bit-exact",
+    "metrics": {
+      "bit_exact": 1360,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 1360,
+      "skipped": [],
+      "subprograms": {
+        "getatmforcing_flat": {
+          "bit_exact": 1360,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 1360
+        }
+      },
+      "trials": 10
+    },
+    "passed": true,
+    "verdict": "bit_exact",
+    "verifier": "differential.bitexact-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:29:38.074460+00:00"
+}

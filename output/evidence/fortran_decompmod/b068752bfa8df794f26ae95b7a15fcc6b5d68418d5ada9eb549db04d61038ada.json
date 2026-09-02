@@ -1,0 +1,49 @@
+{
+  "artifact": {
+    "digest": "aaf4f223984708748e7f023e2342d0842a499c4cf5524fab073f3ff49082ea2c",
+    "files": [
+      "decompmod_constants.py",
+      "decompmod_numpy.py"
+    ],
+    "name": "fortran:decompmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"aaf4f223984708748e7f023e2342d0842a499c4cf5524fab073f3ff49082ea2c\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:decompmod\"}}",
+  "reference": {
+    "key": "f2py:decompmod:77594440643b6836",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "1 subprogram(s) could not be compared: get_clump_bounds_flat: candidate raised: TypeError: get_clump_bounds() takes 1 positional argument but 2 were given",
+    "metrics": {
+      "bit_exact": 0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 0,
+      "skipped": [],
+      "subprograms": {
+        "get_clump_bounds_flat": {
+          "error": "candidate raised: TypeError: get_clump_bounds() takes 1 positional argument but 2 were given"
+        }
+      },
+      "trials": 10
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.bitexact-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:29:10.854203+00:00"
+}

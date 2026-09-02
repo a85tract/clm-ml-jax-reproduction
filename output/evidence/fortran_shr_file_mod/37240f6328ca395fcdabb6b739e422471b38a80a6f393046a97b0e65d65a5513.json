@@ -1,0 +1,42 @@
+{
+  "artifact": {
+    "digest": "1c968693ee287b7a5272af18e0b62d45dc793051c187769fc79c5baac29a56f8",
+    "files": [
+      "shr_file_mod_constants.py",
+      "shr_file_mod_numpy.py"
+    ],
+    "name": "fortran:shr_file_mod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"1c968693ee287b7a5272af18e0b62d45dc793051c187769fc79c5baac29a56f8\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:shr_file_mod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "3 blocks match",
+    "metrics": {
+      "blocks_checked": 3,
+      "blocks_deferred": 1,
+      "blocks_matched": 3,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:24:40.486376+00:00"
+}

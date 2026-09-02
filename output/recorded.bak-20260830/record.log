@@ -1,0 +1,34 @@
+mlleaffluxesmod: adapters for ['leaffluxes']
+mlsoilfluxesmod: adapters for ['soilfluxes']
+mlfluxprofilesolutionmod: adapters for ['fluxprofilesolution']
+mlleafphotosynthesismod: adapters for ['leafphotosynthesis']
+mlcanopyturbulencemod: adapters for ['canopyturbulence']
+mllongwaveradiationmod: adapters for ['longwaveradiation']
+mlplanthydraulicsmod: adapters for ['plantresistance', 'soilresistance', 'leafwaterpotential']
+mlsoiltemperaturemod: adapters for ['soiltemperature', 'soilthermprop']
+mlcanopynitrogenprofilemod: adapters for ['canopynitrogenprofile']
+mlrungekuttamod: adapters for ['rungekuttaupdate']
+mlleafboundarylayermod: adapters for ['leafboundarylayer']
+mlleafheatcapacitymod: adapters for ['leafheatcapacity']
+mlcanopywatermod: adapters for ['canopywettedfraction', 'canopyinterception', 'canopyevaporation']
+mlsolarradiationmod: adapters for ['solarradiation']
+mlinitverticalmod: adapters for ['initverticalstructure', 'initverticalprofiles', 'getpadparameters']
+probed call sites: {'getpadparameters': 1, 'initverticalstructure': 1, 'initverticalprofiles': 1, 'soilresistance': 1, 'plantresistance': 1, 'leafheatcapacity': 1, 'solarradiation': 1, 'canopynitrogenprofile': 1, 'canopywettedfraction': 1, 'longwaveradiation': 1, 'canopyturbulence': 1, 'leafboundarylayer': 2, 'leafphotosynthesis': 2, 'fluxprofilesolution': 1, 'leafwaterpotential': 2, 'canopyinterception': 1, 'canopyevaporation': 1, 'rungekuttaupdate': 1, 'leaffluxes': 4, 'soilfluxes': 2, 'soilthermprop': 2, 'soiltemperature': 1}
+built /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/recorded/build/prgm.exe
+ran; last line:  Successfully finished simulation
+constant overrides from the namelist: {'met_type': 3, 'dpai_min': 0.01, 'pftcon_val': 1}
+fortran:mlleaffluxesmod: 40 dump(s) -> /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/recorded/dumps/fortran_mlleaffluxesmod
+fortran:mlsoilfluxesmod: 40 dump(s) -> /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/recorded/dumps/fortran_mlsoilfluxesmod
+fortran:mlfluxprofilesolutionmod: 40 dump(s) -> /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/recorded/dumps/fortran_mlfluxprofilesolutionmod
+fortran:mlleafphotosynthesismod: 40 dump(s) -> /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/recorded/dumps/fortran_mlleafphotosynthesismod
+fortran:mlcanopyturbulencemod: 40 dump(s) -> /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/recorded/dumps/fortran_mlcanopyturbulencemod
+fortran:mllongwaveradiationmod: 40 dump(s) -> /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/recorded/dumps/fortran_mllongwaveradiationmod
+fortran:mlplanthydraulicsmod: 120 dump(s) -> /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/recorded/dumps/fortran_mlplanthydraulicsmod
+fortran:mlsoiltemperaturemod: 80 dump(s) -> /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/recorded/dumps/fortran_mlsoiltemperaturemod
+fortran:mlcanopynitrogenprofilemod: 40 dump(s) -> /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/recorded/dumps/fortran_mlcanopynitrogenprofilemod
+fortran:mlrungekuttamod: 40 dump(s) -> /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/recorded/dumps/fortran_mlrungekuttamod
+fortran:mlleafboundarylayermod: 40 dump(s) -> /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/recorded/dumps/fortran_mlleafboundarylayermod
+fortran:mlleafheatcapacitymod: 40 dump(s) -> /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/recorded/dumps/fortran_mlleafheatcapacitymod
+fortran:mlcanopywatermod: 120 dump(s) -> /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/recorded/dumps/fortran_mlcanopywatermod
+fortran:mlsolarradiationmod: 40 dump(s) -> /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/recorded/dumps/fortran_mlsolarradiationmod
+fortran:mlinitverticalmod: 3 dump(s) -> /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/recorded/dumps/fortran_mlinitverticalmod

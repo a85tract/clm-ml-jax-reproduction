@@ -1,0 +1,139 @@
+{
+  "artifact": {
+    "digest": "6139944199027239c4e77a522e29ad9a79898dc1d7ee236076ccb9bf968ff388",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_numpy.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlmathtoolsmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"6139944199027239c4e77a522e29ad9a79898dc1d7ee236076ccb9bf968ff388\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlmathtoolsmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "9/69 blocks disagree: hybrid/B002, hybrid/B005, hybrid/B009, zbrent/B003, zbrent/B004 (+4 more)",
+    "metrics": {
+      "blocks_checked": 69,
+      "blocks_deferred": 0,
+      "blocks_matched": 60,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "hybrid/B002",
+          "reads_source_only": [],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "mlcanopy_inst"
+          ]
+        },
+        {
+          "block": "hybrid/B005",
+          "reads_source_only": [],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "mlcanopy_inst"
+          ]
+        },
+        {
+          "block": "hybrid/B009",
+          "reads_source_only": [],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "mlcanopy_inst"
+          ]
+        },
+        {
+          "block": "zbrent/B003",
+          "reads_source_only": [],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "mlcanopy_inst"
+          ]
+        },
+        {
+          "block": "zbrent/B004",
+          "reads_source_only": [],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "mlcanopy_inst"
+          ]
+        },
+        {
+          "block": "zbrent/B009",
+          "reads_source_only": [],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "mlcanopy_inst"
+          ]
+        },
+        {
+          "block": "bisection/B003",
+          "reads_source_only": [],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "mlcanopy_inst"
+          ]
+        },
+        {
+          "block": "bisection/B004",
+          "reads_source_only": [],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "mlcanopy_inst"
+          ]
+        },
+        {
+          "block": "bisection/B007",
+          "reads_source_only": [],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "mlcanopy_inst"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T04:23:26.304542+00:00"
+}

@@ -1,0 +1,42 @@
+{
+  "artifact": {
+    "digest": "dc4e7a8fd042e99180f4eb8587b0623fcebcc54d01c41ce372b990b195e310af",
+    "files": [
+      "soiltexmod_constants.py",
+      "soiltexmod_numpy.py"
+    ],
+    "name": "fortran:soiltexmod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"dc4e7a8fd042e99180f4eb8587b0623fcebcc54d01c41ce372b990b195e310af\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:soiltexmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "0 blocks match",
+    "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:41.197907+00:00"
+}

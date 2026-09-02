@@ -1,0 +1,87 @@
+{
+  "artifact": {
+    "digest": "f6280f0fe18d88827ee02f87c7ea9cbed7abc28670f3d2889a62b81ddeafe246",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clm_varpar_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlleafboundarylayermod_constants.py",
+      "mlleafboundarylayermod_jax.py",
+      "mlleafboundarylayermod_jax_runtime.py",
+      "mlleafboundarylayermod_numpy.py",
+      "mlleafboundarylayermod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "patchtype_constants.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "pftconmod_constants.py",
+      "pftconmod_numpy.py",
+      "pftconmod_use_constants.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlleafboundarylayermod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"f6280f0fe18d88827ee02f87c7ea9cbed7abc28670f3d2889a62b81ddeafe246\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlleafboundarylayermod\"}}",
+  "reference": {
+    "key": "dump-replay:mlleafboundarylayermod:884d93423899d710",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "24000 points across 1 subprogram(s), all bit-exact -- this backend did not need the tiers",
+    "metrics": {
+      "bit_exact": 24000,
+      "candidate_device": "cpu:0",
+      "dominant_points": 13098,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "max_ulp_dominant": 0,
+      "nan_mismatch": 0,
+      "points": 24000,
+      "rel_gate": 1e-12,
+      "skipped": [],
+      "subprograms": {
+        "leafboundarylayer_flat": {
+          "bit_exact": 24000,
+          "dominant_points": 13098,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 0,
+          "points": 24000
+        }
+      },
+      "trials": 10,
+      "ulp_gate": 32
+    },
+    "passed": true,
+    "verdict": "bit_exact",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T00:49:26.778283+00:00"
+}

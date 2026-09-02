@@ -1,0 +1,48 @@
+{
+  "artifact": {
+    "digest": "09d068bc6fff5ddd1dcc505deb4c11ee2a99ffe4cefa076506e252017e199e31",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varctl_numpy.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlmathtoolsmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"09d068bc6fff5ddd1dcc505deb4c11ee2a99ffe4cefa076506e252017e199e31\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlmathtoolsmod\"}}",
+  "reference": {
+    "key": "f2py:mlmathtoolsmod:ba9b68f69f6c6c74",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "60 blocks match",
+    "metrics": {
+      "blocks_checked": 60,
+      "blocks_deferred": 9,
+      "blocks_matched": 60,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:13:55.945505+00:00"
+}

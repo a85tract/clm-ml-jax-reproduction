@@ -1,0 +1,42 @@
+{
+  "artifact": {
+    "digest": "3b16949247f5379ddfa055956a6e9259caf7eccfe6c540258f321c6336c99627",
+    "files": [
+      "towerdatamod_constants.py",
+      "towerdatamod_numpy.py"
+    ],
+    "name": "fortran:towerdatamod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"3b16949247f5379ddfa055956a6e9259caf7eccfe6c540258f321c6336c99627\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:towerdatamod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "0 blocks match",
+    "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:30:33.300170+00:00"
+}

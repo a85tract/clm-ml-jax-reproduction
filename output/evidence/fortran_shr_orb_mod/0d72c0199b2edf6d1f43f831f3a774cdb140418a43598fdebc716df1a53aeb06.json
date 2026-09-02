@@ -1,0 +1,89 @@
+{
+  "artifact": {
+    "digest": "0640e359f62bb22d7595eb376d4bd542339d05349f212b1b725875d394af8742",
+    "files": [
+      "clm_varcon_numpy.py",
+      "shr_orb_mod_constants.py",
+      "shr_orb_mod_numpy.py",
+      "shr_orb_mod_use_constants.py"
+    ],
+    "name": "fortran:shr_orb_mod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"0640e359f62bb22d7595eb376d4bd542339d05349f212b1b725875d394af8742\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:shr_orb_mod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "4/31 blocks disagree: shr_orb_cosz/B001, shr_orb_decl/B001, shr_orb_params/B001, shr_orb_params/B014",
+    "metrics": {
+      "blocks_checked": 31,
+      "blocks_deferred": 0,
+      "blocks_matched": 27,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "shr_orb_cosz/B001",
+          "reads_source_only": [
+            "pi"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "shr_orb_decl/B001",
+          "reads_source_only": [
+            "pi"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "shr_orb_params/B001",
+          "reads_source_only": [
+            "pi"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "shr_orb_params/B014",
+          "reads_source_only": [
+            "pi"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:30:24.845611+00:00"
+}

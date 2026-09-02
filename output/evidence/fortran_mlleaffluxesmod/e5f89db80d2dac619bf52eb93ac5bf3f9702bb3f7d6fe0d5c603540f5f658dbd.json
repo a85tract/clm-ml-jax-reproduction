@@ -1,0 +1,88 @@
+{
+  "artifact": {
+    "digest": "9cbc9a2ce382b55b6b9eb844326410e9255d513806c8d187977a5d1918b5d220",
+    "files": [
+      "mlleaffluxesmod_constants.py",
+      "mlleaffluxesmod_numpy.py"
+    ],
+    "name": "fortran:mlleaffluxesmod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"9cbc9a2ce382b55b6b9eb844326410e9255d513806c8d187977a5d1918b5d220\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:mlleaffluxesmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/1 blocks disagree: leaffluxes/B001",
+    "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "leaffluxes/B001",
+          "reads_source_only": [
+            "dtime_ml"
+          ],
+          "reads_target_only": [
+            "_mlc"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "cpair",
+            "cpleaf",
+            "den",
+            "desat",
+            "dpai",
+            "dqsat",
+            "dtime",
+            "eair",
+            "err",
+            "esat",
+            "evleaf",
+            "fdry",
+            "fwet",
+            "gbh",
+            "gbv",
+            "gleaf",
+            "gs",
+            "gw",
+            "lambda",
+            "lhleaf",
+            "num1",
+            "num2",
+            "num3",
+            "pref",
+            "qsat",
+            "rnleaf",
+            "shleaf",
+            "stleaf",
+            "tair",
+            "tleaf",
+            "tleaf_bef",
+            "tref",
+            "trleaf"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:24:37.887072+00:00"
+}

@@ -1,0 +1,56 @@
+{
+  "artifact": {
+    "digest": "92d7ed245ce5d25dd2d9565965973b6d592bceadeac62dae280b15fcc324f609",
+    "files": [
+      "surfaceresistancemod_constants.py",
+      "surfaceresistancemod_numpy.py"
+    ],
+    "name": "fortran:surfaceresistancemod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"92d7ed245ce5d25dd2d9565965973b6d592bceadeac62dae280b15fcc324f609\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:surfaceresistancemod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/1 blocks disagree: calc_soilevap_resis/B001",
+    "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 1,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "calc_soilevap_resis/B001",
+          "reads_source_only": [
+            "dsl",
+            "soilresis"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "dsl",
+            "soilresis"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:41.995672+00:00"
+}

@@ -1,0 +1,86 @@
+{
+  "artifact": {
+    "digest": "dcc1aad4bd552fcdcc13fb69d9179e9432f689f75986b7f02a4cc1784f3d1fd0",
+    "files": [
+      "mlsoilfluxesmod_constants.py",
+      "mlsoilfluxesmod_numpy.py"
+    ],
+    "name": "fortran:mlsoilfluxesmod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"dcc1aad4bd552fcdcc13fb69d9179e9432f689f75986b7f02a4cc1784f3d1fd0\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:mlsoilfluxesmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/1 blocks disagree: soilfluxes/B001",
+    "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "soilfluxes/B001",
+          "reads_source_only": [
+            "etsoi"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "cpair",
+            "den",
+            "desat",
+            "dqsat",
+            "eair",
+            "eg",
+            "err",
+            "esat",
+            "etsoi",
+            "gac0",
+            "gsoi",
+            "gw",
+            "gws",
+            "lambda",
+            "lhsoi",
+            "num1",
+            "num2",
+            "num3",
+            "num4",
+            "pref",
+            "qsat",
+            "rhg",
+            "rhomol",
+            "rnsoi",
+            "shsoi",
+            "soil_dz",
+            "soil_t",
+            "soil_tk",
+            "soilres",
+            "tair",
+            "tg",
+            "tg_bef",
+            "tref"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:24:38.225435+00:00"
+}

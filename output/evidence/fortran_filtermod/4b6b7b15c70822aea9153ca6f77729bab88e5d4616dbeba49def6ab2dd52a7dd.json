@@ -1,0 +1,42 @@
+{
+  "artifact": {
+    "digest": "51d077e1521830ab3915ad475b437c9da4ae3b29c0ff9f0c7427fe846a283130",
+    "files": [
+      "filtermod_constants.py",
+      "filtermod_numpy.py"
+    ],
+    "name": "fortran:filtermod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"51d077e1521830ab3915ad475b437c9da4ae3b29c0ff9f0c7427fe846a283130\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:filtermod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "16 blocks match",
+    "metrics": {
+      "blocks_checked": 16,
+      "blocks_deferred": 0,
+      "blocks_matched": 16,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:27.061747+00:00"
+}

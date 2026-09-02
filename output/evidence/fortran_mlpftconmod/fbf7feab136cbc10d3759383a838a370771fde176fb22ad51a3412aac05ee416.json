@@ -1,0 +1,76 @@
+{
+  "artifact": {
+    "digest": "f1778c22e694e5421f418dcaa8c891ca682a7f1f45089e67e64c3a80e14a03a2",
+    "files": [
+      "mlpftconmod_constants.py",
+      "mlpftconmod_numpy.py"
+    ],
+    "name": "fortran:mlpftconmod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"f1778c22e694e5421f418dcaa8c891ca682a7f1f45089e67e64c3a80e14a03a2\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:mlpftconmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "3/89 blocks disagree: initread/B001, initread/B072, initread/B073",
+    "metrics": {
+      "blocks_checked": 89,
+      "blocks_deferred": 2,
+      "blocks_matched": 86,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "initread/B001",
+          "reads_source_only": [
+            "masterproc"
+          ],
+          "reads_target_only": [
+            "_spmdmod"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initread/B072",
+          "reads_source_only": [
+            "pftcon_val"
+          ],
+          "reads_target_only": [
+            "_mlc"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initread/B073",
+          "reads_source_only": [
+            "masterproc"
+          ],
+          "reads_target_only": [
+            "_spmdmod"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:36.519553+00:00"
+}

@@ -1,0 +1,121 @@
+{
+  "artifact": {
+    "digest": "e4b4408d4abb2e9b78b0bf35401d04bb46e6aa5d051f35beac62dc48e0f74fa4",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varctl_numpy.py",
+      "fileutils_constants.py",
+      "fileutils_numpy.py",
+      "shr_file_mod_numpy.py"
+    ],
+    "name": "fortran:fileutils",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"e4b4408d4abb2e9b78b0bf35401d04bb46e6aa5d051f35beac62dc48e0f74fa4\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:fileutils\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "8/16 blocks disagree: getfil/B002, getfil/B007, opnfil/B001, opnfil/B003, opnfil/B004 (+3 more)",
+    "metrics": {
+      "blocks_checked": 16,
+      "blocks_deferred": 3,
+      "blocks_matched": 8,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "getfil/B002",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "getfil/B007",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "opnfil/B001",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "opnfil/B003",
+          "reads_source_only": [
+            "ft",
+            "ioe",
+            "iun",
+            "locfn"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "opnfil/B004",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "getavu/B001",
+          "reads_source_only": [
+            "shr_file_getunit"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "relavu/B001",
+          "reads_source_only": [
+            "iunit"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "relavu/B002",
+          "reads_source_only": [
+            "iunit"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:50:41.775427+00:00"
+}

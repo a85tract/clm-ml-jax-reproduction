@@ -1,0 +1,152 @@
+{
+  "artifact": {
+    "digest": "8e2710c90b92292a9edd06325f4aa03e10350fa32a96d88257e9609582e762c4",
+    "files": [
+      "mlplanthydraulicsmod_constants.py",
+      "mlplanthydraulicsmod_numpy.py"
+    ],
+    "name": "fortran:mlplanthydraulicsmod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"8e2710c90b92292a9edd06325f4aa03e10350fa32a96d88257e9609582e762c4\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:mlplanthydraulicsmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "3/3 blocks disagree: plantresistance/B001, soilresistance/B001, leafwaterpotential/B001",
+    "metrics": {
+      "blocks_checked": 3,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "plantresistance/B001",
+          "reads_source_only": [
+            "lsc",
+            "zs"
+          ],
+          "reads_target_only": [
+            "num_filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "dpai",
+            "fp",
+            "gplant_spa",
+            "ic",
+            "lsc",
+            "ncan",
+            "p",
+            "rplant",
+            "rsoil",
+            "zs"
+          ]
+        },
+        {
+          "block": "soilresistance/B001",
+          "reads_source_only": [
+            "col",
+            "denh2o",
+            "grav",
+            "mmh2o",
+            "pi",
+            "soil_et_loss"
+          ],
+          "reads_target_only": [
+            "_clm_varcon",
+            "_columntype",
+            "_mlcl",
+            "num_filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "c",
+            "dz",
+            "evap",
+            "fp",
+            "h2osoi_ice",
+            "head",
+            "hk",
+            "hk_l",
+            "j",
+            "lai",
+            "nbedrock",
+            "nlayers",
+            "p",
+            "psis",
+            "root_biomass",
+            "root_biomass_density",
+            "root_cross_sec_area",
+            "root_density_spa",
+            "root_dist",
+            "root_length_density",
+            "root_radius_spa",
+            "root_resist_spa",
+            "rootfr",
+            "rsoil",
+            "smp_l",
+            "smp_mpa",
+            "soil_et_loss",
+            "soilr",
+            "soilr1",
+            "soilr2",
+            "totevap"
+          ]
+        },
+        {
+          "block": "leafwaterpotential/B001",
+          "reads_source_only": [
+            "denh2o",
+            "dtime_ml",
+            "grav",
+            "lwp"
+          ],
+          "reads_target_only": [
+            "_clm_varcon",
+            "_mlclm",
+            "num_filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "a",
+            "b",
+            "capac_spa",
+            "dpai",
+            "dtime",
+            "dy",
+            "fp",
+            "head",
+            "ic",
+            "lsc",
+            "lwp",
+            "lwp_bef",
+            "ncan",
+            "p",
+            "psis",
+            "trleaf",
+            "y0",
+            "zs"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:36.729161+00:00"
+}

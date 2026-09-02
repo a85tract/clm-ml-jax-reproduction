@@ -1,0 +1,123 @@
+The Meson build system
+Version: 1.12.0
+Source dir: /private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmp5yllaybh
+Build dir: /private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmp5yllaybh/bbdir
+Build type: native build
+Project name: ref_shr_file_mod
+Project version: 0.1
+Fortran compiler for the host machine: gfortran (gcc 16.1.0 "GNU Fortran (Homebrew GCC 16.1.0) 16.1.0")
+Fortran linker for the host machine: gfortran ld64 1267
+C compiler for the host machine: cc (clang 21.0.0 "Apple clang version 21.0.0 (clang-2100.1.1.101)")
+C linker for the host machine: cc ld64 1267
+Host machine cpu family: aarch64
+Host machine cpu: aarch64
+Compiler for C supports arguments -fno-strict-aliasing: YES 
+Program /Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/python found: YES (/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/python)
+Found pkg-config: YES (/opt/homebrew/bin/pkg-config) 3.0.6
+Run-time dependency python found: YES 3.11
+Library quadmath found: YES
+Build targets in project: 1
+
+Found ninja-1.13.0.git.kitware.jobserver-pipe-1 at /Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/ninja
+ninja: Entering directory `/private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmp5yllaybh/bbdir'
+[1/12] Scanning target ref_shr_file_mod.cpython-311-darwin for modules
+[2/12] Compiling C object ref_shr_file_mod.cpython-311-darwin.so.p/ref_shr_file_modmodule.c.o
+../ref_shr_file_modmodule.c:295:9: warning: misleading indentation; statement is not part of the previous 'if' [-Wmisleading-indentation]
+  295 |         f2py_success = int_from_pyobj(&unit,unit_capi,"ref_shr_file_mod.w_shr_file_freeunit() 1st argument (unit) can't be converted to int");
+      |         ^
+../ref_shr_file_modmodule.c:289:5: note: previous statement is here
+  289 |     if (!PyArg_ParseTupleAndKeywords(capi_args,capi_keywds,\
+      |     ^
+1 warning generated.
+[3/12] Generating dynamic dependency information for target ref_shr_file_mod.cpython-311-darwin
+[4/12] Compiling C object ref_shr_file_mod.cpython-311-darwin.so.p/c9103ebe8974317e72579428ad3ce24fea6d8fbd_.._.._f2py_src_fortranobject.c.o
+[5/12] Compiling Fortran object ref_shr_file_mod.cpython-311-darwin.so.p/shr_kind_mod.f90.o
+[6/12] Compiling Fortran object ref_shr_file_mod.cpython-311-darwin.so.p/ref_shr_file_mod-f2pywrappers.f.o
+[7/12] Compiling Fortran object ref_shr_file_mod.cpython-311-darwin.so.p/clm_varctl.f90.o
+[8/12] Compiling Fortran object ref_shr_file_mod.cpython-311-darwin.so.p/abortutils.f90.o
+FAILED: [code=1] ref_shr_file_mod.cpython-311-darwin.so.p/abortutils.f90.o ref_shr_file_mod.cpython-311-darwin.so.p/abortutils.mod 
+gfortran -Iref_shr_file_mod.cpython-311-darwin.so.p -I. -I.. -I/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged -I/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/_core/include -I/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/src -I/Users/yueqichen/.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/pkgconfig/../../include/python3.11 -fvisibility=hidden -fdiagnostics-color=always -Wall -O3 -O1 -fno-fast-math -ffp-contract=off -Jref_shr_file_mod.cpython-311-darwin.so.p -o ref_shr_file_mod.cpython-311-darwin.so.p/abortutils.f90.o -c ../abortutils.f90
+../abortutils.f90:15:0:
+
+   15 |   include 'netcdf.inc'
+Fatal Error: Cannot open included file 'netcdf.inc'
+compilation terminated.
+[9/12] Compiling Fortran object ref_shr_file_mod.cpython-311-darwin.so.p/ref_shr_file_mod-f2pywrappers2.f90.o
+ninja: build stopped: subcommand failed.
+INFO: autodetecting backend as ninja
+INFO: calculating backend command to run: /Users/yueqichen/agent/SciRecast/RecastEngine/.venv/bin/ninja -C /private/var/folders/xj/2cwln18n0fv4yfkfqf5yk76w0000gn/T/tmp5yllaybh/bbdir
+Using meson backend
+Will pass --lower to f2py
+See https://numpy.org/doc/stable/f2py/buildtools/meson.html
+Reading fortran codes...
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/shr_kind_mod.f90' (format:free)
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/clm_varctl.f90' (format:free)
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/abortutils.f90' (format:free)
+Line #15 in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/abortutils.f90:"  include 'netcdf.inc' "
+	readfortrancode: could not find include file 'netcdf.inc' in /Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged. Ignoring.
+	Reading file '/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/staged/shr_file_mod.f90' (format:free)
+	Reading file 'wrappers.f90' (format:free)
+Post-processing...
+	Block: ref_shr_file_mod
+			Block: shr_kind_mod
+			Block: clm_varctl
+			Block: abortutils
+			Block: shr_file_mod
+			Block: w_shr_file_getunit
+			Block: w_shr_file_freeunit
+Applying post-processing hooks...
+  character_backward_compatibility_hook
+Post-processing (stage 2)...
+	Block: ref_shr_file_mod
+		Block: unknown_interface
+			Block: shr_kind_mod
+			Block: clm_varctl
+			Block: abortutils
+			Block: shr_file_mod
+			Block: w_shr_file_getunit
+			Block: w_shr_file_freeunit
+Building modules...
+    Building module "ref_shr_file_mod"...
+    Generating possibly empty wrappers"
+    Maybe empty "ref_shr_file_mod-f2pywrappers.f"
+		Creating wrapper for Fortran function "w_shr_file_getunit"("w_shr_file_getunit")...
+        Constructing wrapper function "w_shr_file_getunit"...
+          res = w_shr_file_getunit()
+    Generating possibly empty wrappers"
+    Maybe empty "ref_shr_file_mod-f2pywrappers.f"
+        Constructing wrapper function "w_shr_file_freeunit"...
+          w_shr_file_freeunit(unit)
+		Constructing F90 module support for "shr_kind_mod"...
+		  Variables: shr_kind_r8 shr_kind_in
+		Constructing F90 module support for "clm_varctl"...
+		  Variables: iulog rslfile
+		Constructing F90 module support for "abortutils"...
+			Skipping abortutils since there are no public vars/func in this module...
+		Constructing F90 module support for "shr_file_mod"...
+			Skipping shr_file_mod since there are no public vars/func in this module...
+    Wrote C/API module "ref_shr_file_mod" to file "./ref_shr_file_modmodule.c"
+    Fortran 77 wrappers are saved to "./ref_shr_file_mod-f2pywrappers.f"
+    Fortran 90 wrappers are saved to "./ref_shr_file_mod-f2pywrappers2.f90"
+
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'r8': 'shr_kind_r8'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'shr_file_getunit': 'shr_file_getunit'}} not impl.
+get_useparameters: mapping for {'only': 1, 'map': {'shr_file_freeunit': 'shr_file_freeunit'}} not impl.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/__main__.py", line 5, in <module>
+    main()
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/f2py2e.py", line 786, in main
+    run_compile()
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/f2py2e.py", line 758, in run_compile
+    builder.compile()
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/_backends/_meson.py", line 197, in compile
+    self.run_meson(self.build_dir)
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/_backends/_meson.py", line 191, in run_meson
+    self._run_subprocess_command(compile_command, build_dir)
+  File "/Users/yueqichen/agent/SciRecast/RecastEngine/.venv/lib/python3.11/site-packages/numpy/f2py/_backends/_meson.py", line 185, in _run_subprocess_command
+    subprocess.run(command, cwd=cwd, check=True)
+  File "/Users/yueqichen/.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['meson', 'compile', '-C', 'bbdir']' returned non-zero exit status 1.

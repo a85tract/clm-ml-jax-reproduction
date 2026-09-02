@@ -1,0 +1,102 @@
+{
+  "artifact": {
+    "digest": "a8ee03b8e8018c891a114fe71edcdf9fef78c161046b0d6251123d581d292611",
+    "files": [
+      "clm_varcon_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlleafphotosynthesismod_constants.py",
+      "mlleafphotosynthesismod_jax.py",
+      "mlleafphotosynthesismod_jax_runtime.py",
+      "mlleafphotosynthesismod_numpy.py",
+      "mlleafphotosynthesismod_use_constants.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_jax.py",
+      "mlmathtoolsmod_jax_runtime.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "mlpftconmod_constants.py",
+      "mlpftconmod_jax.py",
+      "mlpftconmod_jax_runtime.py",
+      "mlpftconmod_numpy.py",
+      "mlpftconmod_use_constants.py",
+      "mlwatervapormod_constants.py",
+      "mlwatervapormod_jax.py",
+      "mlwatervapormod_jax_runtime.py",
+      "mlwatervapormod_numpy.py",
+      "mlwatervapormod_use_constants.py",
+      "patchtype_constants.py",
+      "patchtype_jax.py",
+      "patchtype_jax_runtime.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "pftconmod_constants.py",
+      "pftconmod_jax.py",
+      "pftconmod_jax_runtime.py",
+      "pftconmod_numpy.py",
+      "pftconmod_use_constants.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mlleafphotosynthesismod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"a8ee03b8e8018c891a114fe71edcdf9fef78c161046b0d6251123d581d292611\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlleafphotosynthesismod\"}}",
+  "reference": {
+    "key": "dump-replay:mlleafphotosynthesismod:191b7980b718ab22",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "every one of 160200 points within 28 ULP (gate 32)",
+    "metrics": {
+      "bit_exact": 153932,
+      "candidate_device": "cpu:0",
+      "dominant_points": 110351,
+      "max_rel": 1.3642420526593923e-48,
+      "max_ulp": 28,
+      "max_ulp_dominant": 0,
+      "nan_mismatch": 0,
+      "points": 160200,
+      "rel_gate": 1e-12,
+      "skipped": [],
+      "subprograms": {
+        "leafphotosynthesis_flat": {
+          "bit_exact": 153932,
+          "dominant_points": 110351,
+          "max_rel": 1.3642420526593923e-48,
+          "max_ulp": 28,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 0,
+          "points": 160200
+        }
+      },
+      "trials": 10,
+      "ulp_gate": 32
+    },
+    "passed": true,
+    "verdict": "ulp_bounded",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T04:49:58.139123+00:00"
+}

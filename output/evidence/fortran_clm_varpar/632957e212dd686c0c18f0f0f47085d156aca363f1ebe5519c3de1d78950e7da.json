@@ -1,0 +1,55 @@
+{
+  "artifact": {
+    "digest": "cd364e0880d191ef5a41266936854b03a62219751b339811253c7429635e6528",
+    "files": [
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py"
+    ],
+    "name": "fortran:clm_varpar",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"cd364e0880d191ef5a41266936854b03a62219751b339811253c7429635e6528\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:clm_varpar\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/1 blocks disagree: clm_varpar_init/B001",
+    "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "clm_varpar_init/B001",
+          "reads_source_only": [
+            "clm_phys"
+          ],
+          "reads_target_only": [
+            "_clm"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:29:06.522145+00:00"
+}

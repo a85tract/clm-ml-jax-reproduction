@@ -1,0 +1,91 @@
+76 units, target=numpy, recipe=translate-clm
+  fortran:abortutils                       ['static.rwset'] 0s
+  fortran:atm2lndtype                      ['f2py-golden-clm'] 0s
+  fortran:canopystatetype                  ['static.rwset'] 0s
+  fortran:clm_driver                       ['f2py-golden-clm'] 14s
+  fortran:clm_initializemod                ['static.rwset'] 5s
+  fortran:clm_instmod                      CRASH ValueError: flag: str is not flat
+/Users/yueqichen/agent/SciRecast/RecastEngine-clm/src/recast/verify/bitexact.py:548: RuntimeWarning: All-NaN slice encountered
+  rel = float(np.nanmax(np.abs(a - b) / scale))
+  fortran:clm_time_manager                 ['differential.bitexact-clm'] 3s
+  fortran:clm_varcon                       ['f2py-golden-clm'] 0s
+  fortran:clm_varctl                       ['f2py-golden-clm'] 0s
+  fortran:clm_varorb                       ['f2py-golden-clm'] 0s
+  fortran:clm_varpar                       ['static.rwset'] 0s
+  fortran:clmdatamod                       ['static.rwset'] 1s
+  fortran:clmml                            ['f2py-golden-clm'] 17s
+  fortran:clmml_driver                     ['static.rwset'] 17s
+  fortran:clmsoiloptionmod                 ['f2py-golden-clm'] 0s
+  fortran:columntype                       ['static.rwset'] 0s
+  fortran:controlmod                       ['static.rwset'] 0s
+  fortran:decompmod                        ['differential.bitexact-clm'] 3s
+  fortran:energyfluxtype                   ['static.rwset'] 0s
+  fortran:fileutils                        ['static.rwset'] 0s
+  fortran:filtermod                        ['f2py-golden-clm'] 0s
+  fortran:frictionvelocitymod              ['static.rwset'] 0s
+  fortran:gridcelltype                     ['static.rwset'] 0s
+  fortran:histfilemod                      ['differential.bitexact-clm'] 2s
+  fortran:initgridcellsmod                 ['static.rwset'] 0s
+  fortran:initsubgridmod                   ['differential.bitexact-clm'] 3s
+  fortran:initverticalmod                  ['static.rwset'] 0s
+  fortran:lnd_comp_nuopc                   CRASH ValueError: fin1: str is not flat
+  fortran:mlcanopyfluxesmod                ['static.rwset'] 12s
+  fortran:mlcanopyfluxestype               ['static.rwset'] 1s
+  fortran:mlcanopynitrogenprofilemod       ['static.rwset'] 1s
+  fortran:mlcanopyturbulencemod            ['static.rwset'] 1s
+  fortran:mlcanopywatermod                 [None] 4s
+  fortran:mlclm_varcon                     ['f2py-golden-clm'] 0s
+  fortran:mlclm_varctl                     ['f2py-golden-clm'] 0s
+  fortran:mlclm_varpar                     ['f2py-golden-clm'] 0s
+  fortran:mlfluxprofilesolutionmod         ['differential.bitexact-clm'] 5s
+  fortran:mlgetatmforcingmod               [None] 4s
+  fortran:mlinitverticalmod                ['f2py-golden-clm'] 5s
+/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlleafboundarylayermod/candidate/mlleafboundarylayermod_numpy.py:887: RuntimeWarning: invalid value encountered in scalar power
+  fac = ((F_101325P / pref[p - 1]) * (((tref[p - 1] / TFRZ)) ** F_1P81))
+/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlleafboundarylayermod/candidate/mlleafboundarylayermod_numpy.py:897: RuntimeWarning: invalid value encountered in scalar power
+  nu = (((GB_FACTOR * F_0P66) * (pr ** F_0P33)) * (re ** 0.5))
+/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlleafboundarylayermod/candidate/mlleafboundarylayermod_numpy.py:902: RuntimeWarning: invalid value encountered in scalar power
+  nu = (((GB_FACTOR * F_0P036) * (pr ** F_0P33)) * (re ** F_0P8))
+/Users/yueqichen/agent/SciRecast/clm-ml-jax/output/translate-clm/fortran_mlleafboundarylayermod/candidate/mlleafboundarylayermod_numpy.py:907: RuntimeWarning: invalid value encountered in scalar power
+  nu = ((F_0P54 * (pr ** F_0P25)) * (gr ** F_0P25))
+  fortran:mlleafboundarylayermod           [None] 4s
+  fortran:mlleaffluxesmod                  ['differential.bitexact-clm'] 4s
+  fortran:mlleafheatcapacitymod            [None] 4s
+  fortran:mlleafphotosynthesismod          ['static.rwset'] 2s
+  fortran:mllongwaveradiationmod           ['static.rwset'] 1s
+  fortran:mlmathtoolsmod                   [None] 3s
+  fortran:mlpftconmod                      ['static.rwset'] 0s
+  fortran:mlplanthydraulicsmod             ['static.rwset'] 2s
+  fortran:mlrungekuttamod                  ['f2py-golden-clm'] 3s
+  fortran:mlsoilfluxesmod                  [None] 4s
+  fortran:mlsoiltemperaturemod             ['f2py-golden-clm'] 2s
+  fortran:mlsolarradiationmod              ['differential.bitexact-clm'] 5s
+  fortran:mlwatervapormod                  [None] 3s
+  fortran:ncdio_pio                        ['static.rwset'] 0s
+  fortran:patchtype                        ['f2py-golden-clm'] 0s
+  fortran:pftconmod                        ['f2py-golden-clm'] 0s
+  fortran:restutilmod                      ['f2py-golden-clm'] 0s
+  fortran:shr_file_mod                     ['differential.bitexact-clm'] 3s
+  fortran:shr_kind_mod                     ['f2py-golden-clm'] 0s
+  fortran:shr_orb_mod                      ['static.rwset'] 0s
+  fortran:soilstateinittimeconstmod        ['static.rwset'] 1s
+  fortran:soilstatetype                    ['static.rwset'] 0s
+  fortran:soiltexmod                       ['f2py-golden-clm'] 0s
+  fortran:soilwatermovementmod             ['f2py-golden-clm'] 1s
+  fortran:solarabsorbedtype                ['static.rwset'] 0s
+  fortran:spmdmod                          ['f2py-golden-clm'] 0s
+  fortran:surfacealbedomod                 CRASH TypeError: string indices must be integers, not 'str'
+  fortran:surfacealbedotype                ['static.rwset'] 0s
+  fortran:surfaceresistancemod             ['f2py-golden-clm'] 1s
+  fortran:temperaturetype                  ['static.rwset'] 0s
+  fortran:towerdatamod                     ['f2py-golden-clm'] 0s
+  fortran:towermetmod                      ['static.rwset'] 2s
+  fortran:wateratm2lndbulktype             ['f2py-golden-clm'] 0s
+  fortran:waterdiagnosticbulktype          ['static.rwset'] 0s
+  fortran:waterfluxbulktype                ['static.rwset'] 0s
+  fortran:waterstatebulktype               ['static.rwset'] 0s
+  fortran:watertype                        ['static.rwset'] 0s
+run finished in 171s
+stopped_by: {'static.rwset': 34, 'f2py-golden-clm': 24, 'differential.bitexact-clm': 8, None: 7, 'CRASH': 3}
+top refusals: [("call to external subroutine 'X'", 36), ("dim expr 'X'", 8), ('formatted internal write', 7), ('goto N is not a loop-exit pattern', 3), ('inquire writes EXIST=', 2), ('towerveg/D003: DATA non-literal bound mxpft', 1), ('inquire writes OPENED=', 1)]
+ unit            7  was not in use

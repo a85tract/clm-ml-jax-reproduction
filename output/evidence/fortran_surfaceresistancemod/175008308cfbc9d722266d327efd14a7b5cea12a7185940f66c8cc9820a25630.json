@@ -1,0 +1,54 @@
+{
+  "artifact": {
+    "digest": "dfd916058c72d0b436b3036188079a7356aa6fbfe48b51ed83440ef3a9c733ca",
+    "files": [
+      "columntype_numpy.py",
+      "soilstatetype_numpy.py",
+      "surfaceresistancemod_constants.py",
+      "surfaceresistancemod_numpy.py",
+      "surfaceresistancemod_use_constants.py",
+      "temperaturetype_numpy.py",
+      "waterstatebulktype_numpy.py"
+    ],
+    "name": "fortran:surfaceresistancemod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"dfd916058c72d0b436b3036188079a7356aa6fbfe48b51ed83440ef3a9c733ca\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:surfaceresistancemod\"}}",
+  "reference": {
+    "key": "f2py:surfaceresistancemod:852240f61e3a9c1a",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "1 subprogram(s) could not be compared: calc_soilevap_resis_flat: candidate raised: NotImplementedError: dim expr 'bounds % begc'",
+    "metrics": {
+      "bit_exact": 0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 0,
+      "skipped": [],
+      "subprograms": {
+        "calc_soilevap_resis_flat": {
+          "error": "candidate raised: NotImplementedError: dim expr 'bounds % begc'"
+        }
+      },
+      "trials": 10
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.bitexact-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:30:32.926568+00:00"
+}

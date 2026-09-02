@@ -1,0 +1,107 @@
+{
+  "artifact": {
+    "digest": "769540566c098bf398879957ccd7609fd90c5b59d2b523f5a169a3b15c490bc2",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_numpy.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mlmathtoolsmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"769540566c098bf398879957ccd7609fd90c5b59d2b523f5a169a3b15c490bc2\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlmathtoolsmod\"}}",
+  "reference": {
+    "key": "f2py:mlmathtoolsmod:c2b7fc90c8e0c3f0",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "2 subprogram(s) could not be compared: tridiag: candidate raised: TypeError: tridiag() missing 1 required positional argument: 'u'; tridiag_2eq: candidate raised: TypeError: tridiag_2eq() missing 2 required positional arguments: 't' and 'q'; 3 subprogram(s) ungated, no reference: bisection (mlcanopy_inst: UNKNOWN(TYPE(MLCANOPY_TYPE))), hybrid (mlcanopy_inst: UNKNOWN(TYPE(MLCANOPY_TYPE))), zbrent (mlcanopy_inst: UNKNOWN(TYPE(MLCANOPY_TYPE)))",
+    "metrics": {
+      "bit_exact": 60,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 60,
+      "skipped": [],
+      "subprograms": {
+        "beta_distribution_cdf": {
+          "bit_exact": 10,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 10
+        },
+        "beta_distribution_pdf": {
+          "bit_exact": 10,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 10
+        },
+        "beta_function": {
+          "bit_exact": 10,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 10
+        },
+        "log_gamma_function": {
+          "bit_exact": 10,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 10
+        },
+        "quadratic": {
+          "bit_exact": 20,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 20
+        },
+        "tridiag": {
+          "error": "candidate raised: TypeError: tridiag() missing 1 required positional argument: 'u'"
+        },
+        "tridiag_2eq": {
+          "error": "candidate raised: TypeError: tridiag_2eq() missing 2 required positional arguments: 't' and 'q'"
+        }
+      },
+      "trials": 10,
+      "ungated": {
+        "bisection": "mlcanopy_inst: UNKNOWN(TYPE(MLCANOPY_TYPE))",
+        "hybrid": "mlcanopy_inst: UNKNOWN(TYPE(MLCANOPY_TYPE))",
+        "zbrent": "mlcanopy_inst: UNKNOWN(TYPE(MLCANOPY_TYPE))"
+      }
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.bitexact-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T04:37:32.219490+00:00"
+}

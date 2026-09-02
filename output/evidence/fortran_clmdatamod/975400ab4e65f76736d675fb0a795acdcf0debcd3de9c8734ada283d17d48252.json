@@ -1,0 +1,121 @@
+{
+  "artifact": {
+    "digest": "1194f3b3fc818768acdd729f84a800fc9d0021eb0eac666b7723d112e8808063",
+    "files": [
+      "abortutils_numpy.py",
+      "canopystatetype_constants.py",
+      "canopystatetype_numpy.py",
+      "canopystatetype_use_constants.py",
+      "clm_varcon_numpy.py",
+      "clm_varpar_numpy.py",
+      "clmdatamod_constants.py",
+      "clmdatamod_numpy.py",
+      "clmdatamod_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "columntype_constants.py",
+      "columntype_numpy.py",
+      "columntype_use_constants.py",
+      "decompmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "soilstatetype_constants.py",
+      "soilstatetype_numpy.py",
+      "soilstatetype_use_constants.py",
+      "surfacealbedotype_constants.py",
+      "surfacealbedotype_numpy.py",
+      "surfacealbedotype_use_constants.py",
+      "waterstatebulktype_constants.py",
+      "waterstatebulktype_numpy.py",
+      "waterstatebulktype_use_constants.py"
+    ],
+    "name": "fortran:clmdatamod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"1194f3b3fc818768acdd729f84a800fc9d0021eb0eac666b7723d112e8808063\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:clmdatamod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "5/30 blocks disagree: clmdata/B001, readclmveg/B002, readclmsoil/B004, readclmsoil/B006, readsoilwatfactor/B002",
+    "metrics": {
+      "blocks_checked": 30,
+      "blocks_deferred": 0,
+      "blocks_matched": 25,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "clmdata/B001",
+          "reads_source_only": [
+            "clm_phys",
+            "nlev_soil_adjust"
+          ],
+          "reads_target_only": [
+            "_clm"
+          ],
+          "writes_source_only": [
+            "elai_loc",
+            "esai_loc",
+            "h2osoi_clm45",
+            "h2osoi_clm50",
+            "h2osoi_factor_loc"
+          ],
+          "writes_target_only": []
+        },
+        {
+          "block": "readclmveg/B002",
+          "reads_source_only": [
+            "ncfilename"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readclmsoil/B004",
+          "reads_source_only": [
+            "ncfilename"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readclmsoil/B006",
+          "reads_source_only": [
+            "clm_phys"
+          ],
+          "reads_target_only": [
+            "_clm"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "readsoilwatfactor/B002",
+          "reads_source_only": [
+            "ncfilename"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:44:02.313832+00:00"
+}

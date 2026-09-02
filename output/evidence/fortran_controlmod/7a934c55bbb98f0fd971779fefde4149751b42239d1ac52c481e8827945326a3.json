@@ -1,0 +1,128 @@
+{
+  "artifact": {
+    "digest": "b2878c31f39aa30bafd39fc3adb86c1748d7090e36fd2abbfec0252da13b49b8",
+    "files": [
+      "clm_time_manager_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "controlmod_constants.py",
+      "controlmod_numpy.py",
+      "controlmod_use_constants.py",
+      "towerdatamod_numpy.py"
+    ],
+    "name": "fortran:controlmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"b2878c31f39aa30bafd39fc3adb86c1748d7090e36fd2abbfec0252da13b49b8\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:controlmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "7/23 blocks disagree: control/B010, control/B012, control/B015, control/B019, control/B020 (+2 more)",
+    "metrics": {
+      "blocks_checked": 23,
+      "blocks_deferred": 0,
+      "blocks_matched": 16,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "control/B010",
+          "reads_source_only": [],
+          "reads_target_only": [],
+          "writes_source_only": [
+            "clm_phys"
+          ],
+          "writes_target_only": [
+            "_clms"
+          ]
+        },
+        {
+          "block": "control/B012",
+          "reads_source_only": [],
+          "reads_target_only": [],
+          "writes_source_only": [
+            "nlev_soil_adjust"
+          ],
+          "writes_target_only": [
+            "_clms"
+          ]
+        },
+        {
+          "block": "control/B015",
+          "reads_source_only": [
+            "clmml_inparm"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "control/B019",
+          "reads_source_only": [],
+          "reads_target_only": [],
+          "writes_source_only": [
+            "tower_num"
+          ],
+          "writes_target_only": [
+            "_tow"
+          ]
+        },
+        {
+          "block": "control/B020",
+          "reads_source_only": [
+            "ntower",
+            "tower_id"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [
+            "tower_num"
+          ],
+          "writes_target_only": [
+            "_tow"
+          ]
+        },
+        {
+          "block": "control/B021",
+          "reads_source_only": [
+            "tower_num"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "control/B022",
+          "reads_source_only": [
+            "tower_num",
+            "tower_time"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:29:08.265551+00:00"
+}

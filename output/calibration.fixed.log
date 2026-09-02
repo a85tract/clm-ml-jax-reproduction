@@ -1,0 +1,19 @@
+=== loss at truth (mult=1.0) ===
+AD check (noon step): d gpp/d mult AD +0.00000e+00 vs FD +0.00000e+00; d lh/d mult AD +0.00000e+00 vs FD +0.00000e+00
+iter   0: loss 1.873e-06  dL/dmult +2.650e-05  mult 0.9500
+FINAL multiplier 0.9500 (truth 1.0)  |error| 5.00%
+=== calibration from 1.5x ===
+truth iota_spa (pft in use) = 750.0000; day scales gpp 2.904e+01 lh 4.616e+02
+start multiplier 1.5000
+AD check (noon step): d gpp/d mult AD +0.00000e+00 vs FD +0.00000e+00; d lh/d mult AD +0.00000e+00 vs FD +0.00000e+00
+iter   0: loss 3.211e-03  dL/dmult +1.083e-02  mult 1.4500
+iter   1: loss 2.690e-03  dL/dmult +9.922e-03  mult 1.2000
+iter   2: loss 6.667e-04  dL/dmult +5.732e-03  mult 0.9500
+iter   3: loss 5.298e-05  dL/dmult -2.249e-03  mult 1.0204
+iter   4: loss 1.168e-05  dL/dmult +9.220e-04  mult 1.0000
+iter   5: loss 1.881e-06  dL/dmult +2.486e-05  mult 0.9994
+iter   6: loss 2.104e-06  dL/dmult -3.410e-06  mult 0.9995
+iter   7: loss 2.135e-06  dL/dmult +9.457e-08  mult 0.9995
+FINAL multiplier 0.9995 (truth 1.0)  |error| 0.05%
+
+[exited with code 0]

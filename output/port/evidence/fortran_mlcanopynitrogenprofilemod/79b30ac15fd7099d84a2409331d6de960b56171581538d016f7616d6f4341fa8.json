@@ -1,0 +1,100 @@
+{
+  "artifact": {
+    "digest": "e2d8d7080c4d7fce6ba0643246a260efdcd0b1e356b6f96e98f154565fbc5b30",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "decompmod_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlcanopynitrogenprofilemod_constants.py",
+      "mlcanopynitrogenprofilemod_jax.py",
+      "mlcanopynitrogenprofilemod_jax_runtime.py",
+      "mlcanopynitrogenprofilemod_numpy.py",
+      "mlcanopynitrogenprofilemod_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlpftconmod_constants.py",
+      "mlpftconmod_jax.py",
+      "mlpftconmod_jax_runtime.py",
+      "mlpftconmod_numpy.py",
+      "mlpftconmod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "patchtype_constants.py",
+      "patchtype_jax.py",
+      "patchtype_jax_runtime.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "pftconmod_constants.py",
+      "pftconmod_jax.py",
+      "pftconmod_jax_runtime.py",
+      "pftconmod_numpy.py",
+      "pftconmod_use_constants.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mlcanopynitrogenprofilemod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"e2d8d7080c4d7fce6ba0643246a260efdcd0b1e356b6f96e98f154565fbc5b30\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlcanopynitrogenprofilemod\"}}",
+  "reference": {
+    "key": "dump-replay:mlcanopynitrogenprofilemod:372e7a55442e15ac",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "48040 points across 1 subprogram(s), all bit-exact -- this backend did not need the tiers",
+    "metrics": {
+      "bit_exact": 48040,
+      "candidate_device": "cpu:0",
+      "dominant_points": 25960,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "max_ulp_dominant": 0,
+      "nan_mismatch": 0,
+      "points": 48040,
+      "rel_gate": 1e-12,
+      "skipped": [],
+      "subprograms": {
+        "canopynitrogenprofile_flat": {
+          "bit_exact": 48040,
+          "dominant_points": 25960,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 0,
+          "points": 48040
+        }
+      },
+      "trials": 10,
+      "ulp_gate": 32
+    },
+    "passed": true,
+    "verdict": "bit_exact",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T01:17:38.051793+00:00"
+}

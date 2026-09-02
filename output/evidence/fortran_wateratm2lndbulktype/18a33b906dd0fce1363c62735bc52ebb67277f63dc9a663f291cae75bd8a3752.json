@@ -1,0 +1,46 @@
+{
+  "artifact": {
+    "digest": "03cb12ee60febbe5f15f2f5829a740ded16258953d8b57d4f71b085fa3377686",
+    "files": [
+      "clm_varpar_numpy.py",
+      "decompmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "wateratm2lndbulktype_constants.py",
+      "wateratm2lndbulktype_numpy.py",
+      "wateratm2lndbulktype_use_constants.py"
+    ],
+    "name": "fortran:wateratm2lndbulktype",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"03cb12ee60febbe5f15f2f5829a740ded16258953d8b57d4f71b085fa3377686\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:wateratm2lndbulktype\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "10 blocks match",
+    "metrics": {
+      "blocks_checked": 10,
+      "blocks_deferred": 1,
+      "blocks_matched": 10,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:46:25.673354+00:00"
+}

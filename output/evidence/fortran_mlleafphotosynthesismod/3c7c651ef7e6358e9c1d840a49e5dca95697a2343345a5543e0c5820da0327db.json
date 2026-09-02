@@ -1,0 +1,382 @@
+{
+  "artifact": {
+    "digest": "f191265d484e54bebcc015bbcacb3e262770ee91e77842cf8e7feb32b02d84cf",
+    "files": [
+      "mlleafphotosynthesismod_constants.py",
+      "mlleafphotosynthesismod_numpy.py"
+    ],
+    "name": "fortran:mlleafphotosynthesismod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"f191265d484e54bebcc015bbcacb3e262770ee91e77842cf8e7feb32b02d84cf\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:mlleafphotosynthesismod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "9/9 blocks disagree: ft/B001, fth/B001, fth25/B001, leafphotosynthesis/B001, cifunc/B001 (+4 more)",
+    "metrics": {
+      "blocks_checked": 9,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "ft/B001",
+          "reads_source_only": [
+            "rgas",
+            "tfrz"
+          ],
+          "reads_target_only": [
+            "_clm_varcon",
+            "_mlc"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "fth/B001",
+          "reads_source_only": [
+            "rgas"
+          ],
+          "reads_target_only": [
+            "_mlc"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "fth25/B001",
+          "reads_source_only": [
+            "rgas",
+            "tfrz"
+          ],
+          "reads_target_only": [
+            "_clm_varcon",
+            "_mlc"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "leafphotosynthesis/B001",
+          "reads_source_only": [
+            "ac",
+            "acclim_type",
+            "agross",
+            "aj",
+            "ap",
+            "cp",
+            "cp25",
+            "cpha",
+            "desat",
+            "dh2o_to_dco2",
+            "gs_type",
+            "gspot_type",
+            "je",
+            "jmaxha_acclim",
+            "jmaxha_noacclim",
+            "jmaxhd_acclim",
+            "jmaxhd_noacclim",
+            "jmaxse_acclim",
+            "jmaxse_noacclim",
+            "kc",
+            "kc25",
+            "kcha",
+            "ko",
+            "ko25",
+            "koha",
+            "kp",
+            "mlpftcon",
+            "phi_psii",
+            "rd",
+            "rdha",
+            "rdhd",
+            "rdse",
+            "rh_min_bb",
+            "tfrz",
+            "theta_j",
+            "vcmaxha_acclim",
+            "vcmaxha_noacclim",
+            "vcmaxhd_acclim",
+            "vcmaxhd_noacclim",
+            "vcmaxse_acclim",
+            "vcmaxse_noacclim",
+            "vpd",
+            "vpd_min_med"
+          ],
+          "reads_target_only": [
+            "_clm_varcon",
+            "_mlc",
+            "_mlcl",
+            "_mlp",
+            "num_filter"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "_mlc",
+            "ac",
+            "agross",
+            "aj",
+            "an_err",
+            "anet",
+            "ap",
+            "apar",
+            "aquad",
+            "bquad",
+            "btran",
+            "c3psn",
+            "cair",
+            "ceair",
+            "ci",
+            "ci0",
+            "ci1",
+            "cp",
+            "cquad",
+            "cs",
+            "desat",
+            "dpai",
+            "eair",
+            "fp",
+            "fpsi",
+            "g0",
+            "g0_bb",
+            "g0_med",
+            "g1",
+            "g1_bb",
+            "g1_med",
+            "gbc",
+            "gbv",
+            "gs",
+            "gs_err",
+            "gsmin_spa",
+            "gspot",
+            "hs",
+            "hs_term",
+            "ic",
+            "je",
+            "jmax",
+            "jmax25",
+            "jmaxc",
+            "jmaxha",
+            "jmaxhd",
+            "jmaxse",
+            "kc",
+            "ko",
+            "kp",
+            "kp25",
+            "leaf_esat",
+            "lwp",
+            "mlcanopy_inst",
+            "ncan",
+            "p",
+            "psi50_gs",
+            "qabs",
+            "r1",
+            "r2",
+            "rd",
+            "rd25",
+            "rdc",
+            "shape_gs",
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "tacclim",
+            "tleaf",
+            "vcmax",
+            "vcmax25",
+            "vcmaxc",
+            "vcmaxha",
+            "vcmaxhd",
+            "vcmaxse",
+            "vpd",
+            "vpd_term"
+          ]
+        },
+        {
+          "block": "cifunc/B001",
+          "reads_source_only": [
+            "ci_dif",
+            "dh2o_to_dco2",
+            "gs_type",
+            "qe_c4",
+            "vpd_min_med"
+          ],
+          "reads_target_only": [
+            "_mlc",
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "ac",
+            "agross",
+            "aj",
+            "anet",
+            "ap",
+            "apar",
+            "aquad",
+            "bquad",
+            "c3psn",
+            "cair",
+            "ceair",
+            "ci_dif",
+            "cinew",
+            "cp",
+            "cquad",
+            "cs",
+            "dpai",
+            "g0",
+            "g1",
+            "gbc",
+            "gbv",
+            "gleaf",
+            "gs",
+            "je",
+            "kc",
+            "ko",
+            "kp",
+            "leaf_esat",
+            "o2ref",
+            "r1",
+            "r2",
+            "rd",
+            "term",
+            "vcmax",
+            "vpd_term"
+          ]
+        },
+        {
+          "block": "cifuncgs/B001",
+          "reads_source_only": [
+            "ci_val",
+            "dh2o_to_dco2",
+            "qe_c4"
+          ],
+          "reads_target_only": [
+            "_mlc"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "a0",
+            "ac",
+            "agross",
+            "aj",
+            "anet",
+            "ap",
+            "apar",
+            "aquad",
+            "b0",
+            "bquad",
+            "c3psn",
+            "cair",
+            "ci_val",
+            "cp",
+            "cquad",
+            "cs",
+            "dpai",
+            "gbc",
+            "gleaf",
+            "gs",
+            "je",
+            "kc",
+            "ko",
+            "kp",
+            "o2ref",
+            "r1",
+            "r2",
+            "rd",
+            "vcmax"
+          ]
+        },
+        {
+          "block": "stomataoptimization/B001",
+          "reads_source_only": [
+            "ci",
+            "gs",
+            "gs_solver",
+            "mlpftcon"
+          ],
+          "reads_target_only": [
+            "_mlcl",
+            "_mlp"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "check1",
+            "check2",
+            "ci",
+            "dpai",
+            "gs",
+            "gs1",
+            "gs2",
+            "gsmin_spa",
+            "mlcanopy_inst"
+          ]
+        },
+        {
+          "block": "stomataefficiency/B001",
+          "reads_source_only": [
+            "check",
+            "ci",
+            "mlpftcon",
+            "vpd_min_med"
+          ],
+          "reads_target_only": [
+            "_mlc",
+            "_mlp"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "an_high",
+            "an_low",
+            "anet",
+            "check",
+            "ci",
+            "delta",
+            "eair",
+            "gbv",
+            "gs",
+            "hs",
+            "iota_spa",
+            "leaf_esat",
+            "mlcanopy_inst",
+            "pref",
+            "vpd"
+          ]
+        },
+        {
+          "block": "realizedrate/B001",
+          "reads_source_only": [
+            "colim_c3a",
+            "colim_c4a",
+            "colim_c4b",
+            "colim_type"
+          ],
+          "reads_target_only": [
+            "_mlc",
+            "_mlcl"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:35.896385+00:00"
+}

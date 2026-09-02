@@ -1,0 +1,133 @@
+{
+  "artifact": {
+    "digest": "75206171451bc90cf3b11da5822af6e56b04b8ae44c3443c26aa098b45ee8ab4",
+    "files": [
+      "abortutils_numpy.py",
+      "atm2lndtype_constants.py",
+      "atm2lndtype_numpy.py",
+      "atm2lndtype_use_constants.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_numpy.py",
+      "decompmod_numpy.py",
+      "frictionvelocitymod_constants.py",
+      "frictionvelocitymod_numpy.py",
+      "frictionvelocitymod_use_constants.py",
+      "gridcelltype_constants.py",
+      "gridcelltype_numpy.py",
+      "gridcelltype_use_constants.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlwatervapormod_constants.py",
+      "mlwatervapormod_numpy.py",
+      "mlwatervapormod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "patchtype_constants.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "towerdatamod_numpy.py",
+      "towermetmod_constants.py",
+      "towermetmod_numpy.py",
+      "towermetmod_use_constants.py",
+      "wateratm2lndbulktype_constants.py",
+      "wateratm2lndbulktype_numpy.py",
+      "wateratm2lndbulktype_use_constants.py"
+    ],
+    "name": "fortran:towermetmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"75206171451bc90cf3b11da5822af6e56b04b8ae44c3443c26aa098b45ee8ab4\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:towermetmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "3/45 blocks disagree: towermetcurr/B001, readtowermet/B002, towermetnext/B001",
+    "metrics": {
+      "blocks_checked": 45,
+      "blocks_deferred": 0,
+      "blocks_matched": 42,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "towermetcurr/B001",
+          "reads_source_only": [
+            "tower_ht",
+            "tower_lat",
+            "tower_lon"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [
+            "flds_loc",
+            "fsds_loc",
+            "grc",
+            "prect_loc",
+            "pref_loc",
+            "qref_loc",
+            "rhref_loc",
+            "tref_loc",
+            "uref_loc",
+            "zref_loc"
+          ],
+          "writes_target_only": [
+            "_gri"
+          ]
+        },
+        {
+          "block": "readtowermet/B002",
+          "reads_source_only": [
+            "ncfilename"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "towermetnext/B001",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "prect_loc",
+            "zref_loc"
+          ],
+          "writes_source_only": [
+            "flds_loc",
+            "fsds_loc",
+            "prect_loc",
+            "pref_loc",
+            "qref_loc",
+            "rhref_loc",
+            "tref_loc",
+            "uref_loc",
+            "zref_loc"
+          ],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:46:25.462819+00:00"
+}

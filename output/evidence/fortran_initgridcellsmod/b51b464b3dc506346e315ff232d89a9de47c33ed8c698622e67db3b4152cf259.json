@@ -1,0 +1,59 @@
+{
+  "artifact": {
+    "digest": "688646d0bc561a2372f8a6ed688c9388033f1e86e81f624de287393dece98a41",
+    "files": [
+      "initgridcellsmod_constants.py",
+      "initgridcellsmod_numpy.py",
+      "initsubgridmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "towerdatamod_numpy.py"
+    ],
+    "name": "fortran:initgridcellsmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"688646d0bc561a2372f8a6ed688c9388033f1e86e81f624de287393dece98a41\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:initgridcellsmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/3 blocks disagree: set_landunit_veg_compete/B002",
+    "metrics": {
+      "blocks_checked": 3,
+      "blocks_deferred": 0,
+      "blocks_matched": 2,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "set_landunit_veg_compete/B002",
+          "reads_source_only": [
+            "tower_num",
+            "tower_pft"
+          ],
+          "reads_target_only": [
+            "_tow",
+            "pi"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:50:45.187433+00:00"
+}

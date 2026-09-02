@@ -1,0 +1,86 @@
+{
+  "artifact": {
+    "digest": "32c7652e2a2d406b71980b8d4bf1eefa2624d6065993c52d2278832eeab2fcf7",
+    "files": [
+      "clm_varcon_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlleafboundarylayermod_constants.py",
+      "mlleafboundarylayermod_jax.py",
+      "mlleafboundarylayermod_jax_runtime.py",
+      "mlleafboundarylayermod_numpy.py",
+      "mlleafboundarylayermod_use_constants.py",
+      "patchtype_constants.py",
+      "patchtype_jax.py",
+      "patchtype_jax_runtime.py",
+      "patchtype_numpy.py",
+      "patchtype_use_constants.py",
+      "pftconmod_constants.py",
+      "pftconmod_jax.py",
+      "pftconmod_jax_runtime.py",
+      "pftconmod_numpy.py",
+      "pftconmod_use_constants.py"
+    ],
+    "name": "fortran:mlleafboundarylayermod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"32c7652e2a2d406b71980b8d4bf1eefa2624d6065993c52d2278832eeab2fcf7\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlleafboundarylayermod\"}}",
+  "reference": {
+    "key": "dump-replay:mlleafboundarylayermod:d7e2166218007989",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "every one of 28800 points within 1 ULP (gate 32)",
+    "metrics": {
+      "bit_exact": 28667,
+      "candidate_device": "cpu:0",
+      "dominant_points": 15690,
+      "max_rel": 1.1102230246251565e-52,
+      "max_ulp": 1,
+      "max_ulp_dominant": 0,
+      "nan_mismatch": 0,
+      "points": 28800,
+      "rel_gate": 1e-12,
+      "skipped": [],
+      "subprograms": {
+        "leafboundarylayer_flat": {
+          "bit_exact": 28667,
+          "dominant_points": 15690,
+          "max_rel": 1.1102230246251565e-52,
+          "max_ulp": 1,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 0,
+          "points": 28800
+        }
+      },
+      "trials": 10,
+      "ulp_gate": 32
+    },
+    "passed": true,
+    "verdict": "ulp_bounded",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T19:13:58.615211+00:00"
+}

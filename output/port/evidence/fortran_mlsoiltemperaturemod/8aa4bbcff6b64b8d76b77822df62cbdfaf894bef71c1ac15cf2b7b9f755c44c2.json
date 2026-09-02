@@ -1,0 +1,123 @@
+{
+  "artifact": {
+    "digest": "c7520b35682c1bf9f61dc23f142b7f12f3d8fed7b8d37f23fbd4fb3ea7b156a9",
+    "files": [
+      "clm_time_manager_constants.py",
+      "clm_time_manager_jax.py",
+      "clm_time_manager_jax_runtime.py",
+      "clm_time_manager_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "columntype_constants.py",
+      "columntype_jax.py",
+      "columntype_jax_runtime.py",
+      "columntype_numpy.py",
+      "columntype_use_constants.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varctl_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_jax.py",
+      "mlmathtoolsmod_jax_runtime.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "mlsoiltemperaturemod_constants.py",
+      "mlsoiltemperaturemod_jax.py",
+      "mlsoiltemperaturemod_jax_runtime.py",
+      "mlsoiltemperaturemod_numpy.py",
+      "mlsoiltemperaturemod_use_constants.py",
+      "soilstatetype_constants.py",
+      "soilstatetype_jax.py",
+      "soilstatetype_jax_runtime.py",
+      "soilstatetype_numpy.py",
+      "soilstatetype_use_constants.py",
+      "temperaturetype_constants.py",
+      "temperaturetype_jax.py",
+      "temperaturetype_jax_runtime.py",
+      "temperaturetype_numpy.py",
+      "temperaturetype_use_constants.py",
+      "waterdiagnosticbulktype_constants.py",
+      "waterdiagnosticbulktype_jax.py",
+      "waterdiagnosticbulktype_jax_runtime.py",
+      "waterdiagnosticbulktype_numpy.py",
+      "waterdiagnosticbulktype_use_constants.py",
+      "waterstatebulktype_constants.py",
+      "waterstatebulktype_jax.py",
+      "waterstatebulktype_jax_runtime.py",
+      "waterstatebulktype_numpy.py",
+      "waterstatebulktype_use_constants.py",
+      "watertype_constants.py",
+      "watertype_jax.py",
+      "watertype_jax_runtime.py",
+      "watertype_numpy.py",
+      "watertype_use_constants.py"
+    ],
+    "name": "fortran:mlsoiltemperaturemod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"c7520b35682c1bf9f61dc23f142b7f12f3d8fed7b8d37f23fbd4fb3ea7b156a9\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlsoiltemperaturemod\"}}",
+  "reference": {
+    "key": "dump-replay:mlsoiltemperaturemod:5b2a676855b28a31",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "every one of 10080 points within 3 ULP (gate 32)",
+    "metrics": {
+      "bit_exact": 9516,
+      "candidate_device": "cpu:0",
+      "dominant_points": 5280,
+      "max_rel": 3.434984472346151e-16,
+      "max_ulp": 3,
+      "max_ulp_dominant": 3,
+      "nan_mismatch": 0,
+      "points": 10080,
+      "rel_gate": 1e-12,
+      "skipped": [],
+      "subprograms": {
+        "soiltemperature_flat": {
+          "bit_exact": 3960,
+          "dominant_points": 1728,
+          "max_rel": 1.1368683772161602e-49,
+          "max_ulp": 2,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 0,
+          "points": 4128
+        },
+        "soilthermprop_flat": {
+          "bit_exact": 5556,
+          "dominant_points": 3552,
+          "max_rel": 3.434984472346151e-16,
+          "max_ulp": 3,
+          "max_ulp_dominant": 3,
+          "nan_mismatch": 0,
+          "points": 5952
+        }
+      },
+      "trials": 10,
+      "ulp_gate": 32
+    },
+    "passed": true,
+    "verdict": "ulp_bounded",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-31T00:47:51.965312+00:00"
+}

@@ -1,0 +1,80 @@
+{
+  "artifact": {
+    "digest": "fe01110b1795f38245c8b6f0526755ef3adad491804c4c44f7fc77abccd2edc5",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_time_manager_constants.py",
+      "clm_time_manager_numpy.py",
+      "clm_time_manager_use_constants.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clm_varpar_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "decompmod_numpy.py",
+      "fileutils_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlcanopyturbulencemod_constants.py",
+      "mlcanopyturbulencemod_numpy.py",
+      "mlcanopyturbulencemod_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mlcanopyturbulencemod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"fe01110b1795f38245c8b6f0526755ef3adad491804c4c44f7fc77abccd2edc5\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlcanopyturbulencemod\"}}",
+  "reference": {
+    "key": "dump-replay:mlcanopyturbulencemod:8bddad93bdfcbfd0",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "16480 points across 1 subprogram(s), all bit-exact",
+    "metrics": {
+      "bit_exact": 16480,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 16480,
+      "skipped": [],
+      "subprograms": {
+        "canopyturbulence_flat": {
+          "bit_exact": 16480,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "nan_mismatch": 0,
+          "points": 16480
+        }
+      },
+      "trials": 10
+    },
+    "passed": true,
+    "verdict": "bit_exact",
+    "verifier": "differential.bitexact-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T04:49:38.557663+00:00"
+}

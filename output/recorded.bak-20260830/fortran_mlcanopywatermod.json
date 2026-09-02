@@ -1,0 +1,16 @@
+{
+  "output": "/Users/yueqichen/agent/SciRecast/cesm/clm-ml-jax/output",
+  "oracle": "dump-replay",
+  "stages": {
+    "dump-replay": {
+      "dumps": "/Users/yueqichen/agent/SciRecast/cesm/clm-ml-jax/output/recorded/dumps/fortran_mlcanopywatermod"
+    },
+    "translate.clm-ml": {
+      "constant_overrides": {
+        "met_type": 3,
+        "dpai_min": 0.01,
+        "pftcon_val": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "artifact": {
+    "digest": "e09592b418bae7e0942927baaa5c776865b93a96b205dda21731cb49c1b16471",
+    "files": [
+      "clm_varcon_numpy.py",
+      "decompmod_numpy.py",
+      "frictionvelocitymod_constants.py",
+      "frictionvelocitymod_numpy.py",
+      "frictionvelocitymod_use_constants.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:frictionvelocitymod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"e09592b418bae7e0942927baaa5c776865b93a96b205dda21731cb49c1b16471\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:frictionvelocitymod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "3/8 blocks disagree: initallocate/B004, initallocate/B006, initallocate/B008",
+    "metrics": {
+      "blocks_checked": 8,
+      "blocks_deferred": 1,
+      "blocks_matched": 5,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "initallocate/B004",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B006",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "initallocate/B008",
+          "reads_source_only": [
+            "nan"
+          ],
+          "reads_target_only": [
+            "_clm_varcon"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:50:42.274871+00:00"
+}

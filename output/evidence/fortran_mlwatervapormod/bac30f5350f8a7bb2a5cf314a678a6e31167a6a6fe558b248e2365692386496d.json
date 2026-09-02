@@ -1,0 +1,43 @@
+{
+  "artifact": {
+    "digest": "d6e31b713a04f3985307f810ea952523ff707eb2dbd8146d3f6fa4c787e9ff89",
+    "files": [
+      "mlwatervapormod_constants.py",
+      "mlwatervapormod_numpy.py",
+      "mlwatervapormod_use_constants.py"
+    ],
+    "name": "fortran:mlwatervapormod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"d6e31b713a04f3985307f810ea952523ff707eb2dbd8146d3f6fa4c787e9ff89\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlwatervapormod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "8 blocks match",
+    "metrics": {
+      "blocks_checked": 8,
+      "blocks_deferred": 0,
+      "blocks_matched": 8,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:45:15.155275+00:00"
+}

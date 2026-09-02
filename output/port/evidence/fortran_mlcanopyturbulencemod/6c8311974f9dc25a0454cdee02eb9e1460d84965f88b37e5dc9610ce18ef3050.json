@@ -1,0 +1,65 @@
+{
+  "artifact": {
+    "digest": "60a9d81beffc057eb5dd63cc0d2252cfdeefaff1028863087244c3754a52f266",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_time_manager_constants.py",
+      "clm_time_manager_numpy.py",
+      "clm_time_manager_use_constants.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clm_varpar_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "decompmod_numpy.py",
+      "fileutils_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlcanopyturbulencemod_constants.py",
+      "mlcanopyturbulencemod_jax.py",
+      "mlcanopyturbulencemod_jax_runtime.py",
+      "mlcanopyturbulencemod_numpy.py",
+      "mlcanopyturbulencemod_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mlcanopyturbulencemod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"60a9d81beffc057eb5dd63cc0d2252cfdeefaff1028863087244c3754a52f266\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlcanopyturbulencemod\"}}",
+  "reference": {
+    "key": "dump-replay:mlcanopyturbulencemod:077852e3ffbea9d3",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "candidate does not import: module 'mlcanopyturbulencemod_numpy' has no attribute 'hf2008_flat'",
+    "metrics": {},
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-30T00:42:06.786831+00:00"
+}

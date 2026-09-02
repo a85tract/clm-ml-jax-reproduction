@@ -1,0 +1,1897 @@
+{
+ "crashes": {
+  "fortran:surfacealbedomod": "TypeError: string indices must be integers, not 'str'"
+ },
+ "refusals": [
+  [
+   "call to external subroutine 'X'",
+   49
+  ],
+  [
+   "dim expr 'X'",
+   8
+  ],
+  [
+   "formatted internal write",
+   7
+  ],
+  [
+   "goto N is not a loop-exit pattern",
+   3
+  ],
+  [
+   "inquire writes EXIST=",
+   2
+  ],
+  [
+   "towerveg/D003: DATA non-literal bound mxpft",
+   1
+  ],
+  [
+   "generic 'X': no match",
+   1
+  ],
+  [
+   "inquire writes OPENED=",
+   1
+  ]
+ ],
+ "units": {
+  "fortran:abortutils": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/3 blocks disagree: handle_err/B001",
+     "metrics": {
+      "blocks_checked": 3,
+      "blocks_deferred": 0,
+      "blocks_matched": 2,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:atm2lndtype": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "call to external subroutine 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "22 blocks match",
+     "metrics": {
+      "blocks_checked": 22,
+      "blocks_deferred": 1,
+      "blocks_matched": 22,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:canopystatetype": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "call to external subroutine 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "4/10 blocks disagree: initallocate/B004, initallocate/B006, initallocate/B008, initallocate/B010",
+     "metrics": {
+      "blocks_checked": 10,
+      "blocks_deferred": 1,
+      "blocks_matched": 6,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:clm_driver": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "dim expr 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "0 blocks match",
+     "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 1,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:clm_initializemod": {
+   "deferred": 5,
+   "deferred_reasons": [
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/5 blocks disagree: initialize2/B008",
+     "metrics": {
+      "blocks_checked": 5,
+      "blocks_deferred": 5,
+      "blocks_matched": 4,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:clm_instmod": {
+   "deferred": 15,
+   "deferred_reasons": [
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "3 blocks match",
+     "metrics": {
+      "blocks_checked": 3,
+      "blocks_deferred": 15,
+      "blocks_matched": 3,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:clm_time_manager": {
+   "deferred": 2,
+   "deferred_reasons": [
+    "goto N is not a loop-exit pattern",
+    "goto N is not a loop-exit pattern"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "48 blocks match",
+     "metrics": {
+      "blocks_checked": 48,
+      "blocks_deferred": 2,
+      "blocks_matched": 48,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:clm_varcon": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "0 blocks match",
+     "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:clm_varctl": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "0 blocks match",
+     "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:clm_varorb": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "0 blocks match",
+     "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:clm_varpar": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/1 blocks disagree: clm_varpar_init/B001",
+     "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:clmdatamod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "4/30 blocks disagree: clmdata/B001, readclmsoil/B001, readclmsoil/B002, readclmsoil/B006",
+     "metrics": {
+      "blocks_checked": 30,
+      "blocks_deferred": 0,
+      "blocks_matched": 26,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:clmml": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "0 blocks match",
+     "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:clmml_driver": {
+   "deferred": 8,
+   "deferred_reasons": [
+    "formatted internal write",
+    "formatted internal write",
+    "formatted internal write",
+    "formatted internal write",
+    "formatted internal write",
+    "formatted internal write",
+    "formatted internal write",
+    "towerveg/D003: DATA non-literal bound mxpft"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "25/79 blocks disagree: clmml_drv/B006, clmml_drv/B007, clmml_drv/B008, clmml_drv/B009, clmml_drv/B025 (+20 more)",
+     "metrics": {
+      "blocks_checked": 79,
+      "blocks_deferred": 8,
+      "blocks_matched": 54,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:clmsoiloptionmod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "0 blocks match",
+     "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:columntype": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "5/10 blocks disagree: init/B002, init/B004, init/B006, init/B008, init/B010",
+     "metrics": {
+      "blocks_checked": 10,
+      "blocks_deferred": 0,
+      "blocks_matched": 5,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:controlmod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "7/23 blocks disagree: control/B010, control/B012, control/B015, control/B019, control/B020 (+2 more)",
+     "metrics": {
+      "blocks_checked": 23,
+      "blocks_deferred": 0,
+      "blocks_matched": 16,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:decompmod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "8 blocks match",
+     "metrics": {
+      "blocks_checked": 8,
+      "blocks_deferred": 0,
+      "blocks_matched": 8,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:energyfluxtype": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "call to external subroutine 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "5/12 blocks disagree: initallocate/B004, initallocate/B006, initallocate/B008, initallocate/B010, initallocate/B012",
+     "metrics": {
+      "blocks_checked": 12,
+      "blocks_deferred": 1,
+      "blocks_matched": 7,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:fileutils": {
+   "deferred": 3,
+   "deferred_reasons": [
+    "goto N is not a loop-exit pattern",
+    "inquire writes EXIST=",
+    "inquire writes EXIST="
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "2/16 blocks disagree: opnfil/B003, relavu/B001",
+     "metrics": {
+      "blocks_checked": 16,
+      "blocks_deferred": 3,
+      "blocks_matched": 14,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:filtermod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "16 blocks match",
+     "metrics": {
+      "blocks_checked": 16,
+      "blocks_deferred": 0,
+      "blocks_matched": 16,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:frictionvelocitymod": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "call to external subroutine 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "3/8 blocks disagree: initallocate/B004, initallocate/B006, initallocate/B008",
+     "metrics": {
+      "blocks_checked": 8,
+      "blocks_deferred": 1,
+      "blocks_matched": 5,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:gridcelltype": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "2/4 blocks disagree: init/B002, init/B004",
+     "metrics": {
+      "blocks_checked": 4,
+      "blocks_deferred": 0,
+      "blocks_matched": 2,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:histfilemod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/differential.bitexact": "failed",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "differential.bitexact",
+   "verdicts": {
+    "differential.bitexact": {
+     "detail": "candidate does not import: No module named 'decompmod_numpy'",
+     "metrics": {},
+     "passed": false
+    },
+    "static.rwset": {
+     "detail": "0 blocks match",
+     "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:initgridcellsmod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/3 blocks disagree: set_landunit_veg_compete/B002",
+     "metrics": {
+      "blocks_checked": 3,
+      "blocks_deferred": 0,
+      "blocks_matched": 2,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:initsubgridmod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "4 blocks match",
+     "metrics": {
+      "blocks_checked": 4,
+      "blocks_deferred": 0,
+      "blocks_matched": 4,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:initverticalmod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/1 blocks disagree: initvertical/B001",
+     "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:lnd_comp_nuopc": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "3 blocks match",
+     "metrics": {
+      "blocks_checked": 3,
+      "blocks_deferred": 0,
+      "blocks_matched": 3,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:mlcanopyfluxesmod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "4/4 blocks disagree: mlcanopyfluxes/B001, getclmvar/B001, mltimestepfluxintegration/B001, canopyfluxesdiagnostics/B001",
+     "metrics": {
+      "blocks_checked": 4,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:mlcanopyfluxestype": {
+   "deferred": 4,
+   "deferred_reasons": [
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "generic 'X': no match"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "378/521 blocks disagree: initallocate/B004, initallocate/B006, initallocate/B008, initallocate/B010, initallocate/B012 (+373 more)",
+     "metrics": {
+      "blocks_checked": 521,
+      "blocks_deferred": 4,
+      "blocks_matched": 143,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:mlcanopynitrogenprofilemod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/1 blocks disagree: canopynitrogenprofile/B001",
+     "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:mlcanopyturbulencemod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "39/73 blocks disagree: canopyturbulence/B001, hf2008/B001, getobu/B001, obufunc/B001, getprsc/B001 (+34 more)",
+     "metrics": {
+      "blocks_checked": 73,
+      "blocks_deferred": 0,
+      "blocks_matched": 34,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:mlcanopywatermod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "3/3 blocks disagree: canopywettedfraction/B001, canopyinterception/B001, canopyevaporation/B001",
+     "metrics": {
+      "blocks_checked": 3,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:mlclm_varcon": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "0 blocks match",
+     "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:mlclm_varctl": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "0 blocks match",
+     "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:mlclm_varpar": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "0 blocks match",
+     "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:mlfluxprofilesolutionmod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "5/5 blocks disagree: fluxprofilesolution/B001, implicitfluxprofilesolution/B001, errorcheck01/B001, errorcheck02/B001, wellmixed/B001",
+     "metrics": {
+      "blocks_checked": 5,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:mlgetatmforcingmod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/6 blocks disagree: getatmforcing/B001",
+     "metrics": {
+      "blocks_checked": 6,
+      "blocks_deferred": 0,
+      "blocks_matched": 5,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:mlinitverticalmod": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "dim expr 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "2/2 blocks disagree: initverticalprofiles/B001, getpadparameters/B001",
+     "metrics": {
+      "blocks_checked": 2,
+      "blocks_deferred": 1,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:mlleafboundarylayermod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/1 blocks disagree: leafboundarylayer/B001",
+     "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:mlleaffluxesmod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/1 blocks disagree: leaffluxes/B001",
+     "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:mlleafheatcapacitymod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/1 blocks disagree: leafheatcapacity/B001",
+     "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:mlleafphotosynthesismod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "9/9 blocks disagree: ft/B001, fth/B001, fth25/B001, leafphotosynthesis/B001, cifunc/B001 (+4 more)",
+     "metrics": {
+      "blocks_checked": 9,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:mllongwaveradiationmod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "2/2 blocks disagree: longwaveradiation/B001, norman/B001",
+     "metrics": {
+      "blocks_checked": 2,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:mlmathtoolsmod": {
+   "deferred": 9,
+   "deferred_reasons": [
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "60 blocks match",
+     "metrics": {
+      "blocks_checked": 60,
+      "blocks_deferred": 9,
+      "blocks_matched": 60,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:mlpftconmod": {
+   "deferred": 2,
+   "deferred_reasons": [
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "3/89 blocks disagree: initread/B001, initread/B072, initread/B073",
+     "metrics": {
+      "blocks_checked": 89,
+      "blocks_deferred": 2,
+      "blocks_matched": 86,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:mlplanthydraulicsmod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "3/3 blocks disagree: plantresistance/B001, soilresistance/B001, leafwaterpotential/B001",
+     "metrics": {
+      "blocks_checked": 3,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:mlrungekuttamod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "2/2 blocks disagree: rungekuttaupdate/B001, rungekuttaini/B001",
+     "metrics": {
+      "blocks_checked": 2,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:mlsoilfluxesmod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/1 blocks disagree: soilfluxes/B001",
+     "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:mlsoiltemperaturemod": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "dim expr 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/1 blocks disagree: soilthermprop/B001",
+     "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 1,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:mlsolarradiationmod": {
+   "deferred": 3,
+   "deferred_reasons": [
+    "dim expr 'X'",
+    "dim expr 'X'",
+    "dim expr 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "0 blocks match",
+     "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 3,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:mlwatervapormod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "emitted file does not parse: invalid syntax (<unknown>, line 626)",
+     "metrics": {
+      "blocks_checked": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:ncdio_pio": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "16 blocks match",
+     "metrics": {
+      "blocks_checked": 16,
+      "blocks_deferred": 0,
+      "blocks_matched": 16,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:patchtype": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "3/6 blocks disagree: init/B002, init/B004, init/B006",
+     "metrics": {
+      "blocks_checked": 6,
+      "blocks_deferred": 0,
+      "blocks_matched": 3,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:pftconmod": {
+   "deferred": 2,
+   "deferred_reasons": [
+    "call to external subroutine 'X'",
+    "call to external subroutine 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/80 blocks disagree: initread/B071",
+     "metrics": {
+      "blocks_checked": 80,
+      "blocks_deferred": 2,
+      "blocks_matched": 79,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:restutilmod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "0 blocks match",
+     "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:shr_file_mod": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "inquire writes OPENED="
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "3 blocks match",
+     "metrics": {
+      "blocks_checked": 3,
+      "blocks_deferred": 1,
+      "blocks_matched": 3,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:shr_kind_mod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "0 blocks match",
+     "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:shr_orb_mod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "4/31 blocks disagree: shr_orb_cosz/B001, shr_orb_decl/B001, shr_orb_params/B001, shr_orb_params/B014",
+     "metrics": {
+      "blocks_checked": 31,
+      "blocks_deferred": 0,
+      "blocks_matched": 27,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:soilstateinittimeconstmod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/1 blocks disagree: soilstateinittimeconst/B001",
+     "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:soilstatetype": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "call to external subroutine 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "16/36 blocks disagree: initallocate/B006, initallocate/B008, initallocate/B010, initallocate/B012, initallocate/B014 (+11 more)",
+     "metrics": {
+      "blocks_checked": 36,
+      "blocks_deferred": 1,
+      "blocks_matched": 20,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:soiltexmod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "0 blocks match",
+     "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:soilwatermovementmod": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "dim expr 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/2 blocks disagree: compute_hydraulic_properties/B001",
+     "metrics": {
+      "blocks_checked": 2,
+      "blocks_deferred": 1,
+      "blocks_matched": 1,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:solarabsorbedtype": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "call to external subroutine 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/4 blocks disagree: initallocate/B004",
+     "metrics": {
+      "blocks_checked": 4,
+      "blocks_deferred": 1,
+      "blocks_matched": 3,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:spmdmod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "0 blocks match",
+     "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:surfacealbedotype": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "call to external subroutine 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "5/14 blocks disagree: initallocate/B006, initallocate/B008, initallocate/B010, initallocate/B012, initallocate/B014",
+     "metrics": {
+      "blocks_checked": 14,
+      "blocks_deferred": 1,
+      "blocks_matched": 9,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:surfaceresistancemod": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "dim expr 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/1 blocks disagree: calc_soilevap_resis/B001",
+     "metrics": {
+      "blocks_checked": 1,
+      "blocks_deferred": 1,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:temperaturetype": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "call to external subroutine 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "3/10 blocks disagree: initallocate/B006, initallocate/B008, initallocate/B010",
+     "metrics": {
+      "blocks_checked": 10,
+      "blocks_deferred": 1,
+      "blocks_matched": 7,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:towerdatamod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "0 blocks match",
+     "metrics": {
+      "blocks_checked": 0,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:towermetmod": {
+   "deferred": 0,
+   "deferred_reasons": [],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "2/45 blocks disagree: towermetcurr/B001, towermetnext/B001",
+     "metrics": {
+      "blocks_checked": 45,
+      "blocks_deferred": 0,
+      "blocks_matched": 43,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:wateratm2lndbulktype": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "call to external subroutine 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "oracle/f2py-golden": "failed",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "ok"
+   },
+   "stopped_by": "f2py-golden",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "10 blocks match",
+     "metrics": {
+      "blocks_checked": 10,
+      "blocks_deferred": 1,
+      "blocks_matched": 10,
+      "blocks_waived": 0
+     },
+     "passed": true
+    }
+   }
+  },
+  "fortran:waterdiagnosticbulktype": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "call to external subroutine 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "3/10 blocks disagree: initallocate/B006, initallocate/B008, initallocate/B010",
+     "metrics": {
+      "blocks_checked": 10,
+      "blocks_deferred": 1,
+      "blocks_matched": 7,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:waterfluxbulktype": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "call to external subroutine 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/4 blocks disagree: initallocate/B004",
+     "metrics": {
+      "blocks_checked": 4,
+      "blocks_deferred": 1,
+      "blocks_matched": 3,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:waterstatebulktype": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "call to external subroutine 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "4/12 blocks disagree: initallocate/B006, initallocate/B008, initallocate/B010, initallocate/B012",
+     "metrics": {
+      "blocks_checked": 12,
+      "blocks_deferred": 1,
+      "blocks_matched": 8,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  },
+  "fortran:watertype": {
+   "deferred": 1,
+   "deferred_reasons": [
+    "call to external subroutine 'X'"
+   ],
+   "stages": {
+    "frontend/fortran": "ok",
+    "store/fs-evidence": "ok",
+    "transform/translate.numpy": "ok",
+    "verifier/static.rwset": "failed"
+   },
+   "stopped_by": "static.rwset",
+   "verdicts": {
+    "static.rwset": {
+     "detail": "1/6 blocks disagree: initallocate/B006",
+     "metrics": {
+      "blocks_checked": 6,
+      "blocks_deferred": 1,
+      "blocks_matched": 5,
+      "blocks_waived": 0
+     },
+     "passed": false
+    }
+   }
+  }
+ }
+}

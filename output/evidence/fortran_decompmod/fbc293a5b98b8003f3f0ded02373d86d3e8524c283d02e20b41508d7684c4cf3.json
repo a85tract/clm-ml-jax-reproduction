@@ -1,0 +1,43 @@
+{
+  "artifact": {
+    "digest": "e4a03d542f011c689c34772f7410dcf98fa061f1adff9abd6ab35d9dd0e90699",
+    "files": [
+      "decompmod_constants.py",
+      "decompmod_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:decompmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"e4a03d542f011c689c34772f7410dcf98fa061f1adff9abd6ab35d9dd0e90699\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:decompmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "8 blocks match",
+    "metrics": {
+      "blocks_checked": 8,
+      "blocks_deferred": 0,
+      "blocks_matched": 8,
+      "blocks_waived": 0,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:50:41.393373+00:00"
+}

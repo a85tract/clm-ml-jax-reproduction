@@ -1,0 +1,66 @@
+{
+  "artifact": {
+    "digest": "0b86d53506cc6df6d33d4a4bcf0ac874ff5a971d54e9d50b49587890b5773a16",
+    "files": [
+      "soilwatermovementmod_constants.py",
+      "soilwatermovementmod_numpy.py"
+    ],
+    "name": "fortran:soilwatermovementmod",
+    "transform": "recast.translate.fortran-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"0b86d53506cc6df6d33d4a4bcf0ac874ff5a971d54e9d50b49587890b5773a16\", \"executor\": \"local\", \"recipe\": \"translate\", \"unit\": \"fortran:soilwatermovementmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "1/2 blocks disagree: compute_hydraulic_properties/B001",
+    "metrics": {
+      "blocks_checked": 2,
+      "blocks_deferred": 1,
+      "blocks_matched": 1,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "compute_hydraulic_properties/B001",
+          "reads_source_only": [
+            "hk_l",
+            "smp_l"
+          ],
+          "reads_target_only": [
+            "nlayers"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "bsw",
+            "hk",
+            "hk_l",
+            "hksat",
+            "j",
+            "s",
+            "smp",
+            "smp_l",
+            "sucsat",
+            "watsat"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:25:41.337094+00:00"
+}

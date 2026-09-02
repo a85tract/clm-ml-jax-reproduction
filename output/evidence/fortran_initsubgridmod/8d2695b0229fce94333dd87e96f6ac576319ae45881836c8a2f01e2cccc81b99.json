@@ -1,0 +1,50 @@
+{
+  "artifact": {
+    "digest": "bbdda9afa66d50a16ccb73bc84523506c6b9ee3ab8349c70638b688f3a560dfb",
+    "files": [
+      "initsubgridmod_constants.py",
+      "initsubgridmod_numpy.py",
+      "patchtype_numpy.py"
+    ],
+    "name": "fortran:initsubgridmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"bbdda9afa66d50a16ccb73bc84523506c6b9ee3ab8349c70638b688f3a560dfb\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:initsubgridmod\"}}",
+  "reference": {
+    "key": "f2py:initsubgridmod:32824a6540f5f5a1",
+    "oracle": "f2py-golden-clm"
+  },
+  "result": {
+    "detail": "1 subprogram(s) could not be compared: add_patch: candidate raised: AttributeError: '_Record' object has no attribute 'column'",
+    "metrics": {
+      "bit_exact": 0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "nan_mismatch": 0,
+      "points": 0,
+      "skipped": [],
+      "subprograms": {
+        "add_patch": {
+          "error": "candidate raised: AttributeError: '_Record' object has no attribute 'column'"
+        }
+      },
+      "trials": 10
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.bitexact-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:29:17.273884+00:00"
+}

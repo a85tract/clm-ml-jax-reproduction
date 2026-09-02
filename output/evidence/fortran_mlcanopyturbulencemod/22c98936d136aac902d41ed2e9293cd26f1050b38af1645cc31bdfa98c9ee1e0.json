@@ -1,0 +1,69 @@
+{
+  "artifact": {
+    "digest": "fe01110b1795f38245c8b6f0526755ef3adad491804c4c44f7fc77abccd2edc5",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_time_manager_constants.py",
+      "clm_time_manager_numpy.py",
+      "clm_time_manager_use_constants.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_numpy.py",
+      "clm_varpar_use_constants.py",
+      "clmsoiloptionmod_numpy.py",
+      "decompmod_numpy.py",
+      "fileutils_numpy.py",
+      "histfilemod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlcanopyturbulencemod_constants.py",
+      "mlcanopyturbulencemod_numpy.py",
+      "mlcanopyturbulencemod_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "ncdio_pio_numpy.py",
+      "restutilmod_numpy.py",
+      "shr_kind_mod_numpy.py",
+      "spmdmod_numpy.py"
+    ],
+    "name": "fortran:mlcanopyturbulencemod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"fe01110b1795f38245c8b6f0526755ef3adad491804c4c44f7fc77abccd2edc5\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mlcanopyturbulencemod\"}}",
+  "reference": {
+    "key": "dump-replay:mlcanopyturbulencemod:8bddad93bdfcbfd0",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "60 blocks match; waived lookuppsihatini/B003: framework stub: ncd_pio_openfile; lookuppsihatini/B004: framework stub: ncd_inqdid; lookuppsihatini/B005: framework stub: ncd_inqdlen; lookuppsihatini/B007: framework stub: ncd_inqdid; lookuppsihatini/B008: framework stub: ncd_inqdlen; lookuppsihatini/B010: framework stub: ncd_io; lookuppsihatini/B012: framework stub: ncd_io; lookuppsihatini/B014: framework stub: ncd_io; lookuppsihatini/B016: framework stub: ncd_io; lookuppsihatini/B018: framework stub: ncd_io; lookuppsihatini/B020: framework stub: ncd_io; lookuppsihatini/B022: framework stub: ncd_pio_closefile",
+    "metrics": {
+      "blocks_checked": 60,
+      "blocks_deferred": 1,
+      "blocks_matched": 60,
+      "blocks_waived": 12,
+      "failures": []
+    },
+    "passed": true,
+    "verdict": "sampled",
+    "verifier": "static.rwset-clm"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T04:49:38.556891+00:00"
+}

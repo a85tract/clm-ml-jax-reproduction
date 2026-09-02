@@ -1,0 +1,78 @@
+{
+  "artifact": {
+    "digest": "1aa7ec0d54425f2872b0413bbc4dc8ec736fd0a88644e351ca1acf21f1d9ea91",
+    "files": [
+      "atm2lndtype_numpy.py",
+      "frictionvelocitymod_numpy.py",
+      "gridcelltype_numpy.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlwatervapormod_numpy.py",
+      "patchtype_numpy.py",
+      "towerdatamod_numpy.py",
+      "towermetmod_constants.py",
+      "towermetmod_numpy.py",
+      "towermetmod_use_constants.py",
+      "wateratm2lndbulktype_numpy.py"
+    ],
+    "name": "fortran:towermetmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"1aa7ec0d54425f2872b0413bbc4dc8ec736fd0a88644e351ca1acf21f1d9ea91\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:towermetmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "2/45 blocks disagree: towermetcurr/B001, readtowermet/B002",
+    "metrics": {
+      "blocks_checked": 45,
+      "blocks_deferred": 0,
+      "blocks_matched": 43,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "towermetcurr/B001",
+          "reads_source_only": [
+            "tower_ht",
+            "tower_lat",
+            "tower_lon"
+          ],
+          "reads_target_only": [
+            "_tow"
+          ],
+          "writes_source_only": [
+            "grc"
+          ],
+          "writes_target_only": [
+            "_gri"
+          ]
+        },
+        {
+          "block": "readtowermet/B002",
+          "reads_source_only": [
+            "ncfilename"
+          ],
+          "reads_target_only": [],
+          "writes_source_only": [],
+          "writes_target_only": []
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T03:30:33.838800+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "fortran:mlcanopyfluxesmod": {
+    "verdict": "[FAIL] verifier   differential.tolerance      failed: a dominant element is 8722388012646179687 ULP out (gate 32); that is where a translation defect shows, not where conditioning does",
+    "stopped": "",
+    "kernels": [
+      "canopyfluxesdiagnostics_flat",
+      "getclmvar_flat",
+      "mlcanopyfluxes_flat",
+      "mltimestepfluxintegration_flat"
+    ]
+  }
+}

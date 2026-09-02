@@ -1,0 +1,121 @@
+{
+  "artifact": {
+    "digest": "f209b83d7cd493bdc0097f90ccc5db6b27fc79f835516d160eafe60722911a7c",
+    "files": [
+      "abortutils_numpy.py",
+      "clm_varcon_numpy.py",
+      "clm_varctl_numpy.py",
+      "decompmod_numpy.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlclm_varpar_numpy.py",
+      "mllongwaveradiationmod_constants.py",
+      "mllongwaveradiationmod_numpy.py",
+      "mllongwaveradiationmod_use_constants.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlpftconmod_numpy.py",
+      "patchtype_numpy.py",
+      "shr_kind_mod_numpy.py"
+    ],
+    "name": "fortran:mllongwaveradiationmod",
+    "transform": "recast-clm.translate.clm-to-numpy"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"f209b83d7cd493bdc0097f90ccc5db6b27fc79f835516d160eafe60722911a7c\", \"executor\": \"local\", \"recipe\": \"translate-clm\", \"unit\": \"fortran:mllongwaveradiationmod\"}}",
+  "reference": {
+    "key": "",
+    "oracle": "none"
+  },
+  "result": {
+    "detail": "2/2 blocks disagree: longwaveradiation/B001, norman/B001",
+    "metrics": {
+      "blocks_checked": 2,
+      "blocks_deferred": 0,
+      "blocks_matched": 0,
+      "blocks_waived": 0,
+      "failures": [
+        {
+          "block": "longwaveradiation/B001",
+          "reads_source_only": [],
+          "reads_target_only": [
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": []
+        },
+        {
+          "block": "norman/B001",
+          "reads_source_only": [
+            "endrun",
+            "lwleaf",
+            "patch"
+          ],
+          "reads_target_only": [
+            "_patchtype",
+            "num_filter",
+            "runtimeerror"
+          ],
+          "writes_source_only": [],
+          "writes_target_only": [
+            "aic",
+            "atri",
+            "bic",
+            "btri",
+            "ctri",
+            "dpai",
+            "dtri",
+            "eic",
+            "emleaf",
+            "err",
+            "fic",
+            "fp",
+            "fracsun",
+            "ic",
+            "icm1",
+            "lw_source",
+            "lw_source_sha",
+            "lw_source_sun",
+            "lwabs",
+            "lwdwn",
+            "lwleaf",
+            "lwsky",
+            "lwsoi",
+            "lwup",
+            "lwupw",
+            "lwveg",
+            "m",
+            "nbot",
+            "ncan",
+            "ntop",
+            "omega",
+            "p",
+            "refld",
+            "rho",
+            "sumabs",
+            "tau",
+            "td",
+            "tg",
+            "tleaf",
+            "trand"
+          ]
+        }
+      ]
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "static.rwset"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-08-29T02:50:57.541913+00:00"
+}
