@@ -389,84 +389,93 @@ def _implicitfluxprofilesolution_flat_k_impl(p, np_, mlcanopy_inst__cpair_forcin
     mlcanopy_inst__eair_profile, = lax.fori_loop(1, mlcanopy_inst__eair_profile.shape[1] + 1, _body_19, (mlcanopy_inst__eair_profile,))
     e0 = e0 * mlcanopy_inst__pref_forcing[p - 1]
 
-    def _body_20(ic, _c):
+    def _body_21(ic, _c):
         mlcanopy_inst__evleaf_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__trleaf_leaf = _c
-        mlcanopy_inst__evleaf_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__trleaf_leaf = _mll_jax._leaffluxes_flat_k_impl(p, ic, ISUN, np_, mlcanopy_inst__cpair_forcing, mlcanopy_inst__cpleaf_profile, mlcanopy_inst__dpai_profile, mlcanopy_inst__eair_profile, mlcanopy_inst__evleaf_leaf, mlcanopy_inst__fdry_profile, mlcanopy_inst__fwet_profile, mlcanopy_inst__gbh_leaf, mlcanopy_inst__gbv_leaf, mlcanopy_inst__gs_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__pref_forcing, mlcanopy_inst__rnleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tair_profile, mlcanopy_inst__tleaf_bef_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__tref_forcing, mlcanopy_inst__trleaf_leaf, clm_varcon__hsub, clm_varcon__hvap, mlclm_varcon__mmh2o, mlclm_varctl__dtime_ml)
-        mlcanopy_inst__evleaf_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__trleaf_leaf = _mll_jax._leaffluxes_flat_k_impl(p, ic, ISHA, np_, mlcanopy_inst__cpair_forcing, mlcanopy_inst__cpleaf_profile, mlcanopy_inst__dpai_profile, mlcanopy_inst__eair_profile, mlcanopy_inst__evleaf_leaf, mlcanopy_inst__fdry_profile, mlcanopy_inst__fwet_profile, mlcanopy_inst__gbh_leaf, mlcanopy_inst__gbv_leaf, mlcanopy_inst__gs_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__pref_forcing, mlcanopy_inst__rnleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tair_profile, mlcanopy_inst__tleaf_bef_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__tref_forcing, mlcanopy_inst__trleaf_leaf, clm_varcon__hsub, clm_varcon__hvap, mlclm_varcon__mmh2o, mlclm_varctl__dtime_ml)
+
+        def _true_20(_c):
+            mlcanopy_inst__evleaf_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__trleaf_leaf = _c
+            mlcanopy_inst__evleaf_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__trleaf_leaf = _mll_jax._leaffluxes_flat_k_impl(p, ic, ISUN, np_, mlcanopy_inst__cpair_forcing, mlcanopy_inst__cpleaf_profile, mlcanopy_inst__dpai_profile, mlcanopy_inst__eair_profile, mlcanopy_inst__evleaf_leaf, mlcanopy_inst__fdry_profile, mlcanopy_inst__fwet_profile, mlcanopy_inst__gbh_leaf, mlcanopy_inst__gbv_leaf, mlcanopy_inst__gs_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__pref_forcing, mlcanopy_inst__rnleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tair_profile, mlcanopy_inst__tleaf_bef_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__tref_forcing, mlcanopy_inst__trleaf_leaf, clm_varcon__hsub, clm_varcon__hvap, mlclm_varcon__mmh2o, mlclm_varctl__dtime_ml)
+            mlcanopy_inst__evleaf_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__trleaf_leaf = _mll_jax._leaffluxes_flat_k_impl(p, ic, ISHA, np_, mlcanopy_inst__cpair_forcing, mlcanopy_inst__cpleaf_profile, mlcanopy_inst__dpai_profile, mlcanopy_inst__eair_profile, mlcanopy_inst__evleaf_leaf, mlcanopy_inst__fdry_profile, mlcanopy_inst__fwet_profile, mlcanopy_inst__gbh_leaf, mlcanopy_inst__gbv_leaf, mlcanopy_inst__gs_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__pref_forcing, mlcanopy_inst__rnleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tair_profile, mlcanopy_inst__tleaf_bef_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__tref_forcing, mlcanopy_inst__trleaf_leaf, clm_varcon__hsub, clm_varcon__hvap, mlclm_varcon__mmh2o, mlclm_varctl__dtime_ml)
+            return (mlcanopy_inst__evleaf_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__trleaf_leaf)
+
+        def _false_20(_c):
+            mlcanopy_inst__evleaf_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__trleaf_leaf = _c
+            return (mlcanopy_inst__evleaf_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__trleaf_leaf)
+        mlcanopy_inst__evleaf_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__trleaf_leaf = lax.cond(ic < mlcanopy_inst__ncan_canopy[p - 1] + 1, _true_20, _false_20, (mlcanopy_inst__evleaf_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__trleaf_leaf))
         return (mlcanopy_inst__evleaf_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__trleaf_leaf)
-    mlcanopy_inst__evleaf_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__trleaf_leaf = lax.fori_loop(1, mlcanopy_inst__ncan_canopy[p - 1] + 1, _body_20, (mlcanopy_inst__evleaf_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__trleaf_leaf))
+    mlcanopy_inst__evleaf_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__trleaf_leaf = lax.fori_loop(1, mlcanopy_inst__dpai_profile.shape[1] + 1, _body_21, (mlcanopy_inst__evleaf_leaf, mlcanopy_inst__lhleaf_leaf, mlcanopy_inst__shleaf_leaf, mlcanopy_inst__stleaf_leaf, mlcanopy_inst__tleaf_leaf, mlcanopy_inst__trleaf_leaf))
     mlcanopy_inst__eg_soil, mlcanopy_inst__etsoi_soil, mlcanopy_inst__gsoi_soil, mlcanopy_inst__lhsoi_soil, mlcanopy_inst__shsoi_soil, mlcanopy_inst__tg_soil = _mls_jax._soilfluxes_flat_k_impl(p, np_, mlcanopy_inst__cpair_forcing, mlcanopy_inst__eair_profile, mlcanopy_inst__eg_soil, mlcanopy_inst__etsoi_soil, mlcanopy_inst__gac0_soil, mlcanopy_inst__gsoi_soil, mlcanopy_inst__lhsoi_soil, mlcanopy_inst__pref_forcing, mlcanopy_inst__rhg_soil, mlcanopy_inst__rhomol_forcing, mlcanopy_inst__rnsoi_soil, mlcanopy_inst__shsoi_soil, mlcanopy_inst__soil_dz_soil, mlcanopy_inst__soil_t_soil, mlcanopy_inst__soil_tk_soil, mlcanopy_inst__soilres_soil, mlcanopy_inst__tair_profile, mlcanopy_inst__tg_bef_soil, mlcanopy_inst__tg_soil, mlcanopy_inst__tref_forcing, clm_varcon__hsub, clm_varcon__hvap, mlclm_varcon__mmh2o)
 
-    def _body_22(ic, _c):
+    def _body_23(ic, _c):
         mlcanopy_inst__shair_profile, mlcanopy_inst__etair_profile = _c
 
-        def _true_21(_c):
+        def _true_22(_c):
             mlcanopy_inst__shair_profile, mlcanopy_inst__etair_profile = _c
             mlcanopy_inst__shair_profile = mlcanopy_inst__shair_profile.at[p - 1, ic - 1].set(-(mlcanopy_inst__cpair_forcing[p - 1] * (mlcanopy_inst__tair_profile[p - 1, ic + 1 - 1] - mlcanopy_inst__tair_profile[p - 1, ic - 1]) * mlcanopy_inst__gac_profile[p - 1, ic - 1]))
             mlcanopy_inst__etair_profile = mlcanopy_inst__etair_profile.at[p - 1, ic - 1].set(-((mlcanopy_inst__eair_profile[p - 1, ic + 1 - 1] - mlcanopy_inst__eair_profile[p - 1, ic - 1]) / mlcanopy_inst__pref_forcing[p - 1] * mlcanopy_inst__gac_profile[p - 1, ic - 1]))
             return (mlcanopy_inst__shair_profile, mlcanopy_inst__etair_profile)
 
-        def _false_21(_c):
+        def _false_22(_c):
             mlcanopy_inst__shair_profile, mlcanopy_inst__etair_profile = _c
             return (mlcanopy_inst__shair_profile, mlcanopy_inst__etair_profile)
-        mlcanopy_inst__shair_profile, mlcanopy_inst__etair_profile = lax.cond(ic < mlcanopy_inst__ncan_canopy[p - 1] - 1 + 1, _true_21, _false_21, (mlcanopy_inst__shair_profile, mlcanopy_inst__etair_profile))
+        mlcanopy_inst__shair_profile, mlcanopy_inst__etair_profile = lax.cond(ic < mlcanopy_inst__ncan_canopy[p - 1] - 1 + 1, _true_22, _false_22, (mlcanopy_inst__shair_profile, mlcanopy_inst__etair_profile))
         return (mlcanopy_inst__shair_profile, mlcanopy_inst__etair_profile)
-    mlcanopy_inst__shair_profile, mlcanopy_inst__etair_profile = lax.fori_loop(1, mlcanopy_inst__shair_profile.shape[1] + 1, _body_22, (mlcanopy_inst__shair_profile, mlcanopy_inst__etair_profile))
+    mlcanopy_inst__shair_profile, mlcanopy_inst__etair_profile = lax.fori_loop(1, mlcanopy_inst__shair_profile.shape[1] + 1, _body_23, (mlcanopy_inst__shair_profile, mlcanopy_inst__etair_profile))
     ic = jnp.int32(mlcanopy_inst__ncan_canopy[p - 1])
     mlcanopy_inst__shair_profile = mlcanopy_inst__shair_profile.at[p - 1, ic - 1].set(-(mlcanopy_inst__cpair_forcing[p - 1] * (mlcanopy_inst__thref_forcing[p - 1] - mlcanopy_inst__tair_profile[p - 1, ic - 1]) * mlcanopy_inst__gac_profile[p - 1, ic - 1]))
     mlcanopy_inst__etair_profile = mlcanopy_inst__etair_profile.at[p - 1, ic - 1].set(-((mlcanopy_inst__eref_forcing[p - 1] - mlcanopy_inst__eair_profile[p - 1, ic - 1]) / mlcanopy_inst__pref_forcing[p - 1] * mlcanopy_inst__gac_profile[p - 1, ic - 1]))
 
-    def _body_24(ic, _c):
+    def _body_25(ic, _c):
         storage_sh, storage_et, mlcanopy_inst__stair_profile = _c
 
-        def _true_23(_c):
+        def _true_24(_c):
             storage_sh, storage_et, mlcanopy_inst__stair_profile = _c
             storage_sh = storage_sh.at[ic - 1].set(mlcanopy_inst__cpair_forcing[p - 1] * (mlcanopy_inst__tair_profile[p - 1, ic - 1] - mlcanopy_inst__tair_bef_profile[p - 1, ic - 1]) * rho_dz_over_dt[ic - 1])
             storage_et = storage_et.at[ic - 1].set((mlcanopy_inst__eair_profile[p - 1, ic - 1] - mlcanopy_inst__eair_bef_profile[p - 1, ic - 1]) / mlcanopy_inst__pref_forcing[p - 1] * rho_dz_over_dt[ic - 1])
             mlcanopy_inst__stair_profile = mlcanopy_inst__stair_profile.at[p - 1, ic - 1].set(storage_sh[ic - 1] + storage_et[ic - 1] * lambda_)
             return (storage_sh, storage_et, mlcanopy_inst__stair_profile)
 
-        def _false_23(_c):
+        def _false_24(_c):
             storage_sh, storage_et, mlcanopy_inst__stair_profile = _c
             return (storage_sh, storage_et, mlcanopy_inst__stair_profile)
-        storage_sh, storage_et, mlcanopy_inst__stair_profile = lax.cond(ic < mlcanopy_inst__ncan_canopy[p - 1] + 1, _true_23, _false_23, (storage_sh, storage_et, mlcanopy_inst__stair_profile))
+        storage_sh, storage_et, mlcanopy_inst__stair_profile = lax.cond(ic < mlcanopy_inst__ncan_canopy[p - 1] + 1, _true_24, _false_24, (storage_sh, storage_et, mlcanopy_inst__stair_profile))
         return (storage_sh, storage_et, mlcanopy_inst__stair_profile)
-    storage_sh, storage_et, mlcanopy_inst__stair_profile = lax.fori_loop(1, storage_sh.shape[0] + 1, _body_24, (storage_sh, storage_et, mlcanopy_inst__stair_profile))
+    storage_sh, storage_et, mlcanopy_inst__stair_profile = lax.fori_loop(1, storage_sh.shape[0] + 1, _body_25, (storage_sh, storage_et, mlcanopy_inst__stair_profile))
 
-    def _body_28(ic, _c):
+    def _body_29(ic, _c):
         shsrc, etsrc, stveg, esat, desat = _c
 
-        def _true_27(_c):
+        def _true_28(_c):
             shsrc, etsrc, stveg, esat, desat = _c
             shsrc = shsrc.at[ic - 1].set(0.0)
             etsrc = etsrc.at[ic - 1].set(0.0)
             stveg = stveg.at[ic - 1].set(0.0)
 
-            def _true_26(_c):
+            def _true_27(_c):
                 shsrc, esat, desat, etsrc, stveg = _c
 
-                def _body_25(il, _c):
+                def _body_26(il, _c):
                     shsrc, esat, desat, etsrc, stveg = _c
                     shsrc = shsrc.at[ic - 1].set(shsrc[ic - 1] + mlcanopy_inst__cpair_forcing[p - 1] * (tleaf_implic[ic - 1, il - 1] - mlcanopy_inst__tair_profile[p - 1, ic - 1]) * gleaf_sh[ic - 1, il - 1])
                     esat, desat = _mlw_jax._satvap_k_impl(mlcanopy_inst__tleaf_bef_leaf[p - 1, ic - 1, il - 1])
                     etsrc = etsrc.at[ic - 1].set(etsrc[ic - 1] + (esat + desat * (tleaf_implic[ic - 1, il - 1] - mlcanopy_inst__tleaf_bef_leaf[p - 1, ic - 1, il - 1]) - mlcanopy_inst__eair_profile[p - 1, ic - 1]) / mlcanopy_inst__pref_forcing[p - 1] * gleaf_et[ic - 1, il - 1])
                     stveg = stveg.at[ic - 1].set(stveg[ic - 1] + heatcap[ic - 1, il - 1] * (tleaf_implic[ic - 1, il - 1] - mlcanopy_inst__tleaf_bef_leaf[p - 1, ic - 1, il - 1]) / dtime)
                     return (shsrc, esat, desat, etsrc, stveg)
-                shsrc, esat, desat, etsrc, stveg = lax.fori_loop(1, NLEAF + 1, _body_25, (shsrc, esat, desat, etsrc, stveg))
+                shsrc, esat, desat, etsrc, stveg = lax.fori_loop(1, NLEAF + 1, _body_26, (shsrc, esat, desat, etsrc, stveg))
                 return (shsrc, esat, desat, etsrc, stveg)
 
-            def _false_26(_c):
+            def _false_27(_c):
                 shsrc, esat, desat, etsrc, stveg = _c
                 return (shsrc, esat, desat, etsrc, stveg)
-            shsrc, esat, desat, etsrc, stveg = lax.cond(mlcanopy_inst__dpai_profile[p - 1, ic - 1] > 0.0, _true_26, _false_26, (shsrc, esat, desat, etsrc, stveg))
+            shsrc, esat, desat, etsrc, stveg = lax.cond(mlcanopy_inst__dpai_profile[p - 1, ic - 1] > 0.0, _true_27, _false_27, (shsrc, esat, desat, etsrc, stveg))
             return (shsrc, etsrc, stveg, esat, desat)
 
-        def _false_27(_c):
+        def _false_28(_c):
             shsrc, etsrc, stveg, esat, desat = _c
             return (shsrc, etsrc, stveg, esat, desat)
-        shsrc, etsrc, stveg, esat, desat = lax.cond(ic < mlcanopy_inst__ncan_canopy[p - 1] + 1, _true_27, _false_27, (shsrc, etsrc, stveg, esat, desat))
+        shsrc, etsrc, stveg, esat, desat = lax.cond(ic < mlcanopy_inst__ncan_canopy[p - 1] + 1, _true_28, _false_28, (shsrc, etsrc, stveg, esat, desat))
         return (shsrc, etsrc, stveg, esat, desat)
-    shsrc, etsrc, stveg, esat, desat = lax.fori_loop(1, shsrc.shape[0] + 1, _body_28, (shsrc, etsrc, stveg, esat, desat))
+    shsrc, etsrc, stveg, esat, desat = lax.fori_loop(1, shsrc.shape[0] + 1, _body_29, (shsrc, etsrc, stveg, esat, desat))
     sh0 = -(mlcanopy_inst__cpair_forcing[p - 1] * (mlcanopy_inst__tair_profile[p - 1, 0] - t0) * mlcanopy_inst__gac0_soil[p - 1])
     et0 = -((mlcanopy_inst__eair_profile[p - 1, 0] - e0) / mlcanopy_inst__pref_forcing[p - 1] * gs0)
     g0 = -(mlcanopy_inst__soil_tk_soil[p - 1] / mlcanopy_inst__soil_dz_soil[p - 1] * mlcanopy_inst__soil_t_soil[p - 1]) + mlcanopy_inst__soil_tk_soil[p - 1] / mlcanopy_inst__soil_dz_soil[p - 1] * t0

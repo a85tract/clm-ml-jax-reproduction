@@ -53,7 +53,7 @@ def _canopywettedfraction_flat_k_impl(num_filter, filter, np_, mlcanopy_inst__dl
                     def _true_1(_c):
                         h2ocanmx, mlcanopy_inst__fwet_profile, mlcanopy_inst__fdry_profile = _c
                         h2ocanmx = mlclm_varcon__dewmx * mlcanopy_inst__dpai_profile[p - 1, ic - 1]
-                        mlcanopy_inst__fwet_profile = mlcanopy_inst__fwet_profile.at[p - 1, ic - 1].set(_f_max(mlcanopy_inst__h2ocan_profile[p - 1, ic - 1] / h2ocanmx, 0.0) ** mlclm_varcon__fwet_exponent)
+                        mlcanopy_inst__fwet_profile = mlcanopy_inst__fwet_profile.at[p - 1, ic - 1].set(jnp.where(_f_max(mlcanopy_inst__h2ocan_profile[p - 1, ic - 1] / h2ocanmx, 0.0) > 0.0, _f_max(mlcanopy_inst__h2ocan_profile[p - 1, ic - 1] / h2ocanmx, 0.0), 1.0) ** mlclm_varcon__fwet_exponent * jnp.where(_f_max(mlcanopy_inst__h2ocan_profile[p - 1, ic - 1] / h2ocanmx, 0.0) > 0.0, 1.0, 0.0))
                         mlcanopy_inst__fwet_profile = mlcanopy_inst__fwet_profile.at[p - 1, ic - 1].set(_f_min(mlcanopy_inst__fwet_profile[p - 1, ic - 1], mlclm_varcon__maximum_leaf_wetted_fraction))
                         mlcanopy_inst__fdry_profile = mlcanopy_inst__fdry_profile.at[p - 1, ic - 1].set((1.0 - mlcanopy_inst__fwet_profile[p - 1, ic - 1]) * (mlcanopy_inst__dlai_profile[p - 1, ic - 1] / mlcanopy_inst__dpai_profile[p - 1, ic - 1]))
                         return (h2ocanmx, mlcanopy_inst__fwet_profile, mlcanopy_inst__fdry_profile)

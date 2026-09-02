@@ -1,0 +1,16 @@
+{
+  "output": "output",
+  "oracle": "dump-replay",
+  "stages": {
+    "dump-replay": {
+      "dumps": "output/recorded.soil-month/dumps/fortran_mllongwaveradiationmod"
+    },
+    "translate.clm-ml": {
+      "constant_overrides": {
+        "met_type": 3,
+        "dpai_min": 0.01,
+        "pftcon_val": 1
+      }
+    }
+  }
+}

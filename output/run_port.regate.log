@@ -1,0 +1,30 @@
+fortran:mlcanopynitrogenprofilemod: [ok ] verifier   differential.tolerance      toleranced: 31152 dominant point(s) within 0 ULP (gate 32); the tail reaches 93 ULP but max_rel=2.643e-48 is inside rel_gate=1e-12
+    kernels=['canopynitrogenprofile_flat']
+fortran:mlcanopyturbulencemod: [ok ] verifier   differential.tolerance      toleranced: 10944 dominant point(s) within 23 ULP (gate 32); the tail reaches 172 ULP but max_rel=3.769e-15 is inside rel_gate=1e-12
+    kernels=['aerodynamicconductance_flat', 'canopyturbulence_flat', 'getbeta', 'getobu_flat', 'getprsc', 'getpsirsl', 'hf2008_flat', 'hybrid__obufunc_flat', 'hybrid__obufunc_iterate_flat', 'lookuppsihat', 'lookuppsihatini', 'obufunc_flat', 'phic_monin_obukhov', 'phim_monin_obukhov', 'psic_monin_obukhov', 'psim_monin_obukhov', 'roughnesslength_flat', 'windprofile_flat', 'zbrent__obufunc_flat', 'zbrent__obufunc_iterate_flat']
+fortran:mlcanopywatermod: [ok ] verifier   differential.tolerance      bit_exact: 19344 points across 3 subprogram(s), all bit-exact -- this backend did not need the tiers
+    kernels=['canopyevaporation_flat', 'canopyinterception_flat', 'canopywettedfraction_flat']
+fortran:mlfluxprofilesolutionmod: [FAIL] verifier   differential.tolerance      failed: a dominant element is 67175 ULP out (gate 32); that is where a translation defect shows, not where conditioning does
+    kernels=['errorcheck01_flat', 'errorcheck02_flat', 'fluxprofilesolution_flat', 'implicitfluxprofilesolution_flat', 'wellmixed_flat']
+fortran:mlinitverticalmod: [ok ] verifier   differential.tolerance      toleranced: 905 dominant point(s) within 0 ULP (gate 32); the tail reaches 597429832 ULP but max_rel=4.146e-45 is inside rel_gate=1e-12
+    kernels=['getpadparameters_flat', 'initverticalprofiles_flat', 'initverticalstructure_flat']
+fortran:mlleafboundarylayermod: [ok ] verifier   differential.tolerance      ulp_bounded: every one of 28800 points within 1 ULP (gate 32)
+    kernels=['leafboundarylayer_flat']
+fortran:mlleaffluxesmod: [ok ] verifier   differential.tolerance      toleranced: 47304 dominant point(s) within 0 ULP (gate 32); the tail reaches 6433 ULP but max_rel=3.951e-48 is inside rel_gate=1e-12
+    kernels=['leaffluxes_flat']
+fortran:mlleafheatcapacitymod: [ok ] verifier   differential.tolerance      ulp_bounded: every one of 4800 points within 1 ULP (gate 32)
+    kernels=['leafheatcapacity_flat']
+fortran:mlleafphotosynthesismod: [ok ] verifier   differential.tolerance      ulp_bounded: every one of 201840 points within 21 ULP (gate 32)
+    kernels=['bisection__stomataefficiency_flat', 'bisection__stomataefficiency_iterate_flat', 'cifunc_flat', 'cifuncgs_flat', 'ft', 'fth', 'fth25', 'hybrid__cifunc_flat', 'hybrid__cifunc_iterate_flat', 'leafphotosynthesis_flat', 'realizedrate', 'stomataefficiency_flat', 'stomataoptimization_flat', 'zbrent__cifunc_flat', 'zbrent__cifunc_iterate_flat', 'zbrent__stomataefficiency_flat', 'zbrent__stomataefficiency_iterate_flat']
+fortran:mllongwaveradiationmod: [FAIL] verifier   differential.tolerance      failed: a dominant element is 5792 ULP out (gate 32); that is where a translation defect shows, not where conditioning does
+    kernels=['longwaveradiation_flat', 'norman_flat']
+fortran:mlplanthydraulicsmod: [ok ] verifier   differential.tolerance      ulp_bounded: every one of 15696 points within 3 ULP (gate 32)
+    kernels=['leafwaterpotential_flat', 'plantresistance_flat', 'soilresistance_flat']
+fortran:mlrungekuttamod: [ok ] verifier   differential.tolerance      toleranced: 97026 dominant point(s) within 2 ULP (gate 32); the tail reaches 150119987579016 ULP but max_rel=3.779e-16 is inside rel_gate=1e-12
+    kernels=['rungekuttaini', 'rungekuttaupdate_flat']
+fortran:mlsoilfluxesmod: [FAIL] verifier   differential.tolerance      failed: a dominant element is 2399 ULP out (gate 32); that is where a translation defect shows, not where conditioning does
+    kernels=['soilfluxes_flat']
+fortran:mlsoiltemperaturemod: [ok ] verifier   differential.tolerance      ulp_bounded: every one of 10080 points within 3 ULP (gate 32)
+    kernels=['soiltemperature_flat', 'soilthermprop_flat']
+fortran:mlsolarradiationmod: [ok ] verifier   differential.tolerance      toleranced: 44544 dominant point(s) within 31 ULP (gate 32); the tail reaches 1803 ULP but max_rel=3.548e-15 is inside rel_gate=1e-12
+    kernels=['norman_flat', 'solarradiation_flat', 'twostream_flat']

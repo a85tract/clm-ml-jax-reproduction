@@ -1,0 +1,19 @@
+{
+  "output": "output",
+  "oracle": "dump-replay",
+  "stages": {
+    "dump-replay": {
+      "dumps": "output/recorded.soil-month/dumps/fortran_mlcanopyfluxesmod"
+    },
+    "translate.clm-ml": {
+      "constant_overrides": {
+        "met_type": 3,
+        "dpai_min": 0.01,
+        "pftcon_val": 1
+      },
+      "traced_scalars": [
+        "clm_time_manager__itim"
+      ]
+    }
+  }
+}

@@ -63,7 +63,7 @@ def _leafboundarylayer_flat_k_impl(num_filter, filter, il, np_, mlcanopy_inst__d
         def _true_7(_c):
             p, fac, visc, dh, dv, dc, re, pr, gr, nu, gbh_lam, gbv_lam, gbc_lam, gbh_turb, gbv_turb, gbc_turb, gbh_free, gbv_free, gbc_free, mlcanopy_inst__gbh_leaf, mlcanopy_inst__gbv_leaf, mlcanopy_inst__gbc_leaf = _c
             p = filter[fp - 1]
-            fac = F_101325P / mlcanopy_inst__pref_forcing[p - 1] * (mlcanopy_inst__tref_forcing[p - 1] / TFRZ) ** F_1P81
+            fac = F_101325P / mlcanopy_inst__pref_forcing[p - 1] * (jnp.where(mlcanopy_inst__tref_forcing[p - 1] / TFRZ > 0.0, mlcanopy_inst__tref_forcing[p - 1] / TFRZ, 1.0) ** F_1P81 * jnp.where(mlcanopy_inst__tref_forcing[p - 1] / TFRZ > 0.0, 1.0, 0.0))
             visc = mlclm_varcon__visc0 * fac
             dh = mlclm_varcon__dh0 * fac
             dv = mlclm_varcon__dv0 * fac
@@ -80,20 +80,20 @@ def _leafboundarylayer_flat_k_impl(num_filter, filter, il, np_, mlcanopy_inst__d
                         re = mlcanopy_inst__wind_profile[p - 1, ic - 1] * pftcon__dleaf[patch__itype[p - 1] - 0] / visc
                         pr = visc / dh
                         gr = clm_varcon__grav * (pftcon__dleaf[patch__itype[p - 1] - 0] * (pftcon__dleaf[patch__itype[p - 1] - 0] * pftcon__dleaf[patch__itype[p - 1] - 0])) * _f_max(mlcanopy_inst__tleaf_leaf[p - 1, ic - 1, il - 1] - mlcanopy_inst__tair_profile[p - 1, ic - 1], 0.0) / (mlcanopy_inst__tair_profile[p - 1, ic - 1] * visc * visc)
-                        nu = mlclm_varcon__gb_factor * F_0P66 * pr ** F_0P33 * re ** 0.5
+                        nu = mlclm_varcon__gb_factor * F_0P66 * (jnp.where(pr > 0.0, pr, 1.0) ** F_0P33 * jnp.where(pr > 0.0, 1.0, 0.0)) * (jnp.where(re > 0.0, re, 1.0) ** 0.5 * jnp.where(re > 0.0, 1.0, 0.0))
                         gbh_lam = dh * nu / pftcon__dleaf[patch__itype[p - 1] - 0] * mlcanopy_inst__rhomol_forcing[p - 1]
                         gbh_lam = _f_max(gbh_lam, mlclm_varcon__gbh_min)
-                        gbv_lam = gbh_lam * (dv / dh) ** F_0P67
-                        gbc_lam = gbh_lam * (dc / dh) ** F_0P67
-                        nu = mlclm_varcon__gb_factor * F_0P036 * pr ** F_0P33 * re ** F_0P8
+                        gbv_lam = gbh_lam * (jnp.where(dv / dh > 0.0, dv / dh, 1.0) ** F_0P67 * jnp.where(dv / dh > 0.0, 1.0, 0.0))
+                        gbc_lam = gbh_lam * (jnp.where(dc / dh > 0.0, dc / dh, 1.0) ** F_0P67 * jnp.where(dc / dh > 0.0, 1.0, 0.0))
+                        nu = mlclm_varcon__gb_factor * F_0P036 * (jnp.where(pr > 0.0, pr, 1.0) ** F_0P33 * jnp.where(pr > 0.0, 1.0, 0.0)) * (jnp.where(re > 0.0, re, 1.0) ** F_0P8 * jnp.where(re > 0.0, 1.0, 0.0))
                         gbh_turb = dh * nu / pftcon__dleaf[patch__itype[p - 1] - 0] * mlcanopy_inst__rhomol_forcing[p - 1]
                         gbh_turb = _f_max(gbh_turb, mlclm_varcon__gbh_min)
-                        gbv_turb = gbh_turb * (dv / dh) ** F_0P67
-                        gbc_turb = gbh_turb * (dc / dh) ** F_0P67
-                        nu = F_0P54 * pr ** F_0P25 * gr ** F_0P25
+                        gbv_turb = gbh_turb * (jnp.where(dv / dh > 0.0, dv / dh, 1.0) ** F_0P67 * jnp.where(dv / dh > 0.0, 1.0, 0.0))
+                        gbc_turb = gbh_turb * (jnp.where(dc / dh > 0.0, dc / dh, 1.0) ** F_0P67 * jnp.where(dc / dh > 0.0, 1.0, 0.0))
+                        nu = F_0P54 * (jnp.where(pr > 0.0, pr, 1.0) ** F_0P25 * jnp.where(pr > 0.0, 1.0, 0.0)) * (jnp.where(gr > 0.0, gr, 1.0) ** F_0P25 * jnp.where(gr > 0.0, 1.0, 0.0))
                         gbh_free = dh * nu / pftcon__dleaf[patch__itype[p - 1] - 0] * mlcanopy_inst__rhomol_forcing[p - 1]
-                        gbv_free = gbh_free * (dv / dh) ** F_0P75
-                        gbc_free = gbh_free * (dc / dh) ** F_0P75
+                        gbv_free = gbh_free * (jnp.where(dv / dh > 0.0, dv / dh, 1.0) ** F_0P75 * jnp.where(dv / dh > 0.0, 1.0, 0.0))
+                        gbc_free = gbh_free * (jnp.where(dc / dh > 0.0, dc / dh, 1.0) ** F_0P75 * jnp.where(dc / dh > 0.0, 1.0, 0.0))
 
                         def _true_3(_c):
                             mlcanopy_inst__gbh_leaf, mlcanopy_inst__gbv_leaf, mlcanopy_inst__gbc_leaf = _c

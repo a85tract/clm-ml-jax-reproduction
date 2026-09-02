@@ -767,3 +767,18 @@ The remaining exogenous boundary is soil hydrology and the forcing.
 Artifacts: output/trajectory.soilclosed.{numpy,jax}.npy,
 output/column_jax_month.soilclosed.log,
 output/recorded.31day/dumps/fortran_mlsoiltemperaturemod/.
+
+## Update 2026-09-02 — the 1-day per-unit recording restored, the JAX gate re-run
+
+The soil-loop month recording of 2026-08-31 had overwritten the per-unit
+dumps under `output/recorded/` (`record.py` clears `dumps/` before sorting).
+That recording now lives at `output/recorded.soil-month/` (its configs point
+there), and `output/recorded/` is a fresh 1-day recording of all 16 units
+(`--calls 48`, so the orchestrator's 48 whole-step dumps are back for
+`column.py` / `throughput.py`): 30 s end to end, 11 s of it the gfortran build.
+
+`run_port.py` over the 15 physics units on it, 2 min 51 s: **12/15**, the
+same three XLA-fusion residuals -- FluxProfileSolution (67,175 ULP), Longwave
+(5,792), SoilFluxes (2,399, identical). SolarRadiation passes at 31 ULP
+dominant, one under the gate (18 on the earlier recording). Log:
+`output/run_port.regate.log`; verdicts: `output/port/summary.json`.
