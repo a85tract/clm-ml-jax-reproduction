@@ -5,9 +5,11 @@ Scientific Code to Differentiable Frameworks: Application to a Land Surface
 Model* — CLM-ml-v2 (Fortran) → `clm-ml-jax` via a five-phase agentic pipeline.
 
 **Upstream source.** `gbonan/CLM-ml_v2.CHATS` @ `8d1cc40` (2025-12-04), cloned to
-`upstream/` and never modified. The paper's `clm-ml-jax` code is not yet public
-(nothing found on GitHub as of 2026-08-28), so the JAX side cannot be checked
-against the authors' artifact.
+`upstream/` and never modified. The authors' own translation is public at
+[AyaLahlou/clm-ml-jax](https://github.com/AyaLahlou/clm-ml-jax) (BSD-3; the
+2026-08-28 search missed it -- found 2026-09-02). Nothing here has been
+compared against it yet; this repository was renamed `clm-ml-jax-reproduction`
+on 2026-09-02 so the two are not confused.
 
 **Status: 2026-08-28.** Everything below was run on macOS 26.5 / Apple silicon,
 gfortran 16.1 (Homebrew), RecastEngine 0.0.1.dev0 with a sibling CAM extension installed
