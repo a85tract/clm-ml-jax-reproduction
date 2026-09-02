@@ -813,7 +813,26 @@ worst day, two orders above at the daily mean (the 8.6% is a low-SH day; the
 absolute number is 0.69 W/m2). The authors' driver re-run on this laptop for
 one day reproduces their shipped day-1 file to the third decimal (SH daily
 2.38e-2 both), at 3.0 s per step on CPU (our kernel 43.7 ms, Fortran 4.9 ms).
-A same-machine 31-day run is in progress; its row goes below when it finishes.
+**Same-machine month (finished 15:11, 77 min at 3.06 s/step).** Their
+driver at their current `main` (`fe4a556`, jax 0.11.1, CPU, x64) on this
+laptop, `output/authors_run_31day/`:
+
+| run | SH daily-mean rel max | SH max daily diff | SH step rel-RMS | SH max step diff | LH step rel-RMS | ustar step rel-RMS |
+|---|---|---|---|---|---|---|
+| authors' JAX, same machine, current main | 7.8e-2 | 2.26 W/m2 | 1.6e-2 | 27.4 W/m2 | 6.3e-3 | 7.8e-3 |
+| authors' JAX, shipped 2026-03-31 | 8.6e-2 | 0.69 W/m2 | 5.5e-3 | 7.5 W/m2 | 1.8e-3 | 5.1e-4 |
+
+The two do not agree with each other: 43 of 1,488 steps, in 27 episodes of
+one to seven steps, differ by more than 1 W/m2 in SH, and at 24 of them the
+shipped file is within 0.01 W/m2 of the Fortran while the same-machine run
+is off by up to 27 W/m2 (step 90, 2007-05-02 20:45: 141.1 against 113.7).
+The trajectory recovers after each episode (day 4 back to 0.1 W/m2), so this
+is a step-level solver excursion, not drift. Outside those 43 steps the
+same-machine run is at the shipped tier (SH step rel-RMS 5.2e-3). The
+shipped files were committed 2026-03-31; the turbulence solver was rewritten
+on 2026-04-10 ("fix gradient explosion in `_GetObu` via IFT"), so the
+current code is not what produced the shipped month. Whether the excursions
+come from that change or from the platform is checked below.
 
 **Unit level** (`compare_authors_units.py`): their function for each recorded
 subprogram, called on our recorded Fortran inputs (loaded into their 1-based

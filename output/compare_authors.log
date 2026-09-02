@@ -1,0 +1,29 @@
+reference: /Users/yueqichen/agent/cesm/clm-ml-jax/output/recorded.31day/run/out  (1488 steps, 31 days)
+
+authors' JAX: output/authors_run_31day  (1488 steps)
+  field       daily-mean rel max     median max |daily diff|  step rel-RMS  max |step diff|
+  rnet                 1.923e-03  2.973e-05            0.221     5.812e-04            5.933
+  shflx                7.786e-02  1.690e-03            2.257     1.630e-02           27.350
+  lhflx                2.179e-02  1.261e-04            2.363     6.284e-03           28.156
+  gppveg               1.461e-03  3.137e-05            0.020     8.545e-04            0.210
+  ustar                1.214e-02  7.938e-04            0.004     7.820e-03            0.101
+  lwup                 5.888e-04  9.981e-06            0.221     4.754e-04            5.933
+  tair_top             1.425e-04  2.130e-06            0.041     1.359e-04            0.882
+  gsoi                 2.314e-02  2.617e-04            0.036     1.494e-03            1.630
+
+our JAX kernel (closed loop, recording as reference): /Users/yueqichen/agent/cesm/clm-ml-jax/output/trajectory.fixed.npy  (1488 steps)
+  field       daily-mean rel max     median max |daily diff|  step rel-RMS  max |step diff|
+  gppveg               1.041e-04  3.265e-10            0.001     1.692e-04            0.078
+  shflx                9.634e-04  4.968e-09            0.041     7.357e-04            1.996
+  lhflx                1.757e-04  4.094e-10            0.038     2.387e-04            1.864
+
+output_files/JAX_outputs_05_2007_31days: /Users/yueqichen/agent/cesm/authors-clm-ml-jax/src/output_files/JAX_outputs_05_2007_31days  (1488 steps)
+  field       daily-mean rel max     median max |daily diff|  step rel-RMS  max |step diff|
+  rnet                 3.839e-04  6.373e-06            0.077     1.475e-04            0.830
+  shflx                8.585e-02  3.161e-04            0.685     5.464e-03            7.468
+  lhflx                4.019e-03  2.535e-05            0.627     1.765e-03            6.769
+  gppveg               1.455e-03  4.954e-06            0.020     7.323e-04            0.210
+  ustar                8.352e-04  5.033e-05            0.000     5.074e-04            0.004
+  lwup                 1.892e-04  2.534e-06            0.077     1.207e-04            0.830
+  tair_top             8.466e-06  7.148e-07            0.002     9.174e-06            0.029
+  gsoi                 4.859e-03  4.956e-05            0.010     1.684e-04            0.182
