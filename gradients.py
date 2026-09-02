@@ -57,7 +57,7 @@ import jax  # noqa: E402  (after the runtime enabled x64)
 import jax.numpy as jnp  # noqa: E402
 
 config = json.loads((PORT / f"{stem}.json").read_text())
-dumps = Path(config["stages"]["dump-replay"]["dumps"])
+dumps = HERE / config["stages"]["dump-replay"]["dumps"]
 kernels = ported._JAX_KERNELS
 print(f"{args.unit}: kernels {kernels}")
 rng = np.random.default_rng(0)

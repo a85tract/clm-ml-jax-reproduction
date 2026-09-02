@@ -1,9 +1,9 @@
 {
-  "output": "/Users/yueqichen/agent/SciRecast/cesm/clm-ml-jax/output",
+  "output": "output",
   "oracle": "dump-replay",
   "stages": {
     "dump-replay": {
-      "dumps": "/Users/yueqichen/agent/SciRecast/cesm/clm-ml-jax/output/recorded/dumps/fortran_mlinitverticalmod"
+      "dumps": "output/recorded/dumps/fortran_mlinitverticalmod"
     },
     "translate.clm-ml": {
       "constant_overrides": {

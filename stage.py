@@ -26,5 +26,5 @@ for d in DIRS:
             )
             assert "staged deviation (Finding 1)" in text
         (STAGED / (f.stem + ".f90")).write_text(text); n += 1
-(STAGED / "recast.json").write_text(json.dumps({"output": str(OUT)}, indent=2) + "\n")
+(STAGED / "recast.json").write_text(json.dumps({"output": str(OUT.relative_to(HERE))}, indent=2) + "\n")
 print(f"staged {n} files -> {STAGED}")

@@ -1,9 +1,9 @@
 {
-  "output": "/Users/yueqichen/agent/SciRecast/cesm/clm-ml-jax/output",
+  "output": "output",
   "oracle": "dump-replay",
   "stages": {
     "dump-replay": {
-      "dumps": "/Users/yueqichen/agent/SciRecast/cesm/clm-ml-jax/output/recorded/dumps/fortran_mlsolarradiationmod"
+      "dumps": "output/recorded.bak-20260830/dumps/fortran_mlsolarradiationmod"
     },
     "translate.clm-ml": {
       "constant_overrides": {

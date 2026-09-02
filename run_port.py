@@ -32,10 +32,11 @@ for path in configs:
     stages = config.setdefault("stages", {})
     if "translate.clm-ml" in stages:
         stages["port.clm-ml-jax"] = stages.pop("translate.clm-ml")
-    config["output"] = str(PORT)
+    config["output"] = str(PORT.relative_to(HERE))
     (PORT / path.name).write_text(json.dumps(config, indent=2))
     run = subprocess.run(
-        ["recast", "run", "port-clm-ml", str(OUT / "staged"), "--config", str(PORT / path.name), "--unit", uid],
+        ["recast", "run", "port-clm-ml", "output/staged", "--config", str((PORT / path.name).relative_to(HERE)), "--unit", uid],
+        cwd=HERE,  # the configs name paths relative to this directory
         capture_output=True,
         text=True,
     )

@@ -167,10 +167,10 @@ for module, plans in plans_by_module.items():
             shutil.copy2(f, target / f.name)
             n += 1
     config = {
-        "output": str(OUT),
+        "output": str(OUT.relative_to(HERE)),
         "oracle": "dump-replay",
         "stages": {
-            "dump-replay": {"dumps": str(target)},
+            "dump-replay": {"dumps": str(target.relative_to(HERE))},
             # The run-control variables the namelist set: the tree's defaults
             # are what the translation would otherwise carry.
             "translate.clm-ml": {"constant_overrides": overrides},

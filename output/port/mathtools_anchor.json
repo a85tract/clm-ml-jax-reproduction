@@ -1,1 +1,1 @@
-{"output": "/Users/yueqichen/agent/SciRecast/cesm/clm-ml-jax/output/port", "oracle": "numpy-anchor", "stages": {"differential.tolerance": {"trials": 5}}}
+{"output": "output/port", "oracle": "numpy-anchor", "stages": {"differential.tolerance": {"trials": 5}}}

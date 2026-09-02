@@ -372,6 +372,11 @@ a recording made under `-O2` differing by FMA contraction.
 
 ## Commands
 
+The config JSONs under `output/` (`recast.json`, `recorded*/fortran_*.json`,
+`port/*.json`) name `output` and `dumps` relative to this directory; the
+engine resolves them against the working directory, so run `recast` from here
+(the scripts do).
+
 ```bash
 cd RecastEngine && source .venv/bin/activate   # checkouts side by side: RecastEngine/, recast-clm-ml/, cesm/clm-ml-jax/
 python ../clm-ml-jax/stage.py

@@ -1,9 +1,9 @@
 {
-  "output": "/Users/yueqichen/agent/SciRecast/cesm/clm-ml-jax/output/port",
+  "output": "output/port",
   "oracle": "dump-replay",
   "stages": {
     "dump-replay": {
-      "dumps": "/Users/yueqichen/agent/SciRecast/cesm/clm-ml-jax/output/recorded/dumps/fortran_mlleafheatcapacitymod"
+      "dumps": "output/recorded/dumps/fortran_mlleafheatcapacitymod"
     },
     "port.clm-ml-jax": {
       "constant_overrides": {
