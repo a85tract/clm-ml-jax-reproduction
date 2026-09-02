@@ -832,7 +832,32 @@ same-machine run is at the shipped tier (SH step rel-RMS 5.2e-3). The
 shipped files were committed 2026-03-31; the turbulence solver was rewritten
 on 2026-04-10 ("fix gradient explosion in `_GetObu` via IFT"), so the
 current code is not what produced the shipped month. Whether the excursions
-come from that change or from the platform is checked below.
+come from that change or from the platform is checked next.
+
+**Their March commit, same machine (`94e1ba6`, the commit that added the
+shipped files; two days, 18-23 s/step).** `output/authors_run_march_2day/`.
+Sensible heat at the excursion, W/m2:
+
+| step | Fortran | shipped file | March commit here | current main here |
+|---|---|---|---|---|
+| 88 | 31.002 | 31.002 | 29.656 | 31.364 |
+| 89 | 72.315 | 72.315 | 82.527 | 85.381 |
+| 90 | 113.739 | 113.739 | 137.074 | 141.089 |
+| 91 | 59.558 | 59.558 | 76.376 | 79.993 |
+| 93 | 127.651 | 127.652 | 136.952 | 141.387 |
+
+Over the two days the shipped file is within 3.3e-4 step rel-RMS of the
+Fortran and agrees with it to the third decimal at most steps; the March
+commit run here is at 6.1e-2 and the current main at 7.2e-2, both with the
+same excursion at the same steps, and the March run differs from the shipped
+file at 62 of 96 steps. So the excursion is not the April solver change: it
+is in the code as of the shipped commit, on this platform (CPU, jax 0.11.1,
+x64). The shipped 31-day file was not produced by either commit as they run
+here, and its first two days sit closer to the Fortran than their own
+per-day shipped 1-day file does (2.4e-2 daily SH); we could not reproduce it
+and do not know its provenance (machine, jax version, or code state). The
+step-level comparison above therefore stands on the same-machine runs, and
+the shipped file's numbers are reported as what the repository ships.
 
 **Unit level** (`compare_authors_units.py`): their function for each recorded
 subprogram, called on our recorded Fortran inputs (loaded into their 1-based

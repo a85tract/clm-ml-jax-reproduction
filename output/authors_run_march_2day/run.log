@@ -1,0 +1,124 @@
+Site: CHATS7  Year: 2007  Month: 5
+6: pftconMod ... using non-default values
+6: Attempting to initialize MLpftcon .....
+6: MLpftcon ... using non-default values
+6: Successfuly initialized MLpftcon
+6: pftconMod ... using non-default values
+6: Attempting to initialize MLpftcon .....
+6: MLpftcon ... using non-default values
+6: Successfuly initialized MLpftcon
+Attempting to read RSL look-up table .....
+Successfully read RSL look-up table
+Initialization complete.
+Output files opened in: /private/tmp/claude-501/-Users-yueqichen/3332d836-b3d4-4efe-a522-ff503684aa5d/scratchpad/authors-out-old3d
+Starting time loop: ntimes=96, dtstep=1800s, progress every 1 step(s)
+/Users/yueqichen/agent/cesm/authors-clm-ml-jax/.venv/lib/python3.13/site-packages/jax/_src/ops/scatter.py:105: FutureWarning: scatter inputs have incompatible types: cannot safely cast value from dtype=float64 to dtype=float32 with jax_numpy_dtype_promotion=standard. In future JAX releases this will result in an error.
+  warnings.warn(
+Attempting to initialize multilayer canopy pad parameters .....
+Successfuly initialized multilayer canopy pad parameters
+Attempting to initialize multilayer canopy vertical structure .....
+Successfully initialized multilayer canopy vertical structure
+MLCanopyFluxes: starting ML sub-steps (num_ml_steps=6, nrk_steps=4, num_mlcan=1)
+MLCanopyFluxes: sub-step 1/6
+MLCanopyFluxes: sub-step 2/6
+MLCanopyFluxes: sub-step 3/6
+MLCanopyFluxes: sub-step 4/6
+MLCanopyFluxes: sub-step 5/6
+MLCanopyFluxes: sub-step 6/6
+  timestep 1/96 | step=58.97s (met=0.01s, adv=58.89s, out=0.08s) | elapsed=59.0s | eta=5602.1s
+  timestep 2/96 | step=22.32s (met=0.01s, adv=22.27s, out=0.05s) | elapsed=81.3s | eta=3820.7s
+  timestep 3/96 | step=23.29s (met=0.01s, adv=23.23s, out=0.05s) | elapsed=104.6s | eta=3242.1s
+  timestep 4/96 | step=23.06s (met=0.01s, adv=23.01s, out=0.05s) | elapsed=127.6s | eta=2935.9s
+  timestep 5/96 | step=21.42s (met=0.01s, adv=21.35s, out=0.06s) | elapsed=149.1s | eta=2713.0s
+  timestep 6/96 | step=13.40s (met=0.01s, adv=13.36s, out=0.04s) | elapsed=162.5s | eta=2437.0s
+  timestep 7/96 | step=10.82s (met=0.01s, adv=10.77s, out=0.04s) | elapsed=173.3s | eta=2203.3s
+  timestep 8/96 | step=8.79s (met=0.01s, adv=8.74s, out=0.04s) | elapsed=182.1s | eta=2002.9s
+  timestep 9/96 | step=8.91s (met=0.01s, adv=8.86s, out=0.04s) | elapsed=191.0s | eta=1846.2s
+  timestep 10/96 | step=8.65s (met=0.01s, adv=8.60s, out=0.04s) | elapsed=199.6s | eta=1716.9s
+  timestep 11/96 | step=9.09s (met=0.01s, adv=9.04s, out=0.04s) | elapsed=208.7s | eta=1612.9s
+  timestep 12/96 | step=8.73s (met=0.01s, adv=8.68s, out=0.04s) | elapsed=217.5s | eta=1522.2s
+  timestep 13/96 | step=8.60s (met=0.01s, adv=8.55s, out=0.04s) | elapsed=226.1s | eta=1443.3s
+  timestep 14/96 | step=9.08s (met=0.01s, adv=9.03s, out=0.04s) | elapsed=235.1s | eta=1377.2s
+  timestep 15/96 | step=8.80s (met=0.01s, adv=8.76s, out=0.04s) | elapsed=243.9s | eta=1317.3s
+  timestep 16/96 | step=8.67s (met=0.01s, adv=8.63s, out=0.04s) | elapsed=252.6s | eta=1263.1s
+  timestep 17/96 | step=8.71s (met=0.01s, adv=8.66s, out=0.04s) | elapsed=261.3s | eta=1214.4s
+  timestep 18/96 | step=9.01s (met=0.01s, adv=8.96s, out=0.05s) | elapsed=270.3s | eta=1171.5s
+  timestep 19/96 | step=8.62s (met=0.01s, adv=8.57s, out=0.04s) | elapsed=279.0s | eta=1130.5s
+  timestep 20/96 | step=8.62s (met=0.01s, adv=8.57s, out=0.04s) | elapsed=287.6s | eta=1092.8s
+  timestep 21/96 | step=8.62s (met=0.01s, adv=8.58s, out=0.04s) | elapsed=296.2s | eta=1057.9s
+  timestep 22/96 | step=9.03s (met=0.01s, adv=8.98s, out=0.04s) | elapsed=305.2s | eta=1026.7s
+  timestep 23/96 | step=8.55s (met=0.01s, adv=8.50s, out=0.04s) | elapsed=313.8s | eta=995.9s
+  timestep 24/96 | step=8.58s (met=0.01s, adv=8.53s, out=0.04s) | elapsed=322.4s | eta=967.1s
+  timestep 25/96 | step=8.56s (met=0.01s, adv=8.51s, out=0.04s) | elapsed=330.9s | eta=939.8s
+  timestep 26/96 | step=10.15s (met=0.01s, adv=10.10s, out=0.04s) | elapsed=341.1s | eta=918.3s
+  timestep 27/96 | step=15.01s (met=0.01s, adv=14.97s, out=0.04s) | elapsed=356.1s | eta=910.0s
+  timestep 28/96 | step=18.77s (met=0.01s, adv=18.72s, out=0.04s) | elapsed=374.9s | eta=910.4s
+  timestep 29/96 | step=18.11s (met=0.01s, adv=18.07s, out=0.04s) | elapsed=393.0s | eta=907.9s
+  timestep 30/96 | step=18.08s (met=0.01s, adv=18.03s, out=0.04s) | elapsed=411.0s | eta=904.3s
+  timestep 31/96 | step=18.14s (met=0.01s, adv=18.10s, out=0.04s) | elapsed=429.2s | eta=899.9s
+  timestep 32/96 | step=18.08s (met=0.01s, adv=18.03s, out=0.04s) | elapsed=447.3s | eta=894.5s
+  timestep 33/96 | step=18.11s (met=0.01s, adv=18.06s, out=0.04s) | elapsed=465.4s | eta=888.4s
+  timestep 34/96 | step=18.81s (met=0.01s, adv=18.76s, out=0.04s) | elapsed=484.2s | eta=882.9s
+  timestep 35/96 | step=18.06s (met=0.01s, adv=18.01s, out=0.04s) | elapsed=502.2s | eta=875.3s
+  timestep 36/96 | step=18.09s (met=0.01s, adv=18.04s, out=0.04s) | elapsed=520.3s | eta=867.2s
+  timestep 37/96 | step=18.10s (met=0.01s, adv=18.05s, out=0.04s) | elapsed=538.4s | eta=858.6s
+  timestep 38/96 | step=18.07s (met=0.01s, adv=18.02s, out=0.04s) | elapsed=556.5s | eta=849.4s
+  timestep 39/96 | step=18.09s (met=0.01s, adv=18.04s, out=0.04s) | elapsed=574.6s | eta=839.8s
+  timestep 40/96 | step=18.08s (met=0.01s, adv=18.04s, out=0.04s) | elapsed=592.7s | eta=829.7s
+  timestep 41/96 | step=18.07s (met=0.01s, adv=18.03s, out=0.04s) | elapsed=610.7s | eta=819.3s
+  timestep 42/96 | step=18.95s (met=0.01s, adv=18.91s, out=0.04s) | elapsed=629.7s | eta=809.6s
+  timestep 43/96 | step=18.08s (met=0.01s, adv=18.03s, out=0.04s) | elapsed=647.8s | eta=798.4s
+  timestep 44/96 | step=18.05s (met=0.01s, adv=18.00s, out=0.04s) | elapsed=665.8s | eta=786.9s
+  timestep 45/96 | step=18.17s (met=0.01s, adv=18.12s, out=0.04s) | elapsed=684.0s | eta=775.2s
+  timestep 46/96 | step=18.05s (met=0.01s, adv=18.01s, out=0.04s) | elapsed=702.0s | eta=763.1s
+  timestep 47/96 | step=18.05s (met=0.01s, adv=18.00s, out=0.04s) | elapsed=720.1s | eta=750.7s
+  timestep 48/96 | step=18.06s (met=0.01s, adv=18.01s, out=0.04s) | elapsed=738.2s | eta=738.2s
+  timestep 49/96 | step=18.10s (met=0.01s, adv=18.05s, out=0.04s) | elapsed=756.3s | eta=725.4s
+  timestep 50/96 | step=18.06s (met=0.01s, adv=18.02s, out=0.04s) | elapsed=774.3s | eta=712.4s
+  timestep 51/96 | step=19.16s (met=0.01s, adv=19.12s, out=0.04s) | elapsed=793.5s | eta=700.1s
+  timestep 52/96 | step=16.62s (met=0.01s, adv=16.57s, out=0.04s) | elapsed=810.1s | eta=685.5s
+  timestep 53/96 | step=14.11s (met=0.01s, adv=14.06s, out=0.04s) | elapsed=824.2s | eta=668.7s
+  timestep 54/96 | step=9.50s (met=0.01s, adv=9.45s, out=0.04s) | elapsed=833.7s | eta=648.4s
+  timestep 55/96 | step=8.56s (met=0.01s, adv=8.51s, out=0.04s) | elapsed=842.3s | eta=627.9s
+  timestep 56/96 | step=8.57s (met=0.01s, adv=8.52s, out=0.04s) | elapsed=850.8s | eta=607.7s
+  timestep 57/96 | step=8.76s (met=0.01s, adv=8.71s, out=0.04s) | elapsed=859.6s | eta=588.1s
+  timestep 58/96 | step=8.72s (met=0.01s, adv=8.67s, out=0.04s) | elapsed=868.3s | eta=568.9s
+  timestep 59/96 | step=8.73s (met=0.01s, adv=8.68s, out=0.04s) | elapsed=877.0s | eta=550.0s
+  timestep 60/96 | step=8.87s (met=0.01s, adv=8.82s, out=0.04s) | elapsed=885.9s | eta=531.5s
+  timestep 61/96 | step=8.76s (met=0.01s, adv=8.71s, out=0.04s) | elapsed=894.7s | eta=513.3s
+  timestep 62/96 | step=10.58s (met=0.01s, adv=10.53s, out=0.04s) | elapsed=905.2s | eta=496.4s
+  timestep 63/96 | step=8.67s (met=0.01s, adv=8.63s, out=0.04s) | elapsed=913.9s | eta=478.7s
+  timestep 64/96 | step=8.83s (met=0.01s, adv=8.78s, out=0.04s) | elapsed=922.7s | eta=461.4s
+  timestep 65/96 | step=8.67s (met=0.01s, adv=8.62s, out=0.04s) | elapsed=931.4s | eta=444.2s
+  timestep 66/96 | step=8.62s (met=0.01s, adv=8.57s, out=0.04s) | elapsed=940.0s | eta=427.3s
+  timestep 67/96 | step=8.75s (met=0.01s, adv=8.70s, out=0.04s) | elapsed=948.8s | eta=410.7s
+  timestep 68/96 | step=8.72s (met=0.01s, adv=8.67s, out=0.04s) | elapsed=957.5s | eta=394.3s
+  timestep 69/96 | step=8.67s (met=0.01s, adv=8.62s, out=0.04s) | elapsed=966.2s | eta=378.1s
+  timestep 70/96 | step=8.75s (met=0.01s, adv=8.70s, out=0.04s) | elapsed=974.9s | eta=362.1s
+  timestep 71/96 | step=8.76s (met=0.01s, adv=8.71s, out=0.04s) | elapsed=983.7s | eta=346.4s
+  timestep 72/96 | step=8.82s (met=0.01s, adv=8.78s, out=0.04s) | elapsed=992.5s | eta=330.8s
+  timestep 73/96 | step=8.86s (met=0.01s, adv=8.81s, out=0.04s) | elapsed=1001.4s | eta=315.5s
+  timestep 74/96 | step=8.87s (met=0.01s, adv=8.82s, out=0.04s) | elapsed=1010.2s | eta=300.3s
+  timestep 75/96 | step=12.94s (met=0.01s, adv=12.89s, out=0.04s) | elapsed=1023.2s | eta=286.5s
+  timestep 76/96 | step=14.13s (met=0.01s, adv=14.09s, out=0.04s) | elapsed=1037.3s | eta=273.0s
+  timestep 77/96 | step=15.63s (met=0.01s, adv=15.58s, out=0.04s) | elapsed=1052.9s | eta=259.8s
+  timestep 78/96 | step=17.13s (met=0.01s, adv=17.08s, out=0.04s) | elapsed=1070.0s | eta=246.9s
+  timestep 79/96 | step=18.49s (met=0.01s, adv=18.44s, out=0.04s) | elapsed=1088.5s | eta=234.2s
+  timestep 80/96 | step=18.65s (met=0.01s, adv=18.60s, out=0.04s) | elapsed=1107.2s | eta=221.4s
+  timestep 81/96 | step=18.79s (met=0.01s, adv=18.74s, out=0.04s) | elapsed=1126.0s | eta=208.5s
+  timestep 82/96 | step=18.72s (met=0.01s, adv=18.67s, out=0.04s) | elapsed=1144.7s | eta=195.4s
+  timestep 83/96 | step=19.10s (met=0.01s, adv=19.05s, out=0.04s) | elapsed=1163.8s | eta=182.3s
+  timestep 84/96 | step=18.71s (met=0.01s, adv=18.66s, out=0.04s) | elapsed=1182.5s | eta=168.9s
+  timestep 85/96 | step=19.24s (met=0.01s, adv=19.19s, out=0.04s) | elapsed=1201.7s | eta=155.5s
+  timestep 86/96 | step=19.31s (met=0.01s, adv=19.26s, out=0.04s) | elapsed=1221.1s | eta=142.0s
+  timestep 87/96 | step=18.74s (met=0.01s, adv=18.69s, out=0.04s) | elapsed=1239.8s | eta=128.3s
+  timestep 88/96 | step=18.80s (met=0.01s, adv=18.75s, out=0.04s) | elapsed=1258.6s | eta=114.4s
+  timestep 89/96 | step=18.72s (met=0.01s, adv=18.67s, out=0.04s) | elapsed=1277.3s | eta=100.5s
+  timestep 90/96 | step=18.72s (met=0.01s, adv=18.67s, out=0.04s) | elapsed=1296.0s | eta=86.4s
+  timestep 91/96 | step=21.27s (met=0.01s, adv=21.22s, out=0.04s) | elapsed=1317.3s | eta=72.4s
+  timestep 92/96 | step=18.60s (met=0.01s, adv=18.55s, out=0.04s) | elapsed=1335.9s | eta=58.1s
+  timestep 93/96 | step=18.56s (met=0.01s, adv=18.51s, out=0.04s) | elapsed=1354.5s | eta=43.7s
+  timestep 94/96 | step=18.62s (met=0.01s, adv=18.57s, out=0.04s) | elapsed=1373.1s | eta=29.2s
+  timestep 95/96 | step=18.55s (met=0.01s, adv=18.50s, out=0.04s) | elapsed=1391.6s | eta=14.6s
+  timestep 96/96 | step=18.67s (met=0.01s, adv=18.63s, out=0.04s) | elapsed=1410.3s | eta=0.0s
+Run complete.
