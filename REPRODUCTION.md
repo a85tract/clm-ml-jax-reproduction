@@ -7,9 +7,12 @@ Model* — CLM-ml-v2 (Fortran) → `clm-ml-jax` via a five-phase agentic pipelin
 **Upstream source.** `gbonan/CLM-ml_v2.CHATS` @ `8d1cc40` (2025-12-04), cloned to
 `upstream/` and never modified. The authors' own translation is public at
 [AyaLahlou/clm-ml-jax](https://github.com/AyaLahlou/clm-ml-jax) (BSD-3; the
-2026-08-28 search missed it -- found 2026-09-02). Nothing here has been
-compared against it yet; this repository was renamed `clm-ml-jax-reproduction`
-on 2026-09-02 so the two are not confused.
+2026-08-28 search missed it -- found 2026-09-02). It has since been run
+against the same Fortran oracle as the generated code, per unit and over the
+month (Update 2026-09-02, "differential against the authors' own
+translation"); nothing generated here is gated against it. This repository
+was renamed `clm-ml-jax-reproduction` on 2026-09-02 so the two are not
+confused.
 
 **Status: 2026-08-28.** Everything below was run on macOS 26.5 / Apple silicon,
 gfortran 16.1 (Homebrew), RecastEngine 0.0.1.dev0 with a sibling CAM extension installed
@@ -363,6 +366,11 @@ a recording made under `-O2` differing by FMA contraction.
    `multilayer_canopy` units can be gated as they stand.
 
 ## Not reproduced (and why)
+
+*Written 2026-08-28; every item below was reached in the updates that follow
+(JAX from 2026-08-29, Fig. 5 through Fig. 9 on 2026-08-30 and -31, the
+authors' code on 2026-09-02). Kept as the record of where the first day
+stopped.*
 
 - The JAX translation itself, the 31-day parity (Fig. 5), gradient checks
   (§4.2), Jacobian (Fig. 6), calibration (Fig. 8), throughput (Fig. 9): all
