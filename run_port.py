@@ -21,6 +21,12 @@ OUT = HERE / "output"
 PORT = OUT / "port"
 PORT.mkdir(exist_ok=True)
 
+# Scalars the JAX backend would make static arguments of the kernel (so it
+# recompiles whenever they change) but which change every step: the per-step
+# counter itim in the whole-step kernel. Kept traced, the month runs on one
+# compile (REPRODUCTION.md, "Reverse mode through the whole step").
+TRACED_SCALARS = {"fortran:mlcanopyfluxesmod": ["clm_time_manager__itim"]}
+
 wanted = sys.argv[1:]
 configs = sorted(OUT.glob("recorded/fortran_*.json"))
 if wanted:
@@ -32,6 +38,8 @@ for path in configs:
     stages = config.setdefault("stages", {})
     if "translate.clm-ml" in stages:
         stages["port.clm-ml-jax"] = stages.pop("translate.clm-ml")
+    if uid in TRACED_SCALARS:
+        stages.setdefault("port.clm-ml-jax", {})["traced_scalars"] = TRACED_SCALARS[uid]
     config["output"] = str(PORT.relative_to(HERE))
     (PORT / path.name).write_text(json.dumps(config, indent=2))
     run = subprocess.run(

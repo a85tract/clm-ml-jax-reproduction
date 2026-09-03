@@ -113,11 +113,22 @@ in one environment, and the upstream clone in `upstream/`.
 ```bash
 python stage.py
 python record.py fortran:mlleaffluxesmod ... fortran:mlcanopyfluxesmod --days 1 --calls 48
-python run_port.py                      # 15 physics units, ~3 min
+python run_port.py                      # 15 physics units, ~3 min; with no arguments also the whole-step unit, whose port is not expected to pass the ULP gate
 python column.py --mode jax             # one day closed loop
 python month_jax.py                     # Fig. 5 (needs the 31-day recording)
 python gradients.py fortran:mlleafphotosynthesismod
 ```
+
+The evidence under `output/` was produced with RecastEngine `main` at
+`11512f6` (2026-09-02) and `recast-clm-ml` at `55ec365`, on jax 0.10.2,
+numpy 2.4.6, Python 3.11.16, gfortran 16.1.0 and netCDF-Fortran 4.6.4
+(macOS, Apple silicon). The reference Fortran is built by `build/build.sh`
+(gfortran `-O2`, topological order from `output/topo_order.txt`). Later
+engine commits tighten the gate: on `main` from 2026-09-03 (PR #15,
+fail-closed translation) two of the passing units become refusals
+(`MLRungeKuttaMod`: `rungekuttaini` is translated but never compared;
+`MLinitVerticalMod`: the recorder writes the integer `nbot_canopy` as
+float64), so the 12/15 above is the pinned engine's number.
 
 ## License
 

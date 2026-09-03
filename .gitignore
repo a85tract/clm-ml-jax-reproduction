@@ -1,7 +1,10 @@
 # upstream is a clone of gbonan/CLM-ml_v2.CHATS, never modified and never committed here
 /upstream/
-# compiled offline Fortran model (regenerate with build/build.sh)
+# compiled offline Fortran model (regenerate with build/build.sh, which is kept)
 /build*/
+!/build/
+/build/*
+!/build/build.sh
 # the 31-day whole-step recording (5.3 GB of dumps) is too large for git;
 # regenerate with `python record.py mlcanopyfluxesmod --days 31` or fetch the
 # archive attached to the GitHub release
