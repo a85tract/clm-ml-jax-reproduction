@@ -4,7 +4,7 @@
 import numpy as np
 
 # ----- module-level parameters
-CALKINDFLAG = 'GREGORIAN'  # clm_time_manager.f90:73 (CHARACTER)
+CALKINDFLAG = 'GREGORIAN '  # clm_time_manager.f90:73 (CHARACTER)
 MDAY = np.array([31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31])  # clm_time_manager.f90:77 (INTEGER)
 MDAYCUM = np.array([0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365])  # clm_time_manager.f90:78 (INTEGER)
 MDAYLEAP = np.array([31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31])  # clm_time_manager.f90:82 (INTEGER)

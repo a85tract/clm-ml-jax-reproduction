@@ -17,7 +17,7 @@ import clmsoiloptionmod_numpy as _clm
 
 _RUNTIME = {'abort_msg': None}
 
-_SIGNATURES = {'clm_varpar_init': {'kind': 'subroutine', 'args': [], 'result': None, 'result_dtype': None}}
+_SIGNATURES = {'clm_varpar_init': {'kind': 'subroutine', 'public': True, 'args': [], 'result': None, 'result_dtype': None}}
 
 _LIBM_STRICT = os.environ.get("PY_LIBM_STRICT", "1") == "1"
 """Strict libm, on by default.

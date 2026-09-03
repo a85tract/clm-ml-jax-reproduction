@@ -23,7 +23,7 @@ _DEVICE = str(jax.devices()[0])
 
 import clmsoiloptionmod_numpy as _clm
 
-_SIGNATURES = {'clm_varpar_init': {'kind': 'subroutine', 'args': [], 'result': None, 'result_dtype': None}}
+_SIGNATURES = {'clm_varpar_init': {'kind': 'subroutine', 'public': True, 'args': [], 'result': None, 'result_dtype': None}}
 
 
 def _clm_varpar_init_k_impl(nlevgrnd, nlevsno, nlevsoi):

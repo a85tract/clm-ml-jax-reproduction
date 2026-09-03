@@ -17,7 +17,7 @@ from patchtype_use_constants import *  # noqa: F401,F403
 
 _RUNTIME = {'abort_msg': None}
 
-_SIGNATURES = {'init': {'kind': 'subroutine', 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(PATCH_TYPE))', 'intent': 'UNKNOWN', 'optional': False}, {'name': 'begp', 'dtype': 'int32', 'intent': 'IN', 'optional': False}, {'name': 'endp', 'dtype': 'int32', 'intent': 'IN', 'optional': False}], 'result': None, 'result_dtype': None}}
+_SIGNATURES = {'init': {'kind': 'subroutine', 'public': False, 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(PATCH_TYPE))', 'intent': 'UNKNOWN', 'optional': False}, {'name': 'begp', 'dtype': 'int32', 'intent': 'IN', 'optional': False}, {'name': 'endp', 'dtype': 'int32', 'intent': 'IN', 'optional': False}], 'result': None, 'result_dtype': None}}
 
 _LIBM_STRICT = os.environ.get("PY_LIBM_STRICT", "1") == "1"
 """Strict libm, on by default.

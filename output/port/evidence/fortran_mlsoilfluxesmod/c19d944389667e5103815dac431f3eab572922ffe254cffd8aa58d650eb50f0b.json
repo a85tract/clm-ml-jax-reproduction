@@ -1,0 +1,85 @@
+{
+  "artifact": {
+    "digest": "ca0fd1c8dabb8abdeb8ab453195c7ef555537d669f6b11915b844f6bd5fdda3c",
+    "files": [
+      "clm_varcon_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlsoilfluxesmod_constants.py",
+      "mlsoilfluxesmod_jax.py",
+      "mlsoilfluxesmod_jax_runtime.py",
+      "mlsoilfluxesmod_numpy.py",
+      "mlwatervapormod_constants.py",
+      "mlwatervapormod_jax.py",
+      "mlwatervapormod_jax_runtime.py",
+      "mlwatervapormod_numpy.py",
+      "mlwatervapormod_use_constants.py"
+    ],
+    "name": "fortran:mlsoilfluxesmod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"ca0fd1c8dabb8abdeb8ab453195c7ef555537d669f6b11915b844f6bd5fdda3c\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlsoilfluxesmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlsoilfluxesmod:45f7fe83c41427d7",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "a dominant element is 2399 ULP out (gate 32); that is where a translation defect shows, not where conditioning does",
+    "metrics": {
+      "bit_exact": 118,
+      "candidate_device": "cpu:0",
+      "dominant_points": 288,
+      "integer_mismatch": 0,
+      "integer_points": 0,
+      "max_rel": 3.9753068841642516e-13,
+      "max_ulp": 2399,
+      "max_ulp_dominant": 2399,
+      "nan_mismatch": 0,
+      "points": 288,
+      "rel_gate": 1e-12,
+      "skipped": [],
+      "subprograms": {
+        "soilfluxes_flat": {
+          "bit_exact": 118,
+          "dominant_points": 288,
+          "integer_mismatch": 0,
+          "integer_points": 0,
+          "max_rel": 3.9753068841642516e-13,
+          "max_ulp": 2399,
+          "max_ulp_dominant": 2399,
+          "nan_mismatch": 0,
+          "points": 288
+        }
+      },
+      "trials": 10,
+      "ulp_gate": 32,
+      "uncovered": []
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-09-03T21:32:12.426392+00:00"
+}

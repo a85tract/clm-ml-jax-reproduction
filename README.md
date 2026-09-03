@@ -44,7 +44,7 @@ the Fortran run on the same laptop:
 | **Fig. 6** Jacobian rows, reverse vs forward mode | `jax.grad` through the whole step equals `jax.jvp` to 2.8e-12 (SH), 6.0e-11 (LH), 9.9e-14 (Tg) at day-15 noon | `output/fig6_day15_noon.fixed.log`, `gradients.py` |
 | **Fig. 8** parameter recovery by gradient calibration | stomatal efficiency recovered to 0.05% of truth from a 1.5x perturbation, 7 iterations | `output/calibration.fixed.log`, `calibration.py` |
 | **Fig. 9** throughput | 43.7 ms per step jitted (25.5 s one-time compile), NumPy 377 ms, Fortran 4.9 ms, all CPU single-point; not comparable to the paper's GPU figure | `throughput.py` |
-| Per-module translation | 15/15 canopy physics modules bit-exact in NumPy on recorded state; 12/15 pass the JAX 32-ULP gate under `jit`, the other three (FluxProfileSolution, Longwave, SoilFluxes) are exact with `jit` off and differ only by XLA fusion | `output/port/summary.json`, `output/run_port.regate.log` |
+| Per-module translation | 15/15 canopy physics modules bit-exact in NumPy on recorded state; 12/15 pass the JAX 32-ULP gate under `jit`, the other three (FluxProfileSolution, Longwave, SoilFluxes) are exact with `jit` off and differ only by XLA fusion | `output/port/summary.json`, `output/run_port.regate2.log` |
 | Beyond the paper | soil-thermal loop also closed (NumPy zero drift over the month; JAX 2.4e-6) | `output/column_jax_month.soilclosed.log`, `month_soil.py` |
 | Against the authors' translation | same oracle, same month: their driver's SH step-RMS 5.5e-3 vs our kernel's 7.4e-4 (nvfortran-vs-gfortran is 7.9e-4); per unit, theirs is exact or ULP-tier wherever the Fortran is closed-form, and off by the Fortran's own solver tolerance where it iterates (gs 3%, Obukhov 0.2%); ours is 0 ULP there | `compare_authors.py`, `compare_authors_units.py`, `output/compare_authors_units.log` |
 
@@ -119,8 +119,10 @@ python month_jax.py                     # Fig. 5 (needs the 31-day recording)
 python gradients.py fortran:mlleafphotosynthesismod
 ```
 
-The evidence under `output/` was produced with RecastEngine `main` at
-`11512f6` (2026-09-02) and `recast-clm-ml` at `55ec365`, on jax 0.10.2,
+The per-unit JAX gates under `output/port/` were last run with RecastEngine
+`main` at `9b2f515` (2026-09-03) and `recast-clm-ml` at `cfb3fce`; the
+column, gradient and calibration results under `output/` were made with the
+engine at `11512f6` (2026-09-02). Both on jax 0.10.2,
 numpy 2.4.6, Python 3.11.16, gfortran 16.1.0 and netCDF-Fortran 4.6.4
 (macOS, Apple silicon). The reference Fortran is built by `build/build.sh`
 (gfortran `-O2`, topological order from `output/topo_order.txt`).

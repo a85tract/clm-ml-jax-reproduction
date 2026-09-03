@@ -25,7 +25,7 @@ from columntype_use_constants import *  # noqa: F401,F403
 import clm_varcon_numpy as _clm_varcon
 import clm_varpar_numpy as _clm_varpar
 
-_SIGNATURES = {'init': {'kind': 'subroutine', 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(COLUMN_TYPE))', 'intent': 'UNKNOWN', 'optional': False}, {'name': 'begc', 'dtype': 'int32', 'intent': 'IN', 'optional': False}, {'name': 'endc', 'dtype': 'int32', 'intent': 'IN', 'optional': False}], 'result': None, 'result_dtype': None}}
+_SIGNATURES = {'init': {'kind': 'subroutine', 'public': False, 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(COLUMN_TYPE))', 'intent': 'UNKNOWN', 'optional': False}, {'name': 'begc', 'dtype': 'int32', 'intent': 'IN', 'optional': False}, {'name': 'endc', 'dtype': 'int32', 'intent': 'IN', 'optional': False}], 'result': None, 'result_dtype': None}}
 
 
 init = _host.init

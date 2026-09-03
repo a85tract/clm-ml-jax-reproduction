@@ -25,7 +25,7 @@ from mlwatervapormod_use_constants import *  # noqa: F401,F403
 import clm_varcon_numpy as _clm_varcon
 import mlclm_varcon_numpy as _mlc
 
-_SIGNATURES = {'satvap': {'kind': 'subroutine', 'args': [{'name': 't', 'dtype': 'float64', 'intent': 'IN', 'optional': False}, {'name': 'es', 'dtype': 'float64', 'intent': 'OUT', 'optional': False}, {'name': 'desdt', 'dtype': 'float64', 'intent': 'OUT', 'optional': False}], 'result': None, 'result_dtype': None}, 'latvap': {'kind': 'function', 'args': [{'name': 't', 'dtype': 'float64', 'intent': 'IN', 'optional': False}], 'result': 'lambda', 'result_dtype': 'float64'}}
+_SIGNATURES = {'satvap': {'kind': 'subroutine', 'public': True, 'args': [{'name': 't', 'dtype': 'float64', 'intent': 'IN', 'optional': False}, {'name': 'es', 'dtype': 'float64', 'intent': 'OUT', 'optional': False}, {'name': 'desdt', 'dtype': 'float64', 'intent': 'OUT', 'optional': False}], 'result': None, 'result_dtype': None}, 'latvap': {'kind': 'function', 'public': True, 'args': [{'name': 't', 'dtype': 'float64', 'intent': 'IN', 'optional': False}], 'result': 'lambda', 'result_dtype': 'float64'}}
 
 
 def _satvap_k_impl(t):

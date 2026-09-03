@@ -19,7 +19,7 @@ import mlwatervapormod_numpy as _mlw
 
 _RUNTIME = {'abort_msg': None}
 
-_SIGNATURES = {'leaffluxes': {'kind': 'subroutine', 'args': [{'name': 'p', 'dtype': 'int32', 'intent': 'IN', 'optional': False}, {'name': 'ic', 'dtype': 'int32', 'intent': 'IN', 'optional': False}, {'name': 'il', 'dtype': 'int32', 'intent': 'IN', 'optional': False}, {'name': 'mlcanopy_inst', 'dtype': 'UNKNOWN(TYPE(MLCANOPY_TYPE))', 'intent': 'INOUT', 'optional': False}], 'result': None, 'result_dtype': None}}
+_SIGNATURES = {'leaffluxes': {'kind': 'subroutine', 'public': True, 'args': [{'name': 'p', 'dtype': 'int32', 'intent': 'IN', 'optional': False}, {'name': 'ic', 'dtype': 'int32', 'intent': 'IN', 'optional': False}, {'name': 'il', 'dtype': 'int32', 'intent': 'IN', 'optional': False}, {'name': 'mlcanopy_inst', 'dtype': 'UNKNOWN(TYPE(MLCANOPY_TYPE))', 'intent': 'INOUT', 'optional': False}], 'result': None, 'result_dtype': None}}
 
 _LIBM_STRICT = os.environ.get("PY_LIBM_STRICT", "1") == "1"
 """Strict libm, on by default.

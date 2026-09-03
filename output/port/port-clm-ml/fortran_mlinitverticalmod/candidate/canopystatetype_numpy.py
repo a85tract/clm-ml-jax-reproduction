@@ -18,7 +18,7 @@ import clm_varcon_numpy as _clm_varcon
 
 _RUNTIME = {'abort_msg': None}
 
-_SIGNATURES = {'init': {'kind': 'subroutine', 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(CANOPYSTATE_TYPE))', 'intent': 'UNKNOWN', 'optional': False}, {'name': 'bounds', 'dtype': 'UNKNOWN(TYPE(BOUNDS_TYPE))', 'intent': 'IN', 'optional': False}], 'result': None, 'result_dtype': None}, 'initallocate': {'kind': 'subroutine', 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(CANOPYSTATE_TYPE))', 'intent': 'UNKNOWN', 'optional': False}, {'name': 'bounds', 'dtype': 'UNKNOWN(TYPE(BOUNDS_TYPE))', 'intent': 'IN', 'optional': False}], 'result': None, 'result_dtype': None}}
+_SIGNATURES = {'init': {'kind': 'subroutine', 'public': False, 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(CANOPYSTATE_TYPE))', 'intent': 'UNKNOWN', 'optional': False}, {'name': 'bounds', 'dtype': 'UNKNOWN(TYPE(BOUNDS_TYPE))', 'intent': 'IN', 'optional': False}], 'result': None, 'result_dtype': None}, 'initallocate': {'kind': 'subroutine', 'public': False, 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(CANOPYSTATE_TYPE))', 'intent': 'UNKNOWN', 'optional': False}, {'name': 'bounds', 'dtype': 'UNKNOWN(TYPE(BOUNDS_TYPE))', 'intent': 'IN', 'optional': False}], 'result': None, 'result_dtype': None}}
 
 _LIBM_STRICT = os.environ.get("PY_LIBM_STRICT", "1") == "1"
 """Strict libm, on by default.

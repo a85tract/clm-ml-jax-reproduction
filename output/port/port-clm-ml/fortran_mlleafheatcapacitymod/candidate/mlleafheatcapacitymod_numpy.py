@@ -21,7 +21,7 @@ import pftconmod_numpy as _pftconmod
 
 _RUNTIME = {'abort_msg': None}
 
-_SIGNATURES = {'leafheatcapacity': {'kind': 'subroutine', 'args': [{'name': 'num_filter', 'dtype': 'int32', 'intent': 'IN', 'optional': False}, {'name': 'filter', 'dtype': 'int32', 'intent': 'IN', 'optional': False, 'dims': [{'lb': '1', 'ub': None}]}, {'name': 'mlcanopy_inst', 'dtype': 'UNKNOWN(TYPE(MLCANOPY_TYPE))', 'intent': 'INOUT', 'optional': False}], 'result': None, 'result_dtype': None}}
+_SIGNATURES = {'leafheatcapacity': {'kind': 'subroutine', 'public': True, 'args': [{'name': 'num_filter', 'dtype': 'int32', 'intent': 'IN', 'optional': False}, {'name': 'filter', 'dtype': 'int32', 'intent': 'IN', 'optional': False, 'dims': [{'lb': '1', 'ub': None}]}, {'name': 'mlcanopy_inst', 'dtype': 'UNKNOWN(TYPE(MLCANOPY_TYPE))', 'intent': 'INOUT', 'optional': False}], 'result': None, 'result_dtype': None}}
 
 _LIBM_STRICT = os.environ.get("PY_LIBM_STRICT", "1") == "1"
 """Strict libm, on by default.

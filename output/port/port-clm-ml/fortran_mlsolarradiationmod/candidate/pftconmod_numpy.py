@@ -19,7 +19,7 @@ import mlclm_varctl_numpy as _mlc
 
 _RUNTIME = {'abort_msg': None}
 
-_SIGNATURES = {'init': {'kind': 'subroutine', 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(PFTCON_TYPE))', 'intent': 'UNKNOWN', 'optional': False}], 'result': None, 'result_dtype': None}, 'initallocate': {'kind': 'subroutine', 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(PFTCON_TYPE))', 'intent': 'UNKNOWN', 'optional': False}], 'result': None, 'result_dtype': None}, 'initread': {'kind': 'subroutine', 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(PFTCON_TYPE))', 'intent': 'UNKNOWN', 'optional': False}], 'result': None, 'result_dtype': None}}
+_SIGNATURES = {'init': {'kind': 'subroutine', 'public': True, 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(PFTCON_TYPE))', 'intent': 'UNKNOWN', 'optional': False}], 'result': None, 'result_dtype': None}, 'initallocate': {'kind': 'subroutine', 'public': True, 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(PFTCON_TYPE))', 'intent': 'UNKNOWN', 'optional': False}], 'result': None, 'result_dtype': None}, 'initread': {'kind': 'subroutine', 'public': True, 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(PFTCON_TYPE))', 'intent': 'UNKNOWN', 'optional': False}], 'result': None, 'result_dtype': None}}
 
 _LIBM_STRICT = os.environ.get("PY_LIBM_STRICT", "1") == "1"
 """Strict libm, on by default.

@@ -25,7 +25,7 @@ from pftconmod_use_constants import *  # noqa: F401,F403
 import clm_varpar_numpy as _clm_varpar
 import mlclm_varctl_numpy as _mlc
 
-_SIGNATURES = {'init': {'kind': 'subroutine', 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(PFTCON_TYPE))', 'intent': 'UNKNOWN', 'optional': False}], 'result': None, 'result_dtype': None}, 'initallocate': {'kind': 'subroutine', 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(PFTCON_TYPE))', 'intent': 'UNKNOWN', 'optional': False}], 'result': None, 'result_dtype': None}, 'initread': {'kind': 'subroutine', 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(PFTCON_TYPE))', 'intent': 'UNKNOWN', 'optional': False}], 'result': None, 'result_dtype': None}}
+_SIGNATURES = {'init': {'kind': 'subroutine', 'public': True, 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(PFTCON_TYPE))', 'intent': 'UNKNOWN', 'optional': False}], 'result': None, 'result_dtype': None}, 'initallocate': {'kind': 'subroutine', 'public': True, 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(PFTCON_TYPE))', 'intent': 'UNKNOWN', 'optional': False}], 'result': None, 'result_dtype': None}, 'initread': {'kind': 'subroutine', 'public': True, 'args': [{'name': 'this', 'dtype': 'UNKNOWN(CLASS(PFTCON_TYPE))', 'intent': 'UNKNOWN', 'optional': False}], 'result': None, 'result_dtype': None}}
 
 
 def _init_k_impl(this):
