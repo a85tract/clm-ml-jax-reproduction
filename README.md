@@ -123,12 +123,7 @@ The evidence under `output/` was produced with RecastEngine `main` at
 `11512f6` (2026-09-02) and `recast-clm-ml` at `55ec365`, on jax 0.10.2,
 numpy 2.4.6, Python 3.11.16, gfortran 16.1.0 and netCDF-Fortran 4.6.4
 (macOS, Apple silicon). The reference Fortran is built by `build/build.sh`
-(gfortran `-O2`, topological order from `output/topo_order.txt`). Later
-engine commits tighten the gate: on `main` from 2026-09-03 (PR #15,
-fail-closed translation) two of the passing units become refusals
-(`MLRungeKuttaMod`: `rungekuttaini` is translated but never compared;
-`MLinitVerticalMod`: the recorder writes the integer `nbot_canopy` as
-float64), so the 12/15 above is the pinned engine's number.
+(gfortran `-O2`, topological order from `output/topo_order.txt`).
 
 ## License
 
