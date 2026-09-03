@@ -1,0 +1,99 @@
+{
+  "artifact": {
+    "digest": "dbcd544c01449cffae77d34b197157536a4672eb9c75e65d1ec45292c0e6eaaf",
+    "files": [
+      "clm_varcon_numpy.py",
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py",
+      "mlfluxprofilesolutionmod_constants.py",
+      "mlfluxprofilesolutionmod_jax.py",
+      "mlfluxprofilesolutionmod_jax_runtime.py",
+      "mlfluxprofilesolutionmod_numpy.py",
+      "mlfluxprofilesolutionmod_use_constants.py",
+      "mlleaffluxesmod_constants.py",
+      "mlleaffluxesmod_jax.py",
+      "mlleaffluxesmod_jax_runtime.py",
+      "mlleaffluxesmod_numpy.py",
+      "mlmathtoolsmod_constants.py",
+      "mlmathtoolsmod_jax.py",
+      "mlmathtoolsmod_jax_runtime.py",
+      "mlmathtoolsmod_numpy.py",
+      "mlmathtoolsmod_use_constants.py",
+      "mlsoilfluxesmod_constants.py",
+      "mlsoilfluxesmod_jax.py",
+      "mlsoilfluxesmod_jax_runtime.py",
+      "mlsoilfluxesmod_numpy.py",
+      "mlwatervapormod_constants.py",
+      "mlwatervapormod_jax.py",
+      "mlwatervapormod_jax_runtime.py",
+      "mlwatervapormod_numpy.py",
+      "mlwatervapormod_use_constants.py"
+    ],
+    "name": "fortran:mlfluxprofilesolutionmod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"dbcd544c01449cffae77d34b197157536a4672eb9c75e65d1ec45292c0e6eaaf\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlfluxprofilesolutionmod\"}}",
+  "reference": {
+    "key": "dump-replay:mlfluxprofilesolutionmod:1c8161b858effccb",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "a dominant element is 4346 ULP out (gate 32); that is where a translation defect shows, not where conditioning does",
+    "metrics": {
+      "bit_exact": 78983,
+      "candidate_device": "cpu:0",
+      "dominant_points": 54912,
+      "integer_mismatch": 0,
+      "integer_points": 0,
+      "max_rel": 6.006495041966036e-13,
+      "max_ulp": 19184094,
+      "max_ulp_dominant": 4346,
+      "nan_mismatch": 0,
+      "points": 101280,
+      "rel_gate": 1e-12,
+      "skipped": [],
+      "subprograms": {
+        "fluxprofilesolution_flat": {
+          "bit_exact": 78983,
+          "dominant_points": 54912,
+          "integer_mismatch": 0,
+          "integer_points": 0,
+          "max_rel": 6.006495041966036e-13,
+          "max_ulp": 19184094,
+          "max_ulp_dominant": 4346,
+          "nan_mismatch": 0,
+          "points": 101280
+        }
+      },
+      "trials": 10,
+      "ulp_gate": 32,
+      "uncovered": []
+    },
+    "passed": false,
+    "verdict": "failed",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-09-03T22:27:13.234316+00:00"
+}

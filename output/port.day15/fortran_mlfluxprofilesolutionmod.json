@@ -1,0 +1,16 @@
+{
+  "output": "output/port.day15",
+  "oracle": "dump-replay",
+  "stages": {
+    "dump-replay": {
+      "dumps": "output/recorded.day15/dumps/fortran_mlfluxprofilesolutionmod"
+    },
+    "port.clm-ml-jax": {
+      "constant_overrides": {
+        "met_type": 3,
+        "dpai_min": 0.01,
+        "pftcon_val": 1
+      }
+    }
+  }
+}

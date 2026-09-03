@@ -1,0 +1,29 @@
+ncan = 46
+mode=jax  open loop (recorded inputs every step)  start=673  steps=48  carried=262  exogenous=194
+  step 673: max_abs 1.476e+20  max_rel 2.133e-11  (mlcanopy_inst__dtair_profile)
+  step 674: max_abs 1.476e+20  max_rel 2.318e-11  (mlcanopy_inst__dtleaf_leaf)
+  step 678: max_abs 1.476e+20  max_rel 2.935e-11  (mlcanopy_inst__dtair_profile)
+  step 680: max_abs 1.476e+20  max_rel 1.000e+00  (mlcanopy_inst__aj_leaf)
+  step 681: max_abs 1.476e+20  max_rel 1.000e+00  (mlcanopy_inst__agross_leaf)
+  step 682: max_abs 1.476e+20  max_rel 3.905e+00  (mlcanopy_inst__gppveg_canopy)
+  step 683: max_abs 1.476e+20  max_rel 1.332e+00  (mlcanopy_inst__gppvegsun_canopy)
+  step 684: max_abs 1.476e+20  max_rel 1.000e+00  (mlcanopy_inst__agross_leaf)
+  step 685: max_abs 1.476e+20  max_rel 1.655e+04  (mlcanopy_inst__gppvegsun_canopy)
+  step 686: max_abs 1.476e+20  max_rel 5.711e+00  (mlcanopy_inst__gppveg_canopy)
+  step 687: max_abs 1.476e+20  max_rel 2.000e+00  (mlcanopy_inst__aj_leaf)
+  step 688: max_abs 1.476e+20  max_rel 5.998e+00  (mlcanopy_inst__gppvegsha_canopy)
+  step 689: max_abs 1.476e+20  max_rel 2.270e+00  (mlcanopy_inst__gppvegsha_canopy)
+  step 690: max_abs 1.476e+20  max_rel 3.260e+00  (mlcanopy_inst__gppvegsun_canopy)
+  step 691: max_abs 1.476e+20  max_rel 9.213e+00  (mlcanopy_inst__gppvegsun_canopy)
+  step 692: max_abs 1.476e+20  max_rel 2.460e+00  (mlcanopy_inst__gppvegsun_canopy)
+  step 693: max_abs 1.476e+20  max_rel 2.324e+01  (mlcanopy_inst__gppvegsun_canopy)
+  step 694: max_abs 1.476e+20  max_rel 1.597e+00  (mlcanopy_inst__gppvegsun_canopy)
+  step 695: max_abs 1.476e+20  max_rel 1.167e+01  (mlcanopy_inst__gppvegsha_canopy)
+  step 696: max_abs 1.476e+20  max_rel 9.811e+00  (mlcanopy_inst__gppvegsha_canopy)
+  step 720: max_abs 1.476e+20  max_rel 4.106e-11  (mlcanopy_inst__dtair_profile)
+worst of day: max_rel 1.655e+04 at step 685: mlcanopy_inst__gppvegsun_canopy (abs 1.476e+20)
+per-flux relative error over 48 steps from step 673 (gate: max < 0.001):
+  gppveg_canopy    median 7.798e-14  p95 2.135e-05  max 3.353e-05  ok
+  lhflx_canopy     median 7.794e-13  p95 1.143e-11  max 2.512e-11  ok
+  shflx_canopy     median 1.089e-11  p95 4.300e-11  max 2.878e-10  ok
+  ustar_canopy     median 2.297e-13  p95 1.481e-12  max 7.076e-12  ok

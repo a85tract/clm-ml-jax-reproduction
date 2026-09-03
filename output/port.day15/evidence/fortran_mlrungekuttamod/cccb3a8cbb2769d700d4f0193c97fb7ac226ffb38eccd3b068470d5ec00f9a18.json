@@ -1,0 +1,82 @@
+{
+  "artifact": {
+    "digest": "71bebee5ba34998f4833fdb9d37c860b185e307d449c8276ab2e87195346be62",
+    "files": [
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlclm_varctl_numpy.py",
+      "mlrungekuttamod_constants.py",
+      "mlrungekuttamod_jax.py",
+      "mlrungekuttamod_jax_runtime.py",
+      "mlrungekuttamod_numpy.py",
+      "mlrungekuttamod_use_constants.py"
+    ],
+    "name": "fortran:mlrungekuttamod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"71bebee5ba34998f4833fdb9d37c860b185e307d449c8276ab2e87195346be62\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlrungekuttamod\"}}",
+  "reference": {
+    "key": "dump-replay:mlrungekuttamod:ee6afb876c95ef53",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "every one of 168240 points within 2 ULP (gate 32); 1 subprogram(s) ungated, no reference: rungekuttaini (no per-call recording; compared inside the whole-step replay of fortran:mlcanopyfluxesmod, which calls it every step)",
+    "metrics": {
+      "bit_exact": 167732,
+      "candidate_device": "cpu:0",
+      "dominant_points": 90864,
+      "integer_mismatch": 0,
+      "integer_points": 0,
+      "max_rel": 1.909902036008782e-16,
+      "max_ulp": 2,
+      "max_ulp_dominant": 2,
+      "nan_mismatch": 0,
+      "points": 168240,
+      "rel_gate": 1e-12,
+      "skipped": [],
+      "subprograms": {
+        "rungekuttaupdate_flat": {
+          "bit_exact": 167732,
+          "dominant_points": 90864,
+          "integer_mismatch": 0,
+          "integer_points": 0,
+          "max_rel": 1.909902036008782e-16,
+          "max_ulp": 2,
+          "max_ulp_dominant": 2,
+          "nan_mismatch": 0,
+          "points": 168240
+        }
+      },
+      "trials": 10,
+      "ulp_gate": 32,
+      "uncovered": [],
+      "ungated": {
+        "rungekuttaini": "no per-call recording; compared inside the whole-step replay of fortran:mlcanopyfluxesmod, which calls it every step"
+      }
+    },
+    "passed": true,
+    "verdict": "ulp_bounded",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-09-03T22:28:22.657415+00:00"
+}

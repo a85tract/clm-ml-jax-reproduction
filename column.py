@@ -28,7 +28,28 @@ HERE = Path(__file__).resolve().parent
 parser = argparse.ArgumentParser()
 parser.add_argument("--mode", choices=("numpy", "jax"), default="numpy")
 parser.add_argument("--steps", type=int, default=48)
+parser.add_argument(
+    "--start",
+    type=int,
+    default=1,
+    help="first model step (day 15 starts at 673; needs a recording that holds it, "
+    "e.g. --dumps output/recorded.31day/dumps/fortran_mlcanopyfluxesmod)",
+)
 parser.add_argument("--dumps", default=str(HERE / "output/recorded/dumps/fortran_mlcanopyfluxesmod"))
+parser.add_argument(
+    "--bar",
+    type=float,
+    default=1e-3,
+    help="the gate: max relative error over the run on each canopy flux "
+    "(gppveg, lhflx, shflx, ustar). Exit 1 above it. The kernel regression of "
+    "2026-08-31 read 13%% here; the fixed kernel 3e-5 (root-finder staircase).",
+)
+parser.add_argument(
+    "--open-loop",
+    action="store_true",
+    help="feed every step the recorded inputs instead of the kernel's own outputs: "
+    "the per-step kernel check, not the column; what the day-15 gate runs",
+)
 args = parser.parse_args()
 
 cand = HERE / "output/port/port-clm-ml/fortran_mlcanopyfluxesmod/candidate"
@@ -71,10 +92,10 @@ def load_step(k: int) -> dict:
     return sample
 
 
-first = load_step(1)
+first = load_step(args.start)
 carried_names = {n for n in (a["name"].lower() for a in sig["args"] if a["intent"] != "OUT") if n in first["outputs"]}
 # ncan is written inside step 1 (initVerticalStructure); step 2's input has it.
-ncan = int(np.asarray(load_step(min(2, args.steps))["inputs"]["mlcanopy_inst__ncan_canopy"])[0])
+ncan = int(np.asarray(load_step(min(args.start + 1, args.start + args.steps - 1))["inputs"]["mlcanopy_inst__ncan_canopy"])[0])
 print(f"ncan = {ncan}")
 
 
@@ -87,16 +108,20 @@ def dominant(name: str, got: np.ndarray, want: np.ndarray):
         return got[:, : ncan + 1], want[:, : ncan + 1]
     return got, want
 state: dict[str, np.ndarray] = {}
-print(f"mode={args.mode}  steps={args.steps}  carried={len(carried_names)}  exogenous={len(taken) - len(carried_names)}")
+loop = "open loop (recorded inputs every step)" if args.open_loop else "closed loop"
+print(f"mode={args.mode}  {loop}  start={args.start}  steps={args.steps}  carried={len(carried_names)}  exogenous={len(taken) - len(carried_names)}")
 worst_of_day = (0.0, 0.0, "")
-for k in range(1, args.steps + 1):
-    sample = first if k == 1 else load_step(k)
+FLUXES = ("gppveg_canopy", "lhflx_canopy", "shflx_canopy", "ustar_canopy")
+flux_err: dict[str, list[float]] = {f: [] for f in FLUXES}
+for k in range(args.start, args.start + args.steps):
+    sample = first if k == args.start else load_step(k)
     kw = {}
     for name in taken:
         low = name.lower()
         # np values go in as they are: traced positions accept them and the
         # static scalar positions NEED hashable np scalars, not jax arrays.
-        kw[name] = state[low] if (low in state and k > 1) else sample["inputs"][low]
+        carry = low in state and k > args.start and not args.open_loop
+        kw[name] = state[low] if carry else sample["inputs"][low]
     result = fn(**kw)
     result = result if isinstance(result, tuple) else (result,)
     step_abs = step_rel = 0.0
@@ -111,6 +136,10 @@ for k in range(1, args.steps + 1):
             continue
         want = np.asarray(want)
         gd, wd = dominant(low, got.astype(np.float64), np.asarray(want).astype(np.float64))
+        for flux in FLUXES:
+            if low.endswith(flux):
+                denom = max(float(np.abs(wd).max()), 1e-12)
+                flux_err[flux].append(float(np.abs(gd - wd).max()) / denom)
         diff = np.abs(gd - wd)
         # The array's own scale as the floor: a -2e-16 beside an exact 0 in
         # a mumol-scale array is not a relative error of 2e14.
@@ -122,6 +151,22 @@ for k in range(1, args.steps + 1):
             step_rel, step_name = rel, low
     if step_rel > worst_of_day[1]:
         worst_of_day = (step_abs, step_rel, f"step {k}: {step_name}")
-    if k in (1, 2, 6, 12, 24, 48) or step_rel > 1e-3:
+    if (k - args.start + 1) in (1, 2, 6, 12, 24, 48) or step_rel > 1e-3:
         print(f"  step {k:3d}: max_abs {step_abs:.3e}  max_rel {step_rel:.3e}  ({step_name})")
 print(f"worst of day: max_rel {worst_of_day[1]:.3e} at {worst_of_day[2]} (abs {worst_of_day[0]:.3e})")
+# The gate reads the canopy fluxes, per step, over the run: a leaf whose
+# root finder took the other branch is a 100% error in that leaf and a
+# staircase step in the total, and the total is what the paper's Fig. 5
+# compares.
+print(f"per-flux relative error over {args.steps} steps from step {args.start} (gate: max < {args.bar:g}):")
+failed = False
+for flux, errs in flux_err.items():
+    if not errs:
+        print(f"  {flux:16s} not in the outputs")
+        failed = True
+        continue
+    e = np.array(errs)
+    verdict = "ok" if e.max() < args.bar else "FAIL"
+    failed = failed or verdict == "FAIL"
+    print(f"  {flux:16s} median {np.median(e):.3e}  p95 {np.percentile(e, 95):.3e}  max {e.max():.3e}  {verdict}")
+sys.exit(1 if failed else 0)

@@ -27,13 +27,34 @@ from recast.oracle.record import RECORDER_MODULE, plans_for_units, probe_tree, r
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "output"
 STAGED = OUT / "staged"
-REC = OUT / "recorded"
 
 parser = argparse.ArgumentParser()
 parser.add_argument("units", nargs="+")
 parser.add_argument("--days", type=int, default=1)
 parser.add_argument("--calls", type=int, default=40)
+parser.add_argument(
+    "--start-step",
+    type=int,
+    default=1,
+    help="record from this model step (48 per day; day 15 starts at 673). "
+    "Every kernel gate runs day 15 beside day 1: day 1 is leaf-out and hid "
+    "a real kernel regression (REPRODUCTION.md, 2026-08-31).",
+)
+parser.add_argument(
+    "--out",
+    default=None,
+    help="recording directory (default output/recorded, or output/recorded.day<N> "
+    "when --start-step is not 1). Never the directory of another recording: "
+    "the dumps there are cleared.",
+)
 args = parser.parse_args()
+if args.start_step > 1:
+    args.days = max(args.days, -(-args.start_step // 48))
+REC = (
+    Path(args.out).resolve()
+    if args.out
+    else OUT / ("recorded" if args.start_step == 1 else f"recorded.day{-(-args.start_step // 48)}")
+)
 
 frontend = REGISTRY.get("frontend", "clm-ml")()
 units = {u.uid: u for u in frontend.discover(STAGED)}
@@ -51,7 +72,8 @@ print("probed call sites:", sites)
 # One recorder module for all units: merge by concatenating would define the
 # module several times, so generate one module over all plans instead.
 all_plans = [p for plans in plans_by_module.values() for p in plans]
-recorder = recorder_module("recorder", all_plans, calls=args.calls)
+window = None if args.start_step == 1 else ("clm_time_manager", "itim", args.start_step, 10**9)
+recorder = recorder_module("recorder", all_plans, calls=args.calls, window=window)
 # each probe line names its own module in the PROBE header
 for module, plans in plans_by_module.items():
     for p in plans:
@@ -182,5 +204,6 @@ for module, plans in plans_by_module.items():
     "Recorded with gfortran "
     + subprocess.run(["gfortran", "--version"], capture_output=True, text=True).stdout.splitlines()[0]
     + f"\nflags: {' '.join(flags)}\nnamelist: nl.CHATS7.05.2007 with stop_n = {args.days}\n"
-    f"calls per probe: {args.calls}\nprobed sites: {sites}\n"
+    f"calls per probe: {args.calls}\nrecorded from model step: {args.start_step}\n"
+    f"probed sites: {sites}\n"
 )

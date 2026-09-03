@@ -1,0 +1,102 @@
+{
+  "artifact": {
+    "digest": "d8923b712c513df0a0c4339ceeb847cb2c27b590ec1387c39baa00bf9c9ac814",
+    "files": [
+      "clm_varpar_constants.py",
+      "clm_varpar_jax.py",
+      "clm_varpar_jax_runtime.py",
+      "clm_varpar_numpy.py",
+      "clmsoiloptionmod_numpy.py",
+      "mlcanopyfluxestype_constants.py",
+      "mlcanopyfluxestype_jax.py",
+      "mlcanopyfluxestype_jax_runtime.py",
+      "mlcanopyfluxestype_numpy.py",
+      "mlcanopyfluxestype_use_constants.py",
+      "mlcanopywatermod_constants.py",
+      "mlcanopywatermod_jax.py",
+      "mlcanopywatermod_jax_runtime.py",
+      "mlcanopywatermod_numpy.py",
+      "mlcanopywatermod_use_constants.py",
+      "mlclm_varcon_numpy.py",
+      "mlclm_varctl_numpy.py"
+    ],
+    "name": "fortran:mlcanopywatermod",
+    "transform": "recast-clm-ml.port.clm-ml-to-jax"
+  },
+  "cases": [],
+  "cc_test": {
+    "commit": "unknown",
+    "version": "unknown"
+  },
+  "environment": {
+    "engine": "recast 0.0.1.dev0",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16"
+  },
+  "evidence_class": "complete",
+  "notes": "{\"recast\": {\"artifacts\": {}, \"candidate\": \"d8923b712c513df0a0c4339ceeb847cb2c27b590ec1387c39baa00bf9c9ac814\", \"executor\": \"local\", \"recipe\": \"port-clm-ml\", \"unit\": \"fortran:mlcanopywatermod\"}}",
+  "reference": {
+    "key": "dump-replay:mlcanopywatermod:88e751dc25b78748",
+    "oracle": "dump-replay"
+  },
+  "result": {
+    "detail": "every one of 19344 points within 2 ULP (gate 32)",
+    "metrics": {
+      "bit_exact": 19188,
+      "candidate_device": "cpu:0",
+      "dominant_points": 6672,
+      "integer_mismatch": 0,
+      "integer_points": 0,
+      "max_rel": 1.6565813378989788e-16,
+      "max_ulp": 2,
+      "max_ulp_dominant": 2,
+      "nan_mismatch": 0,
+      "points": 19344,
+      "rel_gate": 1e-12,
+      "skipped": [],
+      "subprograms": {
+        "canopyevaporation_flat": {
+          "bit_exact": 4644,
+          "dominant_points": 672,
+          "integer_mismatch": 0,
+          "integer_points": 0,
+          "max_rel": 1.6565813378989788e-16,
+          "max_ulp": 2,
+          "max_ulp_dominant": 2,
+          "nan_mismatch": 0,
+          "points": 4800
+        },
+        "canopyinterception_flat": {
+          "bit_exact": 4944,
+          "dominant_points": 816,
+          "integer_mismatch": 0,
+          "integer_points": 0,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 0,
+          "points": 4944
+        },
+        "canopywettedfraction_flat": {
+          "bit_exact": 9600,
+          "dominant_points": 5184,
+          "integer_mismatch": 0,
+          "integer_points": 0,
+          "max_rel": 0.0,
+          "max_ulp": 0,
+          "max_ulp_dominant": 0,
+          "nan_mismatch": 0,
+          "points": 9600
+        }
+      },
+      "trials": 10,
+      "ulp_gate": 32,
+      "uncovered": []
+    },
+    "passed": true,
+    "verdict": "ulp_bounded",
+    "verifier": "differential.tolerance"
+  },
+  "schema_version": 1,
+  "timestamp": "2026-09-03T22:27:00.405846+00:00"
+}

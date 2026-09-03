@@ -908,3 +908,49 @@ whole of the column-level gap between the two rows above: 5.5e-3 against
 Artifacts: `output/compare_authors_units.{log,json}`, `compare_authors.py`,
 `compare_authors_units.py`; the authors' clone at `../authors-clm-ml-jax`
 (not committed).
+
+## Update 2026-09-03 — the day-15 gate, mechanized
+
+The standing policy of 2026-08-31 -- every kernel gate runs day 15 beside
+day 1 -- had been prose: the committed recording was day 1, `column.py` and
+`calibration.py` defaulted to day 1, and the day-15 open-loop check that
+found the callee-extent regression had no script. Now:
+
+- `record.py --start-step N` records from model step N (the engine's
+  recorder takes a `window` on `clm_time_manager%itim`), into
+  `output/recorded.day<N/48>`; `--out` names another directory. It clears
+  only its own dumps: the 2026-08-31 overwrite of the per-unit recording by
+  the soil-month one is no longer one command away.
+- `run_port.py --recorded DIR` gates on that recording into
+  `output/port<suffix>/` and merges its summary by unit, so the whole-step
+  run of 2026-09-02 could not erase the fifteen physics verdicts again.
+- `column.py --start K --open-loop --bar 1e-3` is the day-15 check as a
+  gate: recorded inputs every step, the four canopy fluxes' maximum
+  relative error over the run against a bar, exit 1 above it. The
+  regression read 13% here, the fixed kernel 3e-5.
+
+**Day-15 per-unit recording** (`output/recorded.day15/`, 48 calls per probe
+from step 673, 30 s): 15 units have dumps; `MLinitVerticalMod` runs only at
+step 1 and has none, which the replay oracle reports as "found no dump
+files" rather than a pass. **`run_port.py --recorded output/recorded.day15`:
+11 of the 14 units the recording reaches** (`output/port.day15/summary.json`,
+`output/run_port.day15.log`), the same three XLA-fusion residuals as day 1
+(FluxProfileSolution 4,346 ULP, Longwave 3,584, SoilFluxes 1,722; smaller
+than day 1's 67,175 / 5,792 / 2,399). Where day 1 held a unit at 0 ULP the
+active canopy moves it: CanopyNitrogenProfile 0 to 16 ULP, LeafBoundaryLayer
+1 to 4, LeafFluxes' tail 6,433 to 14,173 ULP at max_rel 3e-48, SolarRadiation
+31 to 32 dominant, exactly at the gate. Photosynthesis stays at 0 ULP
+dominant (139,440 points), RungeKutta 2 ULP with `rungekuttaini` named
+ungated.
+
+**Whole-step JAX kernel, day 15, open loop** (`output/gate_day15_jax.log`,
+from the 31-day recording): gppveg median 7.8e-14, p95 2.1e-5, max 3.35e-5;
+lhflx max 2.5e-11; shflx 2.9e-10; ustar 7.1e-12 -- the numbers of the
+2026-08-31 check, now re-earned by a committed command. Day 1 the same way
+(`output/gate_day1_jax.log`): gppveg max 1.9e-5, the rest below 1e-9. The
+NumPy kernel closed-loop from step 673 is bit-exact for the 48 steps, as
+from step 1. The per-field "worst of day" line above the table is not the
+gate: a leaf whose root finder took the other branch is a 100% error in
+that leaf and a staircase step in the total, and at sunrise a canopy total
+of zero makes any nonzero a large ratio.
+
