@@ -125,7 +125,7 @@ hard part — an oracle that can drive subprograms taking `mlcanopy_type`.
 ## Update 2026-08-28 (later) — `recast-clm-ml`, and `MLWaterVaporMod` end to end
 
 The gap named above is now a package: `../recast-clm-ml/` (branch
-`translate-clm-ml`), a model-domain extension of the engine, attached through entry
+`translate-clm`), a model-domain extension of the engine, attached through entry
 points only. What it took to carry the paper's simplest Tier-1 module through
 all eight stages, bit-exact against the Fortran:
 
